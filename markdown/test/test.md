@@ -1,13 +1,13 @@
-author: AUTHOR_NAME
-summary:
-id: CODELAB_NAME
-tags:
+author: Jan Kirenz
+summary: here here
+id: test
+tags: mlops
 categories:
 environments: Web
 status: Published
-feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/CODELAB_NAME/CODELAB_NAME.md
+feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/test
 
-# Title
+# Title here
 
 <!-- ------------------------ -->
 ## Overview
@@ -89,7 +89,7 @@ Gongratulations! You have completed the tutorial and learned how to:
 ---
 
 
-<img src="img/Jan.png" alt="Jan Kirenz" width="100">
+<img src="img/Jan.png" alt="Jan Kirenz" width="50">
 
 Thank you for participating in this tutorial. If you found any issues along the way I'd 
 appreciate it if you'd raise them by clicking the `Report a mistake` button at the bottom left of this site.
