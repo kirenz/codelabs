@@ -23,10 +23,10 @@ max_redirects = 10
 ### Requests
 ###
 # User agent to send with each request
-user_agent = "curl/7.71.1"
+user_agent = ""
 
 # Website timeout from connect to response finished
-timeout = 20
+timeout = 5
 
 # Comma-separated list of accepted status codes for valid links.
 # Omit to accept all response types.
