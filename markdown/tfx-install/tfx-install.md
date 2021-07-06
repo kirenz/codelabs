@@ -1,13 +1,13 @@
-author: AUTHOR_NAME
+author: kirenz
 summary:
-id: CODELAB_NAME
+id: tfx-install
 tags:
 categories:
 environments: Web
 status: Published
-feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/CODELAB_NAME/CODELAB_NAME.md
+feedback link: https://github.com/SolaceDev/solace-dev-codelabs/blob/master/markdown/tfx-install
 
-# Title
+# Title of codelab goes here
 
 ## What you'll learn: Overview
 
