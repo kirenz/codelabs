@@ -26,7 +26,7 @@ fi
 
 # env variables
 CODELAB_NAME=$1
-AUTHOR_NAME=`Jan Kirenz`
+AUTHOR_NAME="Jan Kirenz"
 
 # local variables
 codelab_markdown_filename="markdown/$CODELAB_NAME/$CODELAB_NAME.md"

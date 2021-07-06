@@ -1,10 +1,11 @@
+author: Jan Kirenz
 summary: How to install TensorFlow and TensorFlow Extended with Anaconda
 id: install-tfx
-categories: mlops
 tags: tfx
+categories: mlops
+environments: Web
 status: Published
-authors: Jan Kirenz
-Feedback Link: https://www.kirenz.com
+feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/install-tfx
 
 # Installation of Anaconda, TensorFlow & TFX
 
@@ -19,15 +20,15 @@ We start with an overview of the software we will install in this tutorial: Anac
 We use the data science platform Anaconda to install TFX
 </aside>
 
-<img src="assets/tf-logo.png" alt="TensorFlow logo" width="200">
+<img src="img/tf-logo.png" alt="TensorFlow logo" width="200">
 
 - [TensorFlow](https://www.tensorflow.org/) is an end-to-end open source platform for machine learning.
 
-<img src="assets/tfx-logo.png" alt="TensorFlow Extended logo" width="200">
+<img src="img/tfx-logo.png" alt="TensorFlow Extended logo" width="200">
 
 - [TensorFlow Extended (TFX)](https://www.tensorflow.org/tfx) is a Google-production-scale machine learning platform based on TensorFlow.
 
-<img src="assets/anaconda-logo.png" alt="Anaconda logo" width="200">
+<img src="img/anaconda-logo.png" alt="Anaconda logo" width="200">
 
 - We will use the [Anaconda](https://www.anaconda.com/) open source data science platform to install TensorFlow and TensorFlow Extended. Anaconda's package manager *Conda* makes it very easy to manage multiple data environments that can be maintained and run separately without interference from each other.
 
@@ -107,3 +108,27 @@ I hope this helps you get up and running quickly with TensorFlow and TensorFlow 
 If you'd like to learn more about TensorFlow Extended, have a look at the following suggestions.
 
 Tutorial: Build your first TFX pipeline.
+
+<!-- ------------------------ -->
+## What's next?
+
+Duration: 0:07:00
+
+Gongratulations! You have completed the tutorial and learned how to install:
+
+✅ Anaconda
+✅ TensorFlow
+✅ TensorFlow Extended  
+
+Next, you may want to implement your first TFX pipeline:
+
+Learn how to implement a local pipeline with TFX
+
+---
+
+<img src="img/Jan.jpg" alt="Jan Kirenz" width="200">
+
+Thank you for participating in this tutorial. If you found any issues along the way I'd 
+appreciate it if you'd raise them by clicking the `Report a mistake` button at the bottom left of this site.
+
+*Copyright: Jan Kirenz (2021), [kirenz.com](https://www.kirenz.com), [Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0) License](https://creativecommons.org/licenses/by-nc/2.0/)*

@@ -4,16 +4,17 @@
   "description": "use nodemon to watch changes on md file, rebuild codelab on saves",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon --watch get-started-basics.md --exec 'claat export -o temp/ get-started-basics.md && lsof -c claat -t | xargs kill && cd temp/get-started-basics && claat serve'"
+    "watch": "nodemon --watch install-tfx.md --exec \"claat export -o temp/ install-tfx.md && ./node_modules/kill-port/cli.js --port 9090 && cd temp/install-tfx && claat serve\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SolaceDev/solace-dev-codelabs/tree/master/markdown/get-started-basics"
+    "url": "https://github.com/kirenz/codelabs/tree/master/markdown/install-tfx"
   },
   "keywords": [
     "codelab"
   ],
   "dependencies": {
+    "kill-port": "^1.6.1",
     "nodemon": "^2.0.3"
   }
 }

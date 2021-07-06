@@ -9,62 +9,88 @@ feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/CODELAB_N
 
 # Title
 
-## What you'll learn: Overview
+<!-- ------------------------ -->
+## Overview
 
 Duration: 0:05:00
 
-Enter a codelab overview here: what & why and github repo link where you can find related code if applicable
+### What we cover
+In this tutorial we 
 
-### Info Boxes
-Plain Text followed by green & yellow info boxes 
+<img src="img/hdm-logo.png" alt="HdM Logo" width="200">
 
-Negative
-: This will appear in a yellow info box.
+<aside class="positive">
+Info box
+</aside>
 
-Positive
-: This will appear in a green info box.
+Txt
 
-### Bullets
-Plain Text followed by bullets
-* Hello
-* CodeLab
-* World
+<aside class="positive">
+Info box
+</aside>
 
-### Numbered List
-1. List
-1. Using
-1. Numbers
 
-### Add an Image or a GIF
-
-![Soly Image Caption](img/soly.gif)
-
-## What you need: Prerequisites
+<!-- ------------------------ -->
+## Prerequisites
 
 Duration: 0:07:00
 
-Enter environment setup & prerequisites here
+To start this tutorial, you need the following environment setup:
 
-### Add a Link
-Add a link!
-[Example of a Link](https://www.google.com)
+- Txt
+- Txt
 
-### Embed an iframe
+Furthermore, you should be familiar with:
+
+- Txt
+- Txt
+
+<aside class="positive">
+Info box
+</aside>
+
+<!-- ------------------------ -->
+## Txt
+
+Duration: 0:05:00
+
+```bash
+brew install go
+```
+
+```python
+brew install go
+```
 
 ![https://codepen.io/tzoght/embed/yRNZaP](https://en.wikipedia.org/wiki/File:Example.jpg "Try Me Publisher")
 
-## Custom Step 1
-## Custom Step 2
-## Custom Step 3
+Txt
 
-## Takeaways
+
+<!-- ------------------------ -->
+## Txt
+
+Duration: 0:05:00
+
+Txt
+
+<!-- ------------------------ -->
+## What's next?
 
 Duration: 0:07:00
 
-✅ < Fill IN TAKEAWAY 1>   
-✅ < Fill IN TAKEAWAY 2>   
-✅ < Fill IN TAKEAWAY 3>   
+Gongratulations! You have completed the tutorial and learned how to:
 
-![Soly Image Caption](img/soly.gif)
+✅ Install
+✅ Use   
+✅ Implement   
 
-Thanks for participating in this codelab! Let us know what you thought in the [Solace Community Forum](https://solace.community/)! If you found any issues along the way we'd appreciate it if you'd raise them by clicking the Report a mistake button at the bottom left of this codelab.
+
+---
+
+<img src="img/Jan.jpg" alt="Jan Kirenz" width="200">
+
+Thank you for participating in this tutorial. If you found any issues along the way I'd 
+appreciate it if you'd raise them by clicking the `Report a mistake` button at the bottom left of this site.
+
+*Copyright: Jan Kirenz (2021), [kirenz.com](https://www.kirenz.com), [Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0) License](https://creativecommons.org/licenses/by-nc/2.0/)*
