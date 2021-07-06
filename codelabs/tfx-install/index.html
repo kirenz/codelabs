@@ -1,0 +1,107 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Installation of Anaconda, TensorFlow &amp; TFX</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="tfx-install"
+                  title="Installation of Anaconda, TensorFlow &amp; TFX"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/tfx-install">
+    
+      <google-codelab-step label="Overview" duration="2">
+        <p>We start with an overview of the software we will install in this tutorial: Anaconda, TensorFlow &amp; TensorFlow Extended.</p>
+<aside class="special"><p> We use the data science platform Anaconda to install TFX </p>
+</aside>
+<ul>
+<li><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a> is an end-to-end open source platform for machine learning.</li>
+<li><a href="https://www.tensorflow.org/tfx" target="_blank">TensorFlow Extended (TFX)</a> is a Google-production-scale machine learning platform based on TensorFlow.</li>
+<li>We will use the <a href="https://www.anaconda.com/" target="_blank">Anaconda</a> open source data science platform to install TensorFlow and TensorFlow Extended. Anaconda&#39;s package manager <em>Conda</em> makes it very easy to manage multiple data environments that can be maintained and run separately without interference from each other.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Install Anaconda individual" duration="10">
+        <p class="image-container"><img alt="Anaconda logo" style="width: 200.00px" src="img/a65e86b6a759a874.png">   </p>
+<p>Go to <a href="https://www.anaconda.com/products/individual" target="_blank">anaconda.com</a> and choose the appropriate <code>Graphical Installer</code> for your system (Windows, MacOS or Linux). Install the software on your system.</p>
+<p>Here some tips if you have problems installing Anaconda: <a href="https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems" target="_blank">troubleshooting</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create TensorFlow environment" duration="5">
+        <p class="image-container"><img alt="TensorFlow logo" style="width: 300.00px" src="img/b538f31a85a23aee.png">   </p>
+<p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow).</p>
+<p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
+<p>We create an environment with a specific version of Python (3.8) and the <strong>tensorflow</strong> package. We call the environment <code>tf</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.8 tensorflow
+</code></pre>
+<p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Activate TensorFlow environment" duration="2">
+        <p>You can activate your environment as follows:</p>
+<pre><code language="language-bash" class="language-bash">conda activate tf
+</code></pre>
+<p>And deactivate it with:</p>
+<pre><code language="language-bash" class="language-bash">conda deactivate
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Install TensorFlow Extended" duration="3">
+        <p class="image-container"><img alt="TensorFlow Extended logo" style="width: 300.00px" src="img/8f5e5828c76225b5.png">   </p>
+<p>First of all, you have to activate the <code>tf</code> environment:</p>
+<pre><code language="language-bash" class="language-bash">conda activate tf
+</code></pre>
+<p>Now we have to use <code>pip</code> (pip is the package installer for Python) to install TFX in our <code>tf</code> environment:</p>
+<pre><code language="language-bash" class="language-bash">pip install tfx
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What&#39;s next?" duration="1">
+        <p>Gongratulations! You have completed the tutorial and learned how to install:</p>
+<p>✅ Anaconda<br> ✅ TensorFlow<br> ✅ TensorFlow Extended</p>
+<p>If you&#39;d like to learn more about TensorFlow Extended, have a look at the following suggestions:</p>
+<p>Tutorial: Build your first TFX pipeline.</p>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the <em>Report a mistake</em> button at the bottom left of this site.</p>
+<p><em>Copyright: Jan Kirenz (2021), </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em>, </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0) License</em></a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

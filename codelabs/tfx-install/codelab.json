@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-07-06T18:01:57+02:00",
+  "id": "tfx-install",
+  "duration": 23,
+  "title": "Installation of Anaconda, TensorFlow \u0026 TFX",
+  "summary": "How to install TensorFlow and TensorFlow Extended with Anaconda",
+  "source": "tfx-install.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "mlops"
+  ],
+  "tags": [
+    "tfx",
+    "web"
+  ],
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/tfx-install",
+  "url": "tfx-install"
+}

@@ -4,11 +4,11 @@
   "description": "use nodemon to watch changes on md file, rebuild codelab on saves",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon --watch test.md --exec \"claat export -o temp/ test.md && ./node_modules/kill-port/cli.js --port 9090 && cd temp/test && claat serve\""
+    "watch": "nodemon --watch tfx-install.md --exec \"claat export -o temp/ tfx-install.md && ./node_modules/kill-port/cli.js --port 9090 && cd temp/tfx-install && claat serve\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kirenz/codelabs/tree/master/markdown/test"
+    "url": "https://github.com/kirenz/codelabs/tree/master/markdown/tfx-install"
   },
   "keywords": [
     "codelab"
