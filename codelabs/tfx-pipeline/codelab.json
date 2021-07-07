@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-07-07T10:03:42+02:00",
+  "id": "tfx-pipeline",
+  "duration": 52,
+  "title": "Build a TFX Pipeline",
+  "summary": "Building a TFX pipeline locally",
+  "source": "tfx-pipeline.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "mlops"
+  ],
+  "tags": [
+    "pipeline",
+    "tfx",
+    "web"
+  ],
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/tfx-pipeline",
+  "url": "tfx-pipeline"
+}

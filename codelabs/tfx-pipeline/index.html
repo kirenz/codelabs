@@ -1,0 +1,237 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Build a TFX Pipeline</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="tfx-pipeline"
+                  title="Build a TFX Pipeline"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/tfx-pipeline">
+    
+      <google-codelab-step label="Overview" duration="1">
+        <h2 is-upgraded>What we cover</h2>
+<p class="image-container"><img alt="TFX" style="width: 200.00px" src="img/9f3ccfde6f852bca.svg"></p>
+<p>TFX Pipeline templates make it easy to get started with pipeline development by providing a prebuilt set of pipeline definitions that you can customize for your use case.</p>
+<p>In our example, we mainly follow the instructions provided by this TensorFlow tutorial: <a href="https://www.tensorflow.org/tfx/guide/build_local_pipeline?hl=en" target="_blank">Building a TFX Pipeline Locally</a> to build a pipeline from a prebuilt template.</p>
+<aside class="special"><p> You will learn how to build a TFX-pipeline from a template </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="5">
+        <p>To complete this tutorial, you need the following environment:</p>
+<ul>
+<li>Code editor (e.g., <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>)</li>
+<li>Anaconda</li>
+<li>Virtual Anaconda environment (preferably named &#34;tf&#34;) with: <ul>
+<li>TensorFlow</li>
+<li>TensorFlow Extended</li>
+</ul>
+</li>
+</ul>
+<aside class="special"><p> Review this <a href="https://kirenz.github.io/codelabs/codelabs/tfx-install/index.html#0" target="_blank">tutorial</a> to create the environment. </p>
+</aside>
+<p>Furthermore, you should be aware of pathing differences between macOS, Windows and Linux:</p>
+<ul>
+<li>macOS: <code>/Users/username/...</code></li>
+<li>Windows: <code>C:/Users/username/...</code></li>
+<li>Linux: <code>/home/username/...</code></li>
+</ul>
+<aside class="warning"><p> Note that I used macOS to create this tutorial and therfore my code examples follow the path logic of macOS.   </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Environment setup" duration="7">
+        <p>We first need to set up our environment and create new folders:</p>
+<ol type="1">
+<li>On <em>Windows</em> open the Start menu and open an Anaconda Command Prompt. On <em>macOS</em> or <em>Linux</em> open a terminal window.</li>
+<li>Activate the virtual Anaconda environment (in my case &#34;tf&#34;):</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">conda activate tf
+</code></pre>
+<ol type="1" start="3">
+<li>Create a project folder <strong>tfx-files</strong> with <code>mkdir</code> (make directory):</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">mkdir tfx-files
+</code></pre>
+<ol type="1" start="4">
+<li>Create a sub-folder inside <strong>tfx-files</strong> called <strong>output</strong>. Therefore, we first need to change directory (<code>cd</code>) into the <strong>tfx-files</strong> directory:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">cd your-path-to-txf-files
+</code></pre>
+<ul>
+<li>On my machine, the command is <code>cd /Users/jankirenz/tfx-files</code>.</li>
+</ul>
+<ol type="1" start="5">
+<li>Create the new sub-folder <strong>output</strong>:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">mkdir output
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Pipeline template" duration="5">
+        <h2 is-upgraded>Create a copy of the pipeline template</h2>
+<p>In the next steps, we use the <a href="https://www.tensorflow.org/tfx/guide/cli" target="_blank">TFX command-line interface (CLI)</a> which is a part of the TFX package. All commands start with <code>tfx</code>.</p>
+<p>First, we use <code>tfx template</code> which are commands for listing and copying TFX pipeline templates.</p>
+<ol type="1">
+<li>List the currently available TFX pipeline templates:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">tfx template list
+</code></pre>
+<ol type="1" start="2">
+<li>We copy the <strong>penguin</strong> template to our local machine (you have to change the following code):</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">tfx template copy --model=penguin --pipeline_name=pipeline-tutorial \
+--destination_path=your-path-to-txf-files
+</code></pre>
+<p>Only change the entry for destination_path:</p>
+<ul>
+<li>model: The name of the template you want to copy (we use the penguin template).</li>
+<li>pipeline_name: The name of the pipeline to create (we call it pipeline-tutorial).</li>
+<li>destination_path: The path to copy the template into (<strong>you need to provide this information</strong>).</li>
+</ul>
+<aside class="warning"><p> If you should have troubles finding the path, you can open your file explorer and drag the folder tfx-files into the terminal to show the path. </p>
+</aside>
+<ul>
+<li>On my machine, the code is: <code>tfx template copy --model=penguin --pipeline_name=pipeline-tutorial \ --destination_path=/Users/jankirenz/tfx-files</code></li>
+</ul>
+<ol type="1" start="3">
+<li>A copy of the pipeline template has been created at the path you specified.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Explore pipeline template" duration="7">
+        <p>Explore the directories and files that were copied to your pipeline&#39;s project directory <strong>tfx-files</strong>:</p>
+<ul>
+<li>A <strong>pipeline</strong> directory with<ul>
+<li><strong>pipeline.py</strong> - defines the pipeline, and lists which components are being used</li>
+<li><strong>configs.py</strong> - holds configuration details such as where the data is coming from or which orchestrator is being used</li>
+</ul>
+</li>
+<li>A <strong>data</strong> directory<ul>
+<li>This typically contains a data.csv file, which is the default source for the TFX-component ExampleGen. You can change the data source in configs.py.</li>
+</ul>
+</li>
+<li>A <strong>models</strong> directory with preprocessing code and model implementations</li>
+<li>The template copies directed acyclic graph (DAG) runners –which runs the components one by one in DAG&#39;s topological order– for local environment and <a href="https://www.kubeflow.org/" target="_blank">Kubeflow</a>. The file is called <strong>local.runner.py</strong>.</li>
+</ul>
+<aside class="warning"><p> Note that the file <strong>local.runner.py</strong> needs to be moved from the sub-folder data into the project folder tfx-files. </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create a pipeline" duration="10">
+        <p>Before we can create our pipeline, we first need to change some code in the file <strong>local_runner.py</strong>. This script creates a pipeline run and specifies the run&#39;s parameters, such as the <code>DATA_PATH</code> and <code>OUTPUT_DIR</code>.</p>
+<p><em>Note that you don&#39;t necessarily have to change the variable definition of </em></p>
+<p><em><code>DATA_PATH</code></em></p>
+<p><em> since the given expression returns the full path name in a multiplatform-safe way.</em></p>
+<ol type="1">
+<li>Open the file with your code editor and define the variables <code>OUTPUT_DIR</code> (in line 32) and <code>DATA_PATH</code>:</li>
+</ol>
+<pre><code language="language-python" class="language-python">OUTPUT_DIR = &#39;your-path-to-tfx-files/output&#39;
+</code></pre>
+<ul>
+<li>On my machine, the variable would be defined as: <code>OUTPUT_DIR = /Users/jankirenz/tfx-files/output</code></li>
+</ul>
+<pre><code language="language-python" class="language-python">DATA_PATH = &#39;your-path-to-tfx-files/data/&#39;
+</code></pre>
+<ul>
+<li>On my machine, the variable would be defined as: <code>DATA_PATH = '/Users/jankirenz/tfx-files/data/'</code></li>
+</ul>
+<ol type="1" start="2">
+<li>We can save all changes and close the file.</li>
+<li>In your terminal, change directory (<code>cd</code>) into the project directory of <code>tfx-files</code>:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">cd your-path-to-txf-files
+</code></pre>
+<ul>
+<li>On my machine: <code>cd /Users/jankirenz/tfx-files/</code></li>
+</ul>
+<ol type="1" start="4">
+<li>Run the following commands in your pipeline directory:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">tfx pipeline create --pipeline_path=your-path-to-txf-files/local_runner.py
+</code></pre>
+<p>In my case this would be <code>tfx pipeline create --pipeline_path=/Users/jankirenz/tfx-files/local_runner.py</code></p>
+<p>If you run the code, the last output line should display <code>Pipeline "pipeline-tutorial" created successfully.</code></p>
+<ol type="1" start="5">
+<li>Finally, run this command:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">tfx run create --pipeline_name=pipeline-tutorial
+</code></pre>
+<ul>
+<li>The command creates a pipeline run using <a href="https://www.tensorflow.org/tfx/api_docs/python/tfx/orchestration/local/local_dag_runner/LocalDagRunner" target="_blank">LocalDagRunner</a>, which adds the following directories to your pipeline (in your sub-folder <code>output</code>: <ul>
+<li>A <strong>tfx_metadata</strong> directory which contains the ML Metadata store used locally.</li>
+<li>A <strong>tfx_pipeline_output</strong> directory which contains the pipeline&#39;s file outputs.</li>
+</ul>
+</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Customize the template" duration="10">
+        <p>Open your pipeline&#39;s <strong>pipeline/configs.py</strong> file and review the contents:</p>
+<ul>
+<li>This script defines the configuration options used by the pipeline and the component functions.</li>
+<li>This is where you would specify things like the location of the datasource or the number of training steps in a run.</li>
+</ul>
+<p>Open your pipeline&#39;s <strong>pipeline/pipeline.py</strong> file and review the contents:</p>
+<ul>
+<li>This script creates the TFX pipeline.</li>
+<li>Initially, the pipeline contains only an ExampleGen component.</li>
+<li>You may follow the instructions in the <strong>TODO</strong> comments in <strong>pipeline.py</strong> to add more steps to the pipeline.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What&#39;s next?" duration="7">
+        <p>Gongratulations! You have completed the tutorial and learned how to:</p>
+<p>✅ Install a TFX pipeline template<br> ✅ Created a local TFX pipeline run<br> ✅ Reviewed the pipeline components</p>
+<aside class="special"><p> After you have reviewed the scaffolding created by the template and created a pipeline run using LocalDagRunner you could now proceed to customize the template to fit your requirements. </p>
+</aside>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
+<p><em>Copyright: Jan Kirenz (2021) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>CC BY-NC 2.0 License</em></a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
