@@ -18,12 +18,11 @@ Duration: 0:03:00
 
 <img src="img/tfx-hero.svg" alt="TFX" width="200">
 
-
-- Google's open-source software **TensorFlow Extended (TFX)** is an end-to-end platform for deploying production ML pipelines. When you’re ready to move your models to production, use TFX to create and manage a production pipeline.
+- Google's open-source software [**TensorFlow Extended (TFX)**](https://www.tensorflow.org/tfx) is an end-to-end platform for deploying production ML pipelines. When you’re ready to move your models to production, use TFX to create and manage a production pipeline.
 
 - A **TFX pipeline** is a sequence of components that implement an ML pipeline which is specifically designed for scalable, high-performance machine learning tasks. Components are built using TFX libraries which can also be used individually.
 
-- Several TFX components rely on **Apache Beam** for distributed data processing. In addition, TFX can use Apache Beam to *orchestrate* and *execute* the pipeline direct acyclic graph (DAG).
+- Several TFX components rely on [**Apache Beam**](https://beam.apache.org/) for distributed data processing. In addition, TFX can use Apache Beam to *orchestrate* and *execute* the pipeline direct acyclic graph (DAG).
 
 - **TFX pipeline templates** make it easy to get started with pipeline development by providing a prebuilt set of pipeline definitions that you can customize for your use case.
 
@@ -150,7 +149,7 @@ Explore the directories and files that were copied to your pipeline's project di
 
 - A **pipeline** directory with
 
-  - **pipeline.py** - defines the pipeline, and lists which components are being used
+  - **pipeline.py** - defines the pipeline, and lists which components are being used. 
   - **configs.py** - holds configuration details such as where the data is coming from or which orchestrator is being used
 
 - A **data** directory
@@ -208,7 +207,7 @@ In my case this would be ``tfx pipeline create --pipeline_path=/Users/jankirenz/
 
 If you run the code, the last output line should display ``Pipeline "pipeline-beam" created successfully.``
 
-5. Finally, run this command:
+5. Finally, use this command to actually run the pipeline:
 
 ```bash
 tfx run create --pipeline_name=pipeline-beam
@@ -228,11 +227,46 @@ Open your pipeline's **pipeline/configs.py** file and review the contents:
 - This script defines the configuration options used by the pipeline and the component functions.
 - This is where you would specify things like the location of the datasource or the number of training steps in a run.
 
-Open your pipeline's **pipeline/pipeline.py** file and review the contents:
+Open your pipeline's **pipeline/pipeline.py** file to add some TFX components to our pipeline:  
 
 - This script creates the TFX pipeline.
-- Initially, the pipeline contains only an ExampleGen component.
-- You may follow the instructions in the **TODO** comments in **pipeline.py** to add more steps to the pipeline.
+- Initially, the pipeline contains only an **ExampleGen** component (`example_gen`) which brings data into the pipeline.
+- We will now follow the instructions in the **TODO** comments in **pipeline.py** to add more steps to the pipeline.
+- To add more components, simply uncomment the code lines where you find the command ``components.append()``. Therefore, we remove the ``#`` before:  
+  - ``components.append(statistics_gen)``
+  - ``components.append(schema_gen)``
+  - ``components.append(example_validator)``  
+  - ``components.append(transform)``
+- Save all changes.
+
+<aside class="positive">
+After you have reviewed the scaffolding created by the template and created a pipeline run using BEAM you can now proceed to customize the template to fit your requirements.
+</aside>
+
+<!-- ------------------------ -->
+## Update the pipeline
+
+Duration: 0:10:00
+
+1. Update the pipeline: run the following command in your pipeline directory:
+
+```bash
+tfx pipeline update --pipeline_path=your-path-to-txf-beam/local_runner.py
+```
+
+- In my case: ``tfx pipeline update --pipeline_path=/Users/jankirenz/tfx-beam/local_runner.py``
+
+- The last line of your output should display: ``Pipeline "pipeline-beam" updated successfully.``
+
+2. Run the pipeline:
+
+```bash
+tfx run create --pipeline_name=pipeline-beam
+```
+
+- In your output, the last line reads ``INFO:absl:Component Transform is finished.``
+
+3. Take a look at your files in the **output** folder. TFX stored multiple artifacts for every component in the pipeline.
 
 <!-- ------------------------ -->
 ## What's next?
@@ -242,12 +276,10 @@ Duration: 0:07:00
 Gongratulations! You have completed the tutorial and learned how to:
 
 ✅ Install a TFX pipeline template  
-✅ Created a local TFX BEAM pipeline run  
-✅ Reviewed the pipeline components  
+✅ Created a local TFX Beam pipeline run  
+✅ Added pipeline components  
 
-<aside class="positive">
-After you have reviewed the scaffolding created by the template and created a pipeline run using BEAM you could now proceed to customize the template to fit your requirements.
-</aside>
+
 
 ---
 
