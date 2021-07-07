@@ -20,7 +20,7 @@ We use the data science platform Anaconda to install TFX
 </aside>
 
 - [TensorFlow](https://www.tensorflow.org/) is an end-to-end open source platform for machine learning.
-- [TensorFlow Extended (TFX)](https://www.tensorflow.org/tfx) is a Google-production-scale machine learning platform based on TensorFlow.
+- [TensorFlow Extended (TFX)](https://www.tensorflow.org/tfx) is an end-to-end platform for deploying production ML pipelines. When you’re ready to move your models to production, use TFX to create and manage a production pipeline.
 - We will use the [Anaconda](https://www.anaconda.com/) open source data science platform to install TensorFlow and TensorFlow Extended. Anaconda's package manager *Conda* makes it very easy to manage multiple data environments that can be maintained and run separately without interference from each other.
 
 <!-- ------------------------ -->

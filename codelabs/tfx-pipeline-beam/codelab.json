@@ -3,12 +3,12 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2021-07-07T11:21:50+02:00",
-  "id": "tfx-pipeline",
-  "duration": 52,
-  "title": "Build a TFX Pipeline",
+  "updated": "2021-07-07T11:19:14+02:00",
+  "id": "tfx-pipeline-beam",
+  "duration": 54,
+  "title": "Build a TFX Pipeline with Apache Beam",
   "summary": "Building a TFX pipeline locally",
-  "source": "tfx-pipeline.md",
+  "source": "tfx-pipeline-beam.md",
   "theme": "",
   "status": [
     "published"
@@ -22,5 +22,5 @@
     "web"
   ],
   "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/tfx-pipeline",
-  "url": "tfx-pipeline"
+  "url": "tfx-pipeline-beam"
 }

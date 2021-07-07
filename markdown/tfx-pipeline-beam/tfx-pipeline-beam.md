@@ -1,18 +1,18 @@
 author: Jan Kirenz
 summary: Building a TFX pipeline locally
-id: tfx-pipeline
+id: tfx-pipeline-beam
 tags: tfx, pipeline
 categories: mlops
 environments: Web
 status: Published
 feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/tfx-pipeline
 
-# Build a TFX Pipeline
+# Build a TFX Pipeline with Apache Beam
 
 <!-- ------------------------ -->
 ## Overview
 
-Duration: 0:01:00
+Duration: 0:03:00
 
 ### What we cover
 
@@ -23,12 +23,18 @@ Duration: 0:01:00
 
 - A **TFX pipeline** is a sequence of components that implement an ML pipeline which is specifically designed for scalable, high-performance machine learning tasks. Components are built using TFX libraries which can also be used individually.
 
+- Several TFX components rely on **Apache Beam** for distributed data processing. In addition, TFX can use Apache Beam to *orchestrate* and *execute* the pipeline direct acyclic graph (DAG).
+
 - **TFX pipeline templates** make it easy to get started with pipeline development by providing a prebuilt set of pipeline definitions that you can customize for your use case.
 
-In our example, we mainly follow the instructions provided by this TensorFlow tutorial: [Building a TFX Pipeline Locally](https://www.tensorflow.org/tfx/guide/build_local_pipeline?hl=en) to build a pipeline from a prebuilt template.
+<img src="img/beam-logo.png" alt="TFX" width="200">
+
+
+In this tutorial, we mainly follow the instructions provided by this excellent TensorFlow tutorial: [Building a TFX Pipeline Locally](https://www.tensorflow.org/tfx/guide/build_local_pipeline?hl=en) to build a TFX Beam pipeline.
+
 
 <aside class="positive">
-You will learn how to build a TFX-pipeline from a template
+You will learn how to build a TFX-pipeline with Apache Beam
 </aside>
 
 
@@ -75,19 +81,19 @@ We first need to set up our environment and create new folders:
 conda activate tf
 ```
 
-3. Create a project folder **tfx-files** with ``mkdir`` (make directory):
+3. Create a project folder **tfx-beam** with ``mkdir`` (make directory):
 
 ```bash
-mkdir tfx-files
+mkdir tfx-beam
 ```
 
-4. Create a sub-folder inside **tfx-files** called **output**. Therefore, we first need to change directory (``cd``) into the **tfx-files** directory:
+4. Create a sub-folder inside **tfx-beam** called **output**. Therefore, we first need to change directory (``cd``) into the **tfx-beam** directory:
 
 ```bash
-cd your-path-to-txf-files
+cd your-path-to-txf-beam
 ```
 
-- On my machine, the command is ``cd /Users/jankirenz/tfx-files``.
+- On my machine, the command is ``cd /Users/jankirenz/tfx-beam``.
 
 5. Create the new sub-folder **output**:  
 
@@ -113,25 +119,25 @@ First, we use ``tfx template`` which are commands for listing and copying TFX pi
 tfx template list
 ```
 
-2. We copy the **penguin** template to our local machine (you have to change the following code):
+2. We copy the **taxi** template to our local machine (you have to change the following code):
 
 ```bash
-tfx template copy --model=penguin --pipeline_name=pipeline-tutorial \
---destination_path=your-path-to-txf-files
+tfx template copy --model=taxi --pipeline_name=pipeline-beam \
+--destination_path=your-path-to-txf-beam
 ```
 
 Only change the entry for destination_path:
 
-- model: The name of the template you want to copy (we use the penguin template).
-- pipeline_name: The name of the pipeline to create (we call it pipeline-tutorial).
+- model: The name of the template you want to copy (we use the taxi template).
+- pipeline_name: The name of the pipeline to create (we call it pipeline-beam).
 - destination_path: The path to copy the template into (**you need to provide this information**).
 
 <aside class="negative">
-If you should have troubles finding the path, you can open your file explorer and drag the folder tfx-files into the terminal to show the path.
+If you should have troubles finding the path, you can open your file explorer and drag the folder tfx-beam into the terminal to show the path.
 </aside>
 
-- On my machine, the code is: ``tfx template copy --model=penguin --pipeline_name=pipeline-tutorial \
---destination_path=/Users/jankirenz/tfx-files``
+- On my machine, the code is: ``tfx template copy --model=taxi --pipeline_name=pipeline-beam \
+--destination_path=/Users/jankirenz/tfx-beam``
 
 3. A copy of the pipeline template has been created at the path you specified.
 
@@ -140,7 +146,7 @@ If you should have troubles finding the path, you can open your file explorer an
 
 Duration: 0:07:00
 
-Explore the directories and files that were copied to your pipeline's project directory **tfx-files**:
+Explore the directories and files that were copied to your pipeline's project directory **tfx-beam**:
 
 - A **pipeline** directory with
 
@@ -156,7 +162,7 @@ Explore the directories and files that were copied to your pipeline's project di
 - The template copies directed acyclic graph (DAG) runners --which runs the components one by one in DAG's topological order-- for local environment and [Kubeflow](https://www.kubeflow.org/). The file is called **local.runner.py**.
 
 <aside class="negative">
-Note that the file <b>local.runner.py</b> needs to be moved from the sub-folder data into the project folder tfx-files.
+Note that the file <b>local.runner.py</b> needs to be moved from the sub-folder data into the project folder tfx-beam.
 </aside>
 
 <!-- ------------------------ -->
@@ -171,44 +177,44 @@ Before we can create our pipeline, we first need to change some code in the file
 1. Open the file with your code editor and define the variables ``OUTPUT_DIR`` (in line 32) and ``DATA_PATH``:
 
 ```python
-OUTPUT_DIR = 'your-path-to-tfx-files/output'
+OUTPUT_DIR = 'your-path-to-tfx-beam/output'
 ```
 
-- On my machine, the variable would be defined as: ``OUTPUT_DIR = /Users/jankirenz/tfx-files/output``
+- On my machine, the variable would be defined as: ``OUTPUT_DIR = /Users/jankirenz/tfx-beam/output``
 
 ```python
-DATA_PATH = 'your-path-to-tfx-files/data/'
+DATA_PATH = 'your-path-to-tfx-beam/data/'
 ```
 
-- On my machine, the variable would be defined as: ``DATA_PATH = '/Users/jankirenz/tfx-files/data/'``
+- On my machine, the variable would be defined as: ``DATA_PATH = '/Users/jankirenz/tfx-beam/data/'``
 
 2. We can save all changes and close the file.
 
-3. In your terminal, change directory (``cd``) into the project directory of ``tfx-files``:
+3. In your terminal, change directory (``cd``) into the project directory of ``tfx-beam``:
 
 ```bash
-cd your-path-to-txf-files
+cd your-path-to-txf-beam
 ```
 
-- On my machine: ``cd /Users/jankirenz/tfx-files/``  
+- On my machine: ``cd /Users/jankirenz/tfx-beam/``  
 
 4. Run the following commands in your pipeline directory:
 
 ```bash
-tfx pipeline create --pipeline_path=your-path-to-txf-files/local_runner.py
+tfx pipeline create --pipeline_path=your-path-to-txf-beam/local_runner.py
 ```
 
-In my case this would be ``tfx pipeline create --pipeline_path=/Users/jankirenz/tfx-files/local_runner.py``
+In my case this would be ``tfx pipeline create --pipeline_path=/Users/jankirenz/tfx-beam/local_runner.py``
 
-If you run the code, the last output line should display ``Pipeline "pipeline-tutorial" created successfully.``
+If you run the code, the last output line should display ``Pipeline "pipeline-beam" created successfully.``
 
 5. Finally, run this command:
 
 ```bash
-tfx run create --pipeline_name=pipeline-tutorial
+tfx run create --pipeline_name=pipeline-beam
 ```
 
-- The command creates a pipeline run using [LocalDagRunner](https://www.tensorflow.org/tfx/api_docs/python/tfx/orchestration/local/local_dag_runner/LocalDagRunner), which adds the following directories to your pipeline (in your sub-folder ``output``:
+- The command creates a pipeline run, which adds the following directories to your pipeline (in your sub-folder ``output``:
   - A **tfx_metadata** directory which contains the ML Metadata store used locally.
   - A **tfx_pipeline_output** directory which contains the pipeline's file outputs.
 
@@ -236,18 +242,17 @@ Duration: 0:07:00
 Gongratulations! You have completed the tutorial and learned how to:
 
 ✅ Install a TFX pipeline template  
-✅ Created a local TFX pipeline run  
+✅ Created a local TFX BEAM pipeline run  
 ✅ Reviewed the pipeline components  
 
 <aside class="positive">
-After you have reviewed the scaffolding created by the template and created a pipeline run using LocalDagRunner you could now proceed to customize the template to fit your requirements.
+After you have reviewed the scaffolding created by the template and created a pipeline run using BEAM you could now proceed to customize the template to fit your requirements.
 </aside>
 
 ---
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
 
-Thank you for participating in this tutorial. If you found any issues along the way I'd 
-appreciate it if you'd raise them by clicking the "Report a mistake" button at the bottom left of this site.
+Thank you for participating in this tutorial. If you found any issues along the way I'd appreciate it if you'd raise them by clicking the "Report a mistake" button at the bottom left of this site.
 
 *Copyright: Jan Kirenz (2021) | [kirenz.com](https://www.kirenz.com) | [CC BY-NC 2.0 License](https://creativecommons.org/licenses/by-nc/2.0/)*
