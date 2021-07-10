@@ -3,7 +3,7 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2021-07-10T21:22:16+02:00",
+  "updated": "2021-07-10T21:27:17+02:00",
   "id": "kubeflow-install",
   "duration": 35,
   "title": "Kubeflow Installation Tutorial",

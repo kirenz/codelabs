@@ -103,10 +103,7 @@ vagrant up
 
 MiniKF will take a few minutes to boot. When this is done, navigate to http://10.10.10.10 and follow the on-screen instructions to start Kubeflow and Rok.
 
-Here a video-tutorial of the complete installation process on [YouTube]:(https://www.youtube.com/watch?v=rVak_NIKF88)
-
-![https://www.youtube.com/watch?v=rVak_NIKF88](https://en.wikipedia.org/wiki/File:Example.jpg "Try Me Publisher")
-
+Here a video-tutorial of the complete installation process on [YouTube](https://www.youtube.com/watch?v=rVak_NIKF88)
 
 <!-- ------------------------ -->
 ## What's next?
