@@ -1,0 +1,124 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Kubeflow Installation Tutorial</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="kubeflow-install"
+                  title="Kubeflow Installation Tutorial"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/kubeflow-install">
+    
+      <google-codelab-step label="Overview" duration="2">
+        <h2 is-upgraded>What we cover</h2>
+<p>In this tutorial you learn how to install Kubeflow - a popular framework for running Machine Learning workflows on <a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/" target="_blank">Kubernetes</a> - on your laptop. Therefore, we use the <a href="https://www.kubeflow.org/docs/distributions/minikf/minikf-vagrant/" target="_blank">MiniKF</a> distribution provided by Arrikto.</p>
+<p class="image-container"><img alt="Kubeflow" style="width: 100.00px" src="img/edb42e8c5ef86902.png"></p>
+<p>MiniKF is a fast and easy way to get started with Kubeflow. With just a few clicks, you are up for experimentation, and for running complete Kubeflow Pipelines.</p>
+<aside class="special"><p> MiniKF - a production-ready local Kubeflow deployment that installs in minutes. </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="System requirements" duration="1">
+        <p>Your system should meet the following requirements:</p>
+<ul>
+<li>12GB RAM</li>
+<li>2 CPUs</li>
+<li>50GB disk space</li>
+</ul>
+<p>MiniKF runs on:</p>
+<ul>
+<li>Linux</li>
+<li>macOS</li>
+<li>Windows</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Software prerequisites" duration="10">
+        <p>Before installing MiniKF, you need to have Vagrant and VirtualBox installed on your laptop.</p>
+<h2 is-upgraded>Vagrant</h2>
+<p>Vagrant is a tool for building and managing virtual machine environments in a single workflow.</p>
+<ul>
+<li><a href="https://www.vagrantup.com/downloads" target="_blank">Install Vagrant</a></li>
+</ul>
+<h2 is-upgraded>VirtualBox</h2>
+<p><a href="https://www.virtualbox.org/manual/ch01.html" target="_blank">Oracle VM VirtualBox</a> is a cross-platform virtualization application. It extends the capabilities of your existing computer so that it can run multiple OSes, inside multiple virtual machines, at the same time. As an example, you can run Windows and Linux on your Mac, run Windows Server 2016 on your Linux server, run Linux on your Windows PC, and so on, all alongside your existing applications. You can install and run as many virtual machines as you like.</p>
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">Download VirtualBox</a></li>
+</ul>
+<p>If you have <strong>macOS</strong>:</p>
+<p>After the installation, you need to <a href="https://support.apple.com/de-de/guide/mac-help/mh11784/mac" target="_blank">change Security &amp; Privacy General preferences on Mac</a> to unblock VirtualBox:</p>
+<ul>
+<li>To change these preferences on your Mac, choose Apple menu  &gt; System Preferences, click Security &amp; Privacy, then click General.</li>
+<li>If the lock at the bottom left of the pane is locked, click it to unlock the preference pane.</li>
+<li>Click allow to load system extensions from the developer of the software.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="MiniKF installation" duration="20">
+        <ul>
+<li>Open a terminal on your laptop and create a new directory:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">mkdir minikf
+</code></pre>
+<ul>
+<li>Switch into it:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">cd minikf
+</code></pre>
+<ul>
+<li>Run the following commands to install MiniKF:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">vagrant init arrikto/minikf
+</code></pre>
+<pre><code language="language-bash" class="language-bash">vagrant up
+</code></pre>
+<p>MiniKF will take a few minutes to boot. When this is done, navigate to http://10.10.10.10 and follow the on-screen instructions to start Kubeflow and Rok.</p>
+<p>Here a video of the complete installation process:</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What&#39;s next?" duration="2">
+        <p>Gongratulations! You have completed the tutorial and learned how to:</p>
+<p>✅ Install MiniKF on your computer.</p>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
+<p><em>Copyright: Jan Kirenz (2021) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>CC BY-NC 2.0 License</em></a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

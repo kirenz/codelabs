@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-07-10T21:19:29+02:00",
+  "id": "kubeflow-install",
+  "duration": 35,
+  "title": "Kubeflow Installation Tutorial",
+  "summary": "A fast and easy way to deploy Kubeflow on your laptop",
+  "source": "kubeflow-install.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "mlops"
+  ],
+  "tags": [
+    "kubeflow",
+    "web"
+  ],
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/kubeflow-install",
+  "url": "kubeflow-install"
+}

@@ -29,7 +29,11 @@ Duration: 00:10:00
 
 <img src="img/anaconda-logo.png" alt="Anaconda logo" width="200">  
 
-Go to [anaconda.com](https://www.anaconda.com/products/individual) and choose the appropriate `Graphical Installer` for your system (Windows, MacOS or Linux). Install the software on your system.
+Go to [anaconda.com](https://www.anaconda.com/products/individual) and choose the appropriate `Graphical Installer` for your system (Windows, MacOS or Linux). Install the software on your system:
+
+- [Installing on macOS](https://docs.continuum.io/anaconda/install/mac-os/)
+- [Installing on Windows](https://docs.continuum.io/anaconda/install/windows/)
+- [https://docs.continuum.io/anaconda/install/linux/](https://docs.continuum.io/anaconda/install/linux/) 
 
 Here some tips if you have problems installing Anaconda: [troubleshooting](https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems).
 
