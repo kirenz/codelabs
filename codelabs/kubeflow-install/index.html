@@ -29,11 +29,29 @@
     
       <google-codelab-step label="Overview" duration="2">
         <h2 is-upgraded>What we cover</h2>
-<p>In this tutorial you learn how to install Kubeflow - a popular framework for running Machine Learning workflows on <a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/" target="_blank">Kubernetes</a> - on your laptop. Therefore, we use the <a href="https://www.kubeflow.org/docs/distributions/minikf/minikf-vagrant/" target="_blank">MiniKF</a> distribution provided by Arrikto.</p>
-<p class="image-container"><img alt="Kubeflow" style="width: 100.00px" src="img/edb42e8c5ef86902.png"></p>
-<p>MiniKF is a fast and easy way to get started with Kubeflow. With just a few clicks, you are up for experimentation, and for running complete Kubeflow Pipelines.</p>
-<aside class="special"><p> MiniKF - a production-ready local Kubeflow deployment that installs in minutes. </p>
+<p>In this tutorial you learn how to install Kubeflow on your local machine. We use Mini Kubeflow<a href="https://www.kubeflow.org/docs/distributions/minikf/minikf-vagrant/" target="_blank">(MiniKF)</a> which is based on Kubernetes using minikube.</p>
+<aside class="special"><p>  MiniKF is a single-node instance of Kubeflow, Kale, and Rok Data Management. It builds ML models for free on your laptop with Vagrant. However, it is possible to move to serving at scale with the same code on GCP, AWS, or Azure. </p>
 </aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Technology overview" duration="10">
+        <h2 is-upgraded>Kubeflow</h2>
+<p class="image-container"><img alt="Kubeflow" style="width: 100.00px" src="img/edb42e8c5ef86902.png"></p>
+<p>The Kubeflow project is dedicated to making deployments of machine learning (ML) workflows on Kubernetes simple, portable and scalable. It&#39;s goal is not to recreate other services, but to provide a straightforward way to deploy best-of-breed open-source systems for ML to diverse infrastructures. Anywhere you are running Kubernetes, you should be able to run Kubeflow (<a href="https://www.kubeflow.org/docs/about/kubeflow/" target="_blank">Kubeflow documentation</a>.</p>
+<h2 is-upgraded>Kubernetes</h2>
+<p><a href="https://kubernetes.io/" target="_blank">Kubernetes</a> (also known as K8s or &#34;kube&#34;) is an open-source system for automating deployment, scaling, and management of containerized applications. A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.</p>
+<p class="image-container"><img alt="Docker container" style="width: 100.00px" src="img/4e794d014eebd456.png"></p>
+<p>For example, <a href="https://www.docker.com/" target="_blank">Docker</a> can be used as a container runtime that Kubernetes orchestrates. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.</p>
+<p>Kubernetes groups containers that make up an application into logical units for easy management and discovery. In other words, you can cluster together groups of hosts running Linux® containers, and Kubernetes helps you easily and efficiently manage those clusters. Kubernetes builds upon 15 years of experience of running production workloads at Google, combined with best-of-breed ideas and practices from the community.</p>
+<h2 is-upgraded>minikube</h2>
+<p>https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/</p>
+<p>minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.</p>
+<p><strong>MiniKF</strong> is the easiest way to get started with Kubeflow and comes bundled with <a href="https://github.com/kubeflow-kale/kale" target="_blank">Kale</a> for automating MLOps workflow and <a href="https://www.arrikto.com/rok-data-management-platform/" target="_blank">Rok</a> for ML data management.</p>
+<p>With MiniKF, you can start building models in your Jupyter notebook and run them easily in Kubeflow Pipelines. When you&#39;re ready to go into production, you can move to a multi-node Kubeflow cloud deployment on GCP, AWS, or Azure with one click. No extra coding or knowledge of containers needed.</p>
+<p>A MiniKF (Mini Kubeflow) VM on GCP that automatically installs:</p>
+<p>Kubernetes (using Minikube) Kubeflow Kale, a tool to convert general purpose Jupyter Notebooks to Kubeflow Pipelines workflows (GitHub) Arrikto Rok data management platform for data versioning and reproducibility</p>
 
 
       </google-codelab-step>
@@ -94,10 +112,33 @@
 </ul>
 <pre><code language="language-bash" class="language-bash">vagrant init arrikto/minikf
 </code></pre>
+<ul>
+<li>This command creates and configures your virtual machine:</li>
+</ul>
 <pre><code language="language-bash" class="language-bash">vagrant up
 </code></pre>
-<p>MiniKF will take a few minutes to boot. When this is done, navigate to http://10.10.10.10 and follow the on-screen instructions to start Kubeflow and Rok.</p>
+<ul>
+<li>MiniKF will take a few minutes to boot.</li>
+<li>When this is done, open a browser and navigate to <a href="http://10.10.10.10" target="_blank">http://10.10.10.10</a>.</li>
+<li>Follow the on-screen instructions to start Kubeflow (press Enter on your keyboard to start MiniKF).</li>
+</ul>
 <p>Here a video-tutorial of the complete installation process on <a href="https://www.youtube.com/watch?v=rVak_NIKF88" target="_blank">YouTube</a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Start MiniKF" duration="5">
+        <p>To start MiniKf, follow these instructions:</p>
+<ul>
+<li>Open a terminal on your laptop and switch to your MiniKF directory (minikf):</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">cd minikf
+</code></pre>
+<ul>
+<li>Run the following command to start MiniKF:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">vagrant up
+</code></pre>
 
 
       </google-codelab-step>
