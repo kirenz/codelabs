@@ -27,9 +27,8 @@
                   environment="web"
                   feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/kubeflow-install">
     
-      <google-codelab-step label="Overview" duration="2">
-        <h2 is-upgraded>What we cover</h2>
-<p>In this tutorial you learn how to install Kubeflow on your local machine. We use Mini Kubeflow<a href="https://www.kubeflow.org/docs/distributions/minikf/minikf-vagrant/" target="_blank">(MiniKF)</a> which is based on Kubernetes using minikube.</p>
+      <google-codelab-step label="What you&#39;ll learn" duration="2">
+        <p>In this tutorial you learn how to install Kubeflow on your local machine. In particular, we use Mini Kubeflow<a href="https://www.kubeflow.org/docs/distributions/minikf/minikf-vagrant/" target="_blank">(MiniKF)</a> which is based on the local Kubernetes distribution  minikube.</p>
 <aside class="special"><p>  MiniKF is a single-node instance of Kubeflow, Kale, and Rok Data Management. It builds ML models for free on your laptop with Vagrant. However, it is possible to move to serving at scale with the same code on GCP, AWS, or Azure. </p>
 </aside>
 
@@ -38,26 +37,62 @@
     
       <google-codelab-step label="Technology overview" duration="10">
         <h2 is-upgraded>Kubeflow</h2>
-<p class="image-container"><img alt="Kubeflow" style="width: 100.00px" src="img/edb42e8c5ef86902.png"></p>
-<p>The Kubeflow project is dedicated to making deployments of machine learning (ML) workflows on Kubernetes simple, portable and scalable. It&#39;s goal is not to recreate other services, but to provide a straightforward way to deploy best-of-breed open-source systems for ML to diverse infrastructures. Anywhere you are running Kubernetes, you should be able to run Kubeflow (<a href="https://www.kubeflow.org/docs/about/kubeflow/" target="_blank">Kubeflow documentation</a>.</p>
-<h2 is-upgraded>Kubernetes</h2>
-<p><a href="https://kubernetes.io/" target="_blank">Kubernetes</a> (also known as K8s or &#34;kube&#34;) is an open-source system for automating deployment, scaling, and management of containerized applications. A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.</p>
-<p class="image-container"><img alt="Docker container" style="width: 100.00px" src="img/4e794d014eebd456.png"></p>
-<p>For example, <a href="https://www.docker.com/" target="_blank">Docker</a> can be used as a container runtime that Kubernetes orchestrates. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.</p>
-<p>Kubernetes groups containers that make up an application into logical units for easy management and discovery. In other words, you can cluster together groups of hosts running Linux® containers, and Kubernetes helps you easily and efficiently manage those clusters. Kubernetes builds upon 15 years of experience of running production workloads at Google, combined with best-of-breed ideas and practices from the community.</p>
-<h2 is-upgraded>minikube</h2>
-<p>https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/</p>
-<p>minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.</p>
-<p><strong>MiniKF</strong> is the easiest way to get started with Kubeflow and comes bundled with <a href="https://github.com/kubeflow-kale/kale" target="_blank">Kale</a> for automating MLOps workflow and <a href="https://www.arrikto.com/rok-data-management-platform/" target="_blank">Rok</a> for ML data management.</p>
-<p>With MiniKF, you can start building models in your Jupyter notebook and run them easily in Kubeflow Pipelines. When you&#39;re ready to go into production, you can move to a multi-node Kubeflow cloud deployment on GCP, AWS, or Azure with one click. No extra coding or knowledge of containers needed.</p>
+<p class="image-container"><img alt="Kubeflow" style="width: 80.00px" src="img/edb42e8c5ef86902.png"></p>
+<p>The Kubeflow project is dedicated to making deployments of machine learning (ML) workflows on Kubernetes simple, portable and scalable. It&#39;s goal is not to recreate other services, but to provide a straightforward way to deploy best-of-breed open-source systems for ML to diverse infrastructures. Anywhere you are running Kubernetes, you should be able to run Kubeflow.</p>
+<p>To learn more:</p>
+<ul>
+<li>📺 watch this short introduction to Kubeflow <a href="https://www.youtube.com/watch?v=cTZArDgbIWw" target="_blank">video</a></li>
+<li>📖 review the <a href="https://www.kubeflow.org/docs/about/kubeflow/" target="_blank">Kubeflow documentation</a></li>
+</ul>
+<h2 is-upgraded>MiniKF</h2>
+<p>MiniKF is the easiest way to get started with Kubeflow and comes bundled with <a href="https://github.com/kubeflow-kale/kale" target="_blank">Kale</a> for automating MLOps workflow and <a href="https://www.arrikto.com/rok-data-management-platform/" target="_blank">Rok</a> for ML data management.</p>
+<p>With MiniKF, you can start building models in your Jupyter notebook and run them easily in Kubeflow Pipelines. When you&#39;re ready to go into production, you can move to a multi-node Kubeflow cloud deployment on GCP, AWS, or Azure with one click. No extra coding or knowledge of containers needed (see Kubernetes).</p>
 <p>A MiniKF (Mini Kubeflow) VM on GCP that automatically installs:</p>
-<p>Kubernetes (using Minikube) Kubeflow Kale, a tool to convert general purpose Jupyter Notebooks to Kubeflow Pipelines workflows (GitHub) Arrikto Rok data management platform for data versioning and reproducibility</p>
+<ul>
+<li>Kubernetes (using Minikube)</li>
+<li>Kubeflow</li>
+<li>Kale, a tool to convert general purpose Jupyter Notebooks to Kubeflow Pipelines workflows (GitHub)</li>
+<li>Arrikto Rok data management platform for data versioning and reproducibility</li>
+</ul>
+<p>To learn more:</p>
+<ul>
+<li>📖 review the <a href="https://www.kubeflow.org/docs/distributions/minikf/" target="_blank">Kubeflow MiniKF documentation</a></li>
+</ul>
+<h2 is-upgraded>Kubernetes</h2>
+<p class="image-container"><img alt="Kubernetes" style="width: 200.00px" src="img/e507784518f29569.png"></p>
+<p><a href="https://kubernetes.io/" target="_blank">Kubernetes</a> (also known as K8s or &#34;kube&#34;) is an open-source system for automating deployment, scaling, and management of containerized applications. A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.</p>
+<p class="image-container"><img alt="Docker container" style="width: 300.00px" src="img/4e794d014eebd456.png"></p>
+<p>For example, <a href="https://www.docker.com/" target="_blank">Docker</a> can be used as a container runtime that Kubernetes orchestrates. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. Kubernetes groups containers that make up an application into logical units for easy management and discovery. In other words, you can cluster together groups of hosts running containers, and Kubernetes helps you easily and efficiently manage those clusters.</p>
+<p>Kubernetes builds upon 15 years of experience of running production workloads at Google, combined with best-of-breed ideas and practices from the community. It has become the standard orchestration platform for containers. All the major cloud providers support it, making it the logical choice for organizations looking to move more applications to the cloud.</p>
+<p>To learn more:</p>
+<ul>
+<li>📖 review the <a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/" target="_blank">Kubernetes documentation</a></li>
+</ul>
+<h2 is-upgraded>minikube</h2>
+<p class="image-container"><img alt="Minikube" style="width: 200.00px" src="img/8f97affc0b7bfe00.jpeg"></p>
+<p>minikube is local Kubernetes (on macOS, Linux, and Windows), focusing on making it easy to learn and develop for Kubernetes. You just need a container or virtual machine manager, such as: Docker, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMWare. In our tutorial, we will use Oracle&#39;s VirtualBox.</p>
+<p>To learn more:</p>
+<ul>
+<li>📖 review the <a href="https://minikube.sigs.k8s.io/docs/start/" target="_blank">minikube documentation</a></li>
+</ul>
+<h2 is-upgraded>VirtualBox</h2>
+<p>Oracle VM VirtualBox is a cross-platform virtualization application. It extends the capabilities of your existing computer so that it can run multiple OSes, inside multiple virtual machines, at the same time. As an example, you can run Windows and Linux on your Mac, run Windows Server on your Linux server, run Linux on your Windows PC, and so on, all alongside your existing applications. You can install and run as many virtual machines as you like.</p>
+<p>To learn more:</p>
+<ul>
+<li>📖 review the <a href="https://www.virtualbox.org/manual/ch01.html" target="_blank">documentation</a></li>
+</ul>
+<h2 is-upgraded>Vagrant</h2>
+<p>Vagrant is a tool for building and managing virtual machine environments in a single workflow. With an easy-to-use workflow and focus on automation, Vagrant lowers development environment setup time and increases production parity.</p>
+<p>To learn more:</p>
+<ul>
+<li>📖 review the <a href="https://www.vagrantup.com/docs" target="_blank">Vagrant documentation</a></li>
+</ul>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="System requirements" duration="1">
-        <p>Your system should meet the following requirements:</p>
+        <p>Ideally, your system should meet the following requirements:</p>
 <ul>
 <li>12GB RAM</li>
 <li>2 CPUs</li>
@@ -74,61 +109,69 @@
       </google-codelab-step>
     
       <google-codelab-step label="Software prerequisites" duration="10">
-        <p>Before installing MiniKF, you need to have Vagrant and VirtualBox installed on your laptop.</p>
-<h2 is-upgraded>Vagrant</h2>
-<p>Vagrant is a tool for building and managing virtual machine environments in a single workflow.</p>
+        <p>Before installing MiniKF, you need to have Vagrant and VirtualBox installed on your laptop:</p>
 <ul>
 <li><a href="https://www.vagrantup.com/downloads" target="_blank">Install Vagrant</a></li>
-</ul>
-<h2 is-upgraded>VirtualBox</h2>
-<p><a href="https://www.virtualbox.org/manual/ch01.html" target="_blank">Oracle VM VirtualBox</a> is a cross-platform virtualization application. It extends the capabilities of your existing computer so that it can run multiple OSes, inside multiple virtual machines, at the same time. As an example, you can run Windows and Linux on your Mac, run Windows Server 2016 on your Linux server, run Linux on your Windows PC, and so on, all alongside your existing applications. You can install and run as many virtual machines as you like.</p>
-<ul>
 <li><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">Download VirtualBox</a></li>
 </ul>
 <p>If you have <strong>macOS</strong>:</p>
-<p>After the installation, you need to <a href="https://support.apple.com/de-de/guide/mac-help/mh11784/mac" target="_blank">change Security &amp; Privacy General preferences on Mac</a> to unblock VirtualBox:</p>
 <ul>
+<li>After the installation, you need to <a href="https://support.apple.com/de-de/guide/mac-help/mh11784/mac" target="_blank">change Security &amp; Privacy General preferences on Mac</a> to unblock VirtualBox:<ul>
 <li>To change these preferences on your Mac, choose Apple menu  &gt; System Preferences, click Security &amp; Privacy, then click General.</li>
-<li>If the lock at the bottom left of the pane is locked, click it to unlock the preference pane.</li>
-<li>Click allow to load system extensions from the developer of the software.</li>
+<li>🔒 If the lock at the bottom left of the pane is locked, click it to unlock the preference pane.</li>
+<li>Allow to load system extensions.</li>
+</ul>
+</li>
 </ul>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="MiniKF installation" duration="20">
-        <ul>
+        <ol type="1">
 <li>Open a terminal on your laptop and create a new directory:</li>
-</ul>
+</ol>
 <pre><code language="language-bash" class="language-bash">mkdir minikf
 </code></pre>
-<ul>
+<ol type="1" start="2">
 <li>Switch into it:</li>
-</ul>
+</ol>
 <pre><code language="language-bash" class="language-bash">cd minikf
 </code></pre>
-<ul>
-<li>Run the following commands to install MiniKF:</li>
-</ul>
+<ol type="1" start="3">
+<li>Run the following command to install MiniKF:</li>
+</ol>
 <pre><code language="language-bash" class="language-bash">vagrant init arrikto/minikf
 </code></pre>
-<ul>
+<ol type="1" start="4">
 <li>This command creates and configures your virtual machine:</li>
-</ul>
+</ol>
 <pre><code language="language-bash" class="language-bash">vagrant up
 </code></pre>
 <ul>
 <li>MiniKF will take a few minutes to boot.</li>
-<li>When this is done, open a browser and navigate to <a href="http://10.10.10.10" target="_blank">http://10.10.10.10</a>.</li>
-<li>Follow the on-screen instructions to start Kubeflow (press Enter on your keyboard to start MiniKF).</li>
 </ul>
-<p>Here a video-tutorial of the complete installation process on <a href="https://www.youtube.com/watch?v=rVak_NIKF88" target="_blank">YouTube</a></p>
+<ol type="1" start="5">
+<li>When this is done, open a browser and navigate to <a href="http://10.10.10.10" target="_blank">http://10.10.10.10</a>.</li>
+<li>Follow the on-screen instructions (press Enter on your keyboard to start the installation)</li>
+<li>When installation is done, copy the provided username and password</li>
+</ol>
+<p class="image-container"><img alt="Minikube credentials" src="img/bbf299bfaa9bd527.png"></p>
+<ol type="1" start="8">
+<li>Click on &#34;Connect to MiniKF&#34; and enter the username and password</li>
+</ol>
+<ul>
+<li>This will open the Kubeflow dashboard:</li>
+</ul>
+<p class="image-container"><img alt="Dashboard" src="img/8c488187cbc3b70.png"></p>
+<aside class="warning"><p> If you run into problems, view this <a href="https://www.youtube.com/watch?v=rVak_NIKF88" target="_blank">video-tutorial</a> of the complete installation process </p>
+</aside>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Start MiniKF" duration="5">
-        <p>To start MiniKf, follow these instructions:</p>
+      <google-codelab-step label="Start MiniKF" duration="10">
+        <p>After installation, you can start MiniKf as follows:</p>
 <ul>
 <li>Open a terminal on your laptop and switch to your MiniKF directory (minikf):</li>
 </ul>
@@ -139,13 +182,16 @@
 </ul>
 <pre><code language="language-bash" class="language-bash">vagrant up
 </code></pre>
+<ul>
+<li>Continue with steps 5-8 from the &#34;MiniKF installation&#34; explanations.</li>
+</ul>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="What&#39;s next?" duration="2">
+      <google-codelab-step label="What we&#39;ve covered" duration="2">
         <p>Gongratulations! You have completed the tutorial and learned how to:</p>
-<p>✅ Install MiniKF on your computer.</p>
+<p>✅ Install MiniKF on your computer. ✅ You are now ready to use Kubeflow on your local machine.</p>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
 <p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
 <p><em>Copyright: Jan Kirenz (2021) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>CC BY-NC 2.0 License</em></a></p>
