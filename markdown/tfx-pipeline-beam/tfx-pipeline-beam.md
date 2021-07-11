@@ -273,7 +273,7 @@ tfx run create --pipeline_name=pipeline-beam
 
 Duration: 0:07:00
 
-Gongratulations! You have completed the tutorial and learned how to:
+Congratulations! You have completed the tutorial and learned how to:
 
 ✅ Install a TFX pipeline template  
 ✅ Created a local TFX Beam pipeline run  

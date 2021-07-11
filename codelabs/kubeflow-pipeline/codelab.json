@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-07-11T18:11:22+02:00",
+  "id": "kubeflow-pipeline",
+  "duration": 40,
+  "title": "Run Kubeflow Pipelines",
+  "summary": "Learn how to build Kubeflow Pipelines: a platform for building and deploying portable, scalable machine learning (ML) workflows based on Docker containers.",
+  "source": "kubeflow-pipeline.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "mlops"
+  ],
+  "tags": [
+    "kubeflow",
+    "pipeline",
+    "web"
+  ],
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/kubeflow-pipeline",
+  "url": "kubeflow-pipeline"
+}

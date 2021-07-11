@@ -95,7 +95,7 @@ pip install tfx
 ## What's next?
 Duration: 0:01:00
 
-Gongratulations! You have completed the tutorial and learned how to install:
+Congratulations! You have completed the tutorial and learned how to install:
 
 ✅ Anaconda  
 ✅ TensorFlow  

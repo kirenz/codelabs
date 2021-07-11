@@ -1,0 +1,165 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Run Kubeflow Pipelines</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="kubeflow-pipeline"
+                  title="Run Kubeflow Pipelines"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/kubeflow-pipeline">
+    
+      <google-codelab-step label="Overview" duration="5">
+        <h2 is-upgraded>What we cover</h2>
+<p>In this tutorial we are building Kubeflow Pipelines on a local machine.</p>
+<p>Kubeflow Pipelines is a platform for building and deploying portable, scalable machine learning (ML) workflows based on Docker containers. We mainly follow the instructions from this <a href="https://www.kubeflow.org/docs/components/pipelines/pipelines-quickstart/" target="_blank">Kubeflow tutorial</a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="7">
+        <p>To start this tutorial, you need the following environment setup:</p>
+<ul>
+<li>Installation of MiniKF</li>
+</ul>
+<p>If you don&#39;t have MiniKF installaed on your system, review this <a href="https://kirenz.github.io/codelabs/codelabs/kubeflow-install" target="_blank">Kubeflow installation tutorial</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What is Kubeflow Pipelines?" duration="3">
+        <p>According to <a href="https://www.kubeflow.org/docs/components/pipelines/overview/pipelines-overview/" target="_blank">Kubeflow&#39;s documentation</a> the Kubeflow Pipelines platform consists of:</p>
+<ul>
+<li>A user interface (UI) for managing and tracking experiments, jobs, and runs.</li>
+<li>An engine for scheduling multi-step ML workflows.</li>
+<li>An SDK for defining and manipulating pipelines and components.</li>
+<li>Notebooks for interacting with the system using the SDK.</li>
+</ul>
+<p>The following are the goals of Kubeflow Pipelines:</p>
+<ul>
+<li>End-to-end orchestration: enabling and simplifying the orchestration of machine learning pipelines.</li>
+<li>Easy experimentation: making it easy for you to try numerous ideas and techniques and manage your various trials/experiments.</li>
+<li>Easy re-use: enabling you to re-use components and pipelines to quickly create end-to-end solutions without having to rebuild each time.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What is a Pipeline?" duration="3">
+        <ul>
+<li>A pipeline is a description of an ML workflow, including all of the components in the workflow and how they combine in the form of a graph.</li>
+<li>The pipeline includes the definition of the inputs (parameters) required to run the pipeline and the inputs and outputs of each component.</li>
+<li>After developing your pipeline, you can upload and share it on the Kubeflow Pipelines UI.</li>
+<li>A pipeline component is a self-contained set of user code, packaged as a Docker image, that performs one step in the pipeline.</li>
+<li>For example, a component can be responsible for data preprocessing, data transformation, model training, and so on.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Run a basic pipeline" duration="10">
+        <p>Kubeflow Pipelines offers a few samples that you can use to try out Kubeflow Pipelines quickly. The steps below show you how to run a basic sample that includes some Python operations, but doesn&#39;t include a machine learning (ML) workload:</p>
+<ol type="1">
+<li>Open the Kubeflow menue at the top left and select <strong>Pipelines</strong>.</li>
+</ol>
+<p class="image-container"><img alt="Menue" src="img/53016d9e9ff48d02.png"></p>
+<ol type="1" start="2">
+<li>Click the name of the sample, <strong>[Tutorial] Data passing in python components</strong>, on the pipelines UI.</li>
+<li>On the top right, click <strong>Create experiment</strong>.</li>
+<li>Provide experiment details:</li>
+</ol>
+<ul>
+<li>Experiment name: My first experiment</li>
+<li>Description: Kubeflow pipeline based on Tutorial Data passing in python components</li>
+</ul>
+<ol type="1" start="5">
+<li>Click <strong>Next</strong>.</li>
+<li>Change the name of the run:</li>
+</ol>
+<ul>
+<li>Run name: My first run</li>
+</ul>
+<ol type="1" start="7">
+<li>Click <strong>Start</strong>.</li>
+<li>Click the name of the run on the experiments dashboard to trigger the pipeline.</li>
+<li>Wait until the pipeline is finished.</li>
+<li>Explore the graph and other aspects of your run by clicking on the components of the graph and the other UI elements.</li>
+</ol>
+<p>You can find the source code for the Data passing in python components tutorial in the <a href="https://github.com/kubeflow/pipelines/tree/master/samples/tutorials/Data%20passing%20in%20python%20components" target="_blank">Kubeflow Pipelines repo</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Run a ML pipeline" duration="10">
+        <p>This section shows you how to run the XGBoost sample available from the pipelines UI. Unlike the basic sample described above, the XGBoost sample does include ML components.</p>
+<ol type="1">
+<li>Open the Kubeflow menue at the top left and select <strong>Pipelines</strong>.</li>
+</ol>
+<p class="image-container"><img alt="Menue" src="img/53016d9e9ff48d02.png"></p>
+<ol type="1" start="2">
+<li>Click the name of the sample, <strong>[Demo] XGBoost - Iterative model training</strong>, on the pipelines UI.</li>
+<li>On the top right, click <strong>Create experiment</strong>.</li>
+<li>Provide experiment details:</li>
+</ol>
+<ul>
+<li>Experiment name: XGBoost experiment</li>
+<li>Description: XGBoost pipeline</li>
+</ul>
+<ol type="1">
+<li>Click <strong>Next</strong>.</li>
+<li>Change the name of the run:</li>
+</ol>
+<ul>
+<li>Run name: XGBoost run</li>
+</ul>
+<ol type="1" start="7">
+<li>Click <strong>Start</strong>.</li>
+<li>Click the name of the run on the experiments dashboard to trigger the pipeline.</li>
+<li>Wait until the pipeline is finsihed (the last component is Xgboost predict).</li>
+<li>Explore the graph and other aspects of your run by clicking on the components of the graph and the other UI elements.</li>
+</ol>
+<p>You can find the source code in the <a href="https://github.com/kubeflow/pipelines/tree/master/samples/core/xgboost_training_cm" target="_blank">Kubeflow Pipelines repo</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What&#39;s next?" duration="2">
+        <p>Congratulations! You have completed the tutorial and learned how to:</p>
+<p>✅ Run a basic Kubeflow pipeline<br> ✅ Run a ML pipeline with XGBoost</p>
+<p>This tutorial showed you how to run some of the examples supplied in the Kubeflow Pipelines UI. Next, you may want to run a pipeline from a notebook, or compile and run a sample from the code. See the guide to experimenting with the <a href="https://www.kubeflow.org/docs/components/pipelines/tutorials/build-pipeline/" target="_blank">Kubeflow Pipelines samples</a>.</p>
+<p>Build your own machine-learning pipelines with the <a href="https://www.kubeflow.org/docs/components/pipelines/sdk/sdk-overview/" target="_blank">Kubeflow Pipelines SDK</a>.</p>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
+<p><em>Copyright: Jan Kirenz (2021) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>CC BY-NC 2.0 License</em></a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

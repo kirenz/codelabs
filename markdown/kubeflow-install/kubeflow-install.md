@@ -205,7 +205,7 @@ vagrant up
 
 Duration: 0:02:00
 
-Gongratulations! You have completed the tutorial and learned how to:
+Congratulations! You have completed the tutorial and learned how to:
 
 ✅ Install MiniKF on your computer.
 ✅ You are now ready to use Kubeflow on your local machine.
