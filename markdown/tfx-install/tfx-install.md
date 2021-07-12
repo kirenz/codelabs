@@ -101,11 +101,9 @@ Congratulations! You have completed the tutorial and learned how to install:
 ✅ TensorFlow  
 ✅ TensorFlow Extended  
 
-If you'd like to learn more about TensorFlow Extended, have a look at the following suggestions:
+If you'd like to learn more about TensorFlow Extended, have a look at the following suggestion:
 
-Tutorial: Build your first TFX pipeline.
-
----
+- 💻[Build your first TFX pipeline](https://kirenz.github.io/codelabs/codelabs/tfx-pipeline)
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
 

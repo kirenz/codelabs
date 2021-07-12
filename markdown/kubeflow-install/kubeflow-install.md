@@ -180,11 +180,23 @@ If you run into problems, view this <a href="https://www.youtube.com/watch?v=rVa
 </aside>
 
 <!-- ------------------------ -->
+## Stop MiniKF
+
+Duration: 0:02:00
+
+When you are done, you can exit Kubeflow and stop MiniKF:
+
+1. Log out from Kubeflow (click the ⍈ symbol at the top right of the Kubeflow UI)
+2. Navigate to your MiniKF browser window [http://10.10.10.10](http://10.10.10.10).
+3. Click on the terminal (in the middle of the screen).
+4. Use ``Ctrl-C``to exit.
+
+<!-- ------------------------ -->
 ## Start MiniKF
 
 Duration: 0:10:00
 
-After installation, you can start MiniKf as follows:
+You can start MiniKf as follows:
 
 - Open a terminal on your laptop and switch to your MiniKF directory (minikf):
 
@@ -209,6 +221,11 @@ Congratulations! You have completed the tutorial and learned how to:
 
 ✅ Install MiniKF on your computer.
 ✅ You are now ready to use Kubeflow on your local machine.
+
+Next, you may want to run a pipeline in Kubeflow. See this tutorial to implement your first pipelines:
+
+- 💻[Create Kubeflow pipelines](https://kirenz.github.io/codelabs/codelabs/kubeflow-pipeline)
+
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
 

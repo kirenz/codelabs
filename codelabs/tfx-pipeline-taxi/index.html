@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Build a TFX Pipeline with Apache Beam</title>
+  <title>Build a TFX Pipeline</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
@@ -22,8 +22,8 @@
 <body>
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid=""
-                  id="tfx-pipeline-beam"
-                  title="Build a TFX Pipeline with Apache Beam"
+                  id="tfx-pipeline-taxi"
+                  title="Build a TFX Pipeline"
                   environment="web"
                   feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/tfx-pipeline">
     
@@ -33,12 +33,10 @@
 <ul>
 <li>Google&#39;s open-source software <a href="https://www.tensorflow.org/tfx" target="_blank"><strong>TensorFlow Extended (TFX)</strong></a> is an end-to-end platform for deploying production ML pipelines. When you&#39;re ready to move your models to production, use TFX to create and manage a production pipeline.</li>
 <li>A <strong>TFX pipeline</strong> is a sequence of components that implement an ML pipeline which is specifically designed for scalable, high-performance machine learning tasks. Components are built using TFX libraries which can also be used individually.</li>
-<li>Several TFX components rely on <a href="https://beam.apache.org/" target="_blank"><strong>Apache Beam</strong></a> for distributed data processing. In addition, TFX can use Apache Beam to <em>orchestrate</em> and <em>execute</em> the pipeline direct acyclic graph (DAG).</li>
 <li><strong>TFX pipeline templates</strong> make it easy to get started with pipeline development by providing a prebuilt set of pipeline definitions that you can customize for your use case.</li>
 </ul>
-<p class="image-container"><img alt="TFX" style="width: 200.00px" src="img/a1dcacf16c2532cd.png"></p>
-<p>In this tutorial, we mainly follow the instructions provided by this excellent TensorFlow tutorial: <a href="https://www.tensorflow.org/tfx/guide/build_local_pipeline?hl=en" target="_blank">Building a TFX Pipeline Locally</a> to build a TFX Beam pipeline.</p>
-<aside class="special"><p> You will learn how to build a TFX-pipeline with Apache Beam </p>
+<p>In this tutorial, we mainly follow the instructions provided by this excellent TensorFlow tutorial: <a href="https://www.tensorflow.org/tfx/guide/build_local_pipeline?hl=en" target="_blank">Building a TFX Pipeline Locally</a> to build a TFX pipeline.</p>
+<aside class="special"><p> You will learn how to build a TFX-pipeline </p>
 </aside>
 
 
@@ -78,17 +76,17 @@
 <pre><code language="language-bash" class="language-bash">conda activate tf
 </code></pre>
 <ol type="1" start="3">
-<li>Create a project folder <strong>tfx-beam</strong> with <code>mkdir</code> (make directory):</li>
+<li>Create a project folder <strong>tfx-taxi</strong> with <code>mkdir</code> (make directory):</li>
 </ol>
-<pre><code language="language-bash" class="language-bash">mkdir tfx-beam
+<pre><code language="language-bash" class="language-bash">mkdir tfx-taxi
 </code></pre>
 <ol type="1" start="4">
-<li>Create a sub-folder inside <strong>tfx-beam</strong> called <strong>output</strong>. Therefore, we first need to change directory (<code>cd</code>) into the <strong>tfx-beam</strong> directory:</li>
+<li>Create a sub-folder inside <strong>tfx-taxi</strong> called <strong>output</strong>. Therefore, we first need to change directory (<code>cd</code>) into the <strong>tfx-taxi</strong> directory:</li>
 </ol>
-<pre><code language="language-bash" class="language-bash">cd your-path-to-txf-beam
+<pre><code language="language-bash" class="language-bash">cd your-path-to-txf-taxi
 </code></pre>
 <ul>
-<li>On my machine, the command is <code>cd /Users/jankirenz/tfx-beam</code>.</li>
+<li>On my machine, the command is <code>cd /Users/jankirenz/tfx-taxi</code>.</li>
 </ul>
 <ol type="1" start="5">
 <li>Create the new sub-folder <strong>output</strong>:</li>
@@ -111,19 +109,19 @@
 <ol type="1" start="2">
 <li>We copy the <strong>taxi</strong> template to our local machine (you have to change the following code):</li>
 </ol>
-<pre><code language="language-bash" class="language-bash">tfx template copy --model=taxi --pipeline_name=pipeline-beam \
---destination_path=your-path-to-txf-beam
+<pre><code language="language-bash" class="language-bash">tfx template copy --model=taxi --pipeline_name=pipeline-taxi \
+--destination_path=your-path-to-txf-taxi
 </code></pre>
 <p>Only change the entry for destination_path:</p>
 <ul>
 <li>model: The name of the template you want to copy (we use the taxi template).</li>
-<li>pipeline_name: The name of the pipeline to create (we call it pipeline-beam).</li>
+<li>pipeline_name: The name of the pipeline to create (we call it pipeline-taxi).</li>
 <li>destination_path: The path to copy the template into (<strong>you need to provide this information</strong>).</li>
 </ul>
-<aside class="warning"><p> If you should have troubles finding the path, you can open your file explorer and drag the folder tfx-beam into the terminal to show the path. </p>
+<aside class="warning"><p> If you should have troubles finding the path, you can open your file explorer and drag the folder tfx-taxi into the terminal to show the path. </p>
 </aside>
 <ul>
-<li>On my machine, the code is: <code>tfx template copy --model=taxi --pipeline_name=pipeline-beam \ --destination_path=/Users/jankirenz/tfx-beam</code></li>
+<li>On my machine, the code is: <code>tfx template copy --model=taxi --pipeline_name=pipeline-taxi \ --destination_path=/Users/jankirenz/tfx-taxi</code></li>
 </ul>
 <ol type="1" start="3">
 <li>A copy of the pipeline template has been created at the path you specified.</li>
@@ -133,7 +131,7 @@
       </google-codelab-step>
     
       <google-codelab-step label="Explore pipeline template" duration="7">
-        <p>Explore the directories and files that were copied to your pipeline&#39;s project directory <strong>tfx-beam</strong>:</p>
+        <p>Explore the directories and files that were copied to your pipeline&#39;s project directory <strong>tfx-taxi</strong>:</p>
 <ul>
 <li>A <strong>pipeline</strong> directory with<ul>
 <li><strong>pipeline.py</strong> - defines the pipeline, and lists which components are being used.</li>
@@ -147,7 +145,7 @@
 <li>A <strong>models</strong> directory with preprocessing code and model implementations</li>
 <li>The template copies directed acyclic graph (DAG) runners –which runs the components one by one in DAG&#39;s topological order– for local environment and <a href="https://www.kubeflow.org/" target="_blank">Kubeflow</a>. The file is called <strong>local.runner.py</strong>.</li>
 </ul>
-<aside class="warning"><p> Note that the file <strong>local.runner.py</strong> needs to be moved from the sub-folder data into the project folder tfx-beam. </p>
+<aside class="warning"><p> Note that the file <strong>local.runner.py</strong> needs to be moved from the sub-folder data into the project folder tfx-taxi. </p>
 </aside>
 
 
@@ -161,36 +159,36 @@
 <ol type="1">
 <li>Open the file with your code editor and define the variables <code>OUTPUT_DIR</code> (in line 32) and <code>DATA_PATH</code>:</li>
 </ol>
-<pre><code language="language-python" class="language-python">OUTPUT_DIR = &#39;your-path-to-tfx-beam/output&#39;
+<pre><code language="language-python" class="language-python">OUTPUT_DIR = &#39;your-path-to-tfx-taxi/output&#39;
 </code></pre>
 <ul>
-<li>On my machine, the variable would be defined as: <code>OUTPUT_DIR = /Users/jankirenz/tfx-beam/output</code></li>
+<li>On my machine, the variable would be defined as: <code>OUTPUT_DIR = /Users/jankirenz/tfx-taxi/output</code></li>
 </ul>
-<pre><code language="language-python" class="language-python">DATA_PATH = &#39;your-path-to-tfx-beam/data/&#39;
+<pre><code language="language-python" class="language-python">DATA_PATH = &#39;your-path-to-tfx-taxi/data/&#39;
 </code></pre>
 <ul>
-<li>On my machine, the variable would be defined as: <code>DATA_PATH = '/Users/jankirenz/tfx-beam/data/'</code></li>
+<li>On my machine, the variable would be defined as: <code>DATA_PATH = '/Users/jankirenz/tfx-taxi/data/'</code></li>
 </ul>
 <ol type="1" start="2">
 <li>We can save all changes and close the file.</li>
-<li>In your terminal, change directory (<code>cd</code>) into the project directory of <code>tfx-beam</code>:</li>
+<li>In your terminal, change directory (<code>cd</code>) into the project directory of <code>tfx-taxi</code>:</li>
 </ol>
-<pre><code language="language-bash" class="language-bash">cd your-path-to-txf-beam
+<pre><code language="language-bash" class="language-bash">cd your-path-to-txf-taxi
 </code></pre>
 <ul>
-<li>On my machine: <code>cd /Users/jankirenz/tfx-beam/</code></li>
+<li>On my machine: <code>cd /Users/jankirenz/tfx-taxi/</code></li>
 </ul>
 <ol type="1" start="4">
 <li>Run the following commands in your pipeline directory:</li>
 </ol>
-<pre><code language="language-bash" class="language-bash">tfx pipeline create --pipeline_path=your-path-to-txf-beam/local_runner.py
+<pre><code language="language-bash" class="language-bash">tfx pipeline create --pipeline_path=your-path-to-txf-taxi/local_runner.py
 </code></pre>
-<p>In my case this would be <code>tfx pipeline create --pipeline_path=/Users/jankirenz/tfx-beam/local_runner.py</code></p>
-<p>If you run the code, the last output line should display <code>Pipeline "pipeline-beam" created successfully.</code></p>
+<p>In my case this would be <code>tfx pipeline create --pipeline_path=/Users/jankirenz/tfx-taxi/local_runner.py</code></p>
+<p>If you run the code, the last output line should display <code>Pipeline "pipeline-taxi" created successfully.</code></p>
 <ol type="1" start="5">
 <li>Finally, use this command to actually run the pipeline:</li>
 </ol>
-<pre><code language="language-bash" class="language-bash">tfx run create --pipeline_name=pipeline-beam
+<pre><code language="language-bash" class="language-bash">tfx run create --pipeline_name=pipeline-taxi
 </code></pre>
 <ul>
 <li>The command creates a pipeline run, which adds the following directories to your pipeline (in your sub-folder <code>output</code>: <ul>
@@ -223,7 +221,7 @@
 </li>
 <li>Save all changes.</li>
 </ul>
-<aside class="special"><p> After you have reviewed the scaffolding created by the template and created a pipeline run using BEAM you can now proceed to customize the template to fit your requirements. </p>
+<aside class="special"><p> After you have reviewed the scaffolding created by the template and created a pipeline run you can now proceed to customize the template to fit your requirements. </p>
 </aside>
 
 
@@ -233,16 +231,16 @@
         <ol type="1">
 <li>Update the pipeline: run the following command in your pipeline directory:</li>
 </ol>
-<pre><code language="language-bash" class="language-bash">tfx pipeline update --pipeline_path=your-path-to-txf-beam/local_runner.py
+<pre><code language="language-bash" class="language-bash">tfx pipeline update --pipeline_path=your-path-to-txf-taxi/local_runner.py
 </code></pre>
 <ul>
-<li>In my case: <code>tfx pipeline update --pipeline_path=/Users/jankirenz/tfx-beam/local_runner.py</code></li>
-<li>The last line of your output should display: <code>Pipeline "pipeline-beam" updated successfully.</code></li>
+<li>In my case: <code>tfx pipeline update --pipeline_path=/Users/jankirenz/tfx-taxi/local_runner.py</code></li>
+<li>The last line of your output should display: <code>Pipeline "pipeline-taxi" updated successfully.</code></li>
 </ul>
 <ol type="1" start="2">
 <li>Run the pipeline:</li>
 </ol>
-<pre><code language="language-bash" class="language-bash">tfx run create --pipeline_name=pipeline-beam
+<pre><code language="language-bash" class="language-bash">tfx run create --pipeline_name=pipeline-taxi
 </code></pre>
 <ul>
 <li>In your output, the last line reads <code>INFO:absl:Component Transform is finished.</code></li>
@@ -256,7 +254,7 @@
     
       <google-codelab-step label="What&#39;s next?" duration="7">
         <p>Congratulations! You have completed the tutorial and learned how to:</p>
-<p>✅ Install a TFX pipeline template<br> ✅ Created a local TFX Beam pipeline run<br> ✅ Added pipeline components</p>
+<p>✅ Install a TFX pipeline template<br> ✅ Created a local TFX pipeline run<br> ✅ Added pipeline components</p>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
 <p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
 <p><em>Copyright: Jan Kirenz (2021) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>CC BY-NC 2.0 License</em></a></p>

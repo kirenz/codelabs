@@ -140,6 +140,18 @@ You can find the source code in the [Kubeflow Pipelines repo](https://github.com
 
 
 <!-- ------------------------ -->
+## Exit Kubeflow
+
+Duration: 0:01:00
+
+When you are done, you can exit Kubeflow and stop MiniKF:
+
+1. Log out from Kubeflow (click the ⍈ symbol at the top right of the Kubeflow UI)
+2. Navigate to your MiniKF browser window [http://10.10.10.10](http://10.10.10.10).
+3. Click on the terminal (in the middle of the screen).
+4. Use ``Ctrl-C``to exit.
+
+<!-- ------------------------ -->
 ## What's next?
 
 Duration: 0:02:00

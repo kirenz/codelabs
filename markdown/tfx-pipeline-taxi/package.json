@@ -4,11 +4,11 @@
   "description": "use nodemon to watch changes on md file, rebuild codelab on saves",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon --watch tfx-pipeline-beam.md --exec \"claat export -o temp/ tfx-pipeline-beam.md && ./node_modules/kill-port/cli.js --port 9090 && cd temp/tfx-pipeline-beam && claat serve\""
+    "watch": "nodemon --watch tfx-pipeline-taxi.md --exec \"claat export -o temp/ tfx-pipeline-taxi.md && ./node_modules/kill-port/cli.js --port 9090 && cd temp/tfx-pipeline-taxi && claat serve\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kirenz/codelabs/tree/master/markdown/tfx-pipeline-beam"
+    "url": "https://github.com/kirenz/codelabs/tree/master/markdown/tfx-pipeline-taxi"
   },
   "keywords": [
     "codelab"
