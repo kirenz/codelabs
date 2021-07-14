@@ -1,0 +1,110 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Installation of Anaconda and TensorFlow</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="anaconda-install"
+                  title="Installation of Anaconda and TensorFlow"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/anaconda-install">
+    
+      <google-codelab-step label="Overview" duration="2">
+        <p class="image-container"><img alt="Anaconda logo" style="width: 200.00px" src="img/a65e86b6a759a874.png">   </p>
+<p>In this tutorial, you&#39;ll learn how to install the <a href="https://www.anaconda.com/" target="_blank">Anaconda</a> open source data science platform. Anaconda&#39;s package manager <em>Conda</em> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other.</p>
+<p>Furthermore, we install <a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a>, an end-to-end open source platform for machine learning.</p>
+<aside class="special"><p> Anaconda is one of the most popular platforms for data science  </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="2">
+        <p>To complete this tutorial, you should be aware of pathing differences between macOS, Windows and Linux:</p>
+<ul>
+<li>macOS: <code>/Users/username/...</code></li>
+<li>Windows: <code>C:/Users/username/...</code></li>
+<li>Linux: <code>/home/username/...</code></li>
+</ul>
+<aside class="warning"><p> Note that I used macOS to create this tutorial and therefore my code examples follow the path logic of macOS.   </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Install Anaconda individual" duration="10">
+        <p>Go to <a href="https://www.anaconda.com/products/individual" target="_blank">anaconda.com</a> and choose the appropriate <code>Graphical Installer</code> for your system (Windows, MacOS or Linux). Install the software on your system:</p>
+<ul>
+<li><a href="https://docs.continuum.io/anaconda/install/mac-os/" target="_blank">Installing on macOS</a></li>
+<li><a href="https://docs.continuum.io/anaconda/install/windows/" target="_blank">Installing on Windows</a></li>
+<li><a href="https://docs.continuum.io/anaconda/install/linux/" target="_blank">https://docs.continuum.io/anaconda/install/linux/</a></li>
+</ul>
+<p>Here some tips if you have problems installing Anaconda: <a href="https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems" target="_blank">troubleshooting</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create a virtual environment" duration="5">
+        <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow).</p>
+<p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
+<p>We create an environment with a specific version of Python (3.8) and the <strong>tensorflow</strong> package. We call the environment <code>tf</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.8 tensorflow
+</code></pre>
+<p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Activate TensorFlow environment" duration="2">
+        <p>You can activate your environment as follows:</p>
+<pre><code language="language-bash" class="language-bash">conda activate tf
+</code></pre>
+<p>And deactivate it with:</p>
+<pre><code language="language-bash" class="language-bash">conda deactivate
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What&#39;s next?" duration="1">
+        <p>Congratulations! You have completed the tutorial and learned how to install:</p>
+<p>✅ Anaconda<br> ✅ TensorFlow</p>
+<p>If you&#39;d like to learn more about TensorFlow, have a look at the following suggestion:</p>
+<ul>
+<li><a href="https://www.tensorflow.org/tutorials" target="_blank">TensorFlow tutorials</a></li>
+</ul>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the <em>Report a mistake</em> button at the bottom left of this site.</p>
+<p><em>Copyright: Jan Kirenz (2021), </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em>, </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0) License</em></a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

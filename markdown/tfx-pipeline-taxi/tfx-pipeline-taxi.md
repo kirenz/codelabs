@@ -59,7 +59,7 @@ Furthermore, you should be aware of pathing differences between macOS, Windows a
 - Linux: ``/home/username/...``
 
 <aside class="negative">
-Note that I used macOS to create this tutorial and therfore my code examples follow the path logic of macOS.  
+Note that I used macOS to create this tutorial and therefore my code examples follow the path logic of macOS.  
 </aside>
 
 <!-- ------------------------ -->
