@@ -1,11 +1,11 @@
 author: Jan Kirenz
 summary:
-id: dash-setup
+id: dash-2.0
 tags:
 categories:
 environments: Web
 status: Published
-feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/dash-setup
+feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/dash-2.0
 
 # Dash installation tutorial
 
@@ -16,19 +16,7 @@ Duration: 0:01:00
 
 ### What we cover
 
-In this tutorial we are going to use Anaconda to install Dash on your system.
-
-<img src="img/hdm-logo.jpg" alt="HdM Logo" width="200">
-
-<aside class="positive">
-Info box
-</aside>
-
-Txt
-
-<aside class="negative">
-Info box
-</aside>
+In this tutorial we are going to install the preview version on Dash 2.0.
 
 
 <!-- ------------------------ -->
@@ -53,10 +41,10 @@ Duration: 0:05:00
 
 On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
 
-We create an environment with a specific version of Python (3.8) . We call the environment ``dash``:
+We create an environment with a specific version of Python (3.9) . We call the environment ``dash``:
 
 ```bash
-conda create -n dash python=3.8
+conda create -n dash2 python=3.9
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
@@ -69,16 +57,16 @@ Duration: 00:05:00
 First, you need to activate your environment as follows:
 
 ```bash
-conda activate dash
+conda activate dash2
 ```
 
 Now we can install modules in our environment. 
 
-To do this, we could use [**pip**](https://pip.pypa.io/en/stable/) (pip is the standard package installer for Python) or **conda** (open source package management system from Anaconda). To learn the differences between the two options, see this article ["Understanding Conda and Pip"](https://www.anaconda.com/blog/understanding-conda-and-pip).  
+To do this, we use [**pip**](https://pip.pypa.io/en/stable/) (pip is the standard package installer for Python) or **conda** (open source package management system from Anaconda). To learn the differences between the two options, see this article ["Understanding Conda and Pip"](https://www.anaconda.com/blog/understanding-conda-and-pip).  
 
-Here, we use conda to install dash and some additional modules. When conda asks you to proceed ``(proceed ([y]/n)?``), simply type ``y``.
+Here, we use conda to install dash-labs and some additional modules. 
 
-- [Dash](https://anaconda.org/conda-forge/dash):
+- [Dash 2.0](https://anaconda.org/conda-forge/dash):
 
 ```bash
 conda install -c conda-forge dash
