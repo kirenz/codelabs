@@ -28,14 +28,22 @@ Anaconda is one of the most popular platforms for data science
 
 Duration: 0:02:00
 
-To complete this tutorial, you should be aware of pathing differences between macOS, Windows and Linux:
+To start this tutorial, you should be familiar with the **command line interface** (other names for the command line are: cmd, CLI, prompt, console or terminal). If you aren't familiar with the terminal, read this [introduction to the command-line interface](https://tutorial.djangogirls.org/en/intro_to_command_line/).
+
+If you are working on macOS, I recommend to use [iTerm2](https://iterm2.com/) instead of the standard terminal.
+
+<aside class="positive">
+The terminal is a text-based application for viewing, handling, and manipulating files on your computer
+</aside>  
+
+Please note that there are pathing differences between macOS, Windows and Linux:
 
 - macOS: ``/Users/username/...``
 - Windows: ``C:/Users/username/...``
 - Linux: ``/home/username/...``
 
 <aside class="negative">
-Note that I used macOS to create this tutorial and therefore my code examples follow the path logic of macOS.  
+I used macOS to create this tutorial and therefore my code examples follow the path logic of macOS.  
 </aside>
 
 
