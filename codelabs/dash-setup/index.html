@@ -1,0 +1,115 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Dash installation tutorial</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="dash-setup"
+                  title="Dash installation tutorial"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/dash-setup">
+    
+      <google-codelab-step label="Overview" duration="1">
+        <h2 is-upgraded>What we cover</h2>
+<p>In this tutorial we are going to use Anaconda to install Dash on your system.</p>
+<p class="image-container"><img alt="HdM Logo" style="width: 200.00px" src="img/b2c99cea58d0e867.jpg"></p>
+<aside class="special"><p> Info box </p>
+</aside>
+<p>Txt</p>
+<aside class="warning"><p> Info box </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="7">
+        <p>To start this tutorial, you need Anaconda. If you don&#39;t already have Anaconda, go to <a href="https://www.anaconda.com/products/individual" target="_blank">anaconda.com</a> and choose the appropriate <code>Graphical Installer</code> for your system (Windows, MacOS or Linux). Install the software on your system:</p>
+<ul>
+<li><a href="https://docs.continuum.io/anaconda/install/mac-os/" target="_blank">Installing on macOS</a></li>
+<li><a href="https://docs.continuum.io/anaconda/install/windows/" target="_blank">Installing on Windows</a></li>
+<li><a href="https://docs.continuum.io/anaconda/install/linux/" target="_blank">https://docs.continuum.io/anaconda/install/linux/</a></li>
+</ul>
+<p>Here some tips if you have problems installing Anaconda: <a href="https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems" target="_blank">troubleshooting</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create Virtual Environment" duration="5">
+        <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.</p>
+<p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
+<p>We create an environment with a specific version of Python (3.8) . We call the environment <code>dash</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n dash python=3.8
+</code></pre>
+<p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Installation of modules" duration="5">
+        <p>First, you need to activate your environment as follows:</p>
+<pre><code language="language-bash" class="language-bash">conda activate dash
+</code></pre>
+<p>Now we can install modules in our environment.</p>
+<p>To do this, we could use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> (pip is the standard package installer for Python) or <strong>conda</strong> (open source package management system from Anaconda). To learn the differences between the two options, see this article <a href="https://www.anaconda.com/blog/understanding-conda-and-pip" target="_blank">&#34;Understanding Conda and Pip&#34;</a>.</p>
+<p>Here, we use conda to install dash and some additional modules. When conda asks you to proceed <code>(proceed ([y]/n)?</code>), simply type <code>y</code>.</p>
+<ul>
+<li><a href="https://anaconda.org/conda-forge/dash" target="_blank">Dash</a>:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda install -c conda-forge dash
+</code></pre>
+<ul>
+<li><a href="https://pandas.pydata.org/docs/index.html" target="_blank">pandas</a>: We also install pandas, which is required by some dash modlues (like Plotly Express).</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda install pandas
+</code></pre>
+<ul>
+<li><a href="https://github.com/plotly/jupyter-dash" target="_blank">Jupyter Dash</a>: This library makes it easy to develop Plotly Dash apps interactively from within Jupyter environments (e.g. classic Notebook, JupyterLab, Visual Studio Code notebooks, PyCharm notebooks, etc.)</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda install -c plotly jupyter-dash
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What&#39;s next?" duration="2">
+        <p>Congratulations! You have completed the tutorial and learned how to:</p>
+<p>✅ Create a virtual environment for dash<br> ✅ Install Python modules in your virtual dash environment</p>
+<p>Next, you may want to proceed with this tutorial provided by plotly to build your first dash app:</p>
+<ul>
+<li><a href="https://dash.plotly.com/layout" target="_blank">Dash tutorial</a></li>
+</ul>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
+<p><em>Copyright: Jan Kirenz (2021) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>CC BY-NC 2.0 License</em></a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
