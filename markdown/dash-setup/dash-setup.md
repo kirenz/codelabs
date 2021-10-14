@@ -16,20 +16,15 @@ Duration: 0:01:00
 
 ### What we cover
 
-In this tutorial we are going to use Anaconda to install Dash on your system.
+In this tutorial we are going to use Anaconda to install `Dash` on your system.
 
-<img src="img/hdm-logo.jpg" alt="HdM Logo" width="200">
+<img src="img/dash.png" alt="Dash Dashboard" width="200">
+
+Dash is a Python framework provided by plotly for building web applications. Written on top of `Flask`, `Plotly.js`, and `React.js`, Dash is ideal for building data visualization apps with highly custom user interfaces in pure Python. It's particularly suited for anyone who works with data in Python.
 
 <aside class="positive">
-Info box
+Dash apps give a point-&-click interface to models written in Python, R, and Julia
 </aside>
-
-Txt
-
-<aside class="negative">
-Info box
-</aside>
-
 
 <!-- ------------------------ -->
 ## Prerequisites
@@ -106,10 +101,15 @@ Congratulations! You have completed the tutorial and learned how to:
 ✅ Create a virtual environment for dash  
 ✅ Install Python modules in your virtual dash environment
 
-Next, you may want to proceed with this tutorial provided by plotly to build your first dash app:
+Next, you may want to proceed with this tutorials to build your first dash apps:
 
-- [Dash tutorial](https://dash.plotly.com/layout)
+- [Dash tutorial](https://github.com/kirenz/dash-tutorial)
 
+More resources:
+
+- [Dashboard gallery](https://dash.gallery/Portal/)
+- [Dash community components](https://plotly.com/dash-community-components/)
+- [Collection of Dash resources](https://github.com/ucg8j/awesome-dash)
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
 
