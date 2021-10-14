@@ -74,27 +74,38 @@ To install Airflow, we simply follow the [ installation tutorial](https://airflo
 conda activate airflow
 ```
 
-1. Show your version of Python (here: 3.8.)
+1. Airflow needs `virualenv` so we install it first:
 
 ```bash
-python --version
+pip install virtualenv
 ```
 
-2. Install Airflow using the constraints file. We use Airflow Version "2.2.0" and Python "3.8.". Note that Airflow will be installed into `~/airflow`. 
+1. Install Airflow with the following constraints file. We use Airflow Version "2.2.0" and Python "3.9." (note that Airflow will be installed into `~/airflow`): 
 
 ```bash
-pip install "apache-airflow==2.2.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.0/constraints-3.8.txt"
+pip install "apache-airflow==2.2.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.0/constraints-3.9.txt"
 ```
 
-3. The Standalone command will initialise the database, make a user, and start all components for you.
+1. Since we will be using PostgreSQL, we need to install the [postgres provider package](https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html):
+
+```bash
+pip install apache-airflow-providers-postgres
+```
+
+
+1. The Standalone command will initialise the database, make a user, and start all components for you.
 
 ```bash
 airflow standalone
 ```
 
-# Visit localhost:8080 in the browser and use the admin account details
-# shown on the terminal to login.
-# Enable the example_bash_operator dag in the home page
+*If you should get the error message "AttributeError: 'NoneType' object has no attribute 'is_alive'" stop the process with `Ctrl` + `c` and use the command `airflow standalone` one more time.
+
+1. In the terminal output: Look for the provided `username` and `password`
+
+1. Visit this site in your browser: [http://0.0.0.0:8080](http://0.0.0.0:8080) and provide `username` and `password`.
+
+1. Enable the example_bash_operator dag in the home page and start experimenting with Airflow.
 
 <!-- ------------------------ -->
 ## What's next?
@@ -103,8 +114,8 @@ Duration: 0:02:00
 
 Congratulations! You have completed the tutorial and learned how to:
 
-✅ Create a virtual environment for dash  
-✅ Install Python modules in your virtual dash environment
+✅ Install Apache Airflow  
+✅ Start Apache Airflow  
 
 Next, you may want to proceed with this tutorials to build your first dash apps:
 
