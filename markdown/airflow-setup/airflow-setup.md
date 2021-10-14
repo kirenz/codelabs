@@ -7,72 +7,94 @@ environments: Web
 status: Published
 feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/airflow-setup
 
-# Title
+
+# Airflow installation tutorial
 
 <!-- ------------------------ -->
 ## Overview
 
-Duration: 0:05:00
+Duration: 0:01:00
 
 ### What we cover
-In this tutorial we 
 
-<img src="img/hdm-logo.jpg" alt="HdM Logo" width="200">
+In this tutorial we are going to install [Apache Airflow](https://airflow.apache.org/) on your system.
+
+<img src="img/logo.png" alt="Apache Airflow logo" width="200">
+
+- Airflow is a open source platform to programmatically author, schedule and monitor workflows.
+
+- Airflow pipelines are defined in Python, allowing for dynamic pipeline generation. This allows for writing code that instantiates pipelines dynamically.
+
+- Anyone with Python knowledge can deploy a workflow with Airflow. Apache Airflow does not limit the scope of your pipelines; you can use it to build ML models, transfer data, manage your infrastructure, and more.
 
 <aside class="positive">
-Info box
+Monitor, schedule and manage your workflows via a robust and modern web application. 
 </aside>
-
-Txt
-
-<aside class="negative">
-Info box
-</aside>
-
 
 <!-- ------------------------ -->
 ## Prerequisites
 
 Duration: 0:07:00
 
-To start this tutorial, you need the following environment setup:
+To start this tutorial, you need Anaconda. If you don't already have Anaconda, go to [anaconda.com](https://www.anaconda.com/products/individual) and choose the appropriate `Graphical Installer` for your system (Windows, MacOS or Linux). Install the software on your system:
 
-- Txt
-- Txt
+- [Installing on macOS](https://docs.continuum.io/anaconda/install/mac-os/)
+- [Installing on Windows](https://docs.continuum.io/anaconda/install/windows/)
+- [https://docs.continuum.io/anaconda/install/linux/](https://docs.continuum.io/anaconda/install/linux/) 
 
-Furthermore, you should be familiar with:
-
-- Txt
-- Txt
-
-<aside class="positive">
-Info box
-</aside>
+Here some tips if you have problems installing Anaconda: [troubleshooting](https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems).
 
 <!-- ------------------------ -->
-## Txt
+## Create Virtual Environment
 
 Duration: 0:05:00
+
+[Conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.
+
+On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
+
+We create an environment with a specific version of Python (3.9). We call the environment ``airflow``:
 
 ```bash
-brew install go
+conda create -n airflow python=3.9
 ```
 
-```python
-brew install go
-```
-
-![https://codepen.io/tzoght/embed/yRNZaP](https://en.wikipedia.org/wiki/File:Example.jpg "Try Me Publisher")
-
-Txt
+When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
 
 
 <!-- ------------------------ -->
-## Txt
+## Installation of modules
+Duration: 00:05:00
 
-Duration: 0:05:00
+To install Airflow, we simply follow the [ installation tutorial](https://airflow.apache.org/docs/apache-airflow/stable/start/local.html) provided by Apache Airflow. Note that we use [**pip**](https://pip.pypa.io/en/stable/) (pip is the standard package installer for Python) to install Airflow in our environment. When pip asks you to proceed ``(proceed ([y]/n)?``), simply type ``y``. 
 
-Txt
+1. First, you need to activate your environment as follows:
+
+```bash
+conda activate airflow
+```
+
+1. Show your version of Python (here: 3.8.)
+
+```bash
+python --version
+```
+
+2. Install Airflow using the constraints file. We use Airflow Version "2.2.0" and Python "3.8.". Note that Airflow will be installed into `~/airflow`. 
+
+```bash
+pip install "apache-airflow==2.2.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.0/constraints-3.8.txt"
+```
+
+3. The Standalone command will initialise the database, make a user, and start all components for you.
+
+```bash
+airflow standalone
+```
+
+# Visit localhost:8080 in the browser and use the admin account details
+# shown on the terminal to login.
+# Enable the example_bash_operator dag in the home page
 
 <!-- ------------------------ -->
 ## What's next?
@@ -81,14 +103,18 @@ Duration: 0:02:00
 
 Congratulations! You have completed the tutorial and learned how to:
 
-✅ Install  
-✅ Use  
-✅ Implement  
+✅ Create a virtual environment for dash  
+✅ Install Python modules in your virtual dash environment
 
-Next, you may want to proceed with this tutorial:
+Next, you may want to proceed with this tutorials to build your first dash apps:
 
-- 💻[](https://kirenz.github.io/codelabs/codelabs/airflow-setup
+- [Dash tutorials](https://github.com/kirenz/dash-tutorial)
 
+More resources:
+
+- [Dashboard gallery](https://dash.gallery/Portal/)
+- [Dash community components](https://plotly.com/dash-community-components/)
+- [Collection of Dash resources](https://github.com/ucg8j/awesome-dash)
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
 
