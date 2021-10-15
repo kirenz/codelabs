@@ -126,11 +126,6 @@ Next, you may want to proceed with this tutorial to build your first DAG:
 
 - [First Airflow DAG](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#)
 
-More resources:
-
-- [Dashboard gallery](https://dash.gallery/Portal/)
-- [Dash community components](https://plotly.com/dash-community-components/)
-- [Collection of Dash resources](https://github.com/ucg8j/awesome-dash)
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
 
