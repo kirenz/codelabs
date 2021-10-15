@@ -103,7 +103,7 @@ Congratulations! You have completed the tutorial and learned how to:
 
 Next, you may want to proceed with this tutorials to build your first dash apps:
 
-- [Dash tutorial](https://github.com/kirenz/dash-tutorial)
+- [Dash tutorials](https://github.com/kirenz/dash-tutorial)
 
 More resources:
 

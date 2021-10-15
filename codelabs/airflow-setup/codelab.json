@@ -1,0 +1,22 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-10-15T16:55:09+02:00",
+  "id": "airflow-setup",
+  "duration": 20,
+  "title": "Airflow installation tutorial",
+  "summary": "",
+  "source": "airflow-setup.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": null,
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/airflow-setup",
+  "url": "airflow-setup"
+}

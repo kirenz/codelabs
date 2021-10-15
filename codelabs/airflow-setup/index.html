@@ -1,0 +1,139 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Airflow installation tutorial</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="airflow-setup"
+                  title="Airflow installation tutorial"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/airflow-setup">
+    
+      <google-codelab-step label="Overview" duration="1">
+        <h2 is-upgraded>What we cover</h2>
+<p>In this tutorial we are going to install <a href="https://airflow.apache.org/" target="_blank">Apache Airflow</a> on your system.</p>
+<p class="image-container"><img alt="Apache Airflow logo" style="width: 200.00px" src="img/86832b628c8aabfe.png"></p>
+<ul>
+<li>Airflow is a open source platform to programmatically author, schedule and monitor workflows.</li>
+<li>Airflow pipelines are defined in Python, allowing for dynamic pipeline generation. This allows for writing code that instantiates pipelines dynamically.</li>
+<li>Anyone with Python knowledge can deploy a workflow with Airflow. Apache Airflow does not limit the scope of your pipelines; you can use it to build ML models, transfer data, manage your infrastructure, and more.</li>
+</ul>
+<aside class="special"><p> Monitor, schedule and manage your workflows via a robust and modern web application.  </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="7">
+        <p>To start this tutorial, you need Anaconda. If you don&#39;t already have Anaconda, go to <a href="https://www.anaconda.com/products/individual" target="_blank">anaconda.com</a> and choose the appropriate <code>Graphical Installer</code> for your system (Windows, MacOS or Linux). Install the software on your system:</p>
+<ul>
+<li><a href="https://docs.continuum.io/anaconda/install/mac-os/" target="_blank">Installing on macOS</a></li>
+<li><a href="https://docs.continuum.io/anaconda/install/windows/" target="_blank">Installing on Windows</a></li>
+<li><a href="https://docs.continuum.io/anaconda/install/linux/" target="_blank">https://docs.continuum.io/anaconda/install/linux/</a></li>
+</ul>
+<p>Here some tips if you have problems installing Anaconda: <a href="https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems" target="_blank">troubleshooting</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create Virtual Environment" duration="5">
+        <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.</p>
+<p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
+<p>We create an environment with a specific version of Python (3.9). We call the environment <code>airflow</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n airflow python=3.9
+</code></pre>
+<p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Installation of modules" duration="5">
+        <p>To install Airflow, we simply follow the <a href="https://airflow.apache.org/docs/apache-airflow/stable/start/local.html" target="_blank"> installation tutorial</a> provided by Apache Airflow. Note that we use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> (pip is the standard package installer for Python) to install Airflow in our environment. When pip asks you to proceed <code>(proceed ([y]/n)?</code>), simply type <code>y</code>.</p>
+<ol type="1">
+<li>First, you need to activate your environment as follows:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">conda activate airflow
+</code></pre>
+<ol type="1">
+<li>Airflow needs <code>virualenv</code> so we install it first:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">pip install virtualenv
+</code></pre>
+<ol type="1">
+<li>Next, Airflow needs a home. <code>~/airflow</code> is the default, but you can put it somewhere else if you prefer (optional). Here is the command for Mac and Linux (if you use Windows, review this <a href="https://stackoverflow.com/questions/18701783/windows-equivalent-of-export/18702064" target="_blank">hint at stackoverflow</a> )</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">export AIRFLOW_HOME=~/airflow
+</code></pre>
+<ol type="1">
+<li>Install Airflow with the following constraints file. We use Airflow Version &#34;2.2.0&#34; and Python &#34;3.9.&#34;:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">pip install &#34;apache-airflow==2.2.0&#34; --constraint &#34;https://raw.githubusercontent.com/apache/airflow/constraints-2.2.0/constraints-3.9.txt&#34;
+</code></pre>
+<ol type="1">
+<li>Since we will be using PostgreSQL, we need to install the <a href="https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html" target="_blank">postgres provider package</a>:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">pip install apache-airflow-providers-postgres
+</code></pre>
+<ol type="1">
+<li>The Standalone command will initialise the database, make a user, and start all components for you.</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">airflow standalone
+</code></pre>
+<p>*If you should get the error message &#34;AttributeError: ‘NoneType&#39; object has no attribute ‘is_alive&#39;&#34; stop the process with <code>Ctrl</code> + <code>c</code> and use the command <code>airflow standalone</code> one more time.</p>
+<ol type="1">
+<li>In the terminal output: Look for the provided <code>username</code> and <code>password</code></li>
+<li>Visit this site in your browser: <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide <code>username</code> and <code>password</code>.</li>
+<li>Enable the example_bash_operator dag in the home page and start experimenting with Airflow.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What&#39;s next?" duration="2">
+        <p>Congratulations! You have completed the tutorial and learned how to:</p>
+<p>✅ Install Apache Airflow<br> ✅ Start Apache Airflow</p>
+<p>Next, you may want to proceed with this tutorial to build your first DAG:</p>
+<ul>
+<li><a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#" target="_blank">First Airflow DAG</a></li>
+</ul>
+<p>More resources:</p>
+<ul>
+<li><a href="https://dash.gallery/Portal/" target="_blank">Dashboard gallery</a></li>
+<li><a href="https://plotly.com/dash-community-components/" target="_blank">Dash community components</a></li>
+<li><a href="https://github.com/ucg8j/awesome-dash" target="_blank">Collection of Dash resources</a></li>
+</ul>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
+<p><em>Copyright: Jan Kirenz (2021) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>CC BY-NC 2.0 License</em></a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

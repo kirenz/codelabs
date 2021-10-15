@@ -80,7 +80,13 @@ conda activate airflow
 pip install virtualenv
 ```
 
-1. Install Airflow with the following constraints file. We use Airflow Version "2.2.0" and Python "3.9." (note that Airflow will be installed into `~/airflow`): 
+1. Next, Airflow needs a home. `~/airflow` is the default, but you can put it somewhere else if you prefer (optional). Here is the command for Mac and Linux (if you use Windows, review this [hint at stackoverflow](https://stackoverflow.com/questions/18701783/windows-equivalent-of-export/18702064) )
+
+```bash
+export AIRFLOW_HOME=~/airflow
+```
+
+1. Install Airflow with the following constraints file. We use Airflow Version "2.2.0" and Python "3.9.": 
 
 ```bash
 pip install "apache-airflow==2.2.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.0/constraints-3.9.txt"
@@ -91,7 +97,6 @@ pip install "apache-airflow==2.2.0" --constraint "https://raw.githubusercontent.
 ```bash
 pip install apache-airflow-providers-postgres
 ```
-
 
 1. The Standalone command will initialise the database, make a user, and start all components for you.
 
@@ -117,9 +122,9 @@ Congratulations! You have completed the tutorial and learned how to:
 ✅ Install Apache Airflow  
 ✅ Start Apache Airflow  
 
-Next, you may want to proceed with this tutorials to build your first dash apps:
+Next, you may want to proceed with this tutorial to build your first DAG:
 
-- [Dash tutorials](https://github.com/kirenz/dash-tutorial)
+- [First Airflow DAG](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#)
 
 More resources:
 
