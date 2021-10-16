@@ -7,72 +7,93 @@ environments: Web
 status: Published
 feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/jupyter-book
 
-# Title
+# Jupyter book installation tutorial
 
 <!-- ------------------------ -->
 ## Overview
 
-Duration: 0:05:00
+Duration: 0:01:00
 
 ### What we cover
-In this tutorial we 
 
-<img src="img/hdm-logo.jpg" alt="HdM Logo" width="200">
+In this tutorial we are going to use Anaconda to install `Jupyter book` on your system.
+
+<img src="img/logo.png" alt="Dash Dashboard" width="200">
+
+[Jupyter Book](https://jupyterbook.org/intro.html) is an open source project for building publication-quality books and documents from computational material.
+
 
 <aside class="positive">
-Info box
+Jupyter Book lets you quickly generate a book structure from templates.
 </aside>
-
-Txt
-
-<aside class="negative">
-Info box
-</aside>
-
 
 <!-- ------------------------ -->
 ## Prerequisites
 
 Duration: 0:07:00
 
-To start this tutorial, you need the following environment setup:
+To start this tutorial, you need Anaconda. If you don't already have Anaconda, go to [anaconda.com](https://www.anaconda.com/products/individual) and choose the appropriate `Graphical Installer` for your system (Windows, MacOS or Linux). Install the software on your system:
 
-- Txt
-- Txt
+- [Installing on macOS](https://docs.continuum.io/anaconda/install/mac-os/)
+- [Installing on Windows](https://docs.continuum.io/anaconda/install/windows/)
+- [https://docs.continuum.io/anaconda/install/linux/](https://docs.continuum.io/anaconda/install/linux/) 
 
-Furthermore, you should be familiar with:
-
-- Txt
-- Txt
-
-<aside class="positive">
-Info box
-</aside>
+Here some tips if you have problems installing Anaconda: [troubleshooting](https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems).
 
 <!-- ------------------------ -->
-## Txt
+## Create Virtual Environment
 
 Duration: 0:05:00
+
+[Conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions. Since there is a known incompatibility for Windows OS notebook execution when using Python 3.8., we will use Python 3.7.
+
+On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
+
+We create an environment with a specific version of Python (3.7). We call the environment ``jbook``:
 
 ```bash
-brew install go
+conda create -n jbook python=3.7
 ```
-
-```python
-brew install go
-```
-
-![https://codepen.io/tzoght/embed/yRNZaP](https://en.wikipedia.org/wiki/File:Example.jpg "Try Me Publisher")
-
-Txt
-
 
 <!-- ------------------------ -->
-## Txt
+## Installation of modules
+Duration: 00:05:00
 
-Duration: 0:05:00
+First, you need to activate your environment as follows:
 
-Txt
+```bash
+conda activate jbook
+```
+
+Now we can install modules in our environment. To do this, we use [**pip**](https://pip.pypa.io/en/stable/) (pip is the standard package installer for Python). 
+
+```bash
+pip install -U jupyter-book
+```
+
+<!-- ------------------------ -->
+## Creation of a book
+Duration: 00:05:00
+
+We are going to follow these [instructions](https://jupyterbook.org/basics/create.html#create-a-template-book) to quickly create a sample book:
+
+- create and `cd` into a folder of your choice (I use the folder `books`) to build the book
+
+´´´bash
+cd books
+´´´
+
+- Build the book:
+
+```bash
+jupyter-book create mynewbook/
+```
+
+This will generate a mini Jupyter Book that you can both build and explore locally. 
+
+It will have a few decisions made for you, and you can explore the configuration of the book in `_config.yml` and its structure in `_toc.yml`. 
+
+Use this book as inspiration, or as a starting point to work from.
 
 <!-- ------------------------ -->
 ## What's next?
@@ -81,13 +102,13 @@ Duration: 0:02:00
 
 Congratulations! You have completed the tutorial and learned how to:
 
-✅ Install  
-✅ Use  
-✅ Implement  
+✅ Create a virtual environment for your Jupyter book  
+✅ Install Jupyter book in your virtual environment
+✅ Create a Jupyter book
 
-Next, you may want to proceed with this tutorial:
+Next, you may want to proceed with this tutorial to explore the structure of your book:
 
-- 💻[](https://kirenz.github.io/codelabs/codelabs/jupyter-book
+- [Jupyter book tutorial](https://jupyterbook.org/basics/organize.html)
 
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
