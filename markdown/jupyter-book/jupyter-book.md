@@ -216,8 +216,6 @@ Typically after a few minutes your site should be viewable online at a url such 
 If not, check your repository settings under Options -> GitHub Pages to ensure that the gh-pages branch is configured as the build source for GitHub Pages and/or to find the url address GitHub is building for you.  
 </aside>
 
-
-
 <!-- ------------------------ -->
 ## Update your book 
 Duration: 00:05:00
