@@ -73,9 +73,20 @@ conda activate jbook
 
 Now we can install modules in our environment. To do this, we use [**pip**](https://pip.pypa.io/en/stable/) (pip is the standard package installer for Python). 
 
+- Install `jupyter-book`
+
 ```bash
 pip install -U jupyter-book
 ```
+
+- Install `ghp-import`
+
+```bash
+pip install ghp-import
+```
+
+*ghp-import is a lightweight Python package that makes it easy to push HTML content to a GitHub repository*
+
 
 <!-- ------------------------ -->
 ## Creation of a book
@@ -163,23 +174,24 @@ Next, we add the folder to GitHub. I use [GitHub Desktop](https://desktop.github
 - In GitHub Desktop, click **Publish repository** and choose to create a public repo (uncheck the option to create a private repo).
 
 <!-- ------------------------ -->
-## Create a GitHub repo 
+## Publish with GitHub Pages 
 Duration: 00:05:00
 
-Next, we add the folder to GitHub. I use [GitHub Desktop](https://desktop.github.com) to create a new repository:
+Now, we’ll publish the build artifact of our book online, so that it is rendered as a website.
 
-- In the GitHub Desktop drop-down menu, click **File** and choose **New Repository**
+First, update the **settings** for your GitHub pages site:
 
-- Use the name of your Jupyter book (*mynewbook*) 
+- Move down to the GitHub Pages and click on *Check it out here!*
 
-- Do not initialize it with a README file.
+- Below **Theme Chooser**, click on *choose a theme* and click on *select theme* (it doesn't matter which theme you choose).
 
-- Choose your local path (*/books*).
+- In your repo, click on **main** and select *ghpages*.  
 
-- Click on **Create Repository**.
+- Now, we need to delete the two files in the repo.
 
-- In GitHub Desktop, click **Publish repository** and choose to create a public repo (uncheck the option to create a private repo).
+- Click on *Go to file* to delete a file.
 
+From the main branch of your book’s root directory (which should contain the _build/html folder) call ghp-import and point it to your HTML files, like so:
 
 <!-- ------------------------ -->
 ## What's next?
@@ -195,7 +207,6 @@ Congratulations! You have completed the tutorial and learned how to:
 Next, you may want to proceed with this tutorial to explore the structure of your book:
 
 - [Jupyter book tutorial](https://jupyterbook.org/basics/organize.html)
-
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
 
