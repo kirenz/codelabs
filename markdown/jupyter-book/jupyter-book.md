@@ -18,6 +18,8 @@ Duration: 0:01:00
 
 In this tutorial we are going to create and publish a `Jupyter book`. [Jupyter Book](https://jupyterbook.org/intro.html) is an open source project for building publication-quality books and documents from computational material.
 
+This is a [gallery of Jupyter Books](https://executablebooks.org/en/latest/gallery.html) built from across the community.
+
 <img src="img/logo.png" alt="Dash Dashboard" width="200">
 
 Building a Jupyter Book broadly consists of these steps:
@@ -27,7 +29,6 @@ Building a Jupyter Book broadly consists of these steps:
 1. **Build your book**. Using Jupyter Book’s command-line interface you can convert your pages into either an HTML or a PDF book. 
 
 1. **Publish your book online**. Once your book is built, you can share it with others. Most common is to build HTML, and host it as a public website (we use GitHub pages).
-
 
 <aside class="positive">
 Jupyter Book lets you quickly generate a book structure from templates.
@@ -79,13 +80,13 @@ Now we can install modules in our environment. To do this, we use [**pip**](http
 pip install -U jupyter-book
 ```
 
-- Install `ghp-import`
+- Install the module `ghp-import`
 
 ```bash
 pip install ghp-import
 ```
 
-*ghp-import is a lightweight Python package that makes it easy to push HTML content to a GitHub repository*
+*[ghp-import](https://github.com/c-w/ghp-import) is a lightweight Python package that makes it easy to push HTML content to a GitHub repository*
 
 
 <!-- ------------------------ -->
@@ -181,17 +182,65 @@ Now, we’ll publish the build artifact of our book online, so that it is render
 
 First, update the **settings** for your GitHub pages site:
 
-- Move down to the GitHub Pages and click on *Check it out here!*
+- Move down to the **GitHub Pages** and click on *Check it out here!*
 
 - Below **Theme Chooser**, click on *choose a theme* and click on *select theme* (it doesn't matter which theme you choose).
 
-- In your repo, click on **main** and select *ghpages*.  
+Next, you need to create a **personal access token** in GitHub:
 
-- Now, we need to delete the two files in the repo.
+- Follow these instructions (select all permissions in step 8) to [create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
-- Click on *Go to file* to delete a file.
+In your terminal:
 
-From the main branch of your book’s root directory (which should contain the _build/html folder) call ghp-import and point it to your HTML files, like so:
+- `cd` into the main branch of your book’s root directory (which should contain the _build/html folder): 
+
+```bash
+cd mynewbook
+```
+
+- call `ghp-import` and point it to your HTML files, like so: 
+
+
+```bash
+ghp-import -n -p -f _build/html
+```
+
+  - Enter your github username.
+  - Enter your personal access token (not your GitHub password).
+
+Typically after a few minutes your site should be viewable online at a url such as: 
+
+- https://<username>.github.io/<mynewbook>/ 
+
+<aside class="negative">
+If not, check your repository settings under Options -> GitHub Pages to ensure that the gh-pages branch is configured as the build source for GitHub Pages and/or to find the url address GitHub is building for you.  
+</aside>
+
+
+
+<!-- ------------------------ -->
+## Update your book 
+Duration: 00:05:00
+
+To update your online book:
+
+- Make changes to your book’s content on the main branch of your repository.
+
+- Re-build your book with:
+
+```bash
+jupyter-book build mynewbook/
+```
+
+- As before use `ghp-import` to push the newly built HTML to the gh-pages branch:
+
+```bash
+ghp-import -n -p -f mynewbook/_build/html 
+```
+
+<aside class="negative">
+You should never edit files in your gh-pages branch by hand.
+<aside>
 
 <!-- ------------------------ -->
 ## What's next?
@@ -203,10 +252,11 @@ Congratulations! You have completed the tutorial and learned how to:
 ✅ Create a virtual environment for your Jupyter book  
 ✅ Install Jupyter book in your virtual environment
 ✅ Create a Jupyter book
+✅ Publish your book with GitHub Pages
 
-Next, you may want to proceed with this tutorial to explore the structure of your book:
+Next, you may want to proceed with this tutorial to create a more complex book:
 
-- [Jupyter book tutorial](https://jupyterbook.org/basics/organize.html)
+- [Jupyter book example](https://jupyterbook.org/start/example-book.html)
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
 
