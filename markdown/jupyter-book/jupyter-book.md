@@ -16,11 +16,17 @@ Duration: 0:01:00
 
 ### What we cover
 
-In this tutorial we are going to install `Jupyter book` on your system. Furthermore, we will create a simple book and publish it on GitHub. 
+In this tutorial we are going to create and publish a `Jupyter book`. [Jupyter Book](https://jupyterbook.org/intro.html) is an open source project for building publication-quality books and documents from computational material.
 
 <img src="img/logo.png" alt="Dash Dashboard" width="200">
 
-[Jupyter Book](https://jupyterbook.org/intro.html) is an open source project for building publication-quality books and documents from computational material.
+Building a Jupyter Book broadly consists of these steps:
+
+1. **Create your book’s content**. You structure your book with a collection of folders, files, and configuration. 
+
+1. **Build your book**. Using Jupyter Book’s command-line interface you can convert your pages into either an HTML or a PDF book. 
+
+1. **Publish your book online**. Once your book is built, you can share it with others. Most common is to build HTML, and host it as a public website (we use GitHub pages).
 
 
 <aside class="positive">
@@ -97,19 +103,35 @@ It will have a few decisions made for you, and you can explore the configuration
 
 Use this book as inspiration, or as a starting point to work from.
 
+
+<!-- ------------------------ -->
+## Book structure
+Duration: 00:05:00
+
+All of the configuration for your book is in a [YAML](https://en.wikipedia.org/wiki/YAML) file called `_config.yml`.
+
+You can define metadata for your book (such as its title), add a book logo, turn on different “interactive” buttons (such as a GitHub button), and more. To get an overview about all options, visit the [documentation](https://jupyterbook.org/start/create.html). Here, we just make some minor changes:
+
+- Open the file `_config.yml`in your code editor.
+
+- change the title and author.
+
+Now that you’ve got a Jupyter Book folder structure, you can create the HTML (or PDF) for each of your book’s pages. That’s covered in the next section.
+
+
 <!-- ------------------------ -->
 ## Add to GitHub 
 Duration: 00:05:00
 
-Next, we add the folder to GitHub. I use [GitHub Desktop](https://desktop.github.com) to create a new repository:
+Next, we add your book project to [GitHub](https://github.com/). I use [GitHub Desktop](https://desktop.github.com) to create a new repository:
 
-- In the GitHub Desktop drop-down menu, click **File** and choose **New Repository**
+- In the GitHub Desktop drop-down menu, click **File** and choose **New Repository**.
 
-- Use the name of your Jupyter book (*mynewbook*) 
+- Use the name of your Jupyter book (*mynewbook*). 
 
-- Choose your local path (*/books*)
+- Choose your local path (*/books*).
 
-- Click on **Create Repository**
+- Click on **Create Repository**.
 
 - In GitHub Desktop, click **Publish repository** (if you want to create a public repo, uncheck the option "Keep this code private").
 
