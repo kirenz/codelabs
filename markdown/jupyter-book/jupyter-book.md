@@ -114,29 +114,38 @@ You can define metadata for your book (such as its title), add a book logo, turn
 
 - Open the file `_config.yml`in your code editor.
 
-- change the title and author.
+- Change the title and author.
 
-Now that you’ve got a Jupyter Book folder structure, you can create the HTML (or PDF) for each of your book’s pages. That’s covered in the next section.
-
+Now that you’ve got a Jupyter Book folder structure, you can create the HTML (or PDF) for each of your book’s pages. 
 
 <!-- ------------------------ -->
-## Add to GitHub 
+## Build HTML book  
 Duration: 00:05:00
 
-Next, we add your book project to [GitHub](https://github.com/). I use [GitHub Desktop](https://desktop.github.com) to create a new repository:
+Once you’ve added content and configured your book, it’s time to build outputs for your book. We’ll use the jupyter-book build command line tool to create a HTML output.
 
-- In the GitHub Desktop drop-down menu, click **File** and choose **New Repository**.
+- `cd`into your path (*books*)
 
-- Use the name of your Jupyter book (*mynewbook*). 
+```bash
+cd books
+```
 
-- Choose your local path (*/books*).
+- Run the following command to build your book (*mynewbook*).
 
-- Click on **Create Repository**.
+```bash
+jupyter-book build mynewbook/
+```
 
-- In GitHub Desktop, click **Publish repository** (if you want to create a public repo, uncheck the option "Keep this code private").
+*This will generate a HTML site which will be placed in the _build/html folder*
+
+- Navigate to the **html** folder inside **_build** and open the file **notebooks.html** with your web browser.
+
+Now that you’ve created the HTML for your book, it’s time to publish it online. That’s covered in the next section.
+
+*If you want to learn more about the details of how to build your book, visit the [documentation](https://jupyterbook.org/start/build.html).*
 
 <!-- ------------------------ -->
-## Add to GitHub 
+## Create a GitHub repo 
 Duration: 00:05:00
 
 Next, we add the folder to GitHub. I use [GitHub Desktop](https://desktop.github.com) to create a new repository:
@@ -145,11 +154,31 @@ Next, we add the folder to GitHub. I use [GitHub Desktop](https://desktop.github
 
 - Use the name of your Jupyter book (*mynewbook*) 
 
-- Choose your local path (*/books*)
+- Do not initialize it with a README file.
 
-- Click on **Create Repository**
+- Choose your local path (*/books*).
 
-- In GitHub Desktop, click **Publish repository** and choose to create a public repo (not private).
+- Click on **Create Repository**.
+
+- In GitHub Desktop, click **Publish repository** and choose to create a public repo (uncheck the option to create a private repo).
+
+<!-- ------------------------ -->
+## Create a GitHub repo 
+Duration: 00:05:00
+
+Next, we add the folder to GitHub. I use [GitHub Desktop](https://desktop.github.com) to create a new repository:
+
+- In the GitHub Desktop drop-down menu, click **File** and choose **New Repository**
+
+- Use the name of your Jupyter book (*mynewbook*) 
+
+- Do not initialize it with a README file.
+
+- Choose your local path (*/books*).
+
+- Click on **Create Repository**.
+
+- In GitHub Desktop, click **Publish repository** and choose to create a public repo (uncheck the option to create a private repo).
 
 
 <!-- ------------------------ -->
