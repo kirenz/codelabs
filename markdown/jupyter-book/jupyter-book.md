@@ -16,7 +16,7 @@ Duration: 0:01:00
 
 ### What we cover
 
-In this tutorial we are going to use Anaconda to install `Jupyter book` on your system.
+In this tutorial we are going to install `Jupyter book` on your system. Furthermore, we will create a simple book and publish it on GitHub. 
 
 <img src="img/logo.png" alt="Dash Dashboard" width="200">
 
@@ -77,13 +77,15 @@ Duration: 00:05:00
 
 We are going to follow these [instructions](https://jupyterbook.org/basics/create.html#create-a-template-book) to quickly create a sample book:
 
-- create and `cd` into a folder of your choice (I use the folder `books`) to build the book
+- create a new folder of your choice (I created a folder with the name `books`).
+
+- `cd`into your folder
 
 ´´´bash
 cd books
 ´´´
 
-- Build the book:
+- Create the book:
 
 ```bash
 jupyter-book create mynewbook/
@@ -94,6 +96,39 @@ This will generate a mini Jupyter Book that you can both build and explore local
 It will have a few decisions made for you, and you can explore the configuration of the book in `_config.yml` and its structure in `_toc.yml`. 
 
 Use this book as inspiration, or as a starting point to work from.
+
+<!-- ------------------------ -->
+## Add to GitHub 
+Duration: 00:05:00
+
+Next, we add the folder to GitHub. I use [GitHub Desktop](https://desktop.github.com) to create a new repository:
+
+- In the GitHub Desktop drop-down menu, click **File** and choose **New Repository**
+
+- Use the name of your Jupyter book (*mynewbook*) 
+
+- Choose your local path (*/books*)
+
+- Click on **Create Repository**
+
+- In GitHub Desktop, click **Publish repository** (if you want to create a public repo, uncheck the option "Keep this code private").
+
+<!-- ------------------------ -->
+## Add to GitHub 
+Duration: 00:05:00
+
+Next, we add the folder to GitHub. I use [GitHub Desktop](https://desktop.github.com) to create a new repository:
+
+- In the GitHub Desktop drop-down menu, click **File** and choose **New Repository**
+
+- Use the name of your Jupyter book (*mynewbook*) 
+
+- Choose your local path (*/books*)
+
+- Click on **Create Repository**
+
+- In GitHub Desktop, click **Publish repository** and choose to create a public repo (not private).
+
 
 <!-- ------------------------ -->
 ## What's next?
