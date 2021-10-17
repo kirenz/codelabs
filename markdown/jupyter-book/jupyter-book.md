@@ -172,7 +172,7 @@ Next, we add the folder to GitHub. I use [GitHub Desktop](https://desktop.github
 
 - Click on **Create Repository**.
 
-- In GitHub Desktop, click **Publish repository** and choose to create a public repo (uncheck the option to create a private repo).
+- In GitHub Desktop, click **Publish repository** and choose to create a public repo (uncheck the option: keep this code private).
 
 <!-- ------------------------ -->
 ## Publish with GitHub Pages 
