@@ -1,0 +1,22 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-10-17T18:17:50+02:00",
+  "id": "jupyter-book",
+  "duration": 50,
+  "title": "Jupyter book installation tutorial",
+  "summary": "",
+  "source": "jupyter-book.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": null,
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/jupyter-book",
+  "url": "jupyter-book"
+}

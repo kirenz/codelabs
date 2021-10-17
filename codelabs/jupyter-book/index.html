@@ -1,0 +1,231 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Jupyter book installation tutorial</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="jupyter-book"
+                  title="Jupyter book installation tutorial"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/jupyter-book">
+    
+      <google-codelab-step label="Overview" duration="1">
+        <h2 is-upgraded>What we cover</h2>
+<p>In this tutorial we are going to create and publish a <code>Jupyter book</code>. <a href="https://jupyterbook.org/intro.html" target="_blank">Jupyter Book</a> is an open source project for building publication-quality books and documents from computational material.</p>
+<p>This is a <a href="https://executablebooks.org/en/latest/gallery.html" target="_blank">gallery of Jupyter Books</a> built from across the community.</p>
+<p class="image-container"><img alt="Dash Dashboard" style="width: 200.00px" src="img/d14106517a8a6bbd.png"></p>
+<p>Building a Jupyter Book broadly consists of these steps:</p>
+<ol type="1">
+<li><strong>Create your book&#39;s content</strong>. You structure your book with a collection of folders, files, and configuration.</li>
+<li><strong>Build your book</strong>. Using Jupyter Book&#39;s command-line interface you can convert your pages into either an HTML or a PDF book.</li>
+<li><strong>Publish your book online</strong>. Once your book is built, you can share it with others. Most common is to build HTML, and host it as a public website (we use GitHub pages).</li>
+</ol>
+<aside class="special"><p> Jupyter Book lets you quickly generate a book structure from templates. </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="7">
+        <p>To start this tutorial, you need Anaconda. If you don&#39;t already have Anaconda, go to <a href="https://www.anaconda.com/products/individual" target="_blank">anaconda.com</a> and choose the appropriate <code>Graphical Installer</code> for your system (Windows, MacOS or Linux). Install the software on your system:</p>
+<ul>
+<li><a href="https://docs.continuum.io/anaconda/install/mac-os/" target="_blank">Installing on macOS</a></li>
+<li><a href="https://docs.continuum.io/anaconda/install/windows/" target="_blank">Installing on Windows</a></li>
+<li><a href="https://docs.continuum.io/anaconda/install/linux/" target="_blank">https://docs.continuum.io/anaconda/install/linux/</a></li>
+</ul>
+<p>Here some tips if you have problems installing Anaconda: <a href="https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems" target="_blank">troubleshooting</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create Virtual Environment" duration="5">
+        <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions. Since there is a known incompatibility for Windows OS notebook execution when using Python 3.8., we will use Python 3.7.</p>
+<p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
+<p>We create an environment with a specific version of Python (3.7). We call the environment <code>jbook</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n jbook python=3.7
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Installation of modules" duration="5">
+        <p>First, you need to activate your environment as follows:</p>
+<pre><code language="language-bash" class="language-bash">conda activate jbook
+</code></pre>
+<p>Now we can install modules in our environment. To do this, we use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> (pip is the standard package installer for Python).</p>
+<ul>
+<li>Install <code>jupyter-book</code></li>
+</ul>
+<pre><code language="language-bash" class="language-bash">pip install -U jupyter-book
+</code></pre>
+<ul>
+<li>Install the module <code>ghp-import</code></li>
+</ul>
+<pre><code language="language-bash" class="language-bash">pip install ghp-import
+</code></pre>
+<p><a href="https://github.com/c-w/ghp-import" target="_blank"><em>ghp-import</em></a><em> is a lightweight Python package that makes it easy to push HTML content to a GitHub repository</em></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creation of a book" duration="5">
+        <p>We are going to follow these <a href="https://jupyterbook.org/basics/create.html#create-a-template-book" target="_blank">instructions</a> to quickly create a sample book:</p>
+<ul>
+<li>create a new folder of your choice (I created a folder with the name <code>books</code>).</li>
+<li><code>cd</code>into your folder</li>
+</ul>
+<p>´´´bash cd books ´´´</p>
+<ul>
+<li>Create the book:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">jupyter-book create mynewbook/
+</code></pre>
+<p>This will generate a mini Jupyter Book that you can both build and explore locally.</p>
+<p>It will have a few decisions made for you, and you can explore the configuration of the book in <code>_config.yml</code> and its structure in <code>_toc.yml</code>.</p>
+<p>Use this book as inspiration, or as a starting point to work from.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Book structure" duration="5">
+        <p>All of the configuration for your book is in a <a href="https://en.wikipedia.org/wiki/YAML" target="_blank">YAML</a> file called <code>_config.yml</code>.</p>
+<p>You can define metadata for your book (such as its title), add a book logo, turn on different &#34;interactive&#34; buttons (such as a GitHub button), and more. To get an overview about all options, visit the <a href="https://jupyterbook.org/start/create.html" target="_blank">documentation</a>. Here, we just make some minor changes:</p>
+<ul>
+<li>Open the file <code>_config.yml</code>in your code editor.</li>
+<li>Change the title and author.</li>
+</ul>
+<p>Now that you&#39;ve got a Jupyter Book folder structure, you can create the HTML (or PDF) for each of your book&#39;s pages.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Build HTML book" duration="5">
+        <p>Once you&#39;ve added content and configured your book, it&#39;s time to build outputs for your book. We&#39;ll use the jupyter-book build command line tool to create a HTML output.</p>
+<ul>
+<li><code>cd</code>into your path (<em>books</em>)</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">cd books
+</code></pre>
+<ul>
+<li>Run the following command to build your book (<em>mynewbook</em>).</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">jupyter-book build mynewbook/
+</code></pre>
+<p><em>This will generate a HTML site which will be placed in the _build/html folder</em></p>
+<ul>
+<li>Navigate to the <strong>html</strong> folder inside <strong>_build</strong> and open the file <strong>notebooks.html</strong> with your web browser.</li>
+</ul>
+<p>Now that you&#39;ve created the HTML for your book, it&#39;s time to publish it online. That&#39;s covered in the next section.</p>
+<p><em>If you want to learn more about the details of how to build your book, visit the </em><a href="https://jupyterbook.org/start/build.html" target="_blank"><em>documentation</em></a><em>.</em></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create a GitHub repo" duration="5">
+        <p>Next, we add the folder to GitHub. I use <a href="https://desktop.github.com" target="_blank">GitHub Desktop</a> to create a new repository:</p>
+<ul>
+<li>In the GitHub Desktop drop-down menu, click <strong>File</strong> and choose <strong>New Repository</strong></li>
+<li>Use the name of your Jupyter book (<em>mynewbook</em>)</li>
+<li>Do not initialize it with a README file.</li>
+<li>Choose your local path (<em>/books</em>).</li>
+<li>Click on <strong>Create Repository</strong>.</li>
+<li>In GitHub Desktop, click <strong>Publish repository</strong> and choose to create a public repo (uncheck the option: keep this code private).</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Publish with GitHub Pages" duration="5">
+        <p>Now, we&#39;ll publish the build artifact of our book online, so that it is rendered as a website.</p>
+<p>First, update the <strong>settings</strong> for your GitHub pages site:</p>
+<ul>
+<li>Move down to the <strong>GitHub Pages</strong> and click on <em>Check it out here!</em></li>
+<li>Below <strong>Theme Chooser</strong>, click on <em>choose a theme</em> and click on <em>select theme</em> (it doesn&#39;t matter which theme you choose).</li>
+</ul>
+<p>Next, you need to create a <strong>personal access token</strong> in GitHub:</p>
+<ul>
+<li>Follow these instructions (select all permissions in step 8) to <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token" target="_blank">create a personal access token</a></li>
+</ul>
+<p>In your terminal:</p>
+<ul>
+<li><code>cd</code> into the main branch of your book&#39;s root directory (which should contain the _build/html folder):</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">cd mynewbook
+</code></pre>
+<ul>
+<li>call <code>ghp-import</code> and point it to your HTML files, like so:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">ghp-import -n -p -f _build/html
+</code></pre>
+<ul>
+<li>Enter your github username.</li>
+<li>Enter your personal access token (not your GitHub password).</li>
+</ul>
+<p>Typically after a few minutes your site should be viewable online at a url such as:</p>
+<ul>
+<li>https://.github.io//</li>
+</ul>
+<aside class="warning"><p> If not, check your repository settings under Options -&gt; GitHub Pages to ensure that the gh-pages branch is configured as the build source for GitHub Pages and/or to find the url address GitHub is building for you.   </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Update your book" duration="2">
+        <p>To update your online book:</p>
+<ul>
+<li>Make changes to your book&#39;s content on the main branch of your repository.</li>
+<li>Re-build your book with:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">jupyter-book build mynewbook/
+</code></pre>
+<ul>
+<li>As before use <code>ghp-import</code> to push the newly built HTML to the gh-pages branch:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">ghp-import -n -p -f mynewbook/_build/html 
+</code></pre>
+<aside class="warning"><p> You should never edit files in your gh-pages branch by hand. </p>
+<aside class="special"><p>What&#39;s next?</p>
+<p>Congratulations! You have completed the tutorial and learned how to:</p>
+<p>✅ Create a virtual environment for your Jupyter book<br> ✅ Install Jupyter book in your virtual environment ✅ Create a Jupyter book ✅ Publish your book with GitHub Pages</p>
+<p>Next, you may want to proceed with this tutorial to create a more complex book:</p>
+<ul>
+<li><a href="https://jupyterbook.org/start/example-book.html" target="_blank">Jupyter book example</a></li>
+</ul>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
+<p><em>Copyright: Jan Kirenz (2021) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>CC BY-NC 2.0 License</em></a></p>
+</aside>
+</aside>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
