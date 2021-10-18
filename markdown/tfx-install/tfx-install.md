@@ -97,6 +97,12 @@ pip install tensorflow-cpu
 pip install tfx
 ```
 
+Install some additional modules:
+
+```bash
+pip install tensorflow-datasets
+```
+
 <!-- ------------------------ -->
 ## What's next?
 Duration: 0:01:00
