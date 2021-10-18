@@ -57,8 +57,8 @@
         <p class="image-container"><img alt="TensorFlow logo" style="width: 300.00px" src="img/b538f31a85a23aee.png">   </p>
 <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow).</p>
 <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
-<p>We create an environment with a specific version of Python (3.8) and the <strong>tensorflow</strong> package. We call the environment <code>tf</code>:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.8 tensorflow
+<p>We create an environment with a specific version of Python (3.8). We call the environment <code>tf</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.8 
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
 
@@ -81,7 +81,10 @@
 <p>First of all, you have to activate the <code>tf</code> environment:</p>
 <pre><code language="language-bash" class="language-bash">conda activate tf
 </code></pre>
-<p>Now we have to use <code>pip</code> (pip is the package installer for Python) to install TFX in our <code>tf</code> environment:</p>
+<p>Now we have to use <code>pip</code> (pip is the package installer for Python) to install TensorFlow and TFX in our <code>tf</code> environment:</p>
+<p>You can delete <code>-cpu</code> if your machine supports GPU:</p>
+<pre><code language="language-bash" class="language-bash">pip install tensorflow-cpu
+</code></pre>
 <pre><code language="language-bash" class="language-bash">pip install tfx
 </code></pre>
 
@@ -90,7 +93,7 @@
     
       <google-codelab-step label="What&#39;s next?" duration="1">
         <p>Congratulations! You have completed the tutorial and learned how to install:</p>
-<p>✅ Anaconda<br> ✅ TensorFlow<br> ✅ TensorFlow Extended</p>
+<p>✅ TensorFlow<br> ✅ TensorFlow Extended</p>
 <p>If you&#39;d like to learn more about TensorFlow Extended, have a look at the following suggestion:</p>
 <ul>
 <li>💻<a href="https://kirenz.github.io/codelabs/codelabs/tfx-pipeline" target="_blank">Build your first TFX pipeline</a></li>

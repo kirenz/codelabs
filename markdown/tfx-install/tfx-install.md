@@ -48,10 +48,10 @@ Duration: 00:05:00
 
 On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
 
-We create an environment with a specific version of Python (3.8) and the **tensorflow** package. We call the environment ``tf``:
+We create an environment with a specific version of Python (3.8). We call the environment ``tf``:
 
 ```bash
-conda create -n tf python=3.8 tensorflow
+conda create -n tf python=3.8 
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
@@ -85,7 +85,13 @@ First of all, you have to activate the `tf` environment:
 conda activate tf
 ```
 
-Now we have to use `pip` (pip is the package installer for Python) to install TFX in our `tf` environment:
+Now we have to use `pip` (pip is the package installer for Python) to install TensorFlow and TFX in our `tf` environment:
+
+You can delete `-cpu` if your machine supports GPU:
+
+```bash
+pip install tensorflow-cpu
+```
 
 ```bash
 pip install tfx
@@ -97,7 +103,6 @@ Duration: 0:01:00
 
 Congratulations! You have completed the tutorial and learned how to install:
 
-✅ Anaconda  
 ✅ TensorFlow  
 ✅ TensorFlow Extended  
 
