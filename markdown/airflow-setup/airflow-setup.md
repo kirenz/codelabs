@@ -68,19 +68,19 @@ Duration: 00:05:00
 
 To install Airflow, we simply follow the [ installation tutorial](https://airflow.apache.org/docs/apache-airflow/stable/start/local.html) provided by Apache Airflow. Note that we use [**pip**](https://pip.pypa.io/en/stable/) (pip is the standard package installer for Python) to install Airflow in our environment. When pip asks you to proceed ``(proceed ([y]/n)?``), simply type ``y``. 
 
-1. First, you need to activate your environment as follows:
+(1) First, you need to activate your environment as follows:
 
 ```bash
 conda activate airflow
 ```
 
-1. Airflow needs `virualenv` so we install it first:
+(2) Airflow needs `virualenv` so we install it first:
 
 ```bash
 pip install virtualenv
 ```
 
-1. Next, Airflow needs a home. `your-home-directory/airflow` is the default, but you can put it somewhere else if you prefer (optional). 
+(3) Next, Airflow needs a home. `your-home-directory/airflow` is the default, but you can put it somewhere else if you prefer (optional). 
 
     - Here is the command for **Mac** and **Linux**: 
 
@@ -88,31 +88,31 @@ pip install virtualenv
 export AIRFLOW_HOME=~/airflow
 ```
 
-   - If you use **Windows**, either provide the full path:
+    - If you use **Windows**, either provide the full path:
 
 ```bash
 SET AIRFLOW_HOME=C:\Users\<YourUserName>\airflow
 ```
 
-  - or (alternatively) use this approach
+    - or (alternatively to the full path) use this approach
 
 ```bash
 SET AIRFLOW_HOME=%USERPROFILE%\airflow
 ```
 
-1. Install Airflow with the following constraints file. We use Airflow Version "2.2.0" and Python "3.9.": 
+(4) Install Airflow with the following constraints file. We use Airflow Version "2.2.0" and Python "3.9.": 
 
 ```bash
 pip install "apache-airflow==2.2.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.0/constraints-3.9.txt"
 ```
 
-1. Since we will be using PostgreSQL, we need to install the [postgres provider package](https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html):
+(5) Since we will be using PostgreSQL, we need to install the [postgres provider package](https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html):
 
 ```bash
 pip install apache-airflow-providers-postgres
 ```
 
-1. The Standalone command will initialise the database, make a user, and start all components for you.
+(6) The Standalone command will initialise the database, make a user, and start all components for you.
 
 ```bash
 airflow standalone
@@ -120,11 +120,11 @@ airflow standalone
 
 *If you should get the error message "AttributeError: 'NoneType' object has no attribute 'is_alive'" stop the process with `Ctrl` + `c` and use the command `airflow standalone` one more time.
 
-1. In the terminal output: Look for the provided `username` and `password`
+(7) In the terminal output: Look for the provided `username` and `password`
 
-1. Visit this site in your browser: [http://0.0.0.0:8080](http://0.0.0.0:8080) and provide `username` and `password`.
+(8) Visit this site in your browser: [http://0.0.0.0:8080](http://0.0.0.0:8080) and provide `username` and `password`.
 
-1. Enable the example_bash_operator dag in the home page and start experimenting with Airflow.
+(9) Enable the example_bash_operator dag in the home page and start experimenting with Airflow.
 
 <!-- ------------------------ -->
 ## What's next?

@@ -67,55 +67,38 @@
     
       <google-codelab-step label="Installation of modules" duration="5">
         <p>To install Airflow, we simply follow the <a href="https://airflow.apache.org/docs/apache-airflow/stable/start/local.html" target="_blank"> installation tutorial</a> provided by Apache Airflow. Note that we use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> (pip is the standard package installer for Python) to install Airflow in our environment. When pip asks you to proceed <code>(proceed ([y]/n)?</code>), simply type <code>y</code>.</p>
-<ol type="1">
-<li>First, you need to activate your environment as follows:</li>
-</ol>
+<p>(1) First, you need to activate your environment as follows:</p>
 <pre><code language="language-bash" class="language-bash">conda activate airflow
 </code></pre>
-<ol type="1">
-<li>Airflow needs <code>virualenv</code> so we install it first:</li>
-</ol>
+<p>(2) Airflow needs <code>virualenv</code> so we install it first:</p>
 <pre><code language="language-bash" class="language-bash">pip install virtualenv
 </code></pre>
-<ol type="1">
-<li>Next, Airflow needs a home. <code>your-home-directory/airflow</code> is the default, but you can put it somewhere else if you prefer (optional).<ul>
-<li>Here is the command for <strong>Mac</strong> and <strong>Linux</strong>:</li>
-</ul>
-</li>
-</ol>
+<p>(3) Next, Airflow needs a home. <code>your-home-directory/airflow</code> is the default, but you can put it somewhere else if you prefer (optional).</p>
+<pre><code>- Here is the command for **Mac** and **Linux**: 
+</code></pre>
 <pre><code language="language-bash" class="language-bash">export AIRFLOW_HOME=~/airflow
 </code></pre>
-<ul>
-<li>If you use <strong>Windows</strong>, either provide the full path:</li>
-</ul>
+<pre><code>- If you use **Windows**, either provide the full path:
+</code></pre>
 <pre><code language="language-bash" class="language-bash">SET AIRFLOW_HOME=C:\Users\&lt;YourUserName&gt;\airflow
 </code></pre>
-<ul>
-<li>or (alternatively) use this approach</li>
-</ul>
+<pre><code>- or (alternatively to the full path) use this approach
+</code></pre>
 <pre><code language="language-bash" class="language-bash">SET AIRFLOW_HOME=%USERPROFILE%\airflow
 </code></pre>
-<ol type="1">
-<li>Install Airflow with the following constraints file. We use Airflow Version &#34;2.2.0&#34; and Python &#34;3.9.&#34;:</li>
-</ol>
+<p>(4) Install Airflow with the following constraints file. We use Airflow Version &#34;2.2.0&#34; and Python &#34;3.9.&#34;:</p>
 <pre><code language="language-bash" class="language-bash">pip install &#34;apache-airflow==2.2.0&#34; --constraint &#34;https://raw.githubusercontent.com/apache/airflow/constraints-2.2.0/constraints-3.9.txt&#34;
 </code></pre>
-<ol type="1">
-<li>Since we will be using PostgreSQL, we need to install the <a href="https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html" target="_blank">postgres provider package</a>:</li>
-</ol>
+<p>(5) Since we will be using PostgreSQL, we need to install the <a href="https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html" target="_blank">postgres provider package</a>:</p>
 <pre><code language="language-bash" class="language-bash">pip install apache-airflow-providers-postgres
 </code></pre>
-<ol type="1">
-<li>The Standalone command will initialise the database, make a user, and start all components for you.</li>
-</ol>
+<p>(6) The Standalone command will initialise the database, make a user, and start all components for you.</p>
 <pre><code language="language-bash" class="language-bash">airflow standalone
 </code></pre>
 <p>*If you should get the error message &#34;AttributeError: ‘NoneType&#39; object has no attribute ‘is_alive&#39;&#34; stop the process with <code>Ctrl</code> + <code>c</code> and use the command <code>airflow standalone</code> one more time.</p>
-<ol type="1">
-<li>In the terminal output: Look for the provided <code>username</code> and <code>password</code></li>
-<li>Visit this site in your browser: <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide <code>username</code> and <code>password</code>.</li>
-<li>Enable the example_bash_operator dag in the home page and start experimenting with Airflow.</li>
-</ol>
+<p>(7) In the terminal output: Look for the provided <code>username</code> and <code>password</code></p>
+<p>(8) Visit this site in your browser: <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide <code>username</code> and <code>password</code>.</p>
+<p>(9) Enable the example_bash_operator dag in the home page and start experimenting with Airflow.</p>
 
 
       </google-codelab-step>
