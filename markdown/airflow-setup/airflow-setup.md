@@ -82,21 +82,22 @@ pip install virtualenv
 
 (3) Next, Airflow needs a home. `your-home-directory/airflow` is the default, but you can put it somewhere else if you prefer (optional). 
 
-    - Here is the command for **Mac** and **Linux**: 
+*Here is the command for **Mac** and **Linux**:* 
 
 ```bash
 export AIRFLOW_HOME=~/airflow
 ```
 
-    - If you use **Windows**, either provide the full path:
+*If you use **Windows**, either provide the full path:*
 
 ```bash
 SET AIRFLOW_HOME=C:\Users\<YourUserName>\airflow
 ```
 
-    - or (alternatively to the full path) use this approach
+*or (alternatively to the full path) use this approach*
 
-```bash
+```ba
+sh
 SET AIRFLOW_HOME=%USERPROFILE%\airflow
 ```
 
