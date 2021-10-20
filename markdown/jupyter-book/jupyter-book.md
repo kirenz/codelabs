@@ -240,9 +240,9 @@ ghp-import -n -p -f mynewbook/_build/html
 You should never edit files in your gh-pages branch by hand.
 <aside>
 
+
 <!-- ------------------------ -->
 ## What's next?
-
 Duration: 0:02:00
 
 Congratulations! You have completed the tutorial and learned how to:
