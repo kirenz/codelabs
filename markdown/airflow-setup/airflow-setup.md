@@ -82,13 +82,13 @@ pip install virtualenv
 
 (3) Next, Airflow needs a home. `your-home-directory/airflow` is the default, but you can put it somewhere else if you prefer (optional). 
 
-*Here is the command for **Mac** and **Linux**:* 
+*Here is the command for Mac and Linux:* 
 
 ```bash
 export AIRFLOW_HOME=~/airflow
 ```
 
-*If you use **Windows**, either provide the full path:*
+*If you use Windows, either provide the full path:*
 
 ```bash
 SET AIRFLOW_HOME=C:\Users\<YourUserName>\airflow
@@ -96,8 +96,7 @@ SET AIRFLOW_HOME=C:\Users\<YourUserName>\airflow
 
 *or (alternatively to the full path) use this approach*
 
-```ba
-sh
+```bash
 SET AIRFLOW_HOME=%USERPROFILE%\airflow
 ```
 
@@ -125,7 +124,7 @@ airflow standalone
 
 (8) Visit this site in your browser: [http://0.0.0.0:8080](http://0.0.0.0:8080) and provide `username` and `password`.
 
-(9) Enable the example_bash_operator dag in the home page and start experimenting with Airflow.
+(9) Start experimenting with Airflow.
 
 <!-- ------------------------ -->
 ## What's next?
