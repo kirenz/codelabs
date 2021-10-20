@@ -99,7 +99,7 @@ We are going to follow these [instructions](https://jupyterbook.org/basics/creat
 
 - `cd`into your folder
 
-´´´bash
+```bash
 cd books
 ´´´
 
