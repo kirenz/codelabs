@@ -248,9 +248,9 @@ Duration: 0:02:00
 Congratulations! You have completed the tutorial and learned how to:
 
 ✅ Create a virtual environment for your Jupyter book  
-✅ Install Jupyter book in your virtual environment
-✅ Create a Jupyter book
-✅ Publish your book with GitHub Pages
+✅ Install Jupyter book in your virtual environment  
+✅ Create a Jupyter book  
+✅ Publish your book with GitHub Pages  
 
 Next, you may want to proceed with this tutorial to create a more complex book:
 
