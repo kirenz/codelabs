@@ -238,7 +238,7 @@ ghp-import -n -p -f mynewbook/_build/html
 
 <aside class="negative">
 You should never edit files in your gh-pages branch by hand.
-<aside>
+</aside>
 
 
 <!-- ------------------------ -->
