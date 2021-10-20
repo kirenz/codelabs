@@ -78,9 +78,22 @@
 <pre><code language="language-bash" class="language-bash">pip install virtualenv
 </code></pre>
 <ol type="1">
-<li>Next, Airflow needs a home. <code>~/airflow</code> is the default, but you can put it somewhere else if you prefer (optional). Here is the command for Mac and Linux (if you use Windows, review this <a href="https://stackoverflow.com/questions/18701783/windows-equivalent-of-export/18702064" target="_blank">hint at stackoverflow</a> )</li>
+<li>Next, Airflow needs a home. <code>your-home-directory/airflow</code> is the default, but you can put it somewhere else if you prefer (optional).<ul>
+<li>Here is the command for <strong>Mac</strong> and <strong>Linux</strong>:</li>
+</ul>
+</li>
 </ol>
 <pre><code language="language-bash" class="language-bash">export AIRFLOW_HOME=~/airflow
+</code></pre>
+<ul>
+<li>If you use <strong>Windows</strong>, either provide the full path:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">SET AIRFLOW_HOME=C:\Users\&lt;YourUserName&gt;\airflow
+</code></pre>
+<ul>
+<li>or (alternatively) use this approach</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">SET AIRFLOW_HOME=%USERPROFILE%\airflow
 </code></pre>
 <ol type="1">
 <li>Install Airflow with the following constraints file. We use Airflow Version &#34;2.2.0&#34; and Python &#34;3.9.&#34;:</li>

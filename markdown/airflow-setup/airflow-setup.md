@@ -80,10 +80,24 @@ conda activate airflow
 pip install virtualenv
 ```
 
-1. Next, Airflow needs a home. `~/airflow` is the default, but you can put it somewhere else if you prefer (optional). Here is the command for Mac and Linux (if you use Windows, review this [hint at stackoverflow](https://stackoverflow.com/questions/18701783/windows-equivalent-of-export/18702064) )
+1. Next, Airflow needs a home. `your-home-directory/airflow` is the default, but you can put it somewhere else if you prefer (optional). 
+
+    - Here is the command for **Mac** and **Linux**: 
 
 ```bash
 export AIRFLOW_HOME=~/airflow
+```
+
+   - If you use **Windows**, either provide the full path:
+
+```bash
+SET AIRFLOW_HOME=C:\Users\<YourUserName>\airflow
+```
+
+  - or (alternatively) use this approach
+
+```bash
+SET AIRFLOW_HOME=%USERPROFILE%\airflow
 ```
 
 1. Install Airflow with the following constraints file. We use Airflow Version "2.2.0" and Python "3.9.": 
