@@ -97,11 +97,12 @@ We are going to follow these [instructions](https://jupyterbook.org/basics/creat
 
 - create a new folder of your choice (I created a folder with the name `books`).
 
-- `cd`into your folder
+- cd into your folder
+
 
 ```bash
 cd books
-´´´
+```
 
 - Create the book:
 
