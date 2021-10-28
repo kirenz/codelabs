@@ -231,10 +231,11 @@ To update your online book:
 jupyter-book build mynewbook/
 ```
 
+- cd into your book  
 - As before use `ghp-import` to push the newly built HTML to the gh-pages branch:
 
 ```bash
-ghp-import -n -p -f mynewbook/_build/html 
+ghp-import -n -p -f _build/html 
 ```
 
 <aside class="negative">
