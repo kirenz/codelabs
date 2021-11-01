@@ -1,0 +1,22 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-08-29T14:34:28+02:00",
+  "id": "dash-first-app",
+  "duration": 24,
+  "title": "Title",
+  "summary": "",
+  "source": "dash-first-app.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": null,
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/dash-first-app",
+  "url": "dash-first-app"
+}

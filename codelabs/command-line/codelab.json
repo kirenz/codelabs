@@ -1,0 +1,22 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-08-29T10:07:24+02:00",
+  "id": "command-line",
+  "duration": 24,
+  "title": "First steps with Command Line",
+  "summary": "",
+  "source": "command-line.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": null,
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/command-line",
+  "url": "command-line"
+}

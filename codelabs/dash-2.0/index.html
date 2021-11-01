@@ -22,18 +22,14 @@
 <body>
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid=""
-                  id="dash-setup"
+                  id="dash-2.0"
                   title="Dash installation tutorial"
                   environment="web"
-                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/dash-setup">
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/dash-2.0">
     
       <google-codelab-step label="Overview" duration="1">
         <h2 is-upgraded>What we cover</h2>
-<p>In this tutorial we are going to use Anaconda to install <code>Dash</code> on your system.</p>
-<p class="image-container"><img alt="Dash Dashboard" style="width: 200.00px" src="img/c0adfd4c2c53f9c5.png"></p>
-<p>Dash is a Python framework provided by plotly for building web applications. Written on top of <code>Flask</code>, <code>Plotly.js</code>, and <code>React.js</code>, Dash is ideal for building data visualization apps with highly custom user interfaces in pure Python. It&#39;s particularly suited for anyone who works with data in Python.</p>
-<aside class="special"><p> Dash apps give a point-&amp;-click interface to models written in Python, R, and Julia </p>
-</aside>
+<p>In this tutorial we are going to install the preview version on Dash 2.0.</p>
 
 
       </google-codelab-step>
@@ -53,8 +49,8 @@
       <google-codelab-step label="Create Virtual Environment" duration="5">
         <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.</p>
 <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
-<p>We create an environment with a specific version of Python (3.8) . We call the environment <code>dash</code>:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n dash python=3.8
+<p>We create an environment with a specific version of Python (3.9) . We call the environment <code>dash</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n dash2 python=3.9
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
 
@@ -63,13 +59,13 @@
     
       <google-codelab-step label="Installation of modules" duration="5">
         <p>First, you need to activate your environment as follows:</p>
-<pre><code language="language-bash" class="language-bash">conda activate dash
+<pre><code language="language-bash" class="language-bash">conda activate dash2
 </code></pre>
 <p>Now we can install modules in our environment.</p>
-<p>To do this, we could use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> (pip is the standard package installer for Python) or <strong>conda</strong> (open source package management system from Anaconda). To learn the differences between the two options, see this article <a href="https://www.anaconda.com/blog/understanding-conda-and-pip" target="_blank">&#34;Understanding Conda and Pip&#34;</a>.</p>
-<p>Here, we use conda to install dash and some additional modules. When conda asks you to proceed <code>(proceed ([y]/n)?</code>), simply type <code>y</code>.</p>
+<p>To do this, we use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> (pip is the standard package installer for Python) or <strong>conda</strong> (open source package management system from Anaconda). To learn the differences between the two options, see this article <a href="https://www.anaconda.com/blog/understanding-conda-and-pip" target="_blank">&#34;Understanding Conda and Pip&#34;</a>.</p>
+<p>Here, we use conda to install dash-labs and some additional modules.</p>
 <ul>
-<li><a href="https://anaconda.org/conda-forge/dash" target="_blank">Dash</a>:</li>
+<li><a href="https://anaconda.org/conda-forge/dash" target="_blank">Dash 2.0</a>:</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">conda install -c conda-forge dash
 </code></pre>
@@ -90,15 +86,9 @@
       <google-codelab-step label="What&#39;s next?" duration="2">
         <p>Congratulations! You have completed the tutorial and learned how to:</p>
 <p>✅ Create a virtual environment for dash<br> ✅ Install Python modules in your virtual dash environment</p>
-<p>Next, you may want to proceed with this tutorials to build your first dash apps:</p>
+<p>Next, you may want to proceed with this tutorial provided by plotly to build your first dash app:</p>
 <ul>
-<li><a href="https://github.com/kirenz/dash-tutorial" target="_blank">Dash tutorials</a></li>
-</ul>
-<p>More resources:</p>
-<ul>
-<li><a href="https://dash.gallery/Portal/" target="_blank">Dashboard gallery</a></li>
-<li><a href="https://plotly.com/dash-community-components/" target="_blank">Dash community components</a></li>
-<li><a href="https://github.com/ucg8j/awesome-dash" target="_blank">Collection of Dash resources</a></li>
+<li><a href="https://dash.plotly.com/layout" target="_blank">Dash tutorial</a></li>
 </ul>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
 <p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>

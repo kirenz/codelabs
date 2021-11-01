@@ -3,12 +3,12 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2021-10-14T19:08:23+02:00",
-  "id": "dash-setup",
+  "updated": "2021-08-29T22:33:04+02:00",
+  "id": "dash-2.0",
   "duration": 20,
   "title": "Dash installation tutorial",
   "summary": "",
-  "source": "dash-setup.md",
+  "source": "dash-2.0.md",
   "theme": "",
   "status": [
     "published"
@@ -17,6 +17,6 @@
   "tags": [
     "web"
   ],
-  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/dash-setup",
-  "url": "dash-setup"
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/dash-2.0",
+  "url": "dash-2.0"
 }
