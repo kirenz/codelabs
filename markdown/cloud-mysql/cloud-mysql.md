@@ -65,7 +65,7 @@ Duration: 0:05:00
 
 4. Choose MySQL
 
-5. Enable API 
+5. Probably you need to click on Enable API  
 
 
 
