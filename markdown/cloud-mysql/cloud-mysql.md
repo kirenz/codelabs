@@ -162,23 +162,57 @@ gcloud sql connect sql-database --user=root --quiet
 Duration: 0:05:00
 
 
+In this section we use SQL code. You can copy the code and paste it into the shell window.
+
+
+
 1. Next, we use SQL to create a database. We call it `mydatabase`
 
-```bash
+```sql
 CREATE DATABASE mydatabase;
 ```
 
 1. Switch to the database by entering the following command into the shell:
 
-```bash
+```sql
 USE mydatabase;
 ```
 
+1. Create a table inside the database. We call the table "teachers"
+
+```sql
+CREATE TABLE teachers (
+    id serial,
+    first_name varchar(25),
+    last_name varchar(50),
+    school varchar(50),
+    hire_date date,
+    salary numeric
+    );
+```
+
+1. Insert values in the table:
+
+```sql
+INSERT INTO teachers (first_name, last_name, school, hire_date, salary)
+VALUES ('Janet', 'Smith', 'F.D. Roosevelt HS', '2011-10-30', 36200), 
+       ('Lee', 'Reynolds', 'F.D. Roosevelt HS', '1993-05-22', 65000),
+       ('Samuel', 'Cole', 'Myers Middle School', '2005-08-01', 43500),
+       ('Samantha', 'Bush', 'Myers Middle School', '2011-10-30', 36200),
+       ('Betty', 'Diaz', 'Myers Middle School', '2005-08-30', 43500),
+       ('Kathleen', 'Roush', 'F.D. Roosevelt HS', '2010-10-22',38500 );
+```
+
+1. Make a SQL-query:
+
+```sql
+SELECT *
+FROM mydatabase.teachers;
+```
+
+<img src="img/4-sql-select.png" alt="" width="100">
 
 
-![https://codepen.io/tzoght/embed/yRNZaP](https://en.wikipedia.org/wiki/File:Example.jpg "Try Me Publisher")
-
-Txt
 
 <!-- ------------------------ -->
 ## What's next?
