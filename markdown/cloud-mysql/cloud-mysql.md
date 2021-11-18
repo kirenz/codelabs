@@ -14,7 +14,7 @@ feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/cloud-mys
 
 Duration: 0:02:00
 
-In this tutorial you learn how to create a SQL database (using [MySQL](https://www.mysql.com)) in Google Cloud hand how to connect the database with [Google Datastudio](https://datastudio.google.com). 
+In this tutorial you learn how to create a SQL database (using [MySQL](https://www.mysql.com)) in Google Cloud and how to connect the database with [Google Datastudio](https://datastudio.google.com). 
 
 <aside class="positive">
 You need a Google Cloud account for this tutorial 
@@ -25,9 +25,8 @@ You need a Google Cloud account for this tutorial
 
 - Create a SQL database in Google Cloud
 - Use the SQL server with cloud shell
-- Create a database and insert data
+- Use SQL to create a database and a table
 - Connect the database with Google Datastudio 
-- Create a report in Google Datastudio
 
 
 <!-- ------------------------ -->
@@ -49,37 +48,35 @@ First you need to create a new project in Google Cloud:
 
 1. Go to the [Google Cloud console](https://console.cloud.google.com) and log in with your account.
 
-2. At the top of the menu, click on the "project selection" button between Google Cloud Platform and the search field.
+1. At the left side at the top of the menu, click on the "project selection" button (located between "Google Cloud Platform" and the search field).
 
 <img src="img/1-database.png" alt="database" width="100">
 
-3. Click on "NEW PROJECT" and call it "bigdata"
+1. Click on "NEW PROJECT" and call it "bigdata"
 
 <img src="img/1b-new-project.png" alt="" width="100">
 
-4. In the project selection, choose your project "bigdata"
+1. In the project selection, choose your project "bigdata"
 
 <!-- ------------------------ -->
 ## Activate Cloud SQL Admin API
 
-Duration: 0:02:00
+Duration: 0:01:00
 
-1. Go to the search field at the top of the page and enter "Cloud SQL Admin API". Select the Cloud SQL Admin API:
+1. Go to the search field at the top of the page and enter "Cloud SQL Admin API". Select the Cloud SQL Admin API from the marketplace:
 
 <img src="img/1c-sql-admin.png" alt="" width="100">
 
-1. Enable the API
+1. Enable the API:
 
 <img src="img/1d-enable-api.png" alt="" width="100">
 
-
 <!-- ------------------------ -->
-## Create SQL database
+## Create a SQL database
 
 Duration: 0:05:00
 
-
-1. Click on the navigation menu on the left
+1. Click on the navigation menu on the left side at the top of the page
 
 1. Under "DATABASES" select "SQL"
 
@@ -96,39 +93,38 @@ Duration: 0:05:00
 <img src="img/2b-mysql.png" alt="" width="100">
 
 
-1. Probably you need to enable the API first. Click on "Enable API"  
+1. If this is the first time that you create a SQL database in Google Cloud, you need to enable the API. Click on "Enable API"  
 
 <img src="img/2c-enable-API.png" alt="" width="100">
 
 
 1. Provide the following information and click on "CREATE INSTANCE":
 
-Note: We won't use a password to make the following steps easier. However, in real projects you should alwas use a strong password.
+Note: We won't use a password to make the following steps easier. However, in real projects you should always use a strong password.
 
 - Instance ID: sql-database
-- Password: Select no password 
+- Password: "Select no password at the checkbox" 
 - Database version: MySQL 8.0
 - Region: us-central (Iowa)
 - Zonal availability: Multiple zones
 
 <img src="img/2d-instance.png" alt="" width="100">
 
-
 <!-- ------------------------ -->
 ## SQL cloud shell
 
 Duration: 0:05:00
 
-1. You should see the following overview
+1. You should see the following overview:
 
 <img src="img/3-sql-overview.png" alt="" width="100">
 
-1. In the window "Connect to this instance", click on "OPEN CLOUD SHELL" to connect. This will open a terminal at the bottom of the page:
+1. In the window "Connect to this instance", click on "OPEN CLOUD SHELL" to connect. This will open a black terminal at the bottom of the page:
 
 <img src="img/3a-cloud-shell.png" alt="" width="100">
 
 
-1. In the terminal, the following code should be already visible:
+1. In the terminal, the following code should be already visible (visit this [documentation](https://cloud.google.com/sdk/gcloud/reference/sql/connect) to learn more):
 
 ```bash
 gcloud sql connect sql-database --user=root --quiet
