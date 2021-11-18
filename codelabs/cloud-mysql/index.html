@@ -56,11 +56,11 @@
 <li>Go to the <a href="https://console.cloud.google.com" target="_blank">Google Cloud console</a> and log in with your account.</li>
 <li>At the left side at the top of the menu, click on the &#34;project selection&#34; button (located between &#34;Google Cloud Platform&#34; and the search field).</li>
 </ol>
-<p class="image-container"><img alt="database" style="width: 250.00px" src="img/645796afe1ac1f57.png"></p>
+<p class="image-container"><img alt="database" style="width: 500.00px" src="img/645796afe1ac1f57.png"></p>
 <ol type="1">
 <li>Click on &#34;NEW PROJECT&#34; and call it &#34;bigdata&#34;</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/a3ebadb8a7f2835b.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/a3ebadb8a7f2835b.png"></p>
 <ol type="1">
 <li>In the project selection, choose your project &#34;bigdata&#34;</li>
 </ol>
@@ -72,11 +72,11 @@
         <ol type="1">
 <li>Go to the search field at the top of the page and enter &#34;Cloud SQL Admin API&#34;. Select the Cloud SQL Admin API from the marketplace:</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/7a681809f8b09dc4.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/7a681809f8b09dc4.png"></p>
 <ol type="1">
 <li>Enable the API:</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/a21ab5a084c91984.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/a21ab5a084c91984.png"></p>
 
 
       </google-codelab-step>
@@ -86,19 +86,19 @@
 <li>Click on the navigation menu on the left side at the top of the page</li>
 <li>Under &#34;DATABASES&#34; select &#34;SQL&#34;</li>
 </ol>
-<p class="image-container"><img alt="database" style="width: 250.00px" src="img/aa997bfe2c62b4be.png"></p>
+<p class="image-container"><img alt="database" style="width: 500.00px" src="img/aa997bfe2c62b4be.png"></p>
 <ol type="1">
 <li>Click on &#34;Create Instance&#34;</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/75257b7e7a9028e9.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/75257b7e7a9028e9.png"></p>
 <ol type="1">
 <li>Choose MySQL</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/eec42bc99d18c7ab.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/eec42bc99d18c7ab.png"></p>
 <ol type="1">
 <li>If this is the first time that you create a SQL database in Google Cloud, you need to enable the API. Click on &#34;Enable API&#34;</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/d29845908d66cc8a.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/d29845908d66cc8a.png"></p>
 <ol type="1">
 <li>Provide the following information and click on &#34;CREATE INSTANCE&#34;:</li>
 </ol>
@@ -110,7 +110,7 @@
 <li>Region: us-central (Iowa)</li>
 <li>Zonal availability: Multiple zones</li>
 </ul>
-<p class="image-container"><img style="width: 250.00px" src="img/b046a2af7455c896.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/b046a2af7455c896.png"></p>
 <aside class="special"><p> If you want lo learn more about advanced options if you create an instance, visit this [documentation](https://cloud.google.com/sql/docs/mysql/create-instance). </p>
 </aside>
 
@@ -121,11 +121,11 @@
         <ol type="1">
 <li>You should see the following overview:</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/6215c572820a0d4d.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/6215c572820a0d4d.png"></p>
 <ol type="1">
 <li>In the window &#34;Connect to this instance&#34;, click on &#34;OPEN CLOUD SHELL&#34; to connect. This will open a black terminal at the bottom of the page:</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/af997d9e78290a0e.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/af997d9e78290a0e.png"></p>
 <ol type="1">
 <li>In the terminal, the following code should be already visible (visit this <a href="https://cloud.google.com/sdk/gcloud/reference/sql/connect" target="_blank">documentation</a> to learn more):</li>
 </ol>
@@ -135,19 +135,19 @@
 <li>Navigate inside the terminal and press enter.</li>
 <li>Now you should see a pop-up window. Authorize cloud shell:</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/845b7a420b0f91c6.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/845b7a420b0f91c6.png"></p>
 <ol type="1">
 <li>Optional: If you don&#39;t click on the authorization immediately, you may get a error message. In that case, first authorize the cloud shell and again enter <code>gcloud sql connect sql-database --user=root --quiet</code> in the terminal. If you still get an error, check the hints at the end of this section.</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/5a88580d51448f47.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/5a88580d51448f47.png"></p>
 <ol type="1">
 <li>Next you need to enter the password. Since we choose to use no password, you only need to press enter.</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/72610afac5fe62f6.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/72610afac5fe62f6.png"></p>
 <ol type="1">
 <li>You should see the following screen:</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/293eb006c152b749.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/293eb006c152b749.png"></p>
 <aside class="warning"><p> Note: If you should have troubles to connect to your database, make sure you have the Cloud SQL Admin and Compute Viewer roles on your user account. In Google Cloud, navigate to the [identity and access management (IAM) page](https://console.cloud.google.com/iam-admin/iam?_ga=2.188518954.367718554.1637234253-833492673.1631961616&amp;_gac=1.24091080.1637070889.Cj0KCQiAys2MBhDOARIsAFf1D1faRohOXdVaN5UQ-cMaSMy0OK75I2zeKTvDGykdbfS7bYbq69hUsmwaAvZPEALw_wcB). For more information regarding IAM, visit this [site](https://cloud.google.com/sql/docs/mysql/create-instance). </p>
 </aside>
 
@@ -195,7 +195,7 @@ VALUES (&#39;Janet&#39;, &#39;Smith&#39;, &#39;F.D. Roosevelt HS&#39;, &#39;2011
 <pre><code language="language-sql" class="language-sql">SELECT *
 FROM mydatabase.teachers;
 </code></pre>
-<p class="image-container"><img style="width: 250.00px" src="img/80a55236fcf231ff.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/80a55236fcf231ff.png"></p>
 
 
       </google-codelab-step>
@@ -206,7 +206,7 @@ FROM mydatabase.teachers;
 <ol type="1">
 <li>Move to the top of the page in the SQL overview page and click on STOP</li>
 </ol>
-<p class="image-container"><img style="width: 250.00px" src="img/778cbec1367414ed.png"></p>
+<p class="image-container"><img style="width: 500.00px" src="img/778cbec1367414ed.png"></p>
 <aside class="special"><p> If you need the database at a later point in time, you can start it again. </p>
 </aside>
 

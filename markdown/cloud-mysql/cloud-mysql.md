@@ -48,11 +48,11 @@ First you need to create a new project in Google Cloud:
 
 1. At the left side at the top of the menu, click on the "project selection" button (located between "Google Cloud Platform" and the search field).
 
-<img src="img/1-menu.png" alt="database" width="250">
+<img src="img/1-menu.png" alt="database" width="500">
 
 1. Click on "NEW PROJECT" and call it "bigdata"
 
-<img src="img/1b-new-project.png" alt="" width="250">
+<img src="img/1b-new-project.png" alt="" width="500">
 
 1. In the project selection, choose your project "bigdata"
 
@@ -63,11 +63,11 @@ Duration: 0:01:00
 
 1. Go to the search field at the top of the page and enter "Cloud SQL Admin API". Select the Cloud SQL Admin API from the marketplace:
 
-<img src="img/1c-sql-admin.png" alt="" width="250">
+<img src="img/1c-sql-admin.png" alt="" width="500">
 
 1. Enable the API:
 
-<img src="img/1d-enable-api.png" alt="" width="250">
+<img src="img/1d-enable-api.png" alt="" width="500">
 
 <!-- ------------------------ -->
 ## Create a SQL database
@@ -78,22 +78,22 @@ Duration: 0:05:00
 
 1. Under "DATABASES" select "SQL"
 
-<img src="img/2-database.png" alt="database" width="250">
+<img src="img/2-database.png" alt="database" width="500">
 
 
 1. Click on "Create Instance"
 
-<img src="img/2a-create-instance.png" alt="" width="250">
+<img src="img/2a-create-instance.png" alt="" width="500">
 
 
 1. Choose MySQL
 
-<img src="img/2b-mysql.png" alt="" width="250">
+<img src="img/2b-mysql.png" alt="" width="500">
 
 
 1. If this is the first time that you create a SQL database in Google Cloud, you need to enable the API. Click on "Enable API"  
 
-<img src="img/2c-enable-API.png" alt="" width="250">
+<img src="img/2c-enable-API.png" alt="" width="500">
 
 
 1. Provide the following information and click on "CREATE INSTANCE":
@@ -106,7 +106,7 @@ Note: We won't use a password to make the following steps easier. However, in re
 - Region: us-central (Iowa)
 - Zonal availability: Multiple zones
 
-<img src="img/2d-instance.png" alt="" width="250">
+<img src="img/2d-instance.png" alt="" width="500">
 
 
 <aside class="positive">
@@ -120,11 +120,11 @@ Duration: 0:05:00
 
 1. You should see the following overview:
 
-<img src="img/3-sql-overview.png" alt="" width="250">
+<img src="img/3-sql-overview.png" alt="" width="500">
 
 1. In the window "Connect to this instance", click on "OPEN CLOUD SHELL" to connect. This will open a black terminal at the bottom of the page:
 
-<img src="img/3a-cloud-shell.png" alt="" width="250">
+<img src="img/3a-cloud-shell.png" alt="" width="500">
 
 
 1. In the terminal, the following code should be already visible (visit this [documentation](https://cloud.google.com/sdk/gcloud/reference/sql/connect) to learn more):
@@ -138,21 +138,21 @@ gcloud sql connect sql-database --user=root --quiet
 
 1. Now you should see a pop-up window. Authorize cloud shell: 
 
-<img src="img/3b-authorize.png" alt="" width="250">
+<img src="img/3b-authorize.png" alt="" width="500">
 
 
 1. Optional: If you don't click on the authorization immediately, you may get a error message. In that case, first authorize the cloud shell and again enter `gcloud sql connect sql-database --user=root --quiet` in the terminal. If you still get an error, check the hints at the end of this section.
 
-<img src="img/3c-error.png" alt="" width="250">
+<img src="img/3c-error.png" alt="" width="500">
 
 
 1. Next you need to enter the password. Since we choose to use no password, you only need to press enter.
 
-<img src="img/3d-password.png" alt="" width="250">
+<img src="img/3d-password.png" alt="" width="500">
 
 1. You should see the following screen:
 
-<img src="img/3e-mysql.png" alt="" width="250">
+<img src="img/3e-mysql.png" alt="" width="500">
 
 
 <aside class="negative">
@@ -210,7 +210,7 @@ SELECT *
 FROM mydatabase.teachers;
 ```
 
-<img src="img/4-sql-select.png" alt="" width="250">
+<img src="img/4-sql-select.png" alt="" width="500">
 
 <!-- ------------------------ -->
 ## Stop SQL database 
@@ -223,7 +223,7 @@ Review [this site](https://cloud.google.com/sql/pricing#mysql-pg-pricing) if you
 
 1. Move to the top of the page in the SQL overview page and click on STOP 
 
-<img src="img/5-stop.png" alt="" width="250">
+<img src="img/5-stop.png" alt="" width="500">
 
 
 <aside class="positive">
