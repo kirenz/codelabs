@@ -78,7 +78,7 @@ Duration: 0:05:00
 
 1. Under "DATABASES" select "SQL"
 
-<img src="img/2-database.png" alt="database" width="500">
+<img src="img/2-database.png" alt="database" width="150">
 
 
 1. Click on "Create Instance"
@@ -109,9 +109,8 @@ Note: We won't use a password to make the following steps easier. However, in re
 <img src="img/2d-instance.png" alt="" width="500">
 
 
-<aside class="positive">
 If you want lo learn more about advanced options if you create an instance, visit this [documentation](https://cloud.google.com/sql/docs/mysql/create-instance).
-</aside>
+
 
 <!-- ------------------------ -->
 ## SQL cloud shell
@@ -232,7 +231,7 @@ If you need the database at a later point in time, you can start it again.
 
 
 <!-- ------------------------ -->
-## What's next?
+## Congratulations!
 
 Duration: 0:02:00
 
