@@ -14,7 +14,7 @@ feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/cloud-mys
 
 Duration: 0:02:00
 
-In this tutorial you learn how to create a SQL database (using [MySQL](https://www.mysql.com)) in Google Cloud and how to connect the database with [Google Datastudio](https://datastudio.google.com). 
+In this tutorial you learn how to create a SQL database (using [MySQL](https://www.mysql.com)) in Google Cloud and how to create a database and table. 
 
 <aside class="positive">
 You need a Google Cloud account for this tutorial 
@@ -26,7 +26,6 @@ You need a Google Cloud account for this tutorial
 - Create a SQL database in Google Cloud
 - Use the SQL server with cloud shell
 - Use SQL to create a database and a table
-- Connect the database with Google Datastudio 
 
 
 <!-- ------------------------ -->
@@ -37,7 +36,6 @@ Duration: 0:01:00
 To start this tutorial, you need the following setup:
 
 - Access to Google Cloud (you may use the teaching credits or the [90-day, $300 Free Trial](https://cloud.google.com/free/docs/gcp-free-tier)).
-- [Google account](myaccount.google.com) to access Google Datastudio
 
 <!-- ------------------------ -->
 ## Create a project
@@ -110,6 +108,11 @@ Note: We won't use a password to make the following steps easier. However, in re
 
 <img src="img/2d-instance.png" alt="" width="100">
 
+
+<aside class="positive">
+If you want lo learn more about advanced options if you create an instance, visit this [documentation](https://cloud.google.com/sql/docs/mysql/create-instance).
+</aside>
+
 <!-- ------------------------ -->
 ## SQL cloud shell
 
@@ -130,7 +133,7 @@ Duration: 0:05:00
 gcloud sql connect sql-database --user=root --quiet
 ```
 
-1. Navigate in the terminal and press enter.
+1. Navigate inside the terminal and press enter.
 
 
 1. Now you should see a pop-up window. Authorize cloud shell: 
@@ -138,7 +141,7 @@ gcloud sql connect sql-database --user=root --quiet
 <img src="img/3b-authorize.png" alt="" width="100">
 
 
-1. Optional: If you don't click on the authorization immediately, you may get a error message. In that case, first authorize the cloud shell and again enter `gcloud sql connect sql-database --user=root --quiet`in the terminal.
+1. Optional: If you don't click on the authorization immediately, you may get a error message. In that case, first authorize the cloud shell and again enter `gcloud sql connect sql-database --user=root --quiet` in the terminal. If you still get an error, check the hints at the end of this section.
 
 <img src="img/3c-error.png" alt="" width="100">
 
@@ -152,15 +155,16 @@ gcloud sql connect sql-database --user=root --quiet
 <img src="img/3e-mysql.png" alt="" width="100">
 
 
+<aside class="negative">
+Note: If you should have troubles to connect to your database, make sure you have the Cloud SQL Admin and Compute Viewer roles on your user account. In Google Cloud, navigate to the [identity and access management (IAM) page](https://console.cloud.google.com/iam-admin/iam?_ga=2.188518954.367718554.1637234253-833492673.1631961616&_gac=1.24091080.1637070889.Cj0KCQiAys2MBhDOARIsAFf1D1faRohOXdVaN5UQ-cMaSMy0OK75I2zeKTvDGykdbfS7bYbq69hUsmwaAvZPEALw_wcB). For more information regarding IAM, visit this [site](https://cloud.google.com/sql/docs/mysql/create-instance).
+</aside>
+
 <!-- ------------------------ -->
-## Create a database
+## Create database and table
 
 Duration: 0:05:00
 
-
-In this section we use SQL code. You can copy the code and paste it into the shell window.
-
-
+In this section we use SQL code to create a database and table. You can copy the code and paste it into the shell window.
 
 1. Next, we use SQL to create a database. We call it `mydatabase`
 
@@ -199,7 +203,7 @@ VALUES ('Janet', 'Smith', 'F.D. Roosevelt HS', '2011-10-30', 36200),
        ('Kathleen', 'Roush', 'F.D. Roosevelt HS', '2010-10-22',38500 );
 ```
 
-1. Make a SQL-query:
+1. Make a SQL-query to select all content from the table:
 
 ```sql
 SELECT *
@@ -208,6 +212,23 @@ FROM mydatabase.teachers;
 
 <img src="img/4-sql-select.png" alt="" width="100">
 
+<!-- ------------------------ -->
+## Stop SQL database 
+
+Duration: 0:01:00
+
+Since you pay your Cloud database by use, it makes sense to stop the instance if you don't need it anymore.
+
+Review [this site](https://cloud.google.com/sql/pricing#mysql-pg-pricing) if you want to learn more about the pricing for SQL databases in Google Cloud.
+
+1. Move to the top of the page in the SQL overview page and click on STOP 
+
+<img src="img/5-stop.png" alt="" width="100">
+
+
+<aside class="positive">
+If you need the database at a later point in time, you can start it again.
+</aside>
 
 
 <!-- ------------------------ -->
@@ -217,13 +238,9 @@ Duration: 0:02:00
 
 Congratulations! You have completed the tutorial and learned how to:
 
-✅ Install  
-✅ Use  
-✅ Implement  
-
-Next, you may want to proceed with this tutorial:
-
-- 💻[](https://kirenz.github.io/codelabs/codelabs/cloud-mysql
+✅ Create a project in Google Cloud  
+✅ Set up a Cloud SQL database  
+✅ Use the cloud shell and SQL to create a database and table
 
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
