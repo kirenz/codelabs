@@ -44,28 +44,28 @@ Duration: 0:02:00
 
 First you need to create a new project in Google Cloud:
 
-1. Go to the [Google Cloud console](https://console.cloud.google.com) and log in with your account.
+- Go to the [Google Cloud console](https://console.cloud.google.com) and log in with your account.
 
-1. At the left side at the top of the menu, click on the "project selection" button (located between "Google Cloud Platform" and the search field).
+- At the left side at the top of the menu, click on the "project selection" button (located between "Google Cloud Platform" and the search field).
 
 <img src="img/1-menu.png" alt="database" width="500">
 
-1. Click on "NEW PROJECT" and call it "bigdata"
+- Click on "NEW PROJECT" and call it "bigdata"
 
 <img src="img/1b-new-project.png" alt="" width="500">
 
-1. In the project selection, choose your project "bigdata"
+- In the project selection, choose your project "bigdata"
 
 <!-- ------------------------ -->
 ## Activate Cloud SQL Admin API
 
 Duration: 0:01:00
 
-1. Go to the search field at the top of the page and enter "Cloud SQL Admin API". Select the Cloud SQL Admin API from the marketplace:
+- Go to the search field at the top of the page and enter "Cloud SQL Admin API". Select the Cloud SQL Admin API from the marketplace:
 
 <img src="img/1c-sql-admin.png" alt="" width="500">
 
-1. Enable the API:
+- Enable the API:
 
 <img src="img/1d-enable-api.png" alt="" width="500">
 
@@ -74,29 +74,29 @@ Duration: 0:01:00
 
 Duration: 0:05:00
 
-1. Click on the navigation menu on the left side at the top of the page
+- Click on the navigation menu on the left side at the top of the page
 
-1. Under "DATABASES" select "SQL"
+- Under "DATABASES" select "SQL"
 
 <img src="img/2-database.png" alt="database" width="150">
 
 
-1. Click on "Create Instance"
+- Click on "Create Instance"
 
 <img src="img/2a-create-instance.png" alt="" width="500">
 
 
-1. Choose MySQL
+- Choose MySQL
 
 <img src="img/2b-mysql.png" alt="" width="500">
 
 
-1. If this is the first time that you create a SQL database in Google Cloud, you need to enable the API. Click on "Enable API"  
+- If this is the first time that you create a SQL database in Google Cloud, you need to enable the API. Click on "Enable API"  
 
 <img src="img/2c-enable-API.png" alt="" width="500">
 
 
-1. Provide the following information and click on "CREATE INSTANCE":
+- Provide the following information and click on "CREATE INSTANCE":
 
 Note: We won't use a password to make the following steps easier. However, in real projects you should always use a strong password.
 
@@ -117,46 +117,46 @@ If you want lo learn more about advanced options if you create an instance, visi
 
 Duration: 0:05:00
 
-1. You should see the following overview:
+- You should see the following overview:
 
 <img src="img/3-sql-overview.png" alt="" width="500">
 
-1. In the window "Connect to this instance", click on "OPEN CLOUD SHELL" to connect. This will open a black terminal at the bottom of the page:
+- In the window "Connect to this instance", click on "OPEN CLOUD SHELL" to connect. This will open a black terminal at the bottom of the page:
 
 <img src="img/3a-cloud-shell.png" alt="" width="500">
 
 
-1. In the terminal, the following code should be already visible (visit this [documentation](https://cloud.google.com/sdk/gcloud/reference/sql/connect) to learn more):
+- In the terminal, the following code should be already visible (visit this [documentation](https://cloud.google.com/sdk/gcloud/reference/sql/connect) to learn more):
 
 ```bash
 gcloud sql connect sql-database --user=root --quiet
 ```
 
-1. Navigate inside the terminal and press enter.
+- Navigate inside the terminal and press enter.
 
 
-1. Now you should see a pop-up window. Authorize cloud shell: 
+- Now you should see a pop-up window. Authorize cloud shell: 
 
 <img src="img/3b-authorize.png" alt="" width="500">
 
 
-1. Optional: If you don't click on the authorization immediately, you may get a error message. In that case, first authorize the cloud shell and again enter `gcloud sql connect sql-database --user=root --quiet` in the terminal. If you still get an error, check the hints at the end of this section.
+- Optional: If you don't click on the authorization immediately, you may get a error message. In that case, first authorize the cloud shell and again enter `gcloud sql connect sql-database --user=root --quiet` in the terminal. If you still get an error, check the hints at the end of this section.
 
 <img src="img/3c-error.png" alt="" width="500">
 
 
-1. Next you need to enter the password. Since we choose to use no password, you only need to press enter.
+- Next you need to enter the password. Since we choose to use no password, you only need to press enter.
 
 <img src="img/3d-password.png" alt="" width="500">
 
-1. You should see the following screen:
+- You should see the following screen:
 
 <img src="img/3e-mysql.png" alt="" width="500">
 
 
-<aside class="negative">
-Note: If you should have troubles to connect to your database, make sure you have the Cloud SQL Admin and Compute Viewer roles on your user account. In Google Cloud, navigate to the [identity and access management (IAM) page](https://console.cloud.google.com/iam-admin/iam?_ga=2.188518954.367718554.1637234253-833492673.1631961616&_gac=1.24091080.1637070889.Cj0KCQiAys2MBhDOARIsAFf1D1faRohOXdVaN5UQ-cMaSMy0OK75I2zeKTvDGykdbfS7bYbq69hUsmwaAvZPEALw_wcB). For more information regarding IAM, visit this [site](https://cloud.google.com/sql/docs/mysql/create-instance).
-</aside>
+
+Note: If you should have troubles to connect to your database, make sure you have the Cloud SQL Admin and Compute Viewer roles on your user account. In Google Cloud, navigate to the [identity and access management (IAM) page](https://console.cloud.google.com/iam-admin/iam?_ga=2.188518954.367718554.1637234253-833492673.1631961616&_gac=-24091080.1637070889.Cj0KCQiAys2MBhDOARIsAFf1D1faRohOXdVaN5UQ-cMaSMy0OK75I2zeKTvDGykdbfS7bYbq69hUsmwaAvZPEALw_wcB). For more information regarding IAM, visit this [site](https://cloud.google.com/sql/docs/mysql/create-instance).
+
 
 <!-- ------------------------ -->
 ## Create database and table
@@ -165,19 +165,19 @@ Duration: 0:05:00
 
 In this section we use SQL code to create a database and table. You can copy the code and paste it into the shell window.
 
-1. Next, we use SQL to create a database. We call it `mydatabase`
+- Next, we use SQL to create a database. We call it `mydatabase`
 
 ```sql
 CREATE DATABASE mydatabase;
 ```
 
-1. Switch to the database by entering the following command into the shell:
+- Switch to the database by entering the following command into the shell:
 
 ```sql
 USE mydatabase;
 ```
 
-1. Create a table inside the database. We call the table "teachers"
+- Create a table inside the database. We call the table "teachers"
 
 ```sql
 CREATE TABLE teachers (
@@ -190,7 +190,7 @@ CREATE TABLE teachers (
     );
 ```
 
-1. Insert values in the table:
+- Insert values in the table:
 
 ```sql
 INSERT INTO teachers (first_name, last_name, school, hire_date, salary)
@@ -202,7 +202,7 @@ VALUES ('Janet', 'Smith', 'F.D. Roosevelt HS', '2011-10-30', 36200),
        ('Kathleen', 'Roush', 'F.D. Roosevelt HS', '2010-10-22',38500 );
 ```
 
-1. Make a SQL-query to select all content from the table:
+- Make a SQL-query to select all content from the table:
 
 ```sql
 SELECT *
@@ -220,7 +220,7 @@ Since you pay your Cloud database by use, it makes sense to stop the instance if
 
 Review [this site](https://cloud.google.com/sql/pricing#mysql-pg-pricing) if you want to learn more about the pricing for SQL databases in Google Cloud.
 
-1. Move to the top of the page in the SQL overview page and click on STOP 
+- Move to the top of the page in the SQL overview page and click on STOP 
 
 <img src="img/5-stop.png" alt="" width="500">
 
