@@ -1,0 +1,235 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Relational database in Google Cloud</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="cloud-mysql"
+                  title="Relational database in Google Cloud"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/cloud-mysql">
+    
+      <google-codelab-step label="Overview" duration="2">
+        <p>In this tutorial you learn how to create a SQL database (using <a href="https://www.mysql.com" target="_blank">MySQL</a>) in Google Cloud and how to create a database and table.</p>
+<aside class="special"><p> You need a Google Cloud account for this tutorial  </p>
+</aside>
+<h2 is-upgraded>What we cover</h2>
+<ul>
+<li>Create a SQL database in Google Cloud</li>
+<li>Use the SQL server with cloud shell</li>
+<li>Use SQL to create a database and a table</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="1">
+        <p>To start this tutorial, you need the following setup:</p>
+<ul>
+<li>Access to Google Cloud (you may use the teaching credits or the <a href="https://cloud.google.com/free/docs/gcp-free-tier" target="_blank">90-day, $300 Free Trial</a>).</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create a project" duration="2">
+        <p>First you need to create a new project in Google Cloud:</p>
+<ol type="1">
+<li>Go to the <a href="https://console.cloud.google.com" target="_blank">Google Cloud console</a> and log in with your account.</li>
+<li>At the left side at the top of the menu, click on the &#34;project selection&#34; button (located between &#34;Google Cloud Platform&#34; and the search field).</li>
+</ol>
+<p class="image-container"><img alt="database" style="width: 100.00px" src="img/645796afe1ac1f57.png"></p>
+<ol type="1">
+<li>Click on &#34;NEW PROJECT&#34; and call it &#34;bigdata&#34;</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/a3ebadb8a7f2835b.png"></p>
+<ol type="1">
+<li>In the project selection, choose your project &#34;bigdata&#34;</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Activate Cloud SQL Admin API" duration="1">
+        <ol type="1">
+<li>Go to the search field at the top of the page and enter &#34;Cloud SQL Admin API&#34;. Select the Cloud SQL Admin API from the marketplace:</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/7a681809f8b09dc4.png"></p>
+<ol type="1">
+<li>Enable the API:</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/a21ab5a084c91984.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create a SQL database" duration="5">
+        <ol type="1">
+<li>Click on the navigation menu on the left side at the top of the page</li>
+<li>Under &#34;DATABASES&#34; select &#34;SQL&#34;</li>
+</ol>
+<p class="image-container"><img alt="database" style="width: 100.00px" src="img/aa997bfe2c62b4be.png"></p>
+<ol type="1">
+<li>Click on &#34;Create Instance&#34;</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/75257b7e7a9028e9.png"></p>
+<ol type="1">
+<li>Choose MySQL</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/eec42bc99d18c7ab.png"></p>
+<ol type="1">
+<li>If this is the first time that you create a SQL database in Google Cloud, you need to enable the API. Click on &#34;Enable API&#34;</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/d29845908d66cc8a.png"></p>
+<ol type="1">
+<li>Provide the following information and click on &#34;CREATE INSTANCE&#34;:</li>
+</ol>
+<p>Note: We won&#39;t use a password to make the following steps easier. However, in real projects you should always use a strong password.</p>
+<ul>
+<li>Instance ID: sql-database</li>
+<li>Password: &#34;Select no password at the checkbox&#34;</li>
+<li>Database version: MySQL 8.0</li>
+<li>Region: us-central (Iowa)</li>
+<li>Zonal availability: Multiple zones</li>
+</ul>
+<p class="image-container"><img style="width: 100.00px" src="img/b046a2af7455c896.png"></p>
+<aside class="special"><p> If you want lo learn more about advanced options if you create an instance, visit this [documentation](https://cloud.google.com/sql/docs/mysql/create-instance). </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="SQL cloud shell" duration="5">
+        <ol type="1">
+<li>You should see the following overview:</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/6215c572820a0d4d.png"></p>
+<ol type="1">
+<li>In the window &#34;Connect to this instance&#34;, click on &#34;OPEN CLOUD SHELL&#34; to connect. This will open a black terminal at the bottom of the page:</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/af997d9e78290a0e.png"></p>
+<ol type="1">
+<li>In the terminal, the following code should be already visible (visit this <a href="https://cloud.google.com/sdk/gcloud/reference/sql/connect" target="_blank">documentation</a> to learn more):</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">gcloud sql connect sql-database --user=root --quiet
+</code></pre>
+<ol type="1">
+<li>Navigate inside the terminal and press enter.</li>
+<li>Now you should see a pop-up window. Authorize cloud shell:</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/845b7a420b0f91c6.png"></p>
+<ol type="1">
+<li>Optional: If you don&#39;t click on the authorization immediately, you may get a error message. In that case, first authorize the cloud shell and again enter <code>gcloud sql connect sql-database --user=root --quiet</code> in the terminal. If you still get an error, check the hints at the end of this section.</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/5a88580d51448f47.png"></p>
+<ol type="1">
+<li>Next you need to enter the password. Since we choose to use no password, you only need to press enter.</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/72610afac5fe62f6.png"></p>
+<ol type="1">
+<li>You should see the following screen:</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/293eb006c152b749.png"></p>
+<aside class="warning"><p> Note: If you should have troubles to connect to your database, make sure you have the Cloud SQL Admin and Compute Viewer roles on your user account. In Google Cloud, navigate to the [identity and access management (IAM) page](https://console.cloud.google.com/iam-admin/iam?_ga=2.188518954.367718554.1637234253-833492673.1631961616&amp;_gac=1.24091080.1637070889.Cj0KCQiAys2MBhDOARIsAFf1D1faRohOXdVaN5UQ-cMaSMy0OK75I2zeKTvDGykdbfS7bYbq69hUsmwaAvZPEALw_wcB). For more information regarding IAM, visit this [site](https://cloud.google.com/sql/docs/mysql/create-instance). </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create database and table" duration="5">
+        <p>In this section we use SQL code to create a database and table. You can copy the code and paste it into the shell window.</p>
+<ol type="1">
+<li>Next, we use SQL to create a database. We call it <code>mydatabase</code></li>
+</ol>
+<pre><code language="language-sql" class="language-sql">CREATE DATABASE mydatabase;
+</code></pre>
+<ol type="1">
+<li>Switch to the database by entering the following command into the shell:</li>
+</ol>
+<pre><code language="language-sql" class="language-sql">USE mydatabase;
+</code></pre>
+<ol type="1">
+<li>Create a table inside the database. We call the table &#34;teachers&#34;</li>
+</ol>
+<pre><code language="language-sql" class="language-sql">CREATE TABLE teachers (
+    id serial,
+    first_name varchar(25),
+    last_name varchar(50),
+    school varchar(50),
+    hire_date date,
+    salary numeric
+    );
+</code></pre>
+<ol type="1">
+<li>Insert values in the table:</li>
+</ol>
+<pre><code language="language-sql" class="language-sql">INSERT INTO teachers (first_name, last_name, school, hire_date, salary)
+VALUES (&#39;Janet&#39;, &#39;Smith&#39;, &#39;F.D. Roosevelt HS&#39;, &#39;2011-10-30&#39;, 36200), 
+       (&#39;Lee&#39;, &#39;Reynolds&#39;, &#39;F.D. Roosevelt HS&#39;, &#39;1993-05-22&#39;, 65000),
+       (&#39;Samuel&#39;, &#39;Cole&#39;, &#39;Myers Middle School&#39;, &#39;2005-08-01&#39;, 43500),
+       (&#39;Samantha&#39;, &#39;Bush&#39;, &#39;Myers Middle School&#39;, &#39;2011-10-30&#39;, 36200),
+       (&#39;Betty&#39;, &#39;Diaz&#39;, &#39;Myers Middle School&#39;, &#39;2005-08-30&#39;, 43500),
+       (&#39;Kathleen&#39;, &#39;Roush&#39;, &#39;F.D. Roosevelt HS&#39;, &#39;2010-10-22&#39;,38500 );
+</code></pre>
+<ol type="1">
+<li>Make a SQL-query to select all content from the table:</li>
+</ol>
+<pre><code language="language-sql" class="language-sql">SELECT *
+FROM mydatabase.teachers;
+</code></pre>
+<p class="image-container"><img style="width: 100.00px" src="img/80a55236fcf231ff.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Stop SQL database" duration="1">
+        <p>Since you pay your Cloud database by use, it makes sense to stop the instance if you don&#39;t need it anymore.</p>
+<p>Review <a href="https://cloud.google.com/sql/pricing#mysql-pg-pricing" target="_blank">this site</a> if you want to learn more about the pricing for SQL databases in Google Cloud.</p>
+<ol type="1">
+<li>Move to the top of the page in the SQL overview page and click on STOP</li>
+</ol>
+<p class="image-container"><img style="width: 100.00px" src="img/778cbec1367414ed.png"></p>
+<aside class="special"><p> If you need the database at a later point in time, you can start it again. </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What&#39;s next?" duration="2">
+        <p>Congratulations! You have completed the tutorial and learned how to:</p>
+<p>✅ Create a project in Google Cloud<br> ✅ Set up a Cloud SQL database<br> ✅ Use the cloud shell and SQL to create a database and table</p>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
+<p><em>Copyright: Jan Kirenz (2021) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>CC BY-NC 2.0 License</em></a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

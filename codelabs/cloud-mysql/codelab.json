@@ -1,0 +1,22 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-11-18T20:21:21+01:00",
+  "id": "cloud-mysql",
+  "duration": 24,
+  "title": "Relational database in Google Cloud",
+  "summary": "Create a relational database in Google Cloud and connect it to Google Datastudio",
+  "source": "cloud-mysql.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": null,
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/cloud-mysql",
+  "url": "cloud-mysql"
+}

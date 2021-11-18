@@ -48,7 +48,7 @@ First you need to create a new project in Google Cloud:
 
 1. At the left side at the top of the menu, click on the "project selection" button (located between "Google Cloud Platform" and the search field).
 
-<img src="img/1-database.png" alt="database" width="100">
+<img src="img/1-menu.png" alt="database" width="100">
 
 1. Click on "NEW PROJECT" and call it "bigdata"
 
