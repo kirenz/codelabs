@@ -48,42 +48,21 @@ To start this tutorial, you need Anaconda. If you don't already have Anaconda, g
 Here some tips if you have problems installing Anaconda: [troubleshooting](https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems).
 
 <!-- ------------------------ -->
-## Create Virtual Environment
-
-Duration: 0:05:00
-
-[Conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions. Since there is a known incompatibility for Windows OS notebook execution when using Python 3.8., we will use Python 3.7.
-
-On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
-
-We create an environment with a specific version of Python (3.7). We call the environment ``jbook``:
-
-```bash
-conda create -n jbook python=3.7
-```
-
-<!-- ------------------------ -->
-## Installation of modules
+## Installation
 Duration: 00:05:00
 
-First, you need to activate your environment as follows:
+Install Jupyter Book in the Anaconda environment of your choice (e.g., your base environment):
+
+- Install `jupyter-book`:
 
 ```bash
-conda activate jbook
-```
-
-Now we can install modules in our environment. To do this, we use [**pip**](https://pip.pypa.io/en/stable/) (pip is the standard package installer for Python). 
-
-- Install `jupyter-book`
-
-```bash
-pip install -U jupyter-book
+conda install -c conda-forge jupyter-book
 ```
 
 - Install the module `ghp-import`
 
 ```bash
-pip install ghp-import
+conda install -c conda-forge ghp-import
 ```
 
 *[ghp-import](https://github.com/c-w/ghp-import) is a lightweight Python package that makes it easy to push HTML content to a GitHub repository*
