@@ -56,30 +56,17 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Create Virtual Environment" duration="5">
-        <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions. Since there is a known incompatibility for Windows OS notebook execution when using Python 3.8., we will use Python 3.7.</p>
-<p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
-<p>We create an environment with a specific version of Python (3.7). We call the environment <code>jbook</code>:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n jbook python=3.7
-</code></pre>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Installation of modules" duration="5">
-        <p>First, you need to activate your environment as follows:</p>
-<pre><code language="language-bash" class="language-bash">conda activate jbook
-</code></pre>
-<p>Now we can install modules in our environment. To do this, we use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> (pip is the standard package installer for Python).</p>
+      <google-codelab-step label="Installation" duration="5">
+        <p>Install Jupyter Book in the Anaconda environment of your choice (e.g., your base environment):</p>
 <ul>
-<li>Install <code>jupyter-book</code></li>
+<li>Install <code>jupyter-book</code>:</li>
 </ul>
-<pre><code language="language-bash" class="language-bash">pip install -U jupyter-book
+<pre><code language="language-bash" class="language-bash">conda install -c conda-forge jupyter-book
 </code></pre>
 <ul>
 <li>Install the module <code>ghp-import</code></li>
 </ul>
-<pre><code language="language-bash" class="language-bash">pip install ghp-import
+<pre><code language="language-bash" class="language-bash">conda install -c conda-forge ghp-import
 </code></pre>
 <p><a href="https://github.com/c-w/ghp-import" target="_blank"><em>ghp-import</em></a><em> is a lightweight Python package that makes it easy to push HTML content to a GitHub repository</em></p>
 
