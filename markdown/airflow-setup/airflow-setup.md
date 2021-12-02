@@ -36,6 +36,14 @@ Monitor, schedule and manage your workflows via a robust and modern web applicat
 
 Duration: 0:07:00
 
+### Windows Subsystem for Linux
+
+If you have a Windows machine, you need Windows Subsystem for Linux. Follow the steps in this tutorial:
+
+- [What is the Windows Subsystem for Linux?](https://docs.microsoft.com/en-us/windows/wsl/about)
+
+### Anaconda
+
 To start this tutorial, you need Anaconda. If you don't already have Anaconda, go to [anaconda.com](https://www.anaconda.com/products/individual) and choose the appropriate `Graphical Installer` for your system (Windows, MacOS or Linux). Install the software on your system:
 
 - [Installing on macOS](https://docs.continuum.io/anaconda/install/mac-os/)
