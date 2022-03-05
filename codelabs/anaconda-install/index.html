@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Installation of Anaconda and TensorFlow</title>
+  <title>Installation of TensorFlow</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
@@ -23,14 +23,13 @@
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid=""
                   id="anaconda-install"
-                  title="Installation of Anaconda and TensorFlow"
+                  title="Installation of TensorFlow"
                   environment="web"
                   feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/anaconda-install">
     
       <google-codelab-step label="Overview" duration="2">
         <p class="image-container"><img alt="Anaconda logo" style="width: 200.00px" src="img/a65e86b6a759a874.png">   </p>
-<p>In this tutorial, you&#39;ll learn how to install the <a href="https://www.anaconda.com/" target="_blank">Anaconda</a> open source data science platform. Anaconda&#39;s package manager <em>Conda</em> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other.</p>
-<p>Furthermore, we install <a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a>, an end-to-end open source platform for machine learning.</p>
+<p>In this tutorial, you&#39;ll learn how to install <a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a>, an end-to-end open source platform for machine learning.</p>
 <aside class="special"><p> Anaconda is one of the most popular platforms for data science  </p>
 </aside>
 
@@ -38,8 +37,7 @@
       </google-codelab-step>
     
       <google-codelab-step label="Prerequisites" duration="2">
-        <p>To start this tutorial, you should be familiar with the <strong>command line interface</strong> (other names for the command line are: cmd, CLI, prompt, console or terminal). If you aren&#39;t familiar with the terminal, read this <a href="https://tutorial.djangogirls.org/en/intro_to_command_line/" target="_blank">introduction to the command-line interface</a>.</p>
-<p>If you are working on macOS, I recommend to use <a href="https://iterm2.com/" target="_blank">iTerm2</a> instead of the standard terminal.</p>
+        <p>To start this tutorial, you need <a href="https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda" target="_blank"><strong>Anaconda</strong></a> and you should be familiar with the <strong>command line interface</strong> (other names for the command line are: cmd, CLI, prompt, console or terminal). If you aren&#39;t familiar with the terminal, read this <a href="https://tutorial.djangogirls.org/en/intro_to_command_line/" target="_blank">introduction to the command-line interface</a>.</p>
 <aside class="special"><p> The terminal is a text-based application for viewing, handling, and manipulating files on your computer </p>
 </aside>
 <p>Please note that there are pathing differences between macOS, Windows and Linux:</p>
@@ -54,23 +52,11 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Install Anaconda individual" duration="10">
-        <p>Go to <a href="https://www.anaconda.com/products/individual" target="_blank">anaconda.com</a> and choose the appropriate <code>Graphical Installer</code> for your system (Windows, MacOS or Linux). Install the software on your system:</p>
-<ul>
-<li><a href="https://docs.continuum.io/anaconda/install/mac-os/" target="_blank">Installing on macOS</a></li>
-<li><a href="https://docs.continuum.io/anaconda/install/windows/" target="_blank">Installing on Windows</a></li>
-<li><a href="https://docs.continuum.io/anaconda/install/linux/" target="_blank">https://docs.continuum.io/anaconda/install/linux/</a></li>
-</ul>
-<p>Here some tips if you have problems installing Anaconda: <a href="https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems" target="_blank">troubleshooting</a>.</p>
-
-
-      </google-codelab-step>
-    
       <google-codelab-step label="Create a virtual environment" duration="5">
-        <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow).</p>
+        <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions. Note that we will use <code>pip</code>in this environment to install packages (and not conda). Therefore, we install pip in this environment.</p>
 <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
-<p>We create an environment with a specific version of Python (3.8) and the <strong>tensorflow</strong> package. We call the environment <code>tf</code>:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.8 tensorflow
+<p>We create an environment with a specific version of Python (3.9) and the <strong>TensorFlow</strong> package. We call the environment <code>tf</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.9 pip
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
 
@@ -81,8 +67,17 @@
         <p>You can activate your environment as follows:</p>
 <pre><code language="language-bash" class="language-bash">conda activate tf
 </code></pre>
-<p>And deactivate it with:</p>
-<pre><code language="language-bash" class="language-bash">conda deactivate
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Install TensorFlow" duration="2">
+        <p>You can install TensorFlow as follows (see <a href="https://www.tensorflow.org/install" target="_blank">documentation</a>):</p>
+<p>Step 1: upgrade pip:</p>
+<pre><code language="language-bash" class="language-bash">pip install --upgrade pip
+</code></pre>
+<p>Step 2: install TensorFlow:</p>
+<pre><code language="language-bash" class="language-bash">pip install tensorflow
 </code></pre>
 
 
@@ -90,11 +85,14 @@
     
       <google-codelab-step label="What&#39;s next?" duration="1">
         <p>Congratulations! You have completed the tutorial and learned how to install:</p>
-<p>✅ Anaconda<br> ✅ TensorFlow</p>
+<p>✅ TensorFlow</p>
 <p>If you&#39;d like to learn more about TensorFlow, have a look at the following suggestion:</p>
 <ul>
 <li><a href="https://www.tensorflow.org/tutorials" target="_blank">TensorFlow tutorials</a></li>
 </ul>
+<p>If you want to switch back to your Anaconda base environment, just use:</p>
+<pre><code language="language-bash" class="language-bash">conda deactivate
+</code></pre>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
 <p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the <em>Report a mistake</em> button at the bottom left of this site.</p>
 <p><em>Copyright: Jan Kirenz (2021), </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em>, </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0) License</em></a></p>

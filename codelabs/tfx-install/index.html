@@ -28,66 +28,52 @@
                   feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/tfx-install">
     
       <google-codelab-step label="Overview" duration="2">
-        <p>We start with an overview of the software we will install in this tutorial: Anaconda, TensorFlow &amp; TensorFlow Extended.</p>
+        <p>We start with an overview of the software we will install in this tutorial: TensorFlow &amp; TensorFlow Extended.</p>
 <aside class="special"><p> We use the data science platform Anaconda to install TFX </p>
 </aside>
 <ul>
 <li><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a> is an end-to-end open source platform for machine learning.</li>
 <li><a href="https://www.tensorflow.org/tfx" target="_blank">TensorFlow Extended (TFX)</a> is an end-to-end platform for deploying production ML pipelines. When you&#39;re ready to move your models to production, use TFX to create and manage a production pipeline.</li>
-<li>We will use the <a href="https://www.anaconda.com/" target="_blank">Anaconda</a> open source data science platform to install TensorFlow and TensorFlow Extended. Anaconda&#39;s package manager <em>Conda</em> makes it very easy to manage multiple data environments that can be maintained and run separately without interference from each other.</li>
+<li>We will use the <a href="https://www.anaconda.com/" target="_blank">Anaconda</a> open source data science platform to install TensorFlow and TensorFlow Extended.</li>
 </ul>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Install Anaconda individual" duration="10">
+      <google-codelab-step label="Prerequisites" duration="2">
         <p class="image-container"><img alt="Anaconda logo" style="width: 200.00px" src="img/a65e86b6a759a874.png">   </p>
-<p>Go to <a href="https://www.anaconda.com/products/individual" target="_blank">anaconda.com</a> and choose the appropriate <code>Graphical Installer</code> for your system (Windows, MacOS or Linux). Install the software on your system:</p>
 <ul>
-<li><a href="https://docs.continuum.io/anaconda/install/mac-os/" target="_blank">Installing on macOS</a></li>
-<li><a href="https://docs.continuum.io/anaconda/install/windows/" target="_blank">Installing on Windows</a></li>
-<li><a href="https://docs.continuum.io/anaconda/install/linux/" target="_blank">https://docs.continuum.io/anaconda/install/linux/</a></li>
+<li>To start this tutorial, you need <a href="https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda" target="_blank"><strong>Anaconda</strong></a>.</li>
 </ul>
-<p>Here some tips if you have problems installing Anaconda: <a href="https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems" target="_blank">troubleshooting</a>.</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Create TensorFlow environment" duration="5">
         <p class="image-container"><img alt="TensorFlow logo" style="width: 300.00px" src="img/b538f31a85a23aee.png">   </p>
-<p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow).</p>
+<p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow). Note that we will use <code>pip</code>in this environment to install packages (and not conda). Therefore, we install pip in this environment.</p>
 <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
 <p>We create an environment with a specific version of Python (3.8). We call the environment <code>tf</code>:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.8 
+<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.8 pip
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Activate TensorFlow environment" duration="2">
-        <p>You can activate your environment as follows:</p>
-<pre><code language="language-bash" class="language-bash">conda activate tf
-</code></pre>
-<p>And deactivate it with:</p>
-<pre><code language="language-bash" class="language-bash">conda deactivate
-</code></pre>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Install TensorFlow Extended" duration="3">
+      <google-codelab-step label="Install TensorFlow and TFX" duration="3">
         <p class="image-container"><img alt="TensorFlow Extended logo" style="width: 300.00px" src="img/8f5e5828c76225b5.png">   </p>
 <p>First of all, you have to activate the <code>tf</code> environment:</p>
 <pre><code language="language-bash" class="language-bash">conda activate tf
 </code></pre>
-<p>Now we have to use <code>pip</code> (pip is the package installer for Python) to install TensorFlow and TFX in our <code>tf</code> environment:</p>
-<p>You can delete <code>-cpu</code> if your machine supports GPU:</p>
-<pre><code language="language-bash" class="language-bash">pip install tensorflow-cpu
+<p>Upgrade pip:</p>
+<pre><code language="language-bash" class="language-bash">pip install --upgrade pip
 </code></pre>
+<p>Now we have to use <code>pip</code> (pip is the package installer for Python) to install TFX. <a href="https://pypi.org/project/tfx/" target="_blank">This table</a> describes how the tfx package versions are compatible with its major dependency PyPI packages.</p>
 <pre><code language="language-bash" class="language-bash">pip install tfx
 </code></pre>
-<p>Install some additional modules:</p>
+<p>TensorFlow is already included in tfx.</p>
+<p>Install one additional module:</p>
 <pre><code language="language-bash" class="language-bash">pip install tensorflow-datasets
 </code></pre>
 
@@ -96,11 +82,14 @@
     
       <google-codelab-step label="What&#39;s next?" duration="1">
         <p>Congratulations! You have completed the tutorial and learned how to install:</p>
-<p>✅ TensorFlow<br> ✅ TensorFlow Extended</p>
+<p>✅ TensorFlow Extended</p>
 <p>If you&#39;d like to learn more about TensorFlow Extended, have a look at the following suggestion:</p>
 <ul>
 <li>💻<a href="https://kirenz.github.io/codelabs/codelabs/tfx-pipeline" target="_blank">Build your first TFX pipeline</a></li>
 </ul>
+<p>If you want to switch back to your Anaconda base environment, just use:</p>
+<pre><code language="language-bash" class="language-bash">conda deactivate
+</code></pre>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
 <p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the <em>Report a mistake</em> button at the bottom left of this site.</p>
 <p><em>Copyright: Jan Kirenz (2021), </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em>, </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0) License</em></a></p>

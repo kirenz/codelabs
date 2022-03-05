@@ -1,5 +1,5 @@
 author: Jan Kirenz
-summary: How to install Anaconda and create a virtual environment for TensorFlow
+summary: How to use Anaconda to create a virtual environment for TensorFlow
 id: anaconda-install
 tags:
 categories: data-science
@@ -7,7 +7,7 @@ environments: Web
 status: Published
 feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/anaconda-install
 
-# Installation of Anaconda and TensorFlow
+# Installation of TensorFlow
 
 <!-- ------------------------ -->
 ## Overview
@@ -15,9 +15,7 @@ Duration: 0:02:00
 
 <img src="img/anaconda-logo.png" alt="Anaconda logo" width="200">  
 
-In this tutorial, you'll learn how to install the [Anaconda](https://www.anaconda.com/) open source data science platform. Anaconda's package manager *Conda* makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other.
-
-Furthermore, we install [TensorFlow](https://www.tensorflow.org/), an end-to-end open source platform for machine learning.
+In this tutorial, you'll learn how to install [TensorFlow](https://www.tensorflow.org/), an end-to-end open source platform for machine learning.
 
 <aside class="positive">
 Anaconda is one of the most popular platforms for data science
@@ -28,9 +26,8 @@ Anaconda is one of the most popular platforms for data science
 
 Duration: 0:02:00
 
-To start this tutorial, you should be familiar with the **command line interface** (other names for the command line are: cmd, CLI, prompt, console or terminal). If you aren't familiar with the terminal, read this [introduction to the command-line interface](https://tutorial.djangogirls.org/en/intro_to_command_line/).
+To start this tutorial, you need [**Anaconda**](https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda) and you should be familiar with the **command line interface** (other names for the command line are: cmd, CLI, prompt, console or terminal). If you aren't familiar with the terminal, read this [introduction to the command-line interface](https://tutorial.djangogirls.org/en/intro_to_command_line/).
 
-If you are working on macOS, I recommend to use [iTerm2](https://iterm2.com/) instead of the standard terminal.
 
 <aside class="positive">
 The terminal is a text-based application for viewing, handling, and manipulating files on your computer
@@ -48,30 +45,18 @@ I used macOS to create this tutorial and therefore my code examples follow the p
 
 
 <!-- ------------------------ -->
-## Install Anaconda individual
-Duration: 00:10:00
-
-Go to [anaconda.com](https://www.anaconda.com/products/individual) and choose the appropriate `Graphical Installer` for your system (Windows, MacOS or Linux). Install the software on your system:
-
-- [Installing on macOS](https://docs.continuum.io/anaconda/install/mac-os/)
-- [Installing on Windows](https://docs.continuum.io/anaconda/install/windows/)
-- [https://docs.continuum.io/anaconda/install/linux/](https://docs.continuum.io/anaconda/install/linux/) 
-
-Here some tips if you have problems installing Anaconda: [troubleshooting](https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems).
-
-<!-- ------------------------ -->
 ## Create a virtual environment
 Duration: 00:05:00
 
 [Conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands
-) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow).
+) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions. Note that we will use `pip`in this environment to install packages (and not conda). Therefore, we install pip in this environment.
 
 On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
 
-We create an environment with a specific version of Python (3.8) and the **tensorflow** package. We call the environment ``tf``:
+We create an environment with a specific version of Python (3.9) and the **TensorFlow** package. We call the environment ``tf``:
 
 ```bash
-conda create -n tf python=3.8 tensorflow
+conda create -n tf python=3.9 pip
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
@@ -87,10 +72,23 @@ You can activate your environment as follows:
 conda activate tf
 ```
 
-And deactivate it with:
+
+<!-- ------------------------ -->
+## Install TensorFlow 
+Duration: 00:02:00
+
+You can install TensorFlow as follows (see [documentation](https://www.tensorflow.org/install)):
+
+Step 1: upgrade pip:
 
 ```bash
-conda deactivate
+pip install --upgrade pip
+```
+
+Step 2: install TensorFlow:
+
+```bash
+pip install tensorflow
 ```
 
 <!-- ------------------------ -->
@@ -99,12 +97,18 @@ Duration: 0:01:00
 
 Congratulations! You have completed the tutorial and learned how to install:
 
-✅ Anaconda  
 ✅ TensorFlow  
 
 If you'd like to learn more about TensorFlow, have a look at the following suggestion:
 
 - [TensorFlow tutorials](https://www.tensorflow.org/tutorials)
+
+If you want to switch back to your Anaconda base environment, just use:
+
+```bash
+conda deactivate
+```
+
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
 
