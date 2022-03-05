@@ -103,6 +103,10 @@ Install some additional modules:
 pip install tensorflow-datasets
 ```
 
+```bash
+pip install seaborn
+```
+
 <!-- ------------------------ -->
 ## What's next?
 Duration: 0:01:00
