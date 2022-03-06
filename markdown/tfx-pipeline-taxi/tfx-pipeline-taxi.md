@@ -158,7 +158,7 @@ Explore the directories and files that were copied to your pipeline's project di
 - The template copies directed acyclic graph (DAG) runners --which runs the components one by one in DAG's topological order-- for local environment and [Kubeflow](https://www.kubeflow.org/). The file is called **local.runner.py**.
 
 <aside class="negative">
-Note that the file <b>local.runner.py</b> needs to be moved from the sub-folder data into the project folder tfx-taxi.
+The file <b>local.runner.py</b> is in the project folder tfx-taxi.
 </aside>
 
 <!-- ------------------------ -->
