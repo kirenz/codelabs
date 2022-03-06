@@ -3,7 +3,7 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2021-08-19T22:26:33+02:00",
+  "updated": "2022-03-06T20:33:00+01:00",
   "id": "tfx-pipeline-taxi",
   "duration": 64,
   "title": "Build a TFX Pipeline",
