@@ -78,7 +78,7 @@ pip install tfx
 
 TensorFlow is already included in tfx.
 
-Install one additional module:
+Install additional modules:
 
 ```bash
 pip install tensorflow-datasets
@@ -87,6 +87,11 @@ pip install tensorflow-datasets
 ```bash
 pip install seaborn
 ```
+
+```bash
+pip install -U scikit-learn
+```
+
 
 <!-- ------------------------ -->
 ## What's next?
