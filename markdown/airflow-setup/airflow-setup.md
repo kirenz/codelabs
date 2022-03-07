@@ -17,7 +17,7 @@ Duration: 0:01:00
 
 ### What we cover
 
-In this tutorial we are going to install [Apache Airflow](https://airflow.apache.org/) on your system.
+In this tutorial we are going to install [Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/start/local.html) on your system.
 
 <img src="img/logo.png" alt="Apache Airflow logo" width="200">
 
@@ -61,10 +61,10 @@ Duration: 0:05:00
 
 On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
 
-We create an environment with a specific version of Python (3.9). We call the environment ``airflow``:
+We create an environment with a specific version of Python (3.8). We call the environment ``airflow``:
 
 ```bash
-conda create -n airflow python=3.9
+conda create -n airflow python=3.8 pip
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
@@ -80,6 +80,12 @@ To install Airflow, we simply follow the [ installation tutorial](https://airflo
 
 ```bash
 conda activate airflow
+```
+
+Then upgrade pip:
+
+```bash
+pip install --upgrade pip
 ```
 
 (2) Airflow needs `virualenv` so we install it first:
@@ -108,10 +114,10 @@ SET AIRFLOW_HOME=C:\Users\<YourUserName>\airflow
 SET AIRFLOW_HOME=%USERPROFILE%\airflow
 ```
 
-(4) Install Airflow with the following constraints file. We use Airflow Version "2.2.0" and Python "3.9.": 
+(4) Install Airflow with the following constraints file. We use Airflow Version "2.2.0" and Python "3.8.": 
 
 ```bash
-pip install "apache-airflow==2.2.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.0/constraints-3.9.txt"
+pip install "apache-airflow==2.2.4" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.4/constraints-3.8.txt"
 ```
 
 (5) Since we will be using PostgreSQL, we need to install the [postgres provider package](https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html):
@@ -130,9 +136,11 @@ airflow standalone
 
 (7) In the terminal output: Look for the provided `username` and `password`
 
-(8) Visit this site in your browser: [http://0.0.0.0:8080](http://0.0.0.0:8080) and provide `username` and `password`.
+(8) Visit this site in your browser (ideally in chrome): [http://0.0.0.0:8080](http://0.0.0.0:8080) and provide `username` and `password`.
 
-(9) Start experimenting with Airflow.
+(9) Thats all! Now start experimenting with Airflow.
+
+(10) If you are done, log out from the user menu.
 
 <!-- ------------------------ -->
 ## What's next?
