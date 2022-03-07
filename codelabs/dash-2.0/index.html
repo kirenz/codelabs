@@ -29,7 +29,7 @@
     
       <google-codelab-step label="Overview" duration="1">
         <h2 is-upgraded>What we cover</h2>
-<p>In this tutorial we are going to install the preview version on Dash 2.0.</p>
+<p>In this tutorial we are going to install Dash.</p>
 
 
       </google-codelab-step>
@@ -48,9 +48,12 @@
     
       <google-codelab-step label="Create Virtual Environment" duration="5">
         <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.</p>
-<p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
-<p>We create an environment with a specific version of Python (3.9) . We call the environment <code>dash</code>:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n dash2 python=3.9
+<ul>
+<li>On Windows open the Start menu and open an Anaconda Command Prompt.</li>
+<li>On macOS or Linux open a terminal window.</li>
+</ul>
+<p>We create an environment with a specific version of Python (3.9) and install pip. We call the environment <code>dash</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n dash python=3.9 pip
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
 
@@ -59,25 +62,25 @@
     
       <google-codelab-step label="Installation of modules" duration="5">
         <p>First, you need to activate your environment as follows:</p>
-<pre><code language="language-bash" class="language-bash">conda activate dash2
+<pre><code language="language-bash" class="language-bash">conda activate dash
+</code></pre>
+<p>Then upgrade pip:</p>
+<pre><code language="language-bash" class="language-bash">pip install --upgrade pip
 </code></pre>
 <p>Now we can install modules in our environment.</p>
-<p>To do this, we use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> (pip is the standard package installer for Python) or <strong>conda</strong> (open source package management system from Anaconda). To learn the differences between the two options, see this article <a href="https://www.anaconda.com/blog/understanding-conda-and-pip" target="_blank">&#34;Understanding Conda and Pip&#34;</a>.</p>
-<p>Here, we use conda to install dash-labs and some additional modules.</p>
-<ul>
-<li><a href="https://anaconda.org/conda-forge/dash" target="_blank">Dash 2.0</a>:</li>
-</ul>
-<pre><code language="language-bash" class="language-bash">conda install -c conda-forge dash
-</code></pre>
-<ul>
-<li><a href="https://pandas.pydata.org/docs/index.html" target="_blank">pandas</a>: We also install pandas, which is required by some dash modlues (like Plotly Express).</li>
-</ul>
-<pre><code language="language-bash" class="language-bash">conda install pandas
+<p>To do this, we use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> (pip is the standard package installer for Python). To learn the differences between different options of how to install python modules in Anaconda, see this article: <a href="https://www.anaconda.com/blog/understanding-conda-and-pip" target="_blank">&#34;Understanding Conda and Pip&#34;</a>.</p>
+<p>Here, we use pip to install dash and some additional modules.</p>
+<pre><code language="language-bash" class="language-bash">pip install dash
 </code></pre>
 <ul>
 <li><a href="https://github.com/plotly/jupyter-dash" target="_blank">Jupyter Dash</a>: This library makes it easy to develop Plotly Dash apps interactively from within Jupyter environments (e.g. classic Notebook, JupyterLab, Visual Studio Code notebooks, PyCharm notebooks, etc.)</li>
 </ul>
-<pre><code language="language-bash" class="language-bash">conda install -c plotly jupyter-dash
+<pre><code language="language-bash" class="language-bash">pip install jupyter-dash
+</code></pre>
+<ul>
+<li><a href="https://pandas.pydata.org/docs/index.html" target="_blank">pandas</a>: We also install pandas, which is required by some dash modlues (like Plotly Express).</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">pip install pandas
 </code></pre>
 
 
@@ -86,9 +89,9 @@
       <google-codelab-step label="What&#39;s next?" duration="2">
         <p>Congratulations! You have completed the tutorial and learned how to:</p>
 <p>✅ Create a virtual environment for dash<br> ✅ Install Python modules in your virtual dash environment</p>
-<p>Next, you may want to proceed with this tutorial provided by plotly to build your first dash app:</p>
+<p>Next, you may want to proceed with this tutorial to build your first dash apps:</p>
 <ul>
-<li><a href="https://dash.plotly.com/layout" target="_blank">Dash tutorial</a></li>
+<li><a href="https://github.com/kirenz/dash-tutorial" target="_blank">Dash tutorial</a></li>
 </ul>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
 <p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
