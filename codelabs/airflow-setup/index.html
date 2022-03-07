@@ -29,7 +29,7 @@
     
       <google-codelab-step label="Overview" duration="1">
         <h2 is-upgraded>What we cover</h2>
-<p>In this tutorial we are going to install <a href="https://airflow.apache.org/" target="_blank">Apache Airflow</a> on your system.</p>
+<p>In this tutorial we are going to install <a href="https://airflow.apache.org/docs/apache-airflow/stable/start/local.html" target="_blank">Apache Airflow</a> on your system.</p>
 <p class="image-container"><img alt="Apache Airflow logo" style="width: 200.00px" src="img/86832b628c8aabfe.png"></p>
 <ul>
 <li>Airflow is a open source platform to programmatically author, schedule and monitor workflows.</li>
@@ -63,8 +63,8 @@
       <google-codelab-step label="Create Virtual Environment" duration="5">
         <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.</p>
 <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
-<p>We create an environment with a specific version of Python (3.9). We call the environment <code>airflow</code>:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n airflow python=3.9
+<p>We create an environment with a specific version of Python (3.8). We call the environment <code>airflow</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n airflow python=3.8 pip
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
 
@@ -75,6 +75,9 @@
         <p>To install Airflow, we simply follow the <a href="https://airflow.apache.org/docs/apache-airflow/stable/start/local.html" target="_blank"> installation tutorial</a> provided by Apache Airflow. Note that we use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> (pip is the standard package installer for Python) to install Airflow in our environment. When pip asks you to proceed <code>(proceed ([y]/n)?</code>), simply type <code>y</code>.</p>
 <p>(1) First, you need to activate your environment as follows:</p>
 <pre><code language="language-bash" class="language-bash">conda activate airflow
+</code></pre>
+<p>Then upgrade pip:</p>
+<pre><code language="language-bash" class="language-bash">pip install --upgrade pip
 </code></pre>
 <p>(2) Airflow needs <code>virualenv</code> so we install it first:</p>
 <pre><code language="language-bash" class="language-bash">pip install virtualenv
@@ -89,8 +92,8 @@
 <p><em>or (alternatively to the full path) use this approach</em></p>
 <pre><code language="language-bash" class="language-bash">SET AIRFLOW_HOME=%USERPROFILE%\airflow
 </code></pre>
-<p>(4) Install Airflow with the following constraints file. We use Airflow Version &#34;2.2.0&#34; and Python &#34;3.9.&#34;:</p>
-<pre><code language="language-bash" class="language-bash">pip install &#34;apache-airflow==2.2.0&#34; --constraint &#34;https://raw.githubusercontent.com/apache/airflow/constraints-2.2.0/constraints-3.9.txt&#34;
+<p>(4) Install Airflow with the following constraints file. We use Airflow Version &#34;2.2.0&#34; and Python &#34;3.8.&#34;:</p>
+<pre><code language="language-bash" class="language-bash">pip install &#34;apache-airflow==2.2.4&#34; --constraint &#34;https://raw.githubusercontent.com/apache/airflow/constraints-2.2.4/constraints-3.8.txt&#34;
 </code></pre>
 <p>(5) Since we will be using PostgreSQL, we need to install the <a href="https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html" target="_blank">postgres provider package</a>:</p>
 <pre><code language="language-bash" class="language-bash">pip install apache-airflow-providers-postgres
@@ -100,8 +103,9 @@
 </code></pre>
 <p>*If you should get the error message &#34;AttributeError: ‘NoneType&#39; object has no attribute ‘is_alive&#39;&#34; stop the process with <code>Ctrl</code> + <code>c</code> and use the command <code>airflow standalone</code> one more time.</p>
 <p>(7) In the terminal output: Look for the provided <code>username</code> and <code>password</code></p>
-<p>(8) Visit this site in your browser: <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide <code>username</code> and <code>password</code>.</p>
-<p>(9) Start experimenting with Airflow.</p>
+<p>(8) Visit this site in your browser (ideally in chrome): <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide <code>username</code> and <code>password</code>.</p>
+<p>(9) Thats all! Now start experimenting with Airflow.</p>
+<p>(10) If you are done, log out from the user menu.</p>
 
 
       </google-codelab-step>
