@@ -16,7 +16,7 @@ Duration: 0:01:00
 
 ### What we cover
 
-In this tutorial we are going to install the preview version on Dash 2.0.
+In this tutorial we are going to install Dash.
 
 
 <!-- ------------------------ -->
@@ -39,12 +39,13 @@ Duration: 0:05:00
 
 [Conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.
 
-On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
+- On Windows open the Start menu and open an Anaconda Command Prompt. 
+- On macOS or Linux open a terminal window.
 
-We create an environment with a specific version of Python (3.9) . We call the environment ``dash``:
+We create an environment with a specific version of Python (3.9) and install pip. We call the environment ``dash``:
 
 ```bash
-conda create -n dash2 python=3.9
+conda create -n dash python=3.9 pip
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
@@ -57,32 +58,38 @@ Duration: 00:05:00
 First, you need to activate your environment as follows:
 
 ```bash
-conda activate dash2
+conda activate dash
+```
+
+Then upgrade pip:
+
+```bash
+pip install --upgrade pip
 ```
 
 Now we can install modules in our environment. 
 
-To do this, we use [**pip**](https://pip.pypa.io/en/stable/) (pip is the standard package installer for Python) or **conda** (open source package management system from Anaconda). To learn the differences between the two options, see this article ["Understanding Conda and Pip"](https://www.anaconda.com/blog/understanding-conda-and-pip).  
+To do this, we use [**pip**](https://pip.pypa.io/en/stable/) (pip is the standard package installer for Python). To learn the differences between different options of how to install python modules in Anaconda, see this article: ["Understanding Conda and Pip"](https://www.anaconda.com/blog/understanding-conda-and-pip).  
 
-Here, we use conda to install dash-labs and some additional modules. 
-
-- [Dash 2.0](https://anaconda.org/conda-forge/dash):
+Here, we use pip to install dash and some additional modules. 
 
 ```bash
-conda install -c conda-forge dash
-```
-
-- [pandas](https://pandas.pydata.org/docs/index.html): We also install pandas, which is required by some dash modlues (like Plotly Express).
-
-```bash
-conda install pandas
+pip install dash
 ```
 
 - [Jupyter Dash](https://github.com/plotly/jupyter-dash): This library makes it easy to develop Plotly Dash apps interactively from within Jupyter environments (e.g. classic Notebook, JupyterLab, Visual Studio Code notebooks, PyCharm notebooks, etc.)
 
 ```bash
-conda install -c plotly jupyter-dash
+pip install jupyter-dash
 ```
+
+- [pandas](https://pandas.pydata.org/docs/index.html): We also install pandas, which is required by some dash modlues (like Plotly Express).
+
+```bash
+pip install pandas
+```
+
+
 
 <!-- ------------------------ -->
 ## What's next?
@@ -94,9 +101,9 @@ Congratulations! You have completed the tutorial and learned how to:
 ✅ Create a virtual environment for dash  
 ✅ Install Python modules in your virtual dash environment
 
-Next, you may want to proceed with this tutorial provided by plotly to build your first dash app:
+Next, you may want to proceed with this tutorial to build your first dash apps:
 
-- [Dash tutorial](https://dash.plotly.com/layout)
+- [Dash tutorial](https://github.com/kirenz/dash-tutorial)
 
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
