@@ -81,7 +81,7 @@ Duration: 0:05:00
 <img src="img/2-database.png" alt="database" width="150">
 
 
-- Click on "Create Instance"
+- Click on "Create Instance" (choose no organization and educational billing account)
 
 <img src="img/2a-create-instance.png" alt="" width="500">
 
@@ -100,7 +100,7 @@ Duration: 0:05:00
 
 Note: We won't use a password to make the following steps easier. However, in real projects you should always use a strong password.
 
-- Instance ID: sql-database
+- Instance ID: sql-bigdata
 - Password: "Select no password at the checkbox" 
 - Database version: MySQL 8.0
 - Region: us-central (Iowa)
@@ -155,7 +155,10 @@ gcloud sql connect sql-database --user=root --quiet
 
 
 
+
 Note: If you should have troubles to connect to your database, make sure you have the Cloud SQL Admin and Compute Viewer roles on your user account. In Google Cloud, navigate to the [identity and access management (IAM) page](https://console.cloud.google.com/iam-admin/iam?_ga=2.188518954.367718554.1637234253-833492673.1631961616&_gac=-24091080.1637070889.Cj0KCQiAys2MBhDOARIsAFf1D1faRohOXdVaN5UQ-cMaSMy0OK75I2zeKTvDGykdbfS7bYbq69hUsmwaAvZPEALw_wcB). For more information regarding IAM, visit this [site](https://cloud.google.com/sql/docs/mysql/create-instance).
+
+If you have troubles to open the **cloud shell**, try a different browser or try to open the shell in a different tab.
 
 
 <!-- ------------------------ -->
@@ -246,4 +249,4 @@ Congratulations! You have completed the tutorial and learned how to:
 
 Thank you for participating in this tutorial. If you found any issues along the way I'd appreciate it if you'd raise them by clicking the "Report a mistake" button at the bottom left of this site.
 
-*Copyright: Jan Kirenz (2021) | [kirenz.com](https://www.kirenz.com) | [CC BY-NC 2.0 License](https://creativecommons.org/licenses/by-nc/2.0/)*
+*Copyright: Jan Kirenz (2022) | [kirenz.com](https://www.kirenz.com) | [CC BY-NC 2.0 License](https://creativecommons.org/licenses/by-nc/2.0/)*
