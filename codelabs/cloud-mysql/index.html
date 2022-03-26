@@ -29,7 +29,7 @@
     
       <google-codelab-step label="Overview" duration="2">
         <p>In this tutorial you learn how to create a SQL database (using <a href="https://www.mysql.com" target="_blank">MySQL</a>) in Google Cloud and how to create a database and table.</p>
-<aside class="special"><p> You need a Google Cloud account for this tutorial  </p>
+<aside class="special"><p> You need a Google account for this tutorial  </p>
 </aside>
 <h2 is-upgraded>What we cover</h2>
 <ul>
@@ -44,7 +44,8 @@
       <google-codelab-step label="Prerequisites" duration="1">
         <p>To start this tutorial, you need the following setup:</p>
 <ul>
-<li>Access to Google Cloud (you may use the teaching credits or the <a href="https://cloud.google.com/free/docs/gcp-free-tier" target="_blank">90-day, $300 Free Trial</a>).</li>
+<li>Google account</li>
+<li>Access to Google Cloud (you may use the teaching credits (see Moodle) or the <a href="https://cloud.google.com/free/docs/gcp-free-tier" target="_blank">90-day, $300 Free Trial</a>).</li>
 </ul>
 
 
@@ -62,6 +63,7 @@
 </ul>
 <p class="image-container"><img style="width: 500.00px" src="img/a3ebadb8a7f2835b.png"></p>
 <ul>
+<li>If asked, provide the following information: no organization and educational billing account</li>
 <li>In the project selection, choose your project &#34;bigdata&#34;</li>
 </ul>
 
@@ -126,12 +128,13 @@
 </ul>
 <p class="image-container"><img style="width: 500.00px" src="img/af997d9e78290a0e.png"></p>
 <ul>
+<li>If you have troubles to open the <strong>cloud shell</strong>, try a different browser (ideally Chrome) or try to open the shell in a different tab.</li>
 <li>In the terminal, the following code should be already visible (visit this <a href="https://cloud.google.com/sdk/gcloud/reference/sql/connect" target="_blank">documentation</a> to learn more):</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">gcloud sql connect sql-database --user=root --quiet
 </code></pre>
 <ul>
-<li>Navigate inside the terminal and press enter.</li>
+<li>Navigate inside the terminal and press enter (this can take a few minutes).</li>
 <li>Now you should see a pop-up window. Authorize cloud shell:</li>
 </ul>
 <p class="image-container"><img style="width: 500.00px" src="img/845b7a420b0f91c6.png"></p>
@@ -148,7 +151,6 @@
 </ul>
 <p class="image-container"><img style="width: 500.00px" src="img/293eb006c152b749.png"></p>
 <p>Note: If you should have troubles to connect to your database, make sure you have the Cloud SQL Admin and Compute Viewer roles on your user account. In Google Cloud, navigate to the <a href="https://console.cloud.google.com/iam-admin/iam?_ga=2.188518954.367718554.1637234253-833492673.1631961616&_gac=-24091080.1637070889.Cj0KCQiAys2MBhDOARIsAFf1D1faRohOXdVaN5UQ-cMaSMy0OK75I2zeKTvDGykdbfS7bYbq69hUsmwaAvZPEALw_wcB" target="_blank">identity and access management (IAM) page</a>. For more information regarding IAM, visit this <a href="https://cloud.google.com/sql/docs/mysql/create-instance" target="_blank">site</a>.</p>
-<p>If you have troubles to open the <strong>cloud shell</strong>, try a different browser or try to open the shell in a different tab.</p>
 
 
       </google-codelab-step>

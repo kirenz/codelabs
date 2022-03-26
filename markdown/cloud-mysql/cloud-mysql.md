@@ -17,7 +17,7 @@ Duration: 0:02:00
 In this tutorial you learn how to create a SQL database (using [MySQL](https://www.mysql.com)) in Google Cloud and how to create a database and table. 
 
 <aside class="positive">
-You need a Google Cloud account for this tutorial 
+You need a Google account for this tutorial 
 </aside>
 
 
@@ -35,7 +35,8 @@ Duration: 0:01:00
 
 To start this tutorial, you need the following setup:
 
-- Access to Google Cloud (you may use the teaching credits or the [90-day, $300 Free Trial](https://cloud.google.com/free/docs/gcp-free-tier)).
+- Google account
+- Access to Google Cloud (you may use the teaching credits (see Moodle) or the [90-day, $300 Free Trial](https://cloud.google.com/free/docs/gcp-free-tier)).
 
 <!-- ------------------------ -->
 ## Create a project
@@ -53,6 +54,8 @@ First you need to create a new project in Google Cloud:
 - Click on "NEW PROJECT" and call it "bigdata"
 
 <img src="img/1b-new-project.png" alt="" width="500">
+
+- If asked, provide the following information: no organization and educational billing account
 
 - In the project selection, choose your project "bigdata"
 
@@ -125,6 +128,7 @@ Duration: 0:05:00
 
 <img src="img/3a-cloud-shell.png" alt="" width="500">
 
+- If you have troubles to open the **cloud shell**, try a different browser (ideally Chrome) or try to open the shell in a different tab.
 
 - In the terminal, the following code should be already visible (visit this [documentation](https://cloud.google.com/sdk/gcloud/reference/sql/connect) to learn more):
 
@@ -132,7 +136,7 @@ Duration: 0:05:00
 gcloud sql connect sql-database --user=root --quiet
 ```
 
-- Navigate inside the terminal and press enter.
+- Navigate inside the terminal and press enter (this can take a few minutes).
 
 
 - Now you should see a pop-up window. Authorize cloud shell: 
@@ -154,11 +158,8 @@ gcloud sql connect sql-database --user=root --quiet
 <img src="img/3e-mysql.png" alt="" width="500">
 
 
-
-
 Note: If you should have troubles to connect to your database, make sure you have the Cloud SQL Admin and Compute Viewer roles on your user account. In Google Cloud, navigate to the [identity and access management (IAM) page](https://console.cloud.google.com/iam-admin/iam?_ga=2.188518954.367718554.1637234253-833492673.1631961616&_gac=-24091080.1637070889.Cj0KCQiAys2MBhDOARIsAFf1D1faRohOXdVaN5UQ-cMaSMy0OK75I2zeKTvDGykdbfS7bYbq69hUsmwaAvZPEALw_wcB). For more information regarding IAM, visit this [site](https://cloud.google.com/sql/docs/mysql/create-instance).
 
-If you have troubles to open the **cloud shell**, try a different browser or try to open the shell in a different tab.
 
 
 <!-- ------------------------ -->
