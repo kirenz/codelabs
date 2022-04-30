@@ -56,7 +56,7 @@ Duration: 0:10:00
 
 <img src="img/html-page.png" alt="HTML page" width="200">
 
-- **HTML tags** are names of the *elements* surrounded by angle brackets `< >` For example, the `<h1>` tag defines the most important heading:  `<h1> This is my most important heading </h1>`
+- **HTML tags** are names of the *elements* surrounded by angle brackets `< >` For example, the \<h1\> tag defines the most important heading:  `<h1> This is my most important heading </h1>`
 
 
  
