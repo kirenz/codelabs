@@ -24,10 +24,9 @@ We will cover:
 - CSS selectors
 - Python libraries
 
-![https://www.youtube.com/watch?v=ewZ_YWbIWXI](https://youtube.com)
+<video id="DWAinkJ54AP8"></video>
 
-![https://www.youtube.com/watch?v=ewZ_YWbIWXI](https://youtu.be)
-
+<video id="ewZ_YWbIWXI"></video>
 
 
 <aside class="positive">
