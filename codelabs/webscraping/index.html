@@ -31,13 +31,14 @@
         <h2 is-upgraded>What we cover</h2>
 <p>In this tutorial we cover the basics of web scraping (also called web harvesting, or web data extraction) with Python to extract data from websites.</p>
 <p>We will cover:</p>
-<ul>
+<aside class="special"><ul>
 <li>Basics of HTML elements</li>
 <li>CSS Syntax</li>
 <li>CSS selectors and SelectorGadget</li>
 <li>Python libraries</li>
 </ul>
-<p><em>The content about HTML and CSS selesctors is based on Dmytro Perepolkin&#39;s </em><a href="https://rvest.tidyverse.org/articles/harvesting-the-web.html" target="_blank"><em>&#34;Introduction to HTML elements&#34;</em></a></p>
+</aside>
+<p><em>The content about HTML and CSS selesctors is mainly based on Dmytro Perepolkin&#39;s </em><a href="https://rvest.tidyverse.org/articles/harvesting-the-web.html" target="_blank"><em>&#34;Introduction to HTML elements&#34;</em></a></p>
 
 
       </google-codelab-step>
@@ -45,38 +46,27 @@
       <google-codelab-step label="Prerequisites" duration="1">
         <p>To start this tutorial, you need:</p>
 <ul>
-<li><a href="https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda" target="_blank">Anaconda</a>.</li>
-<li><a href="https://www.google.com/intl/de_de/chrome/" target="_blank">Google Chrome Web-Browser</a></li>
+<li>The open source data science platform <a href="https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda" target="_blank">Anaconda</a></li>
+<li>A <a href="https://www.google.com/intl/de_de/chrome/" target="_blank">Google Chrome Web-Browser</a></li>
 </ul>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="HTML Elements" duration="10">
-        <p><em>The following content is based on Dmytro Perepolkin&#39;s </em><a href="https://rvest.tidyverse.org/articles/harvesting-the-web.html" target="_blank"><em>&#34;Introduction to HTML elements&#34;</em></a></p>
-<ul>
+        <ul>
 <li>HTML stands for &#34;Hyper Text Markup Language&#34;.</li>
-<li>A <strong>HTML page</strong> consists of a series of <em>elements</em> which browsers use to interpret how to display the content.</li>
-<li><strong>HTML tags</strong> are names of the <em>elements</em> surrounded by angle brackets like so:  content goes here... .</li>
-<li>Most HTML tags come in pairs and consist of opening and a closing tag, known as <strong>start tag</strong> and <strong>end tag</strong>, where the end tag name is preceded by the forward slash <code>/</code>.</li>
-<li>Below is a visualization of a simple HTML page structure:</li>
+<li>A <strong>HTML page</strong> consists of a series of <em>elements</em> which browsers use to interpret how to display the content. Below is a visualization of a simple HTML page structure:</li>
 </ul>
 <p class="image-container"><img alt="HTML page" style="width: 200.00px" src="img/6720b3353833af88.png"></p>
 <ul>
-<li>It is possible to define <strong>HTML attributes</strong> inside HTML tags.</li>
-<li><strong>Attributes</strong> provide additional information about HTML elements, such as<ul>
-<li>hyperlinks for text,</li>
-<li>width and height for images</li>
+<li><strong>HTML tags</strong> are names of the <em>elements</em> surrounded by angle brackets <code>< ></code></li>
 </ul>
-</li>
-<li>Attributes are always defined in the start tag and come in name=&#34;value&#34; pairs</li>
-</ul>
-<aside class="special"><p> For example, The <a target="_blank"> tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the  element is the href attribute, which indicates the link&#39;s destination:  </a></p>
-<p><a href="https://www.example.com" target="_blank">  Here is my anchor text </a></p>
+<aside class="special"><p> For example, The `<a target="_blank">` tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the `` element is the href attribute, which indicates the link&#39;s destination:  <code><a href="https://www.example.com">  Here is my anchor text </a></code></a></p>
 </aside>
-<p>Watch this short video from w3schools which covers the basics of HTML:</p>
-<iframe class="youtube-video" src="https://www.youtube.com/embed/ewZ_YWbIWXI?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p><em>You can learn more about HTML tags and attributes from online resources, such as </em><a href="https://www.w3schools.com/html/default.asp" target="_blank"><em>W3schools</em></a></p>
+<p><a target="_blank">Watch this short video from w3schools which covers the basics of HTML:<iframe class="youtube-video" src="https://www.youtube.com/embed/ewZ_YWbIWXI?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</a></p>
+<p><a target="_blank"><em>You can learn more about HTML tags and attributes from online resources, such as </em></a><a href="https://www.w3schools.com/html/default.asp" target="_blank"><em>W3schools</em></a></p>
 
 
       </google-codelab-step>

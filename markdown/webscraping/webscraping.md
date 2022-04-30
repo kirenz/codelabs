@@ -20,12 +20,17 @@ In this tutorial we cover the basics of web scraping (also called web harvesting
 
 We will cover:
 
+<aside class="positive">
+
 - Basics of HTML elements
 - CSS Syntax
 - CSS selectors and SelectorGadget
 - Python libraries
 
-*The content about HTML and CSS selesctors is based on Dmytro Perepolkin's ["Introduction to HTML elements"](https://rvest.tidyverse.org/articles/harvesting-the-web.html)*
+</aside>
+
+
+*The content about HTML and CSS selesctors is mainly based on Dmytro Perepolkin's ["Introduction to HTML elements"](https://rvest.tidyverse.org/articles/harvesting-the-web.html)*
 
 <!-- ------------------------ -->
 ## Prerequisites
@@ -34,9 +39,9 @@ Duration: 0:01:00
 
 To start this tutorial, you need:
 
-- [Anaconda](https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda). 
+- The open source data science platform [Anaconda](https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda)
 
-- [Google Chrome Web-Browser](https://www.google.com/intl/de_de/chrome/)
+- A [Google Chrome Web-Browser](https://www.google.com/intl/de_de/chrome/)
 
 
 <!-- ------------------------ -->
@@ -44,26 +49,29 @@ To start this tutorial, you need:
 
 Duration: 0:10:00
 
-*The following content is based on Dmytro Perepolkin's ["Introduction to HTML elements"](https://rvest.tidyverse.org/articles/harvesting-the-web.html)*
 
 - HTML stands for "Hyper Text Markup Language". 
 
-- A **HTML page** consists of a series of *elements* which browsers use to interpret how to display the content. 
+- A **HTML page** consists of a series of *elements* which browsers use to interpret how to display the content. Below is a visualization of a simple HTML page structure:
 
-- **HTML tags** are names of the *elements* surrounded by angle brackets like so: <tagname> content goes here... </tagname>. 
+<img src="img/html-page.png" alt="HTML page" width="200">
+
+- **HTML tags** are names of the *elements* surrounded by angle brackets `< >` 
+
+
+<aside class="positive>
+
+For example, the <h1> tag defines the most important heading:  
+
+`<h1> This is my most important heading </h1>`
+
+</aside>
+
  
 - Most HTML tags come in pairs and consist of opening and a closing tag, known as **start tag** and **end tag**, where the end tag name is preceded by the forward slash `/`.
 
 
-- Below is a visualization of a simple HTML page structure:
-
-
-<img src="img/html-page.png" alt="HTML page" width="200">
-
-
-- It is possible to define **HTML attributes** inside HTML tags. 
-
-- **Attributes** provide additional information about HTML elements, such as   
+- It is also possible to define **HTML attributes** inside HTML tags. They provide additional information about HTML elements, such as   
   - hyperlinks for text, 
   - width and height for images
 
@@ -72,9 +80,9 @@ Duration: 0:10:00
 
 
 <aside class="positive">
-For example, The <a> tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the <a> element is the href attribute, which indicates the link's destination: 
+For example, The `<a>` tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the `<a>` element is the href attribute, which indicates the link's destination: 
 
-<a href="https://www.example.com">  Here is my anchor text </a>
+`<a href="https://www.example.com">  Here is my anchor text </a>`
 </aside>
 
 Watch this short video from w3schools which covers the basics of HTML: 
