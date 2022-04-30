@@ -49,11 +49,19 @@ To start this tutorial, you need:
 
 Duration: 0:10:00
 
-- HTML stands for "Hyper Text Markup Language". 
+- Watch this short video from w3schools which covers the basics of HTML: 
+
+<video id="ewZ_YWbIWXI"></video>
+
+
+- HTML stands for "Hyper Text Markup Language"
 
 - A **HTML page** consists of a series of *elements* which browsers use to interpret how to display the content. Below is a visualization of a simple HTML page structure:
 
 <img src="img/html-page.png" alt="HTML page" width="200">
+
+
+### Tags
 
 - **HTML tags** are names of the *elements* surrounded by angle brackets `< >`. For example, the \<h1\> tag defines the most important heading:  
 
@@ -62,6 +70,8 @@ Duration: 0:10:00
  
 - Most HTML tags come in pairs and consist of opening and a closing tag, known as **start tag** and **end tag**, where the end tag name is preceded by the forward slash `/`.
 
+
+### Attributes
 
 - It is also possible to define **HTML attributes** inside HTML tags. They provide additional information about HTML elements, such as   
   - hyperlinks for text, 
@@ -74,10 +84,6 @@ Duration: 0:10:00
 
   - \<a href="https://www.example.com"\>  Here is my anchor text \</a\>
 
-Watch this short video from w3schools which covers the basics of HTML: 
-
-
-<video id="ewZ_YWbIWXI"></video>
 
 
 *You can learn more about HTML tags and attributes from online resources, such as [W3schools](https://www.w3schools.com/html/default.asp)*
