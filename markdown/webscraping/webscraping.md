@@ -81,12 +81,26 @@ Duration: 0:10:00
 
 - Watch this short video from w3schools which covers the basics of HTML: 
 
-![https://www.youtube.com/watch?v=ewZ_YWbIWXI](https://youtube.com)
+<!--
+![https://www.youtube.com/watch?v=ewZ_YWbIWXI](https://youtube.com)]
 
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ewZ_YWbIWXI/0.jpg)](https://www.youtube.com/watch?v=ewZ_YWbIWXI)
+-->
 
 <aside class="positive">
 You can learn more about HTML tags and attributes from online resources, such as [W3schools](https://www.w3schools.com/html/default.asp)
 </aside>
+
+<iframe
+    width="640"
+    height="480"
+    src="https://www.youtube.com/embed/ewZ_YWbIWXI"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+>
+</iframe>
 
 <!-- ------------------------ -->
 ## CSS Syntax
