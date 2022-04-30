@@ -56,16 +56,8 @@ Duration: 0:10:00
 
 <img src="img/html-page.png" alt="HTML page" width="200">
 
-- **HTML tags** are names of the *elements* surrounded by angle brackets `< >` 
+- **HTML tags** are names of the *elements* surrounded by angle brackets `< >` For example, the `<h1>` tag defines the most important heading:  `<h1> This is my most important heading </h1>`
 
-
-<aside class="positive>
-
-For example, the `\<h1>` tag defines the most important heading:  
-
-`\<h1> This is my most important heading \</h1>`
-
-</aside>
 
  
 - Most HTML tags come in pairs and consist of opening and a closing tag, known as **start tag** and **end tag**, where the end tag name is preceded by the forward slash `/`.
