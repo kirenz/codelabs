@@ -24,6 +24,11 @@ We will cover:
 - CSS selectors
 - Python libraries
 
+![https://www.youtube.com/watch?v=ewZ_YWbIWXI](https://youtube.com)
+
+![https://www.youtube.com/watch?v=ewZ_YWbIWXI](https://youtu.be)
+
+
 
 <aside class="positive">
 Info box
@@ -44,6 +49,7 @@ Info box
     allowfullscreen
 >
 </iframe>
+
 
 
 <!-- ------------------------ -->
