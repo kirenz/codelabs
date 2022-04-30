@@ -2,6 +2,11 @@
 #
 # init.sh
 #
+#
+# In root:
+# ./init.sh  <name-of-codelab>
+#
+#
 # Automate these steps to get yourself up and running with Codelab:
 # * Create boilerplate for Codelab
 # * Configure a nodemon watch command to rebuild your codelab on save
@@ -47,7 +52,7 @@ if [ ! -f "$markdown_template" ] || [ ! -f "$package_json_template" ]; then
   exit 0
 fi
 
-# Create a new directory for the codelba 
+# Create a new directory for the codelab
 mkdir markdown/$CODELAB_NAME
 cp -r markdown/template/* markdown/$CODELAB_NAME/
 

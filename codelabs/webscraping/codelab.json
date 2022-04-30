@@ -1,0 +1,22 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-04-30T11:14:08+02:00",
+  "id": "webscraping",
+  "duration": 33,
+  "title": "Web Scraping in Python",
+  "summary": "",
+  "source": "webscraping.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": null,
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/webscraping",
+  "url": "webscraping"
+}
