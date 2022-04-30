@@ -20,14 +20,10 @@ In this tutorial we cover the basics of web scraping (also called web harvesting
 
 We will cover:
 
-<aside class="positive">
-
 - Basics of HTML elements
 - CSS Syntax
 - CSS selectors and SelectorGadget
-- Python libraries
-
-</aside>
+- Python libraries: Beautiful Soup
 
 
 *The content about HTML and CSS selesctors is mainly based on Dmytro Perepolkin's ["Introduction to HTML elements"](https://rvest.tidyverse.org/articles/harvesting-the-web.html)*
@@ -128,9 +124,9 @@ Duration: 0:05:00
 
 - As an example, open the page [quotes to scrape](http://quotes.toscrape.com/) 
 
-The following process is described in this [screencast](https://vimeo.com/52055686):
+- You can now use the extension (click at the magnifying glass symbol at the top right side of your Google Chrome browser) to inspect the site 
 
-1. You can now use the extension (click at the magnifying glass symbol at the top right side of your Google Chrome browser) to inspect the site 
+The following process is described in this [screencast](https://vimeo.com/52055686):
 
 1. A box will open in the bottom right of the website. 
 
@@ -149,11 +145,17 @@ Through this process of selection and rejection, SelectorGadget helps you come u
 
 
 <!-- ------------------------ -->
-## Txt
+## Beautiful Soup
 
 Duration: 0:05:00
 
-Txt
+[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is a Python library for pulling data out of HTML and XML files.
+
+- Import BeautifulSoup
+
+```Python
+from bs4 import BeautifulSoup
+```
 
 <!-- ------------------------ -->
 ## What's next?
