@@ -49,12 +49,12 @@ To start this tutorial, you need:
 
 Duration: 0:10:00
 
-- Watch this short video from w3schools which covers the basics of HTML: 
+Watch this short video from w3schools which covers the basics of "Hyper Text Markup Language" (HTML): 
 
 <video id="ewZ_YWbIWXI"></video>
 
 
-- HTML stands for "Hyper Text Markup Language"
+### HTML page
 
 - A **HTML page** consists of a series of *elements* which browsers use to interpret how to display the content. Below is a visualization of a simple HTML page structure:
 
@@ -69,7 +69,6 @@ Duration: 0:10:00
 
  
 - Most HTML tags come in pairs and consist of opening and a closing tag, known as **start tag** and **end tag**, where the end tag name is preceded by the forward slash `/`.
-
 
 ### Attributes
 
