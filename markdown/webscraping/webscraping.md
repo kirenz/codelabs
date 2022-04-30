@@ -21,42 +21,22 @@ In this tutorial we cover the basics of web scraping (also called web harvesting
 We will cover:
 
 - Basics of HTML elements
-- CSS selectors
+- CSS Syntax
+- CSS selectors and SelectorGadget
 - Python libraries
 
-<video id="DWAinkJ54AP8"></video>
-
-<video id="ewZ_YWbIWXI"></video>
-
-
-<aside class="positive">
-Info box
-</aside>
-
-Txt
-
-<aside class="negative">
-Info box
-</aside>
-
-<iframe
-    width="640"
-    height="480"
-    src="https://www.youtube.com/embed/ewZ_YWbIWXI"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
->
-</iframe>
-
-
+*The content about HTML and CSS selesctors is based on Dmytro Perepolkin's ["Introduction to HTML elements"](https://rvest.tidyverse.org/articles/harvesting-the-web.html)*
 
 <!-- ------------------------ -->
 ## Prerequisites
 
 Duration: 0:01:00
 
-To start this tutorial, you need [**Anaconda**](https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda). 
+To start this tutorial, you need:
+
+- [Anaconda](https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda). 
+
+- [Google Chrome Web-Browser](https://www.google.com/intl/de_de/chrome/)
 
 
 <!-- ------------------------ -->
@@ -88,34 +68,23 @@ Duration: 0:10:00
   - width and height for images
 
 
-- Attributes are always defined in the start tag and come in name="value" pairs, like so: 
+- Attributes are always defined in the start tag and come in name="value" pairs
 
-  - <a href="https://www.example.com">   This is a link   </a>
-
-
-
-- Watch this short video from w3schools which covers the basics of HTML: 
-
-<!--
-![https://www.youtube.com/watch?v=ewZ_YWbIWXI](https://youtube.com)]
-
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ewZ_YWbIWXI/0.jpg)](https://www.youtube.com/watch?v=ewZ_YWbIWXI)
--->
 
 <aside class="positive">
-You can learn more about HTML tags and attributes from online resources, such as [W3schools](https://www.w3schools.com/html/default.asp)
+For example, The <a> tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the <a> element is the href attribute, which indicates the link's destination: 
+
+<a href="https://www.example.com">  Here is my anchor text </a>
 </aside>
 
-<iframe
-    width="640"
-    height="480"
-    src="https://www.youtube.com/embed/ewZ_YWbIWXI"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
->
-</iframe>
+Watch this short video from w3schools which covers the basics of HTML: 
+
+
+<video id="ewZ_YWbIWXI"></video>
+
+
+*You can learn more about HTML tags and attributes from online resources, such as [W3schools](https://www.w3schools.com/html/default.asp)*
+
 
 <!-- ------------------------ -->
 ## CSS Syntax
@@ -124,17 +93,14 @@ Duration: 0:05:00
 
 - CSS stands for Cascading Style Sheets
 
-- It is the language we use to style an HTML document.
+- It is the language we use to style an HTML document
 
-- CSS describes how HTML elements should be displayed.
+- CSS describes how HTML elements should be displayed
 
 
 Watch this short video tutorial from the CSS Syntax chapter of the CSS tutorial on w3schools.com:
 
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QqmCs2UTS8s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
+<video id="QqmCs2UTS8s"></video>
 
 
 <!-- ------------------------ -->
@@ -142,24 +108,28 @@ Watch this short video tutorial from the CSS Syntax chapter of the CSS tutorial 
 
 Duration: 0:05:00
 
-In CSS, selectors are patterns used to select element(s).
+- CSS selectors represent patterns for locating HTML elements 
+
+- They can be used not only for styling, but also for extracting the content of these elements
+
+<aside class="negative">
+Try to solve the first 4 tasks in this CSS selector game:  https://flukeout.github.io/
+</aside>
 
 
+- **Selector Gadget** is an open source tool which allows CSS selector generation and discovery
 
-- [CSS Selector Reference](CSS Selector Reference
-)
+<video id=52055686></video>
 
-```bash
-brew install go
-```
+- Install the [SelectorGadget](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb) extension in Google Chrome
 
-```python
-brew install go
-```
+- Lets have a look at the [quotes to scrape](http://quotes.toscrape.com/) and inspect the content of the page
 
-![https://codepen.io/tzoght/embed/yRNZaP](https://en.wikipedia.org/wiki/File:Example.jpg "Try Me Publisher")
+- You can now use the extension (click at the magnifying glass symbol at the top right side of your Google Chrome browser) to inspect the site
 
-Txt
+
+*To learn more about CSS Selectors, review w3schools [CSS Selector Reference](https://www.w3schools.com/cssref/css_selectors.asp)*
+
 
 
 <!-- ------------------------ -->
