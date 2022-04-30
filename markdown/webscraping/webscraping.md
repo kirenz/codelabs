@@ -35,6 +35,16 @@ Txt
 Info box
 </aside>
 
+<iframe
+    width="640"
+    height="480"
+    src="https://www.youtube.com/embed/ewZ_YWbIWXI"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+>
+</iframe>
+
 
 <!-- ------------------------ -->
 ## Prerequisites
@@ -113,7 +123,6 @@ Duration: 0:05:00
 
 - CSS describes how HTML elements should be displayed.
 
----
 
 Watch this short video tutorial from the CSS Syntax chapter of the CSS tutorial on w3schools.com:
 
