@@ -22,7 +22,7 @@ We will cover:
 
 - Basics of HTML elements
 - CSS Syntax
-- CSS selectors and SelectorGadget
+- CSS selectors: Chrome DevTools and SelectorGadget
 - Python libraries: Beautiful Soup
 
 
