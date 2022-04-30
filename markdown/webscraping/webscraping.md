@@ -56,7 +56,7 @@ Watch this short video from w3schools which covers the basics of "Hyper Text Mar
 
 ### HTML page
 
-- A **HTML page** consists of a series of *elements* which browsers use to interpret how to display the content. Below is a visualization of a simple HTML page structure:
+- A HTML page consists of a series of *elements* which browsers use to interpret how to display the content. Below is a visualization of a simple HTML page structure:
 
 <img src="img/html-page.png" alt="HTML page" width="200">
 
@@ -74,7 +74,7 @@ Watch this short video from w3schools which covers the basics of "Hyper Text Mar
 
 ### HTML attributes
 
-- It is also possible to define **HTML attributes** inside HTML tags. 
+- It is also possible to define HTML attributes inside HTML tags. 
 
 - They provide additional information about HTML elements, such as   
   - hyperlinks for text, 
@@ -99,16 +99,14 @@ Watch this short video from w3schools which covers the basics of "Hyper Text Mar
 
 Duration: 0:05:00
 
-- CSS stands for Cascading Style Sheets
-
-- It is the language we use to style an HTML document
-
-- CSS describes how HTML elements should be displayed
-
-
-Watch this short video tutorial from the CSS Syntax chapter of the CSS tutorial on w3schools.com:
+Watch this short video tutorial about the Cascading Style Sheets (CSS) Syntax:
 
 <video id="QqmCs2UTS8s"></video>
+
+
+- CSS is the language we use to style an HTML document
+
+- CSS describes how HTML elements should be displayed
 
 
 <!-- ------------------------ -->
@@ -120,20 +118,27 @@ Duration: 0:05:00
 
 - They can be used not only for styling, but also for extracting the content of these elements
 
-<aside class="negative">
-Try to solve the first 4 tasks in this CSS selector game:  https://flukeout.github.io/
-</aside>
+- Try to solve the first 4 tasks in this [CSS selector game](https://flukeout.github.io/)
 
+### SelectorGadget
 
-- **Selector Gadget** is an open source tool which allows CSS selector generation and discovery
+- [SelectorGadget](https://selectorgadget.com/) is an open source tool which allows CSS selector generation and discovery
 
-<video id=52055686></video>
+1. Install the [SelectorGadget](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb) extension in Google Chrome
 
-- Install the [SelectorGadget](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb) extension in Google Chrome
+1. As an example, open the page [quotes to scrape](http://quotes.toscrape.com/) 
 
-- Lets have a look at the [quotes to scrape](http://quotes.toscrape.com/) and inspect the content of the page
+1. You can now use the extension (click at the magnifying glass symbol at the top right side of your Google Chrome browser) to inspect the site
 
-- You can now use the extension (click at the magnifying glass symbol at the top right side of your Google Chrome browser) to inspect the site
+1. A box will open in the bottom right of the website. 
+
+1. Click on a page element that you would like your selector to match (it will turn green). 
+
+1. SelectorGadget will then generate a minimal CSS selector for that element, and will highlight (yellow) everything that is matched by the selector. 
+
+1. Now click on a highlighted element to remove it from the selector (red), or click on an unhighlighted element to add it to the selector. 
+
+Through this process of selection and rejection, SelectorGadget helps you come up with the perfect CSS selector for your needs.
 
 
 *To learn more about CSS Selectors, review w3schools [CSS Selector Reference](https://www.w3schools.com/cssref/css_selectors.asp)*
