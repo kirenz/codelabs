@@ -61,9 +61,10 @@ Duration: 0:10:00
 
 <aside class="positive>
 
-For example, the `<h1>` tag defines the most important heading:  
+For example, the ```<h1>``` tag defines the most important heading:  
 
-`<h1> This is my most important heading </h1>`
+```<h1> This is my most important heading </h1>```
+
 </aside>
 
  
