@@ -138,6 +138,9 @@ Duration: 0:05:00
 
 1. Now click on a highlighted element to remove it from the selector (red), or click on an unhighlighted element to add it to the selector. 
 
+<iframe src="https://player.vimeo.com/video/52055686?h=6d49b3e9ac" width="640" height="582" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/52055686">SelectorGadget Screencast</a> from <a href="https://vimeo.com/tectonic">Andrew Cantino</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
 Through this process of selection and rejection, SelectorGadget helps you come up with the perfect CSS selector for your needs.
 
 
