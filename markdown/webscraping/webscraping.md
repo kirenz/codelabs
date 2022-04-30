@@ -55,11 +55,9 @@ Duration: 0:10:00
 
 <img src="img/html-page.png" alt="HTML page" width="200">
 
-- **HTML tags** are names of the *elements* surrounded by angle brackets `< >` 
+- **HTML tags** are names of the *elements* surrounded by angle brackets `< >`. For example, the \<h1\> tag defines the most important heading:  
 
-<aside class="positive">
-For example, the \<h1\> tag defines the most important heading:  \<h1\> This is my most important heading \</h1\>
-</aside>
+  - \<h1\> This is my most important heading \</h1\>
 
  
 - Most HTML tags come in pairs and consist of opening and a closing tag, known as **start tag** and **end tag**, where the end tag name is preceded by the forward slash `/`.
@@ -72,12 +70,9 @@ For example, the \<h1\> tag defines the most important heading:  \<h1\> This is 
 
 - Attributes are always defined in the start tag and come in name="value" pairs
 
+- For example, The `\<a\>` tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the `\<a\>` element is the href attribute, which indicates the link's destination: 
 
-<aside class="positive">
-For example, The `\<a\>` tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the `\<a\>` element is the href attribute, which indicates the link's destination: 
-
-`\<a href="https://www.example.com"\>  Here is my anchor text \</a\>`
-</aside>
+  - \<a href="https://www.example.com"\>  Here is my anchor text \</a\>
 
 Watch this short video from w3schools which covers the basics of HTML: 
 
