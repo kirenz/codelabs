@@ -108,13 +108,26 @@ Watch this short video tutorial about the Cascading Style Sheets (CSS) Syntax:
 <!-- ------------------------ -->
 ## CSS Selectors
 
-Duration: 0:05:00
+Duration: 0:10:00
 
 - CSS selectors represent patterns for locating HTML elements 
 
 - They can be used not only for styling, but also for extracting the content of these elements
 
 - Try to solve the first 4 tasks in this [CSS selector game](https://flukeout.github.io/)
+
+
+### Chrome DevTools 
+
+Learn the basics of viewing a page's CSS using Chrome DevTools:
+
+- In Google Chrome, press `Command`+`Option`+`I` (Mac) or `Control`+`Shift`+`I` to open the The Elements panel of DevTools or you may use the menu:
+
+<img src="img/devtools.png">
+
+- Complete the first task in ["View an element's CSS"](https://developer.chrome.com/docs/devtools/css/)
+
+
 
 ### SelectorGadget
 
@@ -156,6 +169,8 @@ Duration: 0:05:00
 ```Python
 from bs4 import BeautifulSoup
 ```
+
+
 
 <!-- ------------------------ -->
 ## What's next?

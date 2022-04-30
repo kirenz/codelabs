@@ -31,13 +31,12 @@
         <h2 is-upgraded>What we cover</h2>
 <p>In this tutorial we cover the basics of web scraping (also called web harvesting, or web data extraction) with Python to extract data from websites.</p>
 <p>We will cover:</p>
-<aside class="special"><ul>
+<ul>
 <li>Basics of HTML elements</li>
 <li>CSS Syntax</li>
 <li>CSS selectors and SelectorGadget</li>
-<li>Python libraries</li>
+<li>Python libraries: Beautiful Soup</li>
 </ul>
-</aside>
 <p><em>The content about HTML and CSS selesctors is mainly based on Dmytro Perepolkin&#39;s </em><a href="https://rvest.tidyverse.org/articles/harvesting-the-web.html" target="_blank"><em>&#34;Introduction to HTML elements&#34;</em></a></p>
 
 
@@ -101,11 +100,20 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="CSS Selectors" duration="5">
+      <google-codelab-step label="CSS Selectors" duration="10">
         <ul>
 <li>CSS selectors represent patterns for locating HTML elements</li>
 <li>They can be used not only for styling, but also for extracting the content of these elements</li>
 <li>Try to solve the first 4 tasks in this <a href="https://flukeout.github.io/" target="_blank">CSS selector game</a></li>
+</ul>
+<h2 is-upgraded>Chrome DevTools</h2>
+<p>Learn the basics of viewing a page&#39;s CSS using Chrome DevTools:</p>
+<ul>
+<li>In Google Chrome, press <code>Command</code>+<code>Option</code>+<code>I</code> (Mac) or <code>Control</code>+<code>Shift</code>+<code>I</code> to open the The Elements panel of DevTools or you may use the menu:</li>
+</ul>
+<p class="image-container"><img src="img/dd68ea5324d6f321.png"></p>
+<ul>
+<li>Complete the first task in <a href="https://developer.chrome.com/docs/devtools/css/" target="_blank">&#34;View an element&#39;s CSS&#34;</a></li>
 </ul>
 <h2 is-upgraded>SelectorGadget</h2>
 <ul>
@@ -127,8 +135,13 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Txt" duration="5">
-        <p>Txt</p>
+      <google-codelab-step label="Beautiful Soup" duration="5">
+        <p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank">Beautiful Soup</a> is a Python library for pulling data out of HTML and XML files.</p>
+<ul>
+<li>Import BeautifulSoup</li>
+</ul>
+<pre><code language="language-Python" class="language-Python">from bs4 import BeautifulSoup
+</code></pre>
 
 
       </google-codelab-step>
