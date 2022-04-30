@@ -49,15 +49,17 @@ To start this tutorial, you need:
 
 Duration: 0:10:00
 
-
 - HTML stands for "Hyper Text Markup Language". 
 
 - A **HTML page** consists of a series of *elements* which browsers use to interpret how to display the content. Below is a visualization of a simple HTML page structure:
 
 <img src="img/html-page.png" alt="HTML page" width="200">
 
-- **HTML tags** are names of the *elements* surrounded by angle brackets `< >` For example, the \<h1\> tag defines the most important heading:  `<h1> This is my most important heading </h1>`
+- **HTML tags** are names of the *elements* surrounded by angle brackets `< >` 
 
+<aside class="positive">
+For example, the \<h1\> tag defines the most important heading:  \<h1\> This is my most important heading \</h1\>
+</aside>
 
  
 - Most HTML tags come in pairs and consist of opening and a closing tag, known as **start tag** and **end tag**, where the end tag name is preceded by the forward slash `/`.
@@ -72,9 +74,9 @@ Duration: 0:10:00
 
 
 <aside class="positive">
-For example, The `<a>` tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the `<a>` element is the href attribute, which indicates the link's destination: 
+For example, The `\<a\>` tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the `\<a\>` element is the href attribute, which indicates the link's destination: 
 
-`<a href="https://www.example.com">  Here is my anchor text </a>`
+`\<a href="https://www.example.com"\>  Here is my anchor text \</a\>`
 </aside>
 
 Watch this short video from w3schools which covers the basics of HTML: 
