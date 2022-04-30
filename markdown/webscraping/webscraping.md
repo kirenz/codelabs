@@ -7,7 +7,7 @@ environments: Web
 status: Published
 feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/webscraping
 
-# Web Scraping in Python
+# Web Scraping Basics
 
 <!-- ------------------------ -->
 ## Overview
@@ -16,15 +16,14 @@ Duration: 0:05:00
 
 ### What we cover
 
-In this tutorial we cover the basics of web scraping (also called web harvesting, or web data extraction) with Python to extract data from websites.
+In this tutorial we cover the basics of web scraping (also called web harvesting, or web data extraction) you need to know to extract data from websites.
 
 We will cover:
 
-- Basics of HTML elements
-- CSS Syntax
-- CSS selectors: Chrome DevTools and SelectorGadget
-- Python libraries: Beautiful Soup
-
+- Basics of HTML
+- CSS Syntax and selectors
+- Chrome DevTools 
+- SelectorGadget
 
 *The content about HTML and CSS selesctors is mainly based on Dmytro Perepolkin's ["Introduction to HTML elements"](https://rvest.tidyverse.org/articles/harvesting-the-web.html)*
 
@@ -35,13 +34,11 @@ Duration: 0:01:00
 
 To start this tutorial, you need:
 
-- The open source data science platform [Anaconda](https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda)
-
 - A [Google Chrome Web-Browser](https://www.google.com/intl/de_de/chrome/)
 
 
 <!-- ------------------------ -->
-## HTML Elements 
+## HTML  
 
 Duration: 0:10:00
 
@@ -91,9 +88,11 @@ Watch this short video from w3schools which covers the basics of "Hyper Text Mar
 
 
 <!-- ------------------------ -->
-## CSS Syntax
+## CSS 
 
-Duration: 0:05:00
+Duration: 0:10:00
+
+### Syntax
 
 Watch this short video tutorial about the Cascading Style Sheets (CSS) Syntax:
 
@@ -105,10 +104,7 @@ Watch this short video tutorial about the Cascading Style Sheets (CSS) Syntax:
 - CSS describes how HTML elements should be displayed
 
 
-<!-- ------------------------ -->
-## CSS Selectors
-
-Duration: 0:10:00
+### CSS Selectors
 
 - CSS selectors represent patterns for locating HTML elements 
 
@@ -116,8 +112,10 @@ Duration: 0:10:00
 
 - Try to solve the first 4 tasks in this [CSS selector game](https://flukeout.github.io/)
 
+<!-- ------------------------ -->
+## Chrome DevTools 
 
-### Chrome DevTools 
+Duration: 0:05:00
 
 Learn the basics of viewing a page's CSS using Chrome DevTools:
 
@@ -128,8 +126,10 @@ Learn the basics of viewing a page's CSS using Chrome DevTools:
 - Complete the first task in ["View an element's CSS"](https://developer.chrome.com/docs/devtools/css/)
 
 
+<!-- ------------------------ -->
+## SelectorGadget 
 
-### SelectorGadget
+Duration: 0:10:00
 
 - [SelectorGadget](https://selectorgadget.com/) is an open source tool which allows CSS selector generation and discovery
 
@@ -158,34 +158,19 @@ Through this process of selection and rejection, SelectorGadget helps you come u
 
 
 <!-- ------------------------ -->
-## Beautiful Soup
-
-Duration: 0:05:00
-
-[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is a Python library for pulling data out of HTML and XML files.
-
-- Import BeautifulSoup
-
-```Python
-from bs4 import BeautifulSoup
-```
-
-
-
-<!-- ------------------------ -->
 ## What's next?
 
 Duration: 0:02:00
 
-Congratulations! You have completed the tutorial and learned how to:
+Congratulations! You have completed the tutorial and learned the basics of:
 
-✅ Install  
-✅ Use  
-✅ Implement  
+✅ HTML  
+✅ CSS  
+✅ Chrome DevTools and SelectorGadget  
 
 Next, you may want to proceed with this tutorial:
 
-- 💻[](https://kirenz.github.io/codelabs/codelabs/webscraping
+- [Build a Web Scraper in Python]()
 
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">

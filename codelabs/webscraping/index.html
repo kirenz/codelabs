@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Web Scraping in Python</title>
+  <title>Web Scraping Basics</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
@@ -23,19 +23,19 @@
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid=""
                   id="webscraping"
-                  title="Web Scraping in Python"
+                  title="Web Scraping Basics"
                   environment="web"
                   feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/webscraping">
     
       <google-codelab-step label="Overview" duration="5">
         <h2 is-upgraded>What we cover</h2>
-<p>In this tutorial we cover the basics of web scraping (also called web harvesting, or web data extraction) with Python to extract data from websites.</p>
+<p>In this tutorial we cover the basics of web scraping (also called web harvesting, or web data extraction) you need to know to extract data from websites.</p>
 <p>We will cover:</p>
 <ul>
-<li>Basics of HTML elements</li>
-<li>CSS Syntax</li>
-<li>CSS selectors: Chrome DevTools and SelectorGadget</li>
-<li>Python libraries: Beautiful Soup</li>
+<li>Basics of HTML</li>
+<li>CSS Syntax and selectors</li>
+<li>Chrome DevTools</li>
+<li>SelectorGadget</li>
 </ul>
 <p><em>The content about HTML and CSS selesctors is mainly based on Dmytro Perepolkin&#39;s </em><a href="https://rvest.tidyverse.org/articles/harvesting-the-web.html" target="_blank"><em>&#34;Introduction to HTML elements&#34;</em></a></p>
 
@@ -45,14 +45,13 @@
       <google-codelab-step label="Prerequisites" duration="1">
         <p>To start this tutorial, you need:</p>
 <ul>
-<li>The open source data science platform <a href="https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda" target="_blank">Anaconda</a></li>
 <li>A <a href="https://www.google.com/intl/de_de/chrome/" target="_blank">Google Chrome Web-Browser</a></li>
 </ul>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="HTML Elements" duration="10">
+      <google-codelab-step label="HTML" duration="10">
         <p>Watch this short video from w3schools which covers the basics of &#34;Hyper Text Markup Language&#34; (HTML):</p>
 <iframe class="youtube-video" src="https://www.youtube.com/embed/ewZ_YWbIWXI?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h2 is-upgraded>HTML page</h2>
@@ -89,25 +88,26 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="CSS Syntax" duration="5">
-        <p>Watch this short video tutorial about the Cascading Style Sheets (CSS) Syntax:</p>
+      <google-codelab-step label="CSS" duration="10">
+        <h2 is-upgraded>Syntax</h2>
+<p>Watch this short video tutorial about the Cascading Style Sheets (CSS) Syntax:</p>
 <iframe class="youtube-video" src="https://www.youtube.com/embed/QqmCs2UTS8s?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <ul>
 <li>CSS is the language we use to style an HTML document</li>
 <li>CSS describes how HTML elements should be displayed</li>
 </ul>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="CSS Selectors" duration="10">
-        <ul>
+<h2 is-upgraded>CSS Selectors</h2>
+<ul>
 <li>CSS selectors represent patterns for locating HTML elements</li>
 <li>They can be used not only for styling, but also for extracting the content of these elements</li>
 <li>Try to solve the first 4 tasks in this <a href="https://flukeout.github.io/" target="_blank">CSS selector game</a></li>
 </ul>
-<h2 is-upgraded>Chrome DevTools</h2>
-<p>Learn the basics of viewing a page&#39;s CSS using Chrome DevTools:</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Chrome DevTools" duration="5">
+        <p>Learn the basics of viewing a page&#39;s CSS using Chrome DevTools:</p>
 <ul>
 <li>In Google Chrome, press <code>Command</code>+<code>Option</code>+<code>I</code> (Mac) or <code>Control</code>+<code>Shift</code>+<code>I</code> to open the The Elements panel of DevTools or you may use the menu:</li>
 </ul>
@@ -115,8 +115,12 @@
 <ul>
 <li>Complete the first task in <a href="https://developer.chrome.com/docs/devtools/css/" target="_blank">&#34;View an element&#39;s CSS&#34;</a></li>
 </ul>
-<h2 is-upgraded>SelectorGadget</h2>
-<ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="SelectorGadget" duration="10">
+        <ul>
 <li><a href="https://selectorgadget.com/" target="_blank">SelectorGadget</a> is an open source tool which allows CSS selector generation and discovery</li>
 <li>Install the <a href="https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb" target="_blank">SelectorGadget</a> extension in Google Chrome</li>
 <li>As an example, open the page <a href="http://quotes.toscrape.com/" target="_blank">quotes to scrape</a></li>
@@ -135,23 +139,12 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Beautiful Soup" duration="5">
-        <p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank">Beautiful Soup</a> is a Python library for pulling data out of HTML and XML files.</p>
-<ul>
-<li>Import BeautifulSoup</li>
-</ul>
-<pre><code language="language-Python" class="language-Python">from bs4 import BeautifulSoup
-</code></pre>
-
-
-      </google-codelab-step>
-    
       <google-codelab-step label="What&#39;s next?" duration="2">
-        <p>Congratulations! You have completed the tutorial and learned how to:</p>
-<p>✅ Install<br> ✅ Use<br> ✅ Implement</p>
+        <p>Congratulations! You have completed the tutorial and learned the basics of:</p>
+<p>✅ HTML<br> ✅ CSS<br> ✅ Chrome DevTools and SelectorGadget</p>
 <p>Next, you may want to proceed with this tutorial:</p>
 <ul>
-<li>💻[](https://kirenz.github.io/codelabs/codelabs/webscraping</li>
+<li><a target="_blank">Build a Web Scraper in Python</a></li>
 </ul>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
 <p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
