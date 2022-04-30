@@ -79,7 +79,7 @@ Watch this short video from w3schools which covers the basics of "Hyper Text Mar
 
 - Attributes are always defined in the start tag and come in name="value" pairs
 
-- For example, The `\<a\>` tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the `\<a\>` element is the href attribute, which indicates the link's destination: 
+- For example, The \<a\> tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the \<a\> element is the href attribute, which indicates the link's destination: 
 
   - \<a href="https://www.example.com"\>  Here is my anchor text \</a\>
 
