@@ -61,25 +61,31 @@ Watch this short video from w3schools which covers the basics of "Hyper Text Mar
 <img src="img/html-page.png" alt="HTML page" width="200">
 
 
-### Tags
+### HTML tags
 
-- **HTML tags** are names of the *elements* surrounded by angle brackets `< >`. For example, the \<h1\> tag defines the most important heading:  
+- HTML tags are names of the *elements* surrounded by angle brackets `< >`. 
+
+- For example, the \<h1\> tag defines the most important heading:  
 
   - \<h1\> This is my most important heading \</h1\>
 
  
 - Most HTML tags come in pairs and consist of opening and a closing tag, known as **start tag** and **end tag**, where the end tag name is preceded by the forward slash `/`.
 
-### Attributes
+### HTML attributes
 
-- It is also possible to define **HTML attributes** inside HTML tags. They provide additional information about HTML elements, such as   
+- It is also possible to define **HTML attributes** inside HTML tags. 
+
+- They provide additional information about HTML elements, such as   
   - hyperlinks for text, 
   - width and height for images
 
 
 - Attributes are always defined in the start tag and come in name="value" pairs
 
-- For example, The \<a\> tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the \<a\> element is the href attribute, which indicates the link's destination: 
+- For example, the \<a\> tag defines a hyperlink, which is used to link from one page to another. 
+
+- The most important attribute of the \<a\> element is the href attribute, which indicates the link's destination: 
 
   - \<a href="https://www.example.com"\>  Here is my anchor text \</a\>
 
