@@ -16,7 +16,7 @@ Duration: 0:05:00
 
 ### What we cover
 
-In this tutorial we cover the basics of web scraping (also called web harvesting, or web data extraction) you need to know to extract data from websites.
+In this tutorial we cover the basics of web scraping (also called web harvesting, or web data extraction).
 
 We will cover:
 
@@ -170,7 +170,7 @@ Congratulations! You have completed the tutorial and learned the basics of:
 
 Next, you may want to proceed with this tutorial:
 
-- [Build a Web Scraper in Python]()
+- [Web Scraping in Python With Beautiful Soup Requests and Pandas](https://www.kirenz.com/post/2022-05-02-web-scraping-in-python-with-beautiful-soup-requests-and-pandas/)
 
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
