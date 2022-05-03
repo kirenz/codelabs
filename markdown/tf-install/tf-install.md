@@ -17,7 +17,7 @@ In this tutorial, we will install [TensorFlow](https://www.tensorflow.org/), whi
 
 Important note on **Apple Metal (ARM64)**: 
 
-- This tutorial should work fine for Apple Metal. However, if you want to accelerate machine learning on Apple ARM machines, you need to follow [these instructions](https://developer.apple.com/metal/tensorflow-plugin/) from Apple. Start the instructions at "arm64: Apple Silicon". If you choose this option, you can skip the following 2 steps and jump right to "Install additional modules".
+- This tutorial works fine for Apple Metal. However, if you want to accelerate machine learning on Apple ARM machines, you need to follow [these instructions](https://developer.apple.com/metal/tensorflow-plugin/) from Apple. Start the instructions at "arm64: Apple Silicon". If you choose this option, you can skip the following steps and jump right to step 5: "Install additional modules".
 
  
 <!-- ------------------------ -->
