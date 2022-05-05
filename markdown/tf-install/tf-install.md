@@ -15,9 +15,9 @@ Duration: 0:01:00
 
 In this tutorial, we will install [TensorFlow](https://www.tensorflow.org/), which is an end-to-end open source platform for machine learning.
 
-Important note on **Apple Metal (ARM64)**: 
+Important note on **Apple Silicon (ARM64)**: 
 
-- This tutorial works fine for Apple Metal. However, if you want to accelerate machine learning on Apple ARM machines, you need to follow [these instructions](https://developer.apple.com/metal/tensorflow-plugin/) from Apple. Start the instructions at "arm64: Apple Silicon". If you choose this option, you can skip the following steps and jump right to step 5: "Install additional modules".
+- This tutorial works fine for Mac's with the [new Apple chips](https://support.apple.com/de-de/HT211814). However, if you want to accelerate machine learning on Apple ARM machines, you need to follow [these instructions](https://developer.apple.com/metal/tensorflow-plugin/) from Apple. Start the instructions at "arm64: Apple Silicon". If you choose this option, you can skip the following steps and jump right to step 5: "Install additional modules".
 
  
 <!-- ------------------------ -->
