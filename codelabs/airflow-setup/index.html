@@ -64,7 +64,7 @@
         <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.</p>
 <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
 <p>We create an environment with a specific version of Python (3.8). We call the environment <code>airflow</code>:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n airflow python=3.8 pip
+<pre><code language="language-bash" class="language-bash">conda create -n airflow python=3.9 pip
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
 
@@ -92,8 +92,8 @@
 <p><em>or (alternatively to the full path) use this approach</em></p>
 <pre><code language="language-bash" class="language-bash">SET AIRFLOW_HOME=%USERPROFILE%\airflow
 </code></pre>
-<p>(4) Install Airflow with the following constraints file. We use Airflow Version &#34;2.2.0&#34; and Python &#34;3.8.&#34;:</p>
-<pre><code language="language-bash" class="language-bash">pip install &#34;apache-airflow==2.2.4&#34; --constraint &#34;https://raw.githubusercontent.com/apache/airflow/constraints-2.2.4/constraints-3.8.txt&#34;
+<p>(4) Install Airflow with the following constraints file. We use Airflow Version &#34;2.3.0&#34; and Python &#34;3.9.&#34;:</p>
+<pre><code language="language-bash" class="language-bash">pip install &#34;apache-airflow==2.3.0&#34; --constraint &#34;https://raw.githubusercontent.com/apache/airflow/constraints-2.3.0/constraints-3.9.txt&#34;
 </code></pre>
 <p>(5) Since we will be using PostgreSQL, we need to install the <a href="https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html" target="_blank">postgres provider package</a>:</p>
 <pre><code language="language-bash" class="language-bash">pip install apache-airflow-providers-postgres

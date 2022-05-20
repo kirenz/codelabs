@@ -64,7 +64,7 @@ On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or 
 We create an environment with a specific version of Python (3.8). We call the environment ``airflow``:
 
 ```bash
-conda create -n airflow python=3.8 pip
+conda create -n airflow python=3.9 pip
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
@@ -114,10 +114,10 @@ SET AIRFLOW_HOME=C:\Users\<YourUserName>\airflow
 SET AIRFLOW_HOME=%USERPROFILE%\airflow
 ```
 
-(4) Install Airflow with the following constraints file. We use Airflow Version "2.2.0" and Python "3.8.": 
+(4) Install Airflow with the following constraints file. We use Airflow Version "2.3.0" and Python "3.9.": 
 
 ```bash
-pip install "apache-airflow==2.2.4" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.4/constraints-3.8.txt"
+pip install "apache-airflow==2.3.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.3.0/constraints-3.9.txt"
 ```
 
 (5) Since we will be using PostgreSQL, we need to install the [postgres provider package](https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html):
