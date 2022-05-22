@@ -42,25 +42,25 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Prerequisites" duration="7">
+      <google-codelab-step label="Prerequisites" duration="5">
         <h2 is-upgraded>Windows Subsystem for Linux</h2>
 <p>If you have a Windows machine, you need Windows Subsystem for Linux. Follow the steps in this tutorial:</p>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/windows/wsl/about" target="_blank">What is the Windows Subsystem for Linux?</a></li>
 </ul>
+<p>Furthermore, take a look at this short answer at <a href="https://stackoverflow.com/a/53939373" target="_blank">stackoverflow</a> or the more detailed version in this <a href="https://coding-stream-of-consciousness.com/2018/11/06/apache-airflow-windows-10-install-ubuntu/" target="_blank">post</a>.</p>
 <h2 is-upgraded>Anaconda</h2>
-<p>To start this tutorial, you need Anaconda. If you don&#39;t already have Anaconda, go to <a href="https://www.anaconda.com/products/individual" target="_blank">anaconda.com</a> and choose the appropriate <code>Graphical Installer</code> for your system (Windows, MacOS or Linux). Install the software on your system:</p>
+<p>To start this tutorial, I recommend to use Anaconda. If you don&#39;t already have Anaconda, go to <a href="https://www.anaconda.com/products/individual" target="_blank">anaconda.com</a> and choose the appropriate <code>Graphical Installer</code> for your system (Windows, MacOS or Linux). Install the software on your system:</p>
 <ul>
 <li><a href="https://docs.continuum.io/anaconda/install/mac-os/" target="_blank">Installing on macOS</a></li>
 <li><a href="https://docs.continuum.io/anaconda/install/windows/" target="_blank">Installing on Windows</a></li>
 <li><a href="https://docs.continuum.io/anaconda/install/linux/" target="_blank">https://docs.continuum.io/anaconda/install/linux/</a></li>
 </ul>
-<p>Here some tips if you have problems installing Anaconda: <a href="https://docs.anaconda.com/anaconda/user-guide/troubleshooting/#anaconda-installer-download-problems" target="_blank">troubleshooting</a>.</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Create Virtual Environment" duration="5">
+      <google-codelab-step label="Create Virtual Environment" duration="2">
         <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.</p>
 <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
 <p>We create an environment with a specific version of Python and install pip. We call the environment <code>airflow</code>:</p>
@@ -71,70 +71,150 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Installation of modules" duration="5">
-        <p>To install Airflow, we simply follow the <a href="https://airflow.apache.org/docs/apache-airflow/stable/start/local.html" target="_blank"> installation tutorial</a> provided by Apache Airflow. Note that we use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> (pip is the standard package installer for Python) to install Airflow in our environment. When pip asks you to proceed <code>(proceed ([y]/n)?</code>), simply type <code>y</code>.</p>
-<p>(1) First, you need to activate your environment as follows:</p>
+      <google-codelab-step label="Installation" duration="10">
+        <p>To install Airflow, we mainly follow the <a href="https://airflow.apache.org/docs/apache-airflow/stable/start/local.html" target="_blank"> installation tutorial</a> provided by Apache Airflow. Note that we use <a href="https://pip.pypa.io/en/stable/" target="_blank"><strong>pip</strong></a> to install Airflow an some additional modules in our environment. When pip asks you to proceed <code>(proceed ([y]/n)?</code>), simply type <code>y</code>.</p>
+<ul>
+<li>First, you need to activate your environment as follows:</li>
+</ul>
 <pre><code language="language-bash" class="language-bash">conda activate airflow
 </code></pre>
-<p>Then upgrade pip:</p>
+<ul>
+<li>Then upgrade pip:</li>
+</ul>
 <pre><code language="language-bash" class="language-bash">pip install --upgrade pip
 </code></pre>
-<p>(2) Airflow needs <code>virualenv</code> so we install it first:</p>
+<ul>
+<li>Airflow needs <code>virualenv</code> so we install it:</li>
+</ul>
 <pre><code language="language-bash" class="language-bash">pip install virtualenv
 </code></pre>
-<p>(3) Next, Airflow needs a home. <code>your-home-directory/airflow</code> is the default, but you can put it somewhere else if you prefer (optional).</p>
+<ul>
+<li>Next, Airflow needs a home. <code>your-home-directory/airflow</code> is the default:</li>
+</ul>
 <p><em>Here is the command for Mac and Linux:</em></p>
 <pre><code language="language-bash" class="language-bash">export AIRFLOW_HOME=~/airflow
 </code></pre>
-<p><em>If you use Windows, either provide the full path:</em></p>
-<pre><code language="language-bash" class="language-bash">SET AIRFLOW_HOME=C:\Users\&lt;YourUserName&gt;\airflow
-</code></pre>
-<p><em>or (alternatively to the full path) use this approach</em></p>
-<pre><code language="language-bash" class="language-bash">SET AIRFLOW_HOME=%USERPROFILE%\airflow
-</code></pre>
-<p>(4) Install Airflow with the following constraints file. We use Airflow Version &#34;2.3.0&#34; and Python &#34;3.9.&#34;:</p>
+<ul>
+<li>Install Airflow with the following constraints file. We use Airflow Version &#34;2.3.0&#34; and Python &#34;3.9.&#34;:</li>
+</ul>
 <pre><code language="language-bash" class="language-bash">pip install &#34;apache-airflow==2.3.0&#34; --constraint &#34;https://raw.githubusercontent.com/apache/airflow/constraints-2.3.0/constraints-3.9.txt&#34;
 </code></pre>
-<p>(5) Since we will be using PostgreSQL, we need to install the <a href="https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html" target="_blank">postgres provider package</a>:</p>
+<ul>
+<li>Since we will be using PostgreSQL, we need to install the <a href="https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html" target="_blank">postgres provider package</a>:</li>
+</ul>
 <pre><code language="language-bash" class="language-bash">pip install apache-airflow-providers-postgres
 </code></pre>
+<ul>
+<li>Finally, we install one additional module:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">pip install apache-airflow-providers-cncf-kubernetes
+</code></pre>
 <p>–&gt;</p>
-<p>(5) The Standalone command will initialise the database, make a user, and start all components for you.</p>
+<ul>
+<li>The following <code>airflow standalone</code> command will <ul>
+<li>(1) initialise the database,</li>
+<li>(2) make a user, and</li>
+<li>(3) start all components for you</li>
+</ul>
+</li>
+</ul>
 <pre><code language="language-bash" class="language-bash">airflow standalone
 </code></pre>
-<p>*If you should get the error message &#34;AttributeError: ‘NoneType&#39; object has no attribute ‘is_alive&#39;&#34; stop the process with <code>Ctrl</code> + <code>c</code> and use the command <code>airflow standalone</code> one more time.</p>
-<p>(6) In the terminal output: Look for the provided <code>username</code> and <code>password</code></p>
-<p>(7) Visit this site in your browser (ideally in chrome): <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide <code>username</code> and <code>password</code>.</p>
+<p>We only run this command once when we install Airflow. If you want to run the individual parts of Airflow manually rather than using the all-in-one standalone command, check out the instructions provided <a href="https://airflow.apache.org/docs/apache-airflow/stable/start/local.html" target="_blank">here</a>.</p>
+<p><em>If you get the error message &#34;AttributeError: ‘NoneType&#39; object has no attribute ‘is_alive&#39;&#34; stop the process with </em></p>
+<p><em><code>Ctrl</code></em></p>
+<p><em> + </em></p>
+<p><em><code>c</code></em></p>
+<p><em> and use the command </em></p>
+<p><em><code>airflow standalone</code></em></p>
+<p><em> one more time.</em></p>
+<ul>
+<li>In the terminal output: Look for the provided <code>username</code> and <code>password</code> and store them somewhere</li>
+<li>Open the Airflow UI in your browser (ideally in Chrome) <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide <code>username</code> and <code>password</code>.</li>
+<li>The Airflow UI makes it easy to monitor and troubleshoot your data pipelines. Here&#39;s a quick overview of some of the features and visualizations you can find: <a href="https://airflow.apache.org/docs/apache-airflow/stable/ui.html#" target="_blank">Airflow UI</a></li>
+<li>If you are done:<ol type="1">
+<li>Log out from the user menu,</li>
+<li>Go to your terminal and stop the Airflow process with <code>Ctrl</code>+<code>c</code> (this will shut down components).</li>
+</ol>
+<br>Later, we will restart Airflow by using different commands.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Start Airflow" duration="2">
+        <p>In this section, we take a look at how to start Airflow:</p>
+<ul>
+<li>Start your terminal and activate your <code>airflow</code> environment if needed</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">conda activate airflow
+</code></pre>
+<ul>
+<li>Export the airflow home variable</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">export AIRFLOW_HOME=~/airflow
+</code></pre>
+<ul>
+<li>Start the Airflow webserver</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">airflow webserver
+</code></pre>
+<ul>
+<li>Open the Airflow UI in your browser (ideally in Chrome) <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide your <code>username</code> and <code>password</code>.</li>
+<li>If you are done:<ol type="1">
+<li>Log out from the user menu,</li>
+<li>Go to your terminal and stop the Airflow process with <code>Ctrl</code>+<code>c</code> (this will shut down all components).</li>
+</ol>
+</li>
+</ul>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="First pipeline" duration="5">
         <p>Here, we follow the instructions provided in this <a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#tutorial" target="_blank">Apache Airflow tutorial</a>:</p>
-<p>(1) First, create a new folder called <code>dags</code> in you airflow home (i.e. <code>~/airflow/dags</code>). The folder you need to create is also shown in the <code>airflow.cfg</code> file.</p>
-<p>(2) Copy <a href="https://github.com/kirenz/airflow/blob/main/tutorial.py" target="_blank">this Python script</a> as <code>my_airflow_dag.py</code> in the <code>~/airflow/dags</code> folder.</p>
-<p>(3) Use <code>cd</code> to navigate in your <code>dags</code> folder and run the following command:</p>
-<pre><code language="language-bash" class="language-bash">python my_airflow_dag.py
+<ul>
+<li>First, create a new folder called <code>dags</code> in you airflow home (i.e. <code>~/airflow/dags</code>).</li>
+<li>Copy <a href="https://github.com/kirenz/airflow/blob/main/tutorial.py" target="_blank">this Python script</a> and save it as <code>my_airflow_dag.py</code> in your <code>~/airflow/dags</code> folder.</li>
+</ul>
+<p><em>If you want to learn more about the content of this script, review </em><a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html" target="_blank"><em>this site</em></a><em>.</em></p>
+<ul>
+<li>Open a new terminal window and activate your <code>airflow</code> environment if needed</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">conda activate airflow
 </code></pre>
-<p>(4) If the script does not raise an exception it means that you have not done anything wrong, and that your Airflow environment is somewhat sound.</p>
+<ul>
+<li>Export the airflow home variable</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">export AIRFLOW_HOME=~/airflow
+</code></pre>
+<ul>
+<li>Now run the following command:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">python ~/airflow/dags/my_airflow_dag.py
+</code></pre>
+<p>If the script does not raise an exception it means that you have not done anything wrong, and that your Airflow environment is somewhat sound.</p>
+<ul>
+<li>Now proceed to the next step.</li>
+</ul>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Command Line Metadata Validation" duration="2">
-        <p>Let&#39;s run a few commands to validate this script further.</p>
+      <google-codelab-step label="Command Line Metadata Validation" duration="4">
+        <p>Let&#39;s run a few commands in your terminal to test your script:</p>
 <ul>
 <li>initialize the database tables</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">airflow db init
 </code></pre>
 <ul>
-<li>print the list of active DAGs</li>
+<li>print the list of active DAGs (there are many example DAGs provided by Airflow)</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">airflow dags list
 </code></pre>
 <ul>
-<li>prints the list of tasks in the &#34;my_airflow_dag&#34; DAG</li>
+<li>prints the list of tasks in the &#34;my_airflow_dag&#34;</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">airflow tasks list my_airflow_dag
 </code></pre>
@@ -149,16 +229,47 @@
     
       <google-codelab-step label="Testing" duration="2">
         <p>Let&#39;s test by running the actual task instances for a specific date. The date specified in this context is called the logical date (also called execution date for historical reasons), which simulates the scheduler running your task or DAG for a specific date and time, even though it physically will run now (or as soon as its dependencies are met).</p>
-<p>We said the scheduler runs your task for a specific date and time, not at. This is because each run of a DAG conceptually represents not a specific date and time, but an interval between two times, called a data interval. A DAG run&#39;s logical date is the start of its data interval.</p>
-<p>Command layout: command subcommand dag_id task_id date</p>
-<ul>
-<li>testing print_date</li>
-</ul>
-<pre><code language="language-bash" class="language-bash">airflow tasks test tutorial print_date 2015-06-01
+<p>The scheduler runs your task for a specific date and time, not at. This is because each run of a DAG conceptually represents not a specific date and time, but an interval between two times, called a data interval. A DAG run&#39;s logical date is the start of its data interval.</p>
+<p>The general command layout is as follows:</p>
+<pre><code language="language-Bash" class="language-Bash">command subcommand dag_id task_id date
 </code></pre>
-<p>testing sleep</p>
-<p>airflow tasks test tutorial sleep 2015-06-01</p>
-<p>Thats all! Now start experimenting with Airflow. If you are done, log out from the user menu.</p>
+<p>Now take a look at the last lines in the output (ignore warnings for now):</p>
+<ul>
+<li>Testing <code>task_print_date</code>:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">airflow tasks test my_airflow_dag task_print_date 2022-05-22
+</code></pre>
+<ul>
+<li>Testing <code>task_sleep</code></li>
+</ul>
+<pre><code language="language-bash" class="language-bash">airflow tasks test my_airflow_dag task_sleep 2022-05-22
+</code></pre>
+<ul>
+<li>Testing <code>task_templated</code></li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">airflow tasks test my_airflow_dag task_templated 2022-05-22
+</code></pre>
+<p>Let&#39;s proceed to the Airflow user interface (UI).</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Airflow UI" duration="0">
+        <p>Open the Airflow web interface in your browser:</p>
+<ul>
+<li><a href="http://0.0.0.0:8080/home" target="_blank">http://0.0.0.0:8080/home</a></li>
+</ul>
+<p>Now start experimenting with the Airflow web interface:</p>
+<ul>
+<li>Select <code>my_airflow_dag</code> from the list of DAGs.</li>
+<li>Click on the icon &#34;Graph&#34; to display the DAG</li>
+<li>Explore the other options to learn more about your DAG (see this Airflow tutorial about the <a href="https://airflow.apache.org/docs/apache-airflow/stable/ui.html" target="_blank">Airflow UI</a>)</li>
+<li>If you are done:<ol type="1">
+<li>Log out from the user menu,</li>
+<li>Go to your terminal and stop the Airflow process with <code>Ctrl</code>+<code>c</code> (this will shut down all components).</li>
+</ol>
+</li>
+</ul>
 
 
       </google-codelab-step>
@@ -168,7 +279,7 @@
 <p>✅ Install Apache Airflow<br> ✅ Start Apache Airflow<br> ✅ Create a simple pipeline</p>
 <p>Next, you may want to proceed with this tutorial to build another DAG:</p>
 <ul>
-<li><a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#" target="_blank">First Airflow DAG</a></li>
+<li><a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html" target="_blank">Airflow DAG example</a></li>
 </ul>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
 <p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the &#34;Report a mistake&#34; button at the bottom left of this site.</p>
