@@ -140,9 +140,84 @@ airflow standalone
 
 (7) Visit this site in your browser (ideally in chrome): [http://0.0.0.0:8080](http://0.0.0.0:8080) and provide `username` and `password`.
 
-(8) Thats all! Now start experimenting with Airflow.
 
-(9) If you are done, log out from the user menu.
+
+
+<!-- ------------------------ -->
+## First pipeline
+
+Duration: 0:05:00
+
+Here, we follow the instructions provided in this [Apache Airflow tutorial](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#tutorial):
+
+(1) First, create a new folder called `dags` in you airflow home (i.e. `~/airflow/dags`). The folder you need to create is also shown in the `airflow.cfg` file.
+
+
+(2) Copy [this Python script](https://github.com/kirenz/airflow/blob/main/tutorial.py) as `my_airflow_dag.py` in the `~/airflow/dags` folder.
+
+
+(3) Use `cd` to navigate in your `dags` folder and run the following command:
+
+```bash
+python my_airflow_dag.py
+```
+
+(4) If the script does not raise an exception it means that you have not done anything wrong, and that your Airflow environment is somewhat sound.
+
+<!-- ------------------------ -->
+## Command Line Metadata Validation
+
+Duration: 0:02:00
+
+Let's run a few commands to validate this script further.
+
+- initialize the database tables
+
+```bash
+airflow db init
+```
+
+- print the list of active DAGs
+
+```bash
+airflow dags list
+```
+
+- prints the list of tasks in the "my_airflow_dag" DAG
+
+```bash
+airflow tasks list my_airflow_dag
+```
+
+- prints the hierarchy of tasks in the "my_airflow_dag" DAG
+
+```bash
+airflow tasks list my_airflow_dag --tree
+```
+
+<!-- ------------------------ -->
+## Testing
+
+Duration: 0:02:00
+
+Let's test by running the actual task instances for a specific date. The date specified in this context is called the logical date (also called execution date for historical reasons), which simulates the scheduler running your task or DAG for a specific date and time, even though it physically will run now (or as soon as its dependencies are met).
+
+We said the scheduler runs your task for a specific date and time, not at. This is because each run of a DAG conceptually represents not a specific date and time, but an interval between two times, called a data interval. A DAG run's logical date is the start of its data interval.
+
+Command layout: command subcommand dag_id task_id date
+
+- testing print_date
+
+```bash
+airflow tasks test tutorial print_date 2015-06-01
+```
+
+# testing sleep
+airflow tasks test tutorial sleep 2015-06-01
+
+
+Thats all! Now start experimenting with Airflow. If you are done, log out from the user menu.
+
 
 <!-- ------------------------ -->
 ## What's next?
@@ -153,8 +228,10 @@ Congratulations! You have completed the tutorial and learned how to:
 
 ✅ Install Apache Airflow  
 ✅ Start Apache Airflow  
+✅ Create a simple pipeline 
 
-Next, you may want to proceed with this tutorial to build your first DAG:
+
+Next, you may want to proceed with this tutorial to build another DAG:
 
 - [First Airflow DAG](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#)
 
