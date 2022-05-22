@@ -63,7 +63,7 @@
       <google-codelab-step label="Create Virtual Environment" duration="5">
         <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.</p>
 <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
-<p>We create an environment with a specific version of Python (3.8). We call the environment <code>airflow</code>:</p>
+<p>We create an environment with a specific version of Python and install pip. We call the environment <code>airflow</code>:</p>
 <pre><code language="language-bash" class="language-bash">conda create -n airflow python=3.9 pip
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
@@ -98,14 +98,15 @@
 <p>(5) Since we will be using PostgreSQL, we need to install the <a href="https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html" target="_blank">postgres provider package</a>:</p>
 <pre><code language="language-bash" class="language-bash">pip install apache-airflow-providers-postgres
 </code></pre>
-<p>(6) The Standalone command will initialise the database, make a user, and start all components for you.</p>
+<p>–&gt;</p>
+<p>(5) The Standalone command will initialise the database, make a user, and start all components for you.</p>
 <pre><code language="language-bash" class="language-bash">airflow standalone
 </code></pre>
 <p>*If you should get the error message &#34;AttributeError: ‘NoneType&#39; object has no attribute ‘is_alive&#39;&#34; stop the process with <code>Ctrl</code> + <code>c</code> and use the command <code>airflow standalone</code> one more time.</p>
-<p>(7) In the terminal output: Look for the provided <code>username</code> and <code>password</code></p>
-<p>(8) Visit this site in your browser (ideally in chrome): <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide <code>username</code> and <code>password</code>.</p>
-<p>(9) Thats all! Now start experimenting with Airflow.</p>
-<p>(10) If you are done, log out from the user menu.</p>
+<p>(6) In the terminal output: Look for the provided <code>username</code> and <code>password</code></p>
+<p>(7) Visit this site in your browser (ideally in chrome): <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide <code>username</code> and <code>password</code>.</p>
+<p>(8) Thats all! Now start experimenting with Airflow.</p>
+<p>(9) If you are done, log out from the user menu.</p>
 
 
       </google-codelab-step>

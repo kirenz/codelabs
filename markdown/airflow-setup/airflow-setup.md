@@ -61,7 +61,7 @@ Duration: 0:05:00
 
 On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
 
-We create an environment with a specific version of Python (3.8). We call the environment ``airflow``:
+We create an environment with a specific version of Python and install pip. We call the environment ``airflow``:
 
 ```bash
 conda create -n airflow python=3.9 pip
@@ -120,13 +120,15 @@ SET AIRFLOW_HOME=%USERPROFILE%\airflow
 pip install "apache-airflow==2.3.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.3.0/constraints-3.9.txt"
 ```
 
+<!-->
 (5) Since we will be using PostgreSQL, we need to install the [postgres provider package](https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html):
 
 ```bash
 pip install apache-airflow-providers-postgres
 ```
+-->
 
-(6) The Standalone command will initialise the database, make a user, and start all components for you.
+(5) The Standalone command will initialise the database, make a user, and start all components for you.
 
 ```bash
 airflow standalone
@@ -134,13 +136,13 @@ airflow standalone
 
 *If you should get the error message "AttributeError: 'NoneType' object has no attribute 'is_alive'" stop the process with `Ctrl` + `c` and use the command `airflow standalone` one more time.
 
-(7) In the terminal output: Look for the provided `username` and `password`
+(6) In the terminal output: Look for the provided `username` and `password`
 
-(8) Visit this site in your browser (ideally in chrome): [http://0.0.0.0:8080](http://0.0.0.0:8080) and provide `username` and `password`.
+(7) Visit this site in your browser (ideally in chrome): [http://0.0.0.0:8080](http://0.0.0.0:8080) and provide `username` and `password`.
 
-(9) Thats all! Now start experimenting with Airflow.
+(8) Thats all! Now start experimenting with Airflow.
 
-(10) If you are done, log out from the user menu.
+(9) If you are done, log out from the user menu.
 
 <!-- ------------------------ -->
 ## What's next?
