@@ -150,13 +150,13 @@ Duration: 0:05:00
 
 Here, we follow the instructions provided in this [Apache Airflow tutorial](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#tutorial):
 
-(1) First, create a new folder called `dags` in you airflow home (i.e. `~/airflow/dags`). The folder you need to create is also shown in the `airflow.cfg` file.
+(1) First, create a new folder called `dags` in you airflow home (i.e. `~/airflow/dags`). 
 
 
 (2) Copy [this Python script](https://github.com/kirenz/airflow/blob/main/tutorial.py) as `my_airflow_dag.py` in the `~/airflow/dags` folder.
 
 
-(3) Use `cd` to navigate in your `dags` folder and run the following command:
+(3) Open a new terminal, activate your `airflow` environment and use `cd` to navigate in your `dags` folder. Now run the following command:
 
 ```bash
 python my_airflow_dag.py
@@ -218,6 +218,16 @@ airflow tasks test tutorial sleep 2015-06-01
 
 Thats all! Now start experimenting with Airflow. If you are done, log out from the user menu.
 
+<!-- ------------------------ -->
+## What's next?
+
+Duration: 0:02:00
+
+Activate airflow env if needed
+
+conda activate airflow
+
+airflow webserver
 
 <!-- ------------------------ -->
 ## What's next?
