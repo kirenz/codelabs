@@ -105,16 +105,68 @@
 <p>*If you should get the error message &#34;AttributeError: ‘NoneType&#39; object has no attribute ‘is_alive&#39;&#34; stop the process with <code>Ctrl</code> + <code>c</code> and use the command <code>airflow standalone</code> one more time.</p>
 <p>(6) In the terminal output: Look for the provided <code>username</code> and <code>password</code></p>
 <p>(7) Visit this site in your browser (ideally in chrome): <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide <code>username</code> and <code>password</code>.</p>
-<p>(8) Thats all! Now start experimenting with Airflow.</p>
-<p>(9) If you are done, log out from the user menu.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="First pipeline" duration="5">
+        <p>Here, we follow the instructions provided in this <a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#tutorial" target="_blank">Apache Airflow tutorial</a>:</p>
+<p>(1) First, create a new folder called <code>dags</code> in you airflow home (i.e. <code>~/airflow/dags</code>). The folder you need to create is also shown in the <code>airflow.cfg</code> file.</p>
+<p>(2) Copy <a href="https://github.com/kirenz/airflow/blob/main/tutorial.py" target="_blank">this Python script</a> as <code>my_airflow_dag.py</code> in the <code>~/airflow/dags</code> folder.</p>
+<p>(3) Use <code>cd</code> to navigate in your <code>dags</code> folder and run the following command:</p>
+<pre><code language="language-bash" class="language-bash">python my_airflow_dag.py
+</code></pre>
+<p>(4) If the script does not raise an exception it means that you have not done anything wrong, and that your Airflow environment is somewhat sound.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Command Line Metadata Validation" duration="2">
+        <p>Let&#39;s run a few commands to validate this script further.</p>
+<ul>
+<li>initialize the database tables</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">airflow db init
+</code></pre>
+<ul>
+<li>print the list of active DAGs</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">airflow dags list
+</code></pre>
+<ul>
+<li>prints the list of tasks in the &#34;my_airflow_dag&#34; DAG</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">airflow tasks list my_airflow_dag
+</code></pre>
+<ul>
+<li>prints the hierarchy of tasks in the &#34;my_airflow_dag&#34; DAG</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">airflow tasks list my_airflow_dag --tree
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Testing" duration="2">
+        <p>Let&#39;s test by running the actual task instances for a specific date. The date specified in this context is called the logical date (also called execution date for historical reasons), which simulates the scheduler running your task or DAG for a specific date and time, even though it physically will run now (or as soon as its dependencies are met).</p>
+<p>We said the scheduler runs your task for a specific date and time, not at. This is because each run of a DAG conceptually represents not a specific date and time, but an interval between two times, called a data interval. A DAG run&#39;s logical date is the start of its data interval.</p>
+<p>Command layout: command subcommand dag_id task_id date</p>
+<ul>
+<li>testing print_date</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">airflow tasks test tutorial print_date 2015-06-01
+</code></pre>
+<p>testing sleep</p>
+<p>airflow tasks test tutorial sleep 2015-06-01</p>
+<p>Thats all! Now start experimenting with Airflow. If you are done, log out from the user menu.</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="What&#39;s next?" duration="2">
         <p>Congratulations! You have completed the tutorial and learned how to:</p>
-<p>✅ Install Apache Airflow<br> ✅ Start Apache Airflow</p>
-<p>Next, you may want to proceed with this tutorial to build your first DAG:</p>
+<p>✅ Install Apache Airflow<br> ✅ Start Apache Airflow<br> ✅ Create a simple pipeline</p>
+<p>Next, you may want to proceed with this tutorial to build another DAG:</p>
 <ul>
 <li><a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#" target="_blank">First Airflow DAG</a></li>
 </ul>
