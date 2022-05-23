@@ -217,7 +217,7 @@
       <google-codelab-step label="Testing single tasks" duration="4">
         <p>Let&#39;s start our tests by running one actual task instance for a specific date (independent of other tasks).</p>
 <p>The date specified in this context is called the &#34;logical date&#34; (also called execution date), which simulates the scheduler running your task or DAG for a specific date and time, even though it physically will run now (or as soon as its dependencies are met).</p>
-<aside class="special"><p> The scheduler runs your task *for* a specific date and time, not *at* a specific date.  </p>
+<aside class="special"><p> The scheduler runs your task for a specific date and time, not at a specific date.  </p>
 </aside>
 <p>This is because each run of a DAG conceptually represents not a specific date and time, but an interval between two times, called a <em>data interval</em>. A DAG run&#39;s logical date is the start of its data interval.</p>
 <p>The general command layout is as follows:</p>
@@ -264,15 +264,7 @@
 <p>Let&#39;s proceed to the Airflow user interface (UI).</p>
 <aside class="special"><p> If you use depends_on_past=True, individual task instances will depend on the success of their previous task instance (that is, previous according to the logical date). </p>
 </aside>
-<p><em>Note that you may want to consider </em></p>
-<p><em><code>wait_for_downstream=True</code></em></p>
-<p><em> when using </em></p>
-<p><em><code>depends_on_past=True</code></em></p>
-<p><em>. While </em></p>
-<p><em><code>depends_on_past=True</code></em></p>
-<p><em> causes a task instance to depend on the success of its previous task_instance, </em></p>
-<p><em><code>wait_for_downstream=True</code></em></p>
-<p><em> will cause a task instance to also wait for all task instances immediately downstream of the previous task instance to succeed.</em></p>
+<p>Note that you may want to consider <code>wait_for_downstream=True</code> when using <code>depends_on_past=True</code>. While <code>depends_on_past=True</code> causes a task instance to depend on the success of its previous task_instance, <code>wait_for_downstream=True</code> will cause a task instance to also wait for all task instances immediately downstream of the previous task instance to succeed.</p>
 
 
       </google-codelab-step>
