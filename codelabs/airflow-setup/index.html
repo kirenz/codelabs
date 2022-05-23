@@ -166,7 +166,8 @@
 <li>First, create a new folder called <code>dags</code> in you airflow home (i.e. <code>~/airflow/dags</code>).</li>
 <li>Copy <a href="https://github.com/kirenz/airflow/blob/main/tutorial.py" target="_blank">this Python script</a> and save it as <code>my_airflow_dag.py</code> in your <code>~/airflow/dags</code> folder.</li>
 </ul>
-<p><em>If you want to learn more about the content of this script, review </em><a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html" target="_blank"><em>this site</em></a><em>.</em></p>
+<aside class="warning"><p> The file my_airflow_dag needs to be stored in the DAGs folder referenced in your airflow.cfg. The default location for your DAGs is ~/airflow/dags. </p>
+</aside>
 <ul>
 <li>Open a new terminal window and activate your <code>airflow</code> environment if needed</li>
 </ul>
@@ -186,29 +187,30 @@
 <ul>
 <li>Now proceed to the next step.</li>
 </ul>
+<p><em>If you want to learn more about the content of the my_airflow-dag.py script, review </em><a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html" target="_blank"><em>the Airflow tutorial</em></a><em>.</em></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Command Line Metadata Validation" duration="4">
-        <p>Let&#39;s run a few commands in your terminal to test your script:</p>
+        <p>First, we use the command line to do some metadata validation. Let&#39;s run a few commands in your terminal to test your script:</p>
 <ul>
-<li>initialize the database tables</li>
+<li>Initialize the database tables</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">airflow db init
 </code></pre>
 <ul>
-<li>print the list of active DAGs (there are many example DAGs provided by Airflow)</li>
+<li>Print the list of active DAGs (there are many example DAGs provided by Airflow)</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">airflow dags list
 </code></pre>
 <ul>
-<li>prints the list of tasks in the &#34;my_airflow_dag&#34;</li>
+<li>Print the list of tasks in the &#34;my_airflow_dag&#34;</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">airflow tasks list my_airflow_dag
 </code></pre>
 <ul>
-<li>prints the hierarchy of tasks in the &#34;my_airflow_dag&#34; DAG</li>
+<li>Print the hierarchy of tasks in the &#34;my_airflow_dag&#34; DAG</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">airflow tasks list my_airflow_dag --tree
 </code></pre>
@@ -216,34 +218,70 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Testing" duration="2">
-        <p>Let&#39;s test by running the actual task instances for a specific date. The date specified in this context is called the logical date (also called execution date for historical reasons), which simulates the scheduler running your task or DAG for a specific date and time, even though it physically will run now (or as soon as its dependencies are met).</p>
-<p>The scheduler runs your task for a specific date and time, not at. This is because each run of a DAG conceptually represents not a specific date and time, but an interval between two times, called a data interval. A DAG run&#39;s logical date is the start of its data interval.</p>
+      <google-codelab-step label="Testing single tasks" duration="4">
+        <p>Let&#39;s start our tests by running one actual task instance for a specific date (independent of other tasks).</p>
+<p>The date specified in this context is called the &#34;logical date&#34; (also called execution date), which simulates the scheduler running your task or DAG for a specific date and time, even though it physically will run now (or as soon as its dependencies are met).</p>
+<aside class="special"><p> The scheduler runs your task *for* a specific date and time, not *at* a specific date.  </p>
+</aside>
+<p>This is because each run of a DAG conceptually represents not a specific date and time, but an interval between two times, called a <em>data interval</em>. A DAG run&#39;s logical date is the start of its data interval.</p>
 <p>The general command layout is as follows:</p>
 <pre><code language="language-Bash" class="language-Bash">command subcommand dag_id task_id date
 </code></pre>
-<p>Now take a look at the last lines in the output (ignore warnings for now):</p>
 <ul>
 <li>Testing <code>task_print_date</code>:</li>
 </ul>
-<pre><code language="language-bash" class="language-bash">airflow tasks test my_airflow_dag task_print_date 2022-05-22
+<pre><code language="language-bash" class="language-bash">airflow tasks test my_airflow_dag task_print_date 2022-05-20
 </code></pre>
+<p><em>Take a look at the last lines in the output (ignore warnings for now)</em></p>
 <ul>
 <li>Testing <code>task_sleep</code></li>
 </ul>
-<pre><code language="language-bash" class="language-bash">airflow tasks test my_airflow_dag task_sleep 2022-05-22
+<pre><code language="language-bash" class="language-bash">airflow tasks test my_airflow_dag task_sleep 2022-05-20
 </code></pre>
 <ul>
 <li>Testing <code>task_templated</code></li>
 </ul>
-<pre><code language="language-Bash" class="language-Bash">airflow tasks test my_airflow_dag task_templated 2022-05-22
+<pre><code language="language-Bash" class="language-Bash">airflow tasks test my_airflow_dag task_templated 2022-05-20
 </code></pre>
-<p>Let&#39;s proceed to the Airflow user interface (UI).</p>
+<p>Everything looks like it&#39;s running fine so let&#39;s run a backfill.</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Airflow UI" duration="0">
+      <google-codelab-step label="Backfill" duration="4">
+        <p><code>backfill</code> will respect your dependencies, emit logs into files and talk to the database to record status.</p>
+<p>If you do have a <em>webserver</em> up, you will be able to track the progress.</p>
+<p><code>airflow webserver</code> will start a web server if you are interested in tracking the progress visually as your backfill progresses.</p>
+<ul>
+<li>The date range in this context is a <code>start_date</code> and optionally an <code>end_date</code>, which are used to populate the run schedule with task instances from this dag.</li>
+<li>Optional, start a web server in debug mode in the background</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">airflow webserver --debug &amp;
+</code></pre>
+<ul>
+<li>Start your backfill on a date range</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">airflow dags backfill my_airflow_dag \
+    --start-date 2022-05-20 \
+    --end-date 2022-06-22
+</code></pre>
+<p>Let&#39;s proceed to the Airflow user interface (UI).</p>
+<aside class="special"><p> If you use depends_on_past=True, individual task instances will depend on the success of their previous task instance (that is, previous according to the logical date). </p>
+</aside>
+<p><em>Note that you may want to consider </em></p>
+<p><em><code>wait_for_downstream=True</code></em></p>
+<p><em> when using </em></p>
+<p><em><code>depends_on_past=True</code></em></p>
+<p><em>. While </em></p>
+<p><em><code>depends_on_past=True</code></em></p>
+<p><em> causes a task instance to depend on the success of its previous task_instance, </em></p>
+<p><em><code>wait_for_downstream=True</code></em></p>
+<p><em> will cause a task instance to also wait for all task instances immediately downstream of the previous task instance to succeed.</em></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Airflow UI" duration="5">
         <p>Open the Airflow web interface in your browser:</p>
 <ul>
 <li><a href="http://0.0.0.0:8080/home" target="_blank">http://0.0.0.0:8080/home</a></li>
