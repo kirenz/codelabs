@@ -390,7 +390,7 @@ Congratulations! You have completed the tutorial and learned how to:
 ✅ Create a simple pipeline 
 
 
-Next, you may want to proceed with this tutorial to build another DAG:
+Next, you may want to proceed with this tutorial to build another DAG (there are more examples when you scroll down):
 
 - [Airflow DAG example](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html)
 
