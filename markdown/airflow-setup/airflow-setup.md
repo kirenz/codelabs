@@ -109,7 +109,7 @@ export AIRFLOW_HOME=~/airflow
 pip install "apache-airflow==2.3.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.3.0/constraints-3.9.txt"
 ```
 
-<!-->
+<!--
 - Since we will be using PostgreSQL, we need to install the [postgres provider package](https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html):
 
 ```bash
@@ -314,7 +314,7 @@ Now start experimenting with the Airflow web interface:
 
 - If you are done:
   1. Log out from the user menu, 
-  1. Go to your terminal and stop the Airflow process with `Ctrl`+`c` (this will shut down all components). 
+  1. Go to your terminal and stop the Airflow process with Ctrl+c (this will shut down all components). 
 
 <!-- ------------------------ -->
 ## What's next?

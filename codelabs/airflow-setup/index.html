@@ -100,17 +100,6 @@
 <pre><code language="language-bash" class="language-bash">pip install &#34;apache-airflow==2.3.0&#34; --constraint &#34;https://raw.githubusercontent.com/apache/airflow/constraints-2.3.0/constraints-3.9.txt&#34;
 </code></pre>
 <ul>
-<li>Since we will be using PostgreSQL, we need to install the <a href="https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html" target="_blank">postgres provider package</a>:</li>
-</ul>
-<pre><code language="language-bash" class="language-bash">pip install apache-airflow-providers-postgres
-</code></pre>
-<ul>
-<li>Finally, we install one additional module:</li>
-</ul>
-<pre><code language="language-bash" class="language-bash">pip install apache-airflow-providers-cncf-kubernetes
-</code></pre>
-<p>–&gt;</p>
-<ul>
 <li>The following <code>airflow standalone</code> command will <ul>
 <li>(1) initialise the database,</li>
 <li>(2) make a user, and</li>
@@ -266,7 +255,7 @@
 <li>Explore the other options to learn more about your DAG (see this Airflow tutorial about the <a href="https://airflow.apache.org/docs/apache-airflow/stable/ui.html" target="_blank">Airflow UI</a>)</li>
 <li>If you are done:<ol type="1">
 <li>Log out from the user menu,</li>
-<li>Go to your terminal and stop the Airflow process with <code>Ctrl</code>+<code>c</code> (this will shut down all components).</li>
+<li>Go to your terminal and stop the Airflow process with Ctrl+c (this will shut down all components).</li>
 </ol>
 </li>
 </ul>
