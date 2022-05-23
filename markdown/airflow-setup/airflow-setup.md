@@ -298,7 +298,7 @@ command subcommand dag_id task_id date
 - Testing `task_print_date`:
 
 ```bash
-airflow tasks test my_airflow_dag task_print_date 2022-05-20
+airflow tasks test my_airflow_dag task_print_date 2021-05-20
 ```
 
 *Take a look at the last lines in the output (ignore warnings for now)*
@@ -307,13 +307,13 @@ airflow tasks test my_airflow_dag task_print_date 2022-05-20
 - Testing `task_sleep`
 
 ```bash
-airflow tasks test my_airflow_dag task_sleep 2022-05-20
+airflow tasks test my_airflow_dag task_sleep 2021-05-20
 ```
 
 - Testing `task_templated`
 
 ```Bash
-airflow tasks test my_airflow_dag task_templated 2022-05-20
+airflow tasks test my_airflow_dag task_templated 2021-05-20
 ```
 
 Everything looks like it's running fine so let's run a backfill.
@@ -332,7 +332,7 @@ Duration: 0:04:00
 
 - The date range in this context is a `start_date` and optionally an `end_date`, which are used to populate the run schedule with task instances from this dag.
 
-- Optional, start a web server in debug mode in the background
+- Start a web server in debug mode in the background (this is optional)
 
 ```Bash
 airflow webserver --debug &
@@ -341,19 +341,14 @@ airflow webserver --debug &
 - Start your backfill on a date range
 ```Bash
 airflow dags backfill my_airflow_dag \
-    --start-date 2022-05-20 \
-    --end-date 2022-06-22
+    --start-date 2021-05-20 \
+    --end-date 2021-06-01
 ```    
 
-Let's proceed to the Airflow user interface (UI).
+Let's proceed to the Airflow user interface (UI) - see next step.
 
 
-<aside class="positive">
-If you use depends_on_past=True, individual task instances will depend on the success of their previous task instance (that is, previous according to the logical date).
-</aside>
-
-
-Note that you may want to consider `wait_for_downstream=True` when using `depends_on_past=True`. While `depends_on_past=True` causes a task instance to depend on the success of its previous task_instance, `wait_for_downstream=True` will cause a task instance to also wait for all task instances immediately downstream of the previous task instance to succeed.
+Note that if you use `depends_on_past=True`, individual task instances will depend on the success of their previous task instance (that is, previous according to the logical date) In that case you may want to consider to set `wait_for_downstream=True` when using `depends_on_past=True`. While `depends_on_past=True` causes a task instance to depend on the success of its previous task_instance, `wait_for_downstream=True` will cause a task instance to also wait for all task instances immediately downstream of the previous task instance to succeed.
 
 <!-- ------------------------ -->
 
