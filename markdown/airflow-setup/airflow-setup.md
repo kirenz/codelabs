@@ -204,7 +204,10 @@ Here, we mainly follow the instructions provided in this [Apache Airflow tutoria
 
 - Copy [this Python script](https://github.com/kirenz/airflow/blob/main/tutorial.py) and save it as `my_airflow_dag.py` in your `~/airflow/dags` folder.
 
+<!--
 - Copy [this shell script](https://github.com/kirenz/airflow/blob/main/templated_command.sh) and save it as `templated_command.sh` in your `~/airflow/dags` folder.
+-->
+
 
 <aside class="negative">
 The file my_airflow_dag needs to be stored in the DAGs folder referenced in your airflow.cfg. The default location for your DAGs is ~/airflow/dags.
