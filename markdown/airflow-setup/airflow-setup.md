@@ -137,7 +137,11 @@ airflow standalone
   
 We only run this command once when we install Airflow. If you want to run the individual parts of Airflow manually rather than using the all-in-one standalone command, check out the instructions provided [here](https://airflow.apache.org/docs/apache-airflow/stable/start/local.html).
 
-*If you get the error message "AttributeError: 'NoneType' object has no attribute 'is_alive'" stop the process with `Ctrl` + `c` and use the command `airflow standalone` one more time.*
+
+<aside class="negative">
+If you get the error message "AttributeError: 'NoneType object has no attribute is_alive"
+stop the process with Ctrl + c and use the command airflow standalone one more time.
+</aside>
 
 
 - In the terminal output: Look for the provided `username` and `password` and store them somewhere
@@ -194,11 +198,13 @@ airflow webserver
 
 Duration: 0:05:00
 
-Here, we follow the instructions provided in this [Apache Airflow tutorial](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#tutorial):
+Here, we mainly follow the instructions provided in this [Apache Airflow tutorial](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#tutorial):
 
 - First, create a new folder called `dags` in you airflow home (i.e. `~/airflow/dags`). 
 
 - Copy [this Python script](https://github.com/kirenz/airflow/blob/main/tutorial.py) and save it as `my_airflow_dag.py` in your `~/airflow/dags` folder.
+
+- Copy [this shell script](https://github.com/kirenz/airflow/blob/main/templated_command.sh) and save it as `templated_command.sh` in your `~/airflow/dags` folder.
 
 <aside class="negative">
 The file my_airflow_dag needs to be stored in the DAGs folder referenced in your airflow.cfg. The default location for your DAGs is ~/airflow/dags.
