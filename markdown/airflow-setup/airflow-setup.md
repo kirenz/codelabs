@@ -200,7 +200,10 @@ Here, we follow the instructions provided in this [Apache Airflow tutorial](http
 
 - Copy [this Python script](https://github.com/kirenz/airflow/blob/main/tutorial.py) and save it as `my_airflow_dag.py` in your `~/airflow/dags` folder.
 
-*If you want to learn more about the content of this script, review [this site](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html).*
+<aside class="negative">
+The file my_airflow_dag needs to be stored in the DAGs folder referenced in your airflow.cfg. The default location for your DAGs is ~/airflow/dags.
+</aside>
+
 
 - Open a new terminal window and activate your `airflow` environment if needed
 
@@ -224,32 +227,38 @@ If the script does not raise an exception it means that you have not done anythi
 
 - Now proceed to the next step.
 
+
+*If you want to learn more about the content of the my_airflow-dag.py script, review [the Airflow tutorial](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html).*
+
+
 <!-- ------------------------ -->
+
 ## Command Line Metadata Validation
 
 Duration: 0:04:00
 
-Let's run a few commands in your terminal to test your script:
 
-- initialize the database tables
+First, we use the command line to do some metadata validation. Let's run a few commands in your terminal to test your script:
+
+- Initialize the database tables
 
 ```bash
 airflow db init
 ```
 
-- print the list of active DAGs (there are many example DAGs provided by Airflow)
+- Print the list of active DAGs (there are many example DAGs provided by Airflow)
 
 ```bash
 airflow dags list
 ```
 
-- prints the list of tasks in the "my_airflow_dag"
+- Print the list of tasks in the "my_airflow_dag"
 
 ```bash
 airflow tasks list my_airflow_dag
 ```
 
-- prints the hierarchy of tasks in the "my_airflow_dag" DAG
+- Print the hierarchy of tasks in the "my_airflow_dag" DAG
 
 ```bash
 airflow tasks list my_airflow_dag --tree
@@ -257,13 +266,19 @@ airflow tasks list my_airflow_dag --tree
 
 
 <!-- ------------------------ -->
-## Testing
+## Testing single tasks
 
-Duration: 0:02:00
+Duration: 0:04:00
 
-Let's test by running the actual task instances for a specific date. The date specified in this context is called the logical date (also called execution date for historical reasons), which simulates the scheduler running your task or DAG for a specific date and time, even though it physically will run now (or as soon as its dependencies are met).
+Let's start our tests by running one actual task instance for a specific date (independent of other tasks). 
 
-The scheduler runs your task for a specific date and time, not at. This is because each run of a DAG conceptually represents not a specific date and time, but an interval between two times, called a data interval. A DAG run's logical date is the start of its data interval.
+The date specified in this context is called the "logical date" (also called execution date), which simulates the scheduler running your task or DAG for a specific date and time, even though it physically will run now (or as soon as its dependencies are met).
+
+<aside class="positive">
+The scheduler runs your task *for* a specific date and time, not *at* a specific date. 
+</aside>
+
+This is because each run of a DAG conceptually represents not a specific date and time, but an interval between two times, called a *data interval*. A DAG run's logical date is the start of its data interval.
 
 The general command layout is as follows: 
 
@@ -271,30 +286,71 @@ The general command layout is as follows:
 command subcommand dag_id task_id date
 ```
 
-Now take a look at the last lines in the output (ignore warnings for now):
-
 - Testing `task_print_date`:
 
 ```bash
-airflow tasks test my_airflow_dag task_print_date 2022-05-22
+airflow tasks test my_airflow_dag task_print_date 2022-05-20
 ```
+
+*Take a look at the last lines in the output (ignore warnings for now)*
+
 
 - Testing `task_sleep`
 
 ```bash
-airflow tasks test my_airflow_dag task_sleep 2022-05-22
+airflow tasks test my_airflow_dag task_sleep 2022-05-20
 ```
 
 - Testing `task_templated`
 
 ```Bash
-airflow tasks test my_airflow_dag task_templated 2022-05-22
+airflow tasks test my_airflow_dag task_templated 2022-05-20
 ```
+
+Everything looks like it's running fine so let's run a backfill.
+
+<!-- ------------------------ -->
+## Backfill
+
+Duration: 0:04:00
+
+`backfill` will respect your dependencies, emit logs into files and talk to the database to record status.
+
+ If you do have a *webserver* up, you will be able to track the progress. 
+ 
+ `airflow webserver` will start a web server if you are interested in tracking the progress visually as your backfill progresses.
+
+
+- The date range in this context is a `start_date` and optionally an `end_date`, which are used to populate the run schedule with task instances from this dag.
+
+- Optional, start a web server in debug mode in the background
+
+```Bash
+airflow webserver --debug &
+```
+
+- Start your backfill on a date range
+```Bash
+airflow dags backfill my_airflow_dag \
+    --start-date 2022-05-20 \
+    --end-date 2022-06-22
+```    
 
 Let's proceed to the Airflow user interface (UI).
 
+
+<aside class="positive">
+If you use depends_on_past=True, individual task instances will depend on the success of their previous task instance (that is, previous according to the logical date).
+</aside>
+
+
+*Note that you may want to consider `wait_for_downstream=True` when using `depends_on_past=True`. While `depends_on_past=True` causes a task instance to depend on the success of its previous task_instance, `wait_for_downstream=True` will cause a task instance to also wait for all task instances immediately downstream of the previous task instance to succeed.*
+
 <!-- ------------------------ -->
+
 ## Airflow UI
+
+Duration: 0:05:00
 
 Open the Airflow web interface in your browser:
 
