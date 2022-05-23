@@ -110,13 +110,8 @@
 <pre><code language="language-bash" class="language-bash">airflow standalone
 </code></pre>
 <p>We only run this command once when we install Airflow. If you want to run the individual parts of Airflow manually rather than using the all-in-one standalone command, check out the instructions provided <a href="https://airflow.apache.org/docs/apache-airflow/stable/start/local.html" target="_blank">here</a>.</p>
-<p><em>If you get the error message &#34;AttributeError: ‘NoneType&#39; object has no attribute ‘is_alive&#39;&#34; stop the process with </em></p>
-<p><em><code>Ctrl</code></em></p>
-<p><em> + </em></p>
-<p><em><code>c</code></em></p>
-<p><em> and use the command </em></p>
-<p><em><code>airflow standalone</code></em></p>
-<p><em> one more time.</em></p>
+<aside class="warning"><p> If you get the error message &#34;AttributeError: &#39;NoneType object has no attribute is_alive&#34; stop the process with Ctrl + c and use the command airflow standalone one more time. </p>
+</aside>
 <ul>
 <li>In the terminal output: Look for the provided <code>username</code> and <code>password</code> and store them somewhere</li>
 <li>Open the Airflow UI in your browser (ideally in Chrome) <a href="http://0.0.0.0:8080" target="_blank">http://0.0.0.0:8080</a> and provide <code>username</code> and <code>password</code>.</li>
@@ -161,10 +156,11 @@
       </google-codelab-step>
     
       <google-codelab-step label="First pipeline" duration="5">
-        <p>Here, we follow the instructions provided in this <a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#tutorial" target="_blank">Apache Airflow tutorial</a>:</p>
+        <p>Here, we mainly follow the instructions provided in this <a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#tutorial" target="_blank">Apache Airflow tutorial</a>:</p>
 <ul>
 <li>First, create a new folder called <code>dags</code> in you airflow home (i.e. <code>~/airflow/dags</code>).</li>
 <li>Copy <a href="https://github.com/kirenz/airflow/blob/main/tutorial.py" target="_blank">this Python script</a> and save it as <code>my_airflow_dag.py</code> in your <code>~/airflow/dags</code> folder.</li>
+<li>Copy <a href="https://github.com/kirenz/airflow/blob/main/templated_command.sh" target="_blank">this shell script</a> and save it as <code>templated_command.sh</code> in your <code>~/airflow/dags</code> folder.</li>
 </ul>
 <aside class="warning"><p> The file my_airflow_dag needs to be stored in the DAGs folder referenced in your airflow.cfg. The default location for your DAGs is ~/airflow/dags. </p>
 </aside>
