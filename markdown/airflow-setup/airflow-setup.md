@@ -281,7 +281,7 @@ Let's start our tests by running one actual task instance for a specific date (i
 The date specified in this context is called the "logical date" (also called execution date), which simulates the scheduler running your task or DAG for a specific date and time, even though it physically will run now (or as soon as its dependencies are met).
 
 <aside class="positive">
-The scheduler runs your task *for* a specific date and time, not *at* a specific date. 
+The scheduler runs your task for a specific date and time, not at a specific date. 
 </aside>
 
 This is because each run of a DAG conceptually represents not a specific date and time, but an interval between two times, called a *data interval*. A DAG run's logical date is the start of its data interval.
@@ -350,7 +350,7 @@ If you use depends_on_past=True, individual task instances will depend on the su
 </aside>
 
 
-*Note that you may want to consider `wait_for_downstream=True` when using `depends_on_past=True`. While `depends_on_past=True` causes a task instance to depend on the success of its previous task_instance, `wait_for_downstream=True` will cause a task instance to also wait for all task instances immediately downstream of the previous task instance to succeed.*
+Note that you may want to consider `wait_for_downstream=True` when using `depends_on_past=True`. While `depends_on_past=True` causes a task instance to depend on the success of its previous task_instance, `wait_for_downstream=True` will cause a task instance to also wait for all task instances immediately downstream of the previous task instance to succeed.
 
 <!-- ------------------------ -->
 
