@@ -34,20 +34,23 @@ Duration: 00:02:00
 - On Windows open the Start menu and open an Anaconda Command Prompt. 
 - On macOS or Linux open a terminal window.
 
-We create a new environment and call it ``tf``. We also install pip in this new environment:
+We create a new environment and call it ``tf``. We also install TensorFlow and additional packages in this new environment:
+
 
 ```bash
-conda create -n tf pip
+conda create -n tf tensorflow pandas jupyter pydot
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
 
+We also need to install [graphviz](https://graphviz.gitlab.io/download/).
 
-<!-- ------------------------ -->
-## Install TensorFlow on Windows
+
+
+<!--
+## Install TensorFlow
 Duration: 00:05:00
 
-Follow this instructions if you have Windows:
 
 First of all, you have to activate the `tf` environment:
 
@@ -89,7 +92,7 @@ pip install pydot
 We also need to install graphviz: see instructions at https://graphviz.gitlab.io/download/
 
 
-<!-- ------------------------ -->
+
 ## Install TensorFlow on Mac Intel
 Duration: 00:05:00
 
@@ -132,7 +135,6 @@ pip install pydot
 We also need to install graphviz: see instructions at https://graphviz.gitlab.io/download/
 
 
-<!-- ------------------------ -->
 ## Install TensorFlow on Apple silicon
 Duration: 00:05:00
 
@@ -179,6 +181,7 @@ conda install pydot
 
 We also need to install graphviz: see instructions at https://graphviz.gitlab.io/download/
 
+-->
 
 <!-- ------------------------ -->
 ## What's next?
