@@ -38,7 +38,7 @@ We create a new environment and call it ``tf``. We also install TensorFlow and a
 
 
 ```bash
-conda create -n tf tensorflow pandas jupyter pydot
+conda create -n tf tensorflow matplotlib pandas jupyter pydot
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
