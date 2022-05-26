@@ -14,13 +14,13 @@ feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/miniforge
 ## Overview
 Duration: 0:02:00
 
-The open-source project [Miniforge](https://github.com/conda-forge/miniforge) is one of the easiest ways to get started with data science projects. It already includes Python and the most important modules we need. 
+The open-source project [Miniforge](https://github.com/conda-forge/miniforge) is one of the easiest ways to get started with data science projects. It already includes Python and makes it easy to important and manage modules we need. 
 
 <aside class="positive">
-Miniforge is a data science toolkit which already includes most of the data science modules we need.
+Miniforge is an community-led alternative to the data science platform Anaconda, provided by Anaconda, Inc.
  </aside>
 
-Miniforge is an community-led alternative to the data science platform Anaconda, provided by Anaconda, Inc.
+
 
 <!-- ------------------------ -->
 ## Prerequisites
@@ -48,7 +48,7 @@ Duration: 00:05:00
 
 - If you have **Windows**: Open the [Miniforge GitHub page](https://github.com/conda-forge/miniforge#miniforge3), choose the appropriate installer for your system and install the software.
 
-- If you have **MacOs**: Open your terminal and use `brew` to install Miniforge3:
+- If you have **MacOs**: Open your terminal and use `brew` to install Miniforge:
 
 
 ```Bash
@@ -64,15 +64,12 @@ conda init zsh
 - Now restart your terminal.
 
 
-
-*Starting with certain models introduced in late 2020, Apple began the transition from Intel processors to Apple silicon in Mac computers. Here is a list with [Mac computers with Apple silicon](https://support.apple.com/en-us/HT211814). If you have one of them, brew will install the arm64 (Apple Silicon) version, otherwise the version x86_64.*
-
 <!-- ------------------------ -->
 ## Virtual environments
 Duration: 00:05:00
 
 
-During the first installation, Miniforge3 installed the so called `base` environment. Let`s take a look at this environment:
+During the first installation, Miniforge installed the so called `base` environment. Let`s take a look at this environment:
 
 - On *Windows* open the Start menu and open an "Anaconda Command Prompt". 
 - On *macOS* or *Linux* open a terminal window.
@@ -99,7 +96,7 @@ The package manager `conda` makes it easy to manage multiple data environments t
 
 ### Environment for scikit-learn
 
-In this example we will install the module [scikit-learn]() with conda. See step "Installation of modules" for more information about this topic.
+In this example we will install the module [scikit-learn](https://scikit-learn.org/stable/) with conda. See step "Installation of modules" for more information about this topic.
 
 - Let's create a new environment for scikit-learn:
   - `conda create -n` creats a new environment
@@ -164,18 +161,15 @@ conda update scikit-learn
 ## Installation of modules 
 Duration: 00:05:00
 
-There are two options of how to install modules in an environment: with `conda` or `pip`. Note however, that you shouldn't use both methods in one environment.
+There are two options of how to install modules in an environment: with `conda` or `pip`. Note however, that ideally you should always use one of the two methods in one environment.
 
-<aside class="negative">
-Do not use both conda and pip in one environment.
-</aside>
 
 ### Conda-forge
 
-As a first option, you should always try to download a package from [conda-forge](https://conda-forge.org/docs/user/introduction.html).
+As a first option, you should always try to download a package from [conda-forge](https://conda-forge.org/docs/user/introduction.html). Here is a list of [conda-forge packages](https://anaconda.org/conda-forge/repo).
 
 
-- Since we installed Miniforge3, we can simply use `conda install` and type the name of the package we want to install (always keep in mind that you first need to activate the environment of your choice):
+- Since we installed Miniforge, we can simply use `conda install` and type the name of the package we want to install (always keep in mind that you first need to activate the environment of your choice):
 
 ```bash
 conda install package-name
@@ -214,7 +208,7 @@ Duration: 0:01:00
 
 Congratulations! You have completed the tutorial and learned how to: 
 
-✅ install Miniforge3  
+✅ install Miniforge 
 ✅ create virtual environments  
 ✅ install modules using conda
 
