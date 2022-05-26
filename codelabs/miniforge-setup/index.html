@@ -1,0 +1,203 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Miniforge setup</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="miniforge-setup"
+                  title="Miniforge setup"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/miniforge-setup">
+    
+      <google-codelab-step label="Overview" duration="2">
+        <p>The open-source project <a href="https://github.com/conda-forge/miniforge" target="_blank">Miniforge</a> is one of the easiest ways to get started with data science projects. It already includes Python and the most important modules we need.</p>
+<aside class="special"><p> Miniforge is a data science toolkit which already includes most of the data science modules we need.  </p>
+</aside>
+<p>Miniforge is an community-led alternative to the data science platform Anaconda, provided by Anaconda, Inc.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="2">
+        <ul>
+<li>If you already have Anaconda on your machine, you should uninstall it first: how to <a href="https://docs.anaconda.com/anaconda/install/uninstall/" target="_blank">uninstall Anaconda</a>.</li>
+<li>To start this tutorial, you should have some basic understanding of the command line interface (other names for the command line are: cmd, CLI, prompt, console or terminal.<ul>
+<li>If you aren&#39;t familiar with the terminal, read this <a href="https://tutorial.djangogirls.org/en/intro_to_command_line/" target="_blank">introduction to the command-line interface</a>.</li>
+</ul>
+</li>
+</ul>
+<aside class="special"><p> The terminal is a text-based application for viewing, handling, and manipulating files on your computer </p>
+</aside>
+<ul>
+<li>If you have a Mac, <a href="https://brew.sh/" target="_blank">install Homebrew</a> (the missing package manager for macOS). Homebrew makes it easy to install software you need that Apple didn&#39;t.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Installation" duration="5">
+        <ul>
+<li>If you have <strong>Windows</strong>: Open the <a href="https://github.com/conda-forge/miniforge#miniforge3" target="_blank">Miniforge GitHub page</a>, choose the appropriate installer for your system and install the software.</li>
+<li>If you have <strong>MacOs</strong>: Open your terminal and use <code>brew</code> to install Miniforge3:</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">brew install miniforge
+</code></pre>
+<ul>
+<li>Then run this command:</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">conda init zsh
+</code></pre>
+<ul>
+<li>Now restart your terminal.</li>
+</ul>
+<p><em>Starting with certain models introduced in late 2020, Apple began the transition from Intel processors to Apple silicon in Mac computers. Here is a list with </em><a href="https://support.apple.com/en-us/HT211814" target="_blank"><em>Mac computers with Apple silicon</em></a><em>. If you have one of them, brew will install the arm64 (Apple Silicon) version, otherwise the version x86_64.</em></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Virtual environments" duration="5">
+        <p>During the first installation, Miniforge3 installed the so called <code>base</code> environment. Let`s take a look at this environment:</p>
+<ul>
+<li>On <em>Windows</em> open the Start menu and open an &#34;Anaconda Command Prompt&#34;.</li>
+<li>On <em>macOS</em> or <em>Linux</em> open a terminal window.</li>
+</ul>
+<p>Usually, the <code>base</code> environment is already activated (and you can see the word <code>base</code> in your terminal. If not, type: <code>conda activate base</code>)</p>
+<ul>
+<li>Now take a look at all the modules in your <code>base</code> environment:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda list
+</code></pre>
+<p>You should see a list of modules with their name, version, build (more detaild information about the package) and channel (from which the packages were installed).</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create a virtual environment" duration="5">
+        <p>The package manager <code>conda</code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called <em>virtual environments</em>).</p>
+<p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific module versions.</p>
+<h2 is-upgraded>Environment for scikit-learn</h2>
+<p>In this example we will install the module <a target="_blank">scikit-learn</a> with conda. See step &#34;Installation of modules&#34; for more information about this topic.</p>
+<ul>
+<li>Let&#39;s create a new environment for scikit-learn: <ul>
+<li><code>conda create -n</code> creats a new environment</li>
+<li><code>sklearn-env</code> is the name we choose</li>
+<li><code>-c conda-forge scikit-learn</code> installs the module scikit-learn with conda</li>
+</ul>
+</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda create -n sklearn-env -c conda-forge scikit-learn
+</code></pre>
+<p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
+<ul>
+<li>You can activate the new environment as follows:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda activate sklearn-env
+</code></pre>
+<ul>
+<li>Now take a look at all the modules in your <code>sklearn-env</code> environment:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda list
+</code></pre>
+<ul>
+<li>If you want to switch back to your <code>base</code> environment simply type:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda deactivate
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Update environments" duration="5">
+        <p>If you want to update a specific environment (this will update all packages in the selected environment to the latest version but will not update Python), use this command: <code>conda update --all</code></p>
+<p><em>Make sure to activate the right environment first. In our example, we use the sklearn-env environment so we first activate it</em></p>
+<ul>
+<li>Activate enironment</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">conda activate sklearn-env
+</code></pre>
+<ul>
+<li>Update all modules</li>
+</ul>
+<pre><code language="language-terminal" class="language-terminal">conda update --all
+</code></pre>
+<ul>
+<li>If you only want to update specific modules, use conda update and the name of the module (e.g., scikit-learn)</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda update scikit-learn
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Installation of modules" duration="5">
+        <p>There are two options of how to install modules in an environment: with <code>conda</code> or <code>pip</code>. Note however, that you shouldn&#39;t use both methods in one environment.</p>
+<aside class="warning"><p> Do not use both conda and pip in one environment. </p>
+</aside>
+<h2 is-upgraded>Conda-forge</h2>
+<p>As a first option, you should always try to download a package from <a href="https://conda-forge.org/docs/user/introduction.html" target="_blank">conda-forge</a>.</p>
+<ul>
+<li>Since we installed Miniforge3, we can simply use <code>conda install</code> and type the name of the package we want to install (always keep in mind that you first need to activate the environment of your choice):</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda install package-name
+</code></pre>
+<p>As an example, let&#39;s install some additional modules in our <code>sklearn-env</code> environment:</p>
+<ul>
+<li>Activate environment:</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">conda activate sklearn-env
+</code></pre>
+<ul>
+<li>Install pandas:</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">conda install pandas
+</code></pre>
+<h2 is-upgraded>Pip</h2>
+<p>Instead of <code>conda</code>, you can also use <a href="https://pip.pypa.io/en/stable/" target="_blank">pip</a> (the standard package installer for Python) to install packages. Use this option if the package you want to install isn&#39;t available in conda.</p>
+<p>Note that you should always create a new environment and only use <code>pip</code> to install new modules in this environment.</p>
+<ul>
+<li>You can install packages like this:</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">pip install package-name
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Congratulations" duration="1">
+        <p>Congratulations! You have completed the tutorial and learned how to:</p>
+<p>✅ install Miniforge3<br> ✅ create virtual environments ✅ install modules using conda</p>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the <em>Report a mistake</em> button at the bottom left of this site.</p>
+<p><em>Jan Kirenz (2022) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | Made with </em><a href="https://github.com/googlecodelabs/tools" target="_blank"><em>Codelabs</em></a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

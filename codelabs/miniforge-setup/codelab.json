@@ -1,0 +1,22 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-05-26T18:04:40+02:00",
+  "id": "miniforge-setup",
+  "duration": 30,
+  "title": "Miniforge setup",
+  "summary": "",
+  "source": "miniforge-setup.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": null,
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/miniforge-setup",
+  "url": "miniforge-setup"
+}

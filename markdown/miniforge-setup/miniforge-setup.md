@@ -14,13 +14,13 @@ feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/miniforge
 ## Overview
 Duration: 0:02:00
 
-The open-source project [Miniforge](https://github.com/conda-forge/miniforge) is one of the easiest ways to set up data science projects. It already includes Python and the most important modules we need. Miniforge is an community-led alternative to the data science platform Anaconda, provided by Anaconda, Inc.
+The open-source project [Miniforge](https://github.com/conda-forge/miniforge) is one of the easiest ways to get started with data science projects. It already includes Python and the most important modules we need. 
 
 <aside class="positive">
 Miniforge is a data science toolkit which already includes most of the data science modules we need.
  </aside>
 
-
+Miniforge is an community-led alternative to the data science platform Anaconda, provided by Anaconda, Inc.
 
 <!-- ------------------------ -->
 ## Prerequisites
@@ -29,13 +29,15 @@ Duration: 0:02:00
 
 - If you already have Anaconda on your machine, you should uninstall it first: how to [uninstall Anaconda](https://docs.anaconda.com/anaconda/install/uninstall/).
 
+
+- To start this tutorial, you should have some basic understanding of the command line interface (other names for the command line are: cmd, CLI, prompt, console or terminal.   
+  - If you aren't familiar with the terminal, read this [introduction to the command-line interface](https://tutorial.djangogirls.org/en/intro_to_command_line/).
+
 <aside class="positive">
 The terminal is a text-based application for viewing, handling, and manipulating files on your computer
 </aside>  
 
-- To start this tutorial, you should have some basic understanding of the command line interface (other names for the command line are: cmd, CLI, prompt, console or terminal). If you aren't familiar with the terminal, read this [introduction to the command-line interface](https://tutorial.djangogirls.org/en/intro_to_command_line/).
-
-
+- If you have a Mac, [install Homebrew](https://brew.sh/) (the missing package manager for macOS). Homebrew makes it easy to install software you need that Apple didn’t.
 
 
 
@@ -44,27 +46,38 @@ The terminal is a text-based application for viewing, handling, and manipulating
 
 Duration: 00:05:00
 
-- Open this website: [Miniforge](https://github.com/conda-forge/miniforge#miniforge3) 
+- If you have **Windows**: Open the [Miniforge GitHub page](https://github.com/conda-forge/miniforge#miniforge3), choose the appropriate installer for your system and install the software.
+
+- If you have **MacOs**: Open your terminal and use `brew` to install Miniforge3:
 
 
-- Choose the appropriate file for your system (Windows, MacOS with Intel chip, MacOs arm64 or Linux) and install the software.
+```Bash
+brew install miniforge
+```
 
+- Then run this command:
+
+```Bash
+conda init zsh
+```
+
+- Now restart your terminal.
+
+
+
+*Starting with certain models introduced in late 2020, Apple began the transition from Intel processors to Apple silicon in Mac computers. Here is a list with [Mac computers with Apple silicon](https://support.apple.com/en-us/HT211814). If you have one of them, brew will install the arm64 (Apple Silicon) version, otherwise the version x86_64.*
 
 <!-- ------------------------ -->
 ## Virtual environments
 Duration: 00:05:00
 
 
-During the first installation, Anaconda installed the so called `base` environment. Let`s take a look at this environment:
+During the first installation, Miniforge3 installed the so called `base` environment. Let`s take a look at this environment:
 
 - On *Windows* open the Start menu and open an "Anaconda Command Prompt". 
 - On *macOS* or *Linux* open a terminal window.
 
-Usually, the `base` environment is already activated (and you can see the word `base` in your terminal). If not, type: 
-
-```bash
-conda activate base
-```
+Usually, the `base` environment is already activated (and you can see the word `base` in your terminal. If not, type: `conda activate base`)
 
 - Now take a look at all the modules in your `base` environment:
 
@@ -79,15 +92,23 @@ You should see a list of modules with their name, version, build (more detaild i
 ## Create a virtual environment
 Duration: 00:05:00
 
-Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called *virtual environments*). 
+The package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called *virtual environments*). 
 
 [Conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands
-) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions. 
+) help manage dependencies and isolate projects. This is particularly useful when some packages require specific module versions. 
 
-- Let's create an environment with a specific version of Python (3.9). We call the environment ``myenv``:
+### Environment for scikit-learn
+
+In this example we will install the module [scikit-learn]() with conda. See step "Installation of modules" for more information about this topic.
+
+- Let's create a new environment for scikit-learn:
+  - `conda create -n` creats a new environment
+  - `sklearn-env` is the name we choose
+  - `-c conda-forge scikit-learn` installs the module scikit-learn with conda
+
 
 ```bash
-conda create -n myenv python=3.9
+conda create -n sklearn-env -c conda-forge scikit-learn
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
@@ -95,10 +116,10 @@ When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
 - You can activate the new environment as follows:
 
 ```bash
-conda activate myenv
+conda activate sklearn-env
 ```
 
-- Now take a look at all the modules in your `myenv` environment:
+- Now take a look at all the modules in your `sklearn-env` environment:
 
 ```bash
 conda list
@@ -110,16 +131,24 @@ conda list
 conda deactivate
 ```
 
+
 <!-- ------------------------ -->
-## Update anaconda environments
+## Update environments
 Duration: 00:05:00
 
 
-If you want to update a specific Anaconda environment (this will update all packages in the selected environment to the latest version but will not update Python), use this command: `conda update --all`
+If you want to update a specific environment (this will update all packages in the selected environment to the latest version but will not update Python), use this command: `conda update --all`
 
-*Make sure to activate the right environment first. In our example, we use the base environment so we don't have to activate it*
+*Make sure to activate the right environment first. In our example, we use the sklearn-env environment so we first activate it*
 
-- Update all
+
+- Activate enironment
+
+```Bash
+conda activate sklearn-env
+```
+
+- Update all modules
 
 ```terminal
 conda update --all
@@ -131,136 +160,64 @@ conda update --all
 conda update scikit-learn
 ```
 
-- Let's make sure that you use the machine learning module `scikit-learn` in version 1.0.2 or higher:
-
-```terminal
-conda list scikit-learn
-```
-
-- It's also possible to install a specific version of a module:
-
-
-```bash
-conda install -c anaconda scikit-learn=1.0.2
-```
-
 <!-- ------------------------ -->
 ## Installation of modules 
 Duration: 00:05:00
 
-There are several options how to install modules in a Anaconda environment.
+There are two options of how to install modules in an environment: with `conda` or `pip`. Note however, that you shouldn't use both methods in one environment.
 
-
-### Conda
-
-[conda](https://docs.anaconda.com/anaconda/user-guide/tasks/install-packages/) is the official Anaconda module manager. 
-
-If you install a new module with `conda`, it analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2.0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. 
-
-The conda team, from Anaconda, Inc., packages a multitude of packages and provides them to all users free of charge in their default channel.
-
-But what if a package you are looking for is not in the default channel? One option is to use conda-forge (see below).
+<aside class="negative">
+Do not use both conda and pip in one environment.
+</aside>
 
 ### Conda-forge
 
-[Conda-forge](https://conda-forge.org/docs/user/introduction.html) is a community-led collection of recipes, build infrastructure and distributions for the conda package manager.
+As a first option, you should always try to download a package from [conda-forge](https://conda-forge.org/docs/user/introduction.html).
+
+
+- Since we installed Miniforge3, we can simply use `conda install` and type the name of the package we want to install (always keep in mind that you first need to activate the environment of your choice):
+
+```bash
+conda install package-name
+```
+
+As an example, let's install some additional modules in our `sklearn-env` environment:
+
+- Activate environment:
+
+```Bash
+conda activate sklearn-env
+```
+
+- Install pandas:
+
+```Bash
+conda install pandas
+```
+
 
 ### Pip
 
-Instead of conda, you can also use `pip` (the standard package installer for Python) to install packages. 
+Instead of `conda`, you can also use [pip](https://pip.pypa.io/en/stable/) (the standard package installer for Python) to install packages. Use this option if the package you want to install isn't available in conda. 
 
-Note that we will use `pip`in this environment to install packages (and not conda). Therefore, we install pip in this environment.
+Note that you should always create a new environment and only use `pip` to install new modules in this environment.
 
+- You can install packages like this:
 
-
-
-<aside class="negative">
-Note that you should only use either conda or pip in one environment
- </aside>
-
-Let`s install some additional modules in our base environment.  
-
-
-
-
-<!-- ------------------------ -->
-
-
-
-## Create a virtual environment
-Duration: 00:05:00
-
-Furthermore, Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called **virtual environments**). 
- 
-`conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2.0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use `pip` (the standard package installer for Python) to install packages. 
-
-
-<aside class="negative">
-Note that you should only use either conda or pip in one environment
- </aside>
-
-
-
-[Conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands
-) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions. Note that we will use `pip`in this environment to install packages (and not conda). Therefore, we install pip in this environment.
-
-On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
-
-We create an environment with a specific version of Python (3.9) and the **TensorFlow** package. We call the environment ``tf``:
-
-```bash
-conda create -n tf python=3.9 pip
-```
-
-When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
-
-
-<!-- ------------------------ -->
-## Activate TensorFlow environment
-Duration: 00:02:00
-
-You can activate your environment as follows:
-
-```bash
-conda activate tf
-```
-
-
-<!-- ------------------------ -->
-## Install TensorFlow 
-Duration: 00:02:00
-
-You can install TensorFlow as follows (see [documentation](https://www.tensorflow.org/install)):
-
-Step 1: upgrade pip:
-
-```bash
-pip install --upgrade pip
-```
-
-Step 2: install TensorFlow:
-
-```bash
-pip install tensorflow
+```Bash
+pip install package-name
 ```
 
 <!-- ------------------------ -->
-## What's next?
+## Congratulations
 Duration: 0:01:00
 
-Congratulations! You have completed the tutorial and learned how to install:
+Congratulations! You have completed the tutorial and learned how to: 
 
-✅ TensorFlow  
+✅ install Miniforge3  
+✅ create virtual environments
+✅ install modules using conda
 
-If you'd like to learn more about TensorFlow, have a look at the following suggestion:
-
-- [TensorFlow tutorials](https://www.tensorflow.org/tutorials)
-
-If you want to switch back to your Anaconda base environment, just use:
-
-```bash
-conda deactivate
-```
 
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
