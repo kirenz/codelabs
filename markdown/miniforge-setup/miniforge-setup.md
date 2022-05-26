@@ -1,44 +1,42 @@
 author: Jan Kirenz
-summary: How to install Anaconda and create virtual environments
-id: anaconda-install
+summary:
+id: miniforge-setup
 tags:
-categories: data-science
+categories:
 environments: Web
 status: Published
-feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/anaconda-install
+feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/miniforge-setup
 
-# Anaconda setup
+
+# Miniforge setup
 
 <!-- ------------------------ -->
 ## Overview
 Duration: 0:02:00
 
-<img src="img/anaconda-logo.png" alt="Anaconda logo" width="200">  
-
-The open-source [Anaconda Individual Edition](https://www.anaconda.com/products/individual) distribution is one of the easiest ways to perform data science projects. It already includes Python and the most important modules we need. 
+The open-source project [Miniforge](https://github.com/conda-forge/miniforge) is one of the easiest ways to set up data science projects. It already includes Python and the most important modules we need. Miniforge is an community-led alternative to the data science platform Anaconda, provided by Anaconda, Inc.
 
 <aside class="positive">
-Anaconda is a data science toolkit which already includes most of the data science modules we need.
+Miniforge is a data science toolkit which already includes most of the data science modules we need.
  </aside>
 
 
-*If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 or 3.7 is also fine). In your terminal, type `python --version` to see which Python version you are using in your Anaconda base environment.* 
-
-*You may also uninstall your current Anaconda environment from your machine and install the latest version: here a guide of how to [uninstall Anaconda](https://docs.anaconda.com/anaconda/install/uninstall/).*
 
 <!-- ------------------------ -->
 ## Prerequisites
 
 Duration: 0:02:00
 
-- To start this tutorial, you should have some understanding of the **command line interface** (other names for the command line are: cmd, CLI, prompt, console or terminal). 
-
-If you aren't familiar with the terminal, read this [introduction to the command-line interface](https://tutorial.djangogirls.org/en/intro_to_command_line/).
-
+- If you already have Anaconda on your machine, you should uninstall it first: how to [uninstall Anaconda](https://docs.anaconda.com/anaconda/install/uninstall/).
 
 <aside class="positive">
 The terminal is a text-based application for viewing, handling, and manipulating files on your computer
 </aside>  
+
+- To start this tutorial, you should have some basic understanding of the command line interface (other names for the command line are: cmd, CLI, prompt, console or terminal). If you aren't familiar with the terminal, read this [introduction to the command-line interface](https://tutorial.djangogirls.org/en/intro_to_command_line/).
+
+
+
 
 
 <!-- ------------------------ -->
@@ -46,13 +44,10 @@ The terminal is a text-based application for viewing, handling, and manipulating
 
 Duration: 00:05:00
 
-- Go to [anaconda.com](https://www.anaconda.com/products/individual) 
+- Open this website: [Miniforge](https://github.com/conda-forge/miniforge#miniforge3) 
 
 
-- Scroll to the bottom of the page (until you see "Anaconda Installers")
-
-
-- Choose the appropriate `Graphical Installer` for your system (Windows, MacOS or Linux) and install the software.
+- Choose the appropriate file for your system (Windows, MacOS with Intel chip, MacOs arm64 or Linux) and install the software.
 
 
 <!-- ------------------------ -->
@@ -272,4 +267,4 @@ conda deactivate
 
 Thank you for participating in this tutorial. If you found any issues along the way I'd appreciate it if you'd raise them by clicking the *Report a mistake* button at the bottom left of this site.
 
-*Copyright: Jan Kirenz (2021), [kirenz.com](https://www.kirenz.com), [Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0) License](https://creativecommons.org/licenses/by-nc/2.0/)*
+*Jan Kirenz (2022) | [kirenz.com](https://www.kirenz.com) | Made with [Codelabs](https://github.com/googlecodelabs/tools)*
