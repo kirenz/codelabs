@@ -28,10 +28,9 @@
                   feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/miniforge-setup">
     
       <google-codelab-step label="Overview" duration="2">
-        <p>The open-source project <a href="https://github.com/conda-forge/miniforge" target="_blank">Miniforge</a> is one of the easiest ways to get started with data science projects. It already includes Python and the most important modules we need.</p>
-<aside class="special"><p> Miniforge is a data science toolkit which already includes most of the data science modules we need.  </p>
+        <p>The open-source project <a href="https://github.com/conda-forge/miniforge" target="_blank">Miniforge</a> is one of the easiest ways to get started with data science projects. It already includes Python and makes it easy to important and manage modules we need.</p>
+<aside class="special"><p> Miniforge is an community-led alternative to the data science platform Anaconda, provided by Anaconda, Inc.  </p>
 </aside>
-<p>Miniforge is an community-led alternative to the data science platform Anaconda, provided by Anaconda, Inc.</p>
 
 
       </google-codelab-step>
@@ -56,7 +55,7 @@
       <google-codelab-step label="Installation" duration="5">
         <ul>
 <li>If you have <strong>Windows</strong>: Open the <a href="https://github.com/conda-forge/miniforge#miniforge3" target="_blank">Miniforge GitHub page</a>, choose the appropriate installer for your system and install the software.</li>
-<li>If you have <strong>MacOs</strong>: Open your terminal and use <code>brew</code> to install Miniforge3:</li>
+<li>If you have <strong>MacOs</strong>: Open your terminal and use <code>brew</code> to install Miniforge:</li>
 </ul>
 <pre><code language="language-Bash" class="language-Bash">brew install miniforge
 </code></pre>
@@ -68,13 +67,12 @@
 <ul>
 <li>Now restart your terminal.</li>
 </ul>
-<p><em>Starting with certain models introduced in late 2020, Apple began the transition from Intel processors to Apple silicon in Mac computers. Here is a list with </em><a href="https://support.apple.com/en-us/HT211814" target="_blank"><em>Mac computers with Apple silicon</em></a><em>. If you have one of them, brew will install the arm64 (Apple Silicon) version, otherwise the version x86_64.</em></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Virtual environments" duration="5">
-        <p>During the first installation, Miniforge3 installed the so called <code>base</code> environment. Let`s take a look at this environment:</p>
+        <p>During the first installation, Miniforge installed the so called <code>base</code> environment. Let`s take a look at this environment:</p>
 <ul>
 <li>On <em>Windows</em> open the Start menu and open an &#34;Anaconda Command Prompt&#34;.</li>
 <li>On <em>macOS</em> or <em>Linux</em> open a terminal window.</li>
@@ -94,7 +92,7 @@
         <p>The package manager <code>conda</code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called <em>virtual environments</em>).</p>
 <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific module versions.</p>
 <h2 is-upgraded>Environment for scikit-learn</h2>
-<p>In this example we will install the module <a target="_blank">scikit-learn</a> with conda. See step &#34;Installation of modules&#34; for more information about this topic.</p>
+<p>In this example we will install the module <a href="https://scikit-learn.org/stable/" target="_blank">scikit-learn</a> with conda. See step &#34;Installation of modules&#34; for more information about this topic.</p>
 <ul>
 <li>Let&#39;s create a new environment for scikit-learn: <ul>
 <li><code>conda create -n</code> creats a new environment</li>
@@ -148,13 +146,11 @@
       </google-codelab-step>
     
       <google-codelab-step label="Installation of modules" duration="5">
-        <p>There are two options of how to install modules in an environment: with <code>conda</code> or <code>pip</code>. Note however, that you shouldn&#39;t use both methods in one environment.</p>
-<aside class="warning"><p> Do not use both conda and pip in one environment. </p>
-</aside>
+        <p>There are two options of how to install modules in an environment: with <code>conda</code> or <code>pip</code>. Note however, that ideally you should always use one of the two methods in one environment.</p>
 <h2 is-upgraded>Conda-forge</h2>
-<p>As a first option, you should always try to download a package from <a href="https://conda-forge.org/docs/user/introduction.html" target="_blank">conda-forge</a>.</p>
+<p>As a first option, you should always try to download a package from <a href="https://conda-forge.org/docs/user/introduction.html" target="_blank">conda-forge</a>. Here is a list of <a href="https://anaconda.org/conda-forge/repo" target="_blank">conda-forge packages</a>.</p>
 <ul>
-<li>Since we installed Miniforge3, we can simply use <code>conda install</code> and type the name of the package we want to install (always keep in mind that you first need to activate the environment of your choice):</li>
+<li>Since we installed Miniforge, we can simply use <code>conda install</code> and type the name of the package we want to install (always keep in mind that you first need to activate the environment of your choice):</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">conda install package-name
 </code></pre>
@@ -183,7 +179,7 @@
     
       <google-codelab-step label="Congratulations" duration="1">
         <p>Congratulations! You have completed the tutorial and learned how to:</p>
-<p>✅ install Miniforge3<br> ✅ create virtual environments<br> ✅ install modules using conda</p>
+<p>✅ install Miniforge ✅ create virtual environments<br> ✅ install modules using conda</p>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
 <p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the <em>Report a mistake</em> button at the bottom left of this site.</p>
 <p><em>Jan Kirenz (2022) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | Made with </em><a href="https://github.com/googlecodelabs/tools" target="_blank"><em>Codelabs</em></a></p>

@@ -4,11 +4,11 @@
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
   "updated": "2022-05-13T10:22:23+02:00",
-  "id": "dash-2.0",
-  "duration": 20,
-  "title": "Dash installation tutorial",
+  "id": "tf-light-ios",
+  "duration": 24,
+  "title": "TensorFlow Lite iOS App",
   "summary": "",
-  "source": "dash-2.0.md",
+  "source": "tf-light-ios.md",
   "theme": "",
   "status": [
     "published"
@@ -17,6 +17,6 @@
   "tags": [
     "web"
   ],
-  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/dash-2.0",
-  "url": "dash-2.0"
+  "feedback": "https://github.com/kirenz/codelabs/blob/master/markdown/tf-light-ios",
+  "url": "tf-light-ios"
 }

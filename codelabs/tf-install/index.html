@@ -34,9 +34,9 @@
       </google-codelab-step>
     
       <google-codelab-step label="Prerequisites" duration="1">
-        <p class="image-container"><img alt="Anaconda logo" style="width: 200.00px" src="img/a65e86b6a759a874.png">   </p>
+        <p>To start this tutorial, I recommend to use <a href="https://github.com/conda-forge/miniforge" target="_blank">Miniforge</a>:</p>
 <ul>
-<li>To start this tutorial, I recommend to use <a href="https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda" target="_blank">Anaconda</a>.</li>
+<li><a href="https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0" target="_blank">Miniforge3 installation tutorial</a>.</li>
 </ul>
 
 
@@ -44,51 +44,32 @@
     
       <google-codelab-step label="Create TensorFlow environment" duration="2">
         <p class="image-container"><img alt="TensorFlow logo" style="width: 300.00px" src="img/b538f31a85a23aee.png">   </p>
-<p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow).</p>
-<p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
-<p>We create an environment with a specific version of Python (3.9). We call the environment <code>tf</code>:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.9
+<ul>
+<li>On Windows open the Start menu and open an Anaconda Command Prompt.</li>
+<li>On macOS or Linux open a terminal window.</li>
+</ul>
+<p>We create a new environment and call it <code>tf</code>. We also install pip in this new environment:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n tf pip
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Install TensorFlow" duration="2">
-        <p>First of all, you have to activate the <code>tf</code> environment:</p>
+      <google-codelab-step label="Install TensorFlow on Windows" duration="5">
+        <p>Follow this instructions if you have Windows:</p>
+<p>First of all, you have to activate the <code>tf</code> environment:</p>
 <pre><code language="language-bash" class="language-bash">conda activate tf
 </code></pre>
 <p>Upgrade pip:</p>
 <pre><code language="language-bash" class="language-bash">pip install --upgrade pip
 </code></pre>
-<p>Windows and Apple with Intel chips:</p>
 <ul>
 <li>Install TensorFlow</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">pip install tensorflow
 </code></pre>
-<p>Only for Apple chips:</p>
-<ul>
-<li>Install the Tensorflow dependencies:</li>
-</ul>
-<pre><code language="language-bash" class="language-bash">conda install -c apple tensorflow-deps
-</code></pre>
-<ul>
-<li>Install base TensorFlow</li>
-</ul>
-<pre><code>pip install tensorflow-macos
-</code></pre>
-<ul>
-<li>Install metal plugin:</li>
-</ul>
-<pre><code language="language-bash" class="language-bash">pip install tensorflow-metal
-</code></pre>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Install additional modules" duration="5">
-        <p>We install some additional modules:</p>
+<p>We install some additional modules:</p>
 <pre><code language="language-bash" class="language-bash">pip install pandas 
 </code></pre>
 <pre><code language="language-bash" class="language-bash">pip install seaborn 
@@ -102,6 +83,63 @@
 
       </google-codelab-step>
     
+      <google-codelab-step label="Install TensorFlow on Mac Intel" duration="5">
+        <p>Starting with certain models introduced in late 2020, Apple began the transition from Intel processors to Apple silicon in Mac computers. Here is a list with <a href="https://support.apple.com/en-us/HT211814" target="_blank">Mac computers with Apple silicon</a>.</p>
+<p>Follow these instructions if you have an Intel processor:</p>
+<p>Upgrade pip:</p>
+<pre><code language="language-bash" class="language-bash">pip install --upgrade pip
+</code></pre>
+<ul>
+<li>Install TensorFlow</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">pip install tensorflow
+</code></pre>
+<p>We install some additional modules:</p>
+<pre><code language="language-bash" class="language-bash">pip install pandas 
+</code></pre>
+<pre><code language="language-bash" class="language-bash">pip install seaborn 
+</code></pre>
+<pre><code language="language-bash" class="language-bash">pip install jupyter 
+</code></pre>
+<pre><code language="language-bash" class="language-bash">pip install pydot 
+</code></pre>
+<p>We also need to install graphviz: see instructions at https://graphviz.gitlab.io/download/</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Install TensorFlow on Apple silicon" duration="5">
+        <p>Starting with certain models introduced in late 2020, Apple began the transition from Intel processors to Apple silicon in Mac computers. Here is a list with <a href="https://support.apple.com/en-us/HT211814" target="_blank">Mac computers with Apple silicon</a>.</p>
+<p>Follow these instructions if you have an Apple processor:</p>
+<p>We install TensorFlow and the tensorflow-metal PluggableDevice to accelerate training with Metal on Mac GPUs.</p>
+<p>We mainly follow <a href="https://developer.apple.com/metal/tensorflow-plugin/" target="_blank">these instructions</a> provided by Apple:</p>
+<ul>
+<li>Install the Tensorflow dependencies:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda install -c apple tensorflow-deps
+</code></pre>
+<ul>
+<li>Install base TensorFlow</li>
+</ul>
+<pre><code>pip install tensorflow-macos
+</code></pre>
+<ul>
+<li>Install tensorflow-metal plugin:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">pip install tensorflow-metal
+</code></pre>
+<p>We install some additional modules:</p>
+<pre><code language="language-bash" class="language-bash">conda install pandas 
+</code></pre>
+<pre><code language="language-bash" class="language-bash">conda install jupyter 
+</code></pre>
+<pre><code language="language-bash" class="language-bash">conda install pydot 
+</code></pre>
+<p>We also need to install graphviz: see instructions at https://graphviz.gitlab.io/download/</p>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="What&#39;s next?" duration="1">
         <p>Congratulations! You have completed the tutorial and learned how to install:</p>
 <p>✅ TensorFlow</p>
@@ -109,12 +147,12 @@
 <ul>
 <li><a href="https://kirenz.github.io/deep-learning/docs/intro.html" target="_blank">Deep Learning in Python with TensorFlow and Keras</a></li>
 </ul>
-<p>If you want to switch back to your Anaconda base environment, just use:</p>
+<p>If you want to switch back to your base environment, just use:</p>
 <pre><code language="language-bash" class="language-bash">conda deactivate
 </code></pre>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
 <p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the <em>Report a mistake</em> button at the bottom left of this site.</p>
-<p><em>Copyright: Jan Kirenz (2021), </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em>, </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0) License</em></a></p>
+<p><em>Jan Kirenz (2022) | </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em> | Made with </em><a href="https://github.com/googlecodelabs/tools" target="_blank"><em>Codelabs</em></a></p>
 
 
       </google-codelab-step>

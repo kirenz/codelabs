@@ -13,6 +13,8 @@ feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/tfx-insta
 ## Overview
 Duration: 0:02:00
 
+*Note that you can't install TFX on machines with Apple silicon at the moment (2022-05-26)*
+
 We start with an overview of the software we will install in this tutorial: TensorFlow & TensorFlow Extended.
 
 <aside class="positive">
