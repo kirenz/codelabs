@@ -215,7 +215,7 @@ Duration: 0:01:00
 Congratulations! You have completed the tutorial and learned how to: 
 
 ✅ install Miniforge3  
-✅ create virtual environments
+✅ create virtual environments  
 ✅ install modules using conda
 
 
