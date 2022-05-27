@@ -21,7 +21,7 @@ In this tutorial, we will install [TensorFlow](https://www.tensorflow.org/), whi
 
 Duration: 00:01:00
 
-To start this tutorial, I recommend to use [Miniforge](https://github.com/conda-forge/miniforge): 
+To start this tutorial, I recommend to use [Miniforge](https://github.com/conda-forge/miniforge) (a community-led alternative to Anaconda): 
 
 - [Miniforge3 installation tutorial](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0).
 

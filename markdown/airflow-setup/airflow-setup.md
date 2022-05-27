@@ -44,13 +44,13 @@ If you have a Windows machine, you need Windows Subsystem for Linux. Follow the 
 
 Furthermore, take a look at this short answer at [stackoverflow](https://stackoverflow.com/a/53939373) or the more detailed version in this [post](https://coding-stream-of-consciousness.com/2018/11/06/apache-airflow-windows-10-install-ubuntu/).
 
-### Anaconda
+### MiniForge
 
-To start this tutorial, I recommend to use Anaconda. If you don't already have Anaconda, go to [anaconda.com](https://www.anaconda.com/products/individual) and choose the appropriate `Graphical Installer` for your system (Windows, MacOS or Linux). Install the software on your system:
 
-- [Installing on macOS](https://docs.continuum.io/anaconda/install/mac-os/)
-- [Installing on Windows](https://docs.continuum.io/anaconda/install/windows/)
-- [https://docs.continuum.io/anaconda/install/linux/](https://docs.continuum.io/anaconda/install/linux/) 
+To start this tutorial, I recommend to use [Miniforge](https://github.com/conda-forge/miniforge) (a community-led alternative to Anaconda): 
+
+- [Miniforge3 installation tutorial](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0).
+
 
 
 <!-- ------------------------ -->
@@ -58,7 +58,6 @@ To start this tutorial, I recommend to use Anaconda. If you don't already have A
 
 Duration: 0:02:00
 
-[Conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.
 
 On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
 

@@ -49,20 +49,17 @@
 <li><a href="https://docs.microsoft.com/en-us/windows/wsl/about" target="_blank">What is the Windows Subsystem for Linux?</a></li>
 </ul>
 <p>Furthermore, take a look at this short answer at <a href="https://stackoverflow.com/a/53939373" target="_blank">stackoverflow</a> or the more detailed version in this <a href="https://coding-stream-of-consciousness.com/2018/11/06/apache-airflow-windows-10-install-ubuntu/" target="_blank">post</a>.</p>
-<h2 is-upgraded>Anaconda</h2>
-<p>To start this tutorial, I recommend to use Anaconda. If you don&#39;t already have Anaconda, go to <a href="https://www.anaconda.com/products/individual" target="_blank">anaconda.com</a> and choose the appropriate <code>Graphical Installer</code> for your system (Windows, MacOS or Linux). Install the software on your system:</p>
+<h2 is-upgraded>MiniForge</h2>
+<p>To start this tutorial, I recommend to use <a href="https://github.com/conda-forge/miniforge" target="_blank">Miniforge</a> (a community-led alternative to Anaconda):</p>
 <ul>
-<li><a href="https://docs.continuum.io/anaconda/install/mac-os/" target="_blank">Installing on macOS</a></li>
-<li><a href="https://docs.continuum.io/anaconda/install/windows/" target="_blank">Installing on Windows</a></li>
-<li><a href="https://docs.continuum.io/anaconda/install/linux/" target="_blank">https://docs.continuum.io/anaconda/install/linux/</a></li>
+<li><a href="https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0" target="_blank">Miniforge3 installation tutorial</a>.</li>
 </ul>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Create Virtual Environment" duration="2">
-        <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.</p>
-<p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
+        <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
 <p>We create an environment with a specific version of Python and install pip. We call the environment <code>airflow</code>:</p>
 <pre><code language="language-bash" class="language-bash">conda create -n airflow python=3.9 pip
 </code></pre>
