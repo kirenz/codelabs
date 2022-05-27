@@ -14,10 +14,10 @@ feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/miniforge
 ## Overview
 Duration: 0:02:00
 
-The open-source project [Miniforge](https://github.com/conda-forge/miniforge) is one of the easiest ways to get started with data science projects. It already includes Python and makes it easy to important and manage modules we need. 
+The open-source project [Miniforge](https://github.com/conda-forge/miniforge) is one of the easiest ways to get started with data science projects. It is a small, bootstrap version of the data science platform [Anaconda](https://www.anaconda.com/products/distribution) (like [Minconda](https://docs.conda.io/en/latest/miniconda.html)) that includes only Python, the open source package management system [conda](https://docs.conda.io/en/latest/) and a small number of other useful packages. 
 
 <aside class="positive">
-Miniforge is an community-led alternative to the data science platform Anaconda, provided by Anaconda, Inc.
+Miniforge is an community-led alternative to the data science platforms Anaconda and Miniconda, provided by Anaconda, Inc.
  </aside>
 
 
@@ -27,7 +27,7 @@ Miniforge is an community-led alternative to the data science platform Anaconda,
 
 Duration: 0:02:00
 
-- If you already have Anaconda on your machine, you should uninstall it first: how to [uninstall Anaconda](https://docs.anaconda.com/anaconda/install/uninstall/).
+- If you already have Anaconda on your machine, you should uninstall it first (Miniforge is an alternative to Anaconda): how to [uninstall Anaconda](https://docs.anaconda.com/anaconda/install/uninstall/).
 
 
 - To start this tutorial, you should have some basic understanding of the command line interface (other names for the command line are: cmd, CLI, prompt, console or terminal.   
