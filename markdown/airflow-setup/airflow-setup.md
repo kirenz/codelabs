@@ -46,7 +46,6 @@ Furthermore, take a look at this short answer at [stackoverflow](https://stackov
 
 ### MiniForge
 
-
 To start this tutorial, I recommend to use [Miniforge](https://github.com/conda-forge/miniforge) (a community-led alternative to Anaconda): 
 
 - [Miniforge3 installation tutorial](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0).
@@ -64,7 +63,7 @@ On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or 
 We create an environment with a specific version of Python and install pip. We call the environment ``airflow``:
 
 ```bash
-conda create -n airflow python=3.9 pip
+conda create -n airflow python=3.10 pip
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
@@ -102,10 +101,21 @@ pip install virtualenv
 export AIRFLOW_HOME=~/airflow
 ```
 
-- Install Airflow with the following constraints file. We use Airflow Version "2.3.0" and Python "3.9.": 
+- Install Airflow with the following constraints file. We use Airflow Version "2.3.1" and Python "3.10.": 
 
 ```bash
-pip install "apache-airflow==2.3.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.3.0/constraints-3.9.txt"
+pip install "apache-airflow==2.3.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.3.1/constraints-3.10.txt"
+```
+
+- Since we will be using pandas and scikit-learn in some of our examples, we install the modules with pip:
+
+
+```bash
+pip install pandas
+```
+
+```bash
+pip install -U scikit-learn
 ```
 
 <!--
@@ -124,9 +134,9 @@ pip install apache-airflow-providers-cncf-kubernetes
 -->
 
 - The following `airflow standalone` command will 
-  - (1) initialise the database, 
+  - (1) initialise a SQLite database, 
   - (2) make a user, and 
-  - (3) start all components for you 
+  - (3) start all components 
 
 <br>
 
@@ -331,11 +341,14 @@ Duration: 0:04:00
 
 - The date range in this context is a `start_date` and optionally an `end_date`, which are used to populate the run schedule with task instances from this dag.
 
+
+<!--
 - Start a web server in debug mode in the background (this is optional)
 
 ```Bash
 airflow webserver --debug &
 ```
+-->
 
 - Start your backfill on a date range
 ```Bash
@@ -354,6 +367,13 @@ Note that if you use `depends_on_past=True`, individual task instances will depe
 ## Airflow UI
 
 Duration: 0:05:00
+
+
+- If the webserver is not already running, start it now:
+
+```Bash
+airflow webserver
+```
 
 Open the Airflow web interface in your browser:
 
