@@ -61,7 +61,7 @@
       <google-codelab-step label="Create Virtual Environment" duration="2">
         <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
 <p>We create an environment with a specific version of Python and install pip. We call the environment <code>airflow</code>:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n airflow python=3.9 pip
+<pre><code language="language-bash" class="language-bash">conda create -n airflow python=3.10 pip
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
 
@@ -92,15 +92,22 @@
 <pre><code language="language-bash" class="language-bash">export AIRFLOW_HOME=~/airflow
 </code></pre>
 <ul>
-<li>Install Airflow with the following constraints file. We use Airflow Version &#34;2.3.0&#34; and Python &#34;3.9.&#34;:</li>
+<li>Install Airflow with the following constraints file. We use Airflow Version &#34;2.3.1&#34; and Python &#34;3.10.&#34;:</li>
 </ul>
-<pre><code language="language-bash" class="language-bash">pip install &#34;apache-airflow==2.3.0&#34; --constraint &#34;https://raw.githubusercontent.com/apache/airflow/constraints-2.3.0/constraints-3.9.txt&#34;
+<pre><code language="language-bash" class="language-bash">pip install &#34;apache-airflow==2.3.1&#34; --constraint &#34;https://raw.githubusercontent.com/apache/airflow/constraints-2.3.1/constraints-3.10.txt&#34;
+</code></pre>
+<ul>
+<li>Since we will be using pandas and scikit-learn in some of our examples, we install the modules with pip:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">pip install pandas
+</code></pre>
+<pre><code language="language-bash" class="language-bash">pip install -U scikit-learn
 </code></pre>
 <ul>
 <li>The following <code>airflow standalone</code> command will <ul>
-<li>(1) initialise the database,</li>
+<li>(1) initialise a SQLite database,</li>
 <li>(2) make a user, and</li>
-<li>(3) start all components for you</li>
+<li>(3) start all components</li>
 </ul>
 </li>
 </ul>
@@ -246,11 +253,6 @@
 <p><code>airflow webserver</code> will start a web server if you are interested in tracking the progress visually as your backfill progresses.</p>
 <ul>
 <li>The date range in this context is a <code>start_date</code> and optionally an <code>end_date</code>, which are used to populate the run schedule with task instances from this dag.</li>
-<li>Start a web server in debug mode in the background (this is optional)</li>
-</ul>
-<pre><code language="language-Bash" class="language-Bash">airflow webserver --debug &amp;
-</code></pre>
-<ul>
 <li>Start your backfill on a date range</li>
 </ul>
 <pre><code language="language-Bash" class="language-Bash">airflow dags backfill my_airflow_dag \
@@ -264,7 +266,12 @@
       </google-codelab-step>
     
       <google-codelab-step label="Airflow UI" duration="5">
-        <p>Open the Airflow web interface in your browser:</p>
+        <ul>
+<li>If the webserver is not already running, start it now:</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">airflow webserver
+</code></pre>
+<p>Open the Airflow web interface in your browser:</p>
 <ul>
 <li><a href="http://0.0.0.0:8080/home" target="_blank">http://0.0.0.0:8080/home</a></li>
 </ul>
