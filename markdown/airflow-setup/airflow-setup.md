@@ -19,8 +19,11 @@ Duration: 0:01:00
 
 In this tutorial we are going to install [Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/start/local.html) on your system. Furthermore, we will implement a basic pipeline. 
 
+<br>
 
 <img src="img/logo.png" alt="Apache Airflow logo" width="200">
+
+<br>
 
 - Airflow is a open source platform to programmatically author, schedule and monitor workflows.
 
