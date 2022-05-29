@@ -29,7 +29,7 @@
     
       <google-codelab-step label="Overview" duration="1">
         <h2 is-upgraded>What we cover</h2>
-<p>In this tutorial we are going to install <a href="https://airflow.apache.org/docs/apache-airflow/stable/start/local.html" target="_blank">Apache Airflow</a> on your system.</p>
+<p>In this tutorial we are going to install <a href="https://airflow.apache.org/docs/apache-airflow/stable/start/local.html" target="_blank">Apache Airflow</a> on your system. Furthermore, we will implement a basic pipeline.</p>
 <p class="image-container"><img alt="Apache Airflow logo" style="width: 200.00px" src="img/86832b628c8aabfe.png"></p>
 <ul>
 <li>Airflow is a open source platform to programmatically author, schedule and monitor workflows.</li>
@@ -42,14 +42,59 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Prerequisites" duration="5">
-        <h2 is-upgraded>Windows Subsystem for Linux</h2>
-<p>If you have a Windows machine, you need Windows Subsystem for Linux. Follow the steps in this tutorial:</p>
+      <google-codelab-step label="Prerequisites for Windows" duration="5">
+        <h2 is-upgraded>Windows Subsystem for Linux 2 (WSL2)</h2>
+<p>If you have a Windows machine, you need Windows Subsystem for Linux 2 (WSL2). Here, we follow the instructions provided by Microsoft&#39;s Craig Loewen to set up WSL2 (see <a href="https://devblogs.microsoft.com/commandline/install-wsl-with-a-single-command-now-available-in-windows-10-version-2004-and-higher/" target="_blank">this post</a> to learn more).</p>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/windows/wsl/about" target="_blank">What is the Windows Subsystem for Linux?</a></li>
+<li>Open a command prompt window with admin privileges and run</li>
 </ul>
-<p>Furthermore, take a look at this short answer at <a href="https://stackoverflow.com/a/53939373" target="_blank">stackoverflow</a> or the more detailed version in this <a href="https://coding-stream-of-consciousness.com/2018/11/06/apache-airflow-windows-10-install-ubuntu/" target="_blank">post</a>.</p>
-<h2 is-upgraded>MiniForge</h2>
+<pre><code language="language-Bash" class="language-Bash">wsl.exe --install
+</code></pre>
+<p>This will automatically install the open source operating system Ubuntu and the latest WSL Linux kernel version onto your machine.</p>
+<ul>
+<li>When it&#39;s completed, restart your machine.</li>
+</ul>
+<p>Your distribution will start after you boot up again, completing the installation.</p>
+<ul>
+<li>You can launch the Linux terminal with one of the following options: <ul>
+<li>(1) Install the Windows Terminal from the <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=de-de&gl=DE" target="_blank">Microsoft Store</a> (recommend option)</li>
+<li>(2) Use the Ubuntu icon or</li>
+<li>(3) enter <code>wsl</code> or <code>bash</code> in Powershell.</li>
+</ul>
+</li>
+</ul>
+<p><em>You can use </em></p>
+<p><em><code>wsl --update</code></em></p>
+<p><em> to manually update your WSL Linux kernel, and you can use </em></p>
+<p><em><code>wsl --update rollback</code></em></p>
+<p><em> to rollback to a previous WSL Linux kernel version. To learn more about WSL, take a look at this post form Microsoft: </em><a href="https://docs.microsoft.com/en-us/windows/wsl/about#what-is-wsl-2" target="_blank"><em>&#34;What is the Windows Subsystem for Linux?&#34;</em></a><em>.</em></p>
+<h2 is-upgraded>Install Miniforge</h2>
+<p>Next, we install Miniforge (an alternative to Anaconda and Miniconda) on your Linux system.</p>
+<ul>
+<li>Launch the Linux terminal with one of the following options: <ul>
+<li>(1) Install the Windows Terminal from the <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=de-de&gl=DE" target="_blank">Microsoft Store</a> (recommend option)</li>
+<li>(2) Use the Ubuntu icon or</li>
+<li>(3) enter <code>wsl</code> or <code>bash</code> in Powershell.</li>
+</ul>
+</li>
+</ul>
+<p>Next, we install Miniforge with <code>wget</code> (we use <code>wget</code> to download directly from the terminal).</p>
+<ul>
+<li>Get the appropriate Linux version of Miniforge3 for your machine (see <a href="https://github.com/conda-forge/miniforge/releases" target="_blank">this overview</a>; usually <code>x86_64 (amd64)</code>). Here is the example for x86_64 (amd64):</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">wget https://github.com/conda-forge/miniforge/releases/download/4.12.0-0/Miniforge3-4.12.0-0-Linux-x86_64.sh
+</code></pre>
+<ul>
+<li>Now install Miniforge from the installer script:</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">sh Miniforge3-4.12.0-0-Linux-x86_64.sh
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites for Apple" duration="5">
+        <h2 is-upgraded>MiniForge</h2>
 <p>To start this tutorial, I recommend to use <a href="https://github.com/conda-forge/miniforge" target="_blank">Miniforge</a> (a community-led alternative to Anaconda):</p>
 <ul>
 <li><a href="https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0" target="_blank">Miniforge3 installation tutorial</a>.</li>
@@ -59,8 +104,8 @@
       </google-codelab-step>
     
       <google-codelab-step label="Create Virtual Environment" duration="2">
-        <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
-<p>We create an environment with a specific version of Python and install pip. We call the environment <code>airflow</code>:</p>
+        <p>On Windows open your Linux terminal. On macOS or Linux open a terminal window.</p>
+<p>We create an environment with a specific version of Python and install pip. We call the environment <code>airflow</code> (if you don&#39;t have Python 3.10 you can replace it with 3.9 or 3.8):</p>
 <pre><code language="language-bash" class="language-bash">conda create -n airflow python=3.10 pip
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
@@ -92,7 +137,7 @@
 <pre><code language="language-bash" class="language-bash">export AIRFLOW_HOME=~/airflow
 </code></pre>
 <ul>
-<li>Install Airflow with the following constraints file. We use Airflow Version &#34;2.3.1&#34; and Python &#34;3.10.&#34;:</li>
+<li>Install Airflow with the following constraints file. We use Airflow Version &#34;2.3.1&#34; and Python &#34;3.10.&#34;(if you don&#39;t have Python 3.10 you can replace it with 3.9 or 3.8):</li>
 </ul>
 <pre><code language="language-bash" class="language-bash">pip install &#34;apache-airflow==2.3.1&#34; --constraint &#34;https://raw.githubusercontent.com/apache/airflow/constraints-2.3.1/constraints-3.10.txt&#34;
 </code></pre>

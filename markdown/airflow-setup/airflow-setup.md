@@ -17,7 +17,8 @@ Duration: 0:01:00
 
 ### What we cover
 
-In this tutorial we are going to install [Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/start/local.html) on your system.
+In this tutorial we are going to install [Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/start/local.html) on your system. Furthermore, we will implement a basic pipeline. 
+
 
 <img src="img/logo.png" alt="Apache Airflow logo" width="200">
 
@@ -32,17 +33,65 @@ Monitor, schedule and manage your workflows via a robust and modern web applicat
 </aside>
 
 <!-- ------------------------ -->
-## Prerequisites
+## Prerequisites for Windows
 
 Duration: 0:05:00
 
-### Windows Subsystem for Linux
+### Windows Subsystem for Linux 2 (WSL2)
 
-If you have a Windows machine, you need Windows Subsystem for Linux. Follow the steps in this tutorial:
+If you have a Windows machine, you need Windows Subsystem for Linux 2 (WSL2). Here, we follow the instructions provided by Microsoft's Craig Loewen to set up WSL2 (see [this post](https://devblogs.microsoft.com/commandline/install-wsl-with-a-single-command-now-available-in-windows-10-version-2004-and-higher/) to learn more).
 
-- [What is the Windows Subsystem for Linux?](https://docs.microsoft.com/en-us/windows/wsl/about)
+- Open a command prompt window with admin privileges and run 
 
-Furthermore, take a look at this short answer at [stackoverflow](https://stackoverflow.com/a/53939373) or the more detailed version in this [post](https://coding-stream-of-consciousness.com/2018/11/06/apache-airflow-windows-10-install-ubuntu/).
+```Bash
+wsl.exe --install
+```
+
+This will automatically install the open source operating system Ubuntu and the latest WSL Linux kernel version onto your machine. 
+
+- When it’s completed, restart your machine. 
+
+Your distribution will start after you boot up again, completing the installation.
+
+- You can launch the Linux terminal with one of the following options:  
+  - (1) Install the Windows Terminal from the [Microsoft Store](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=de-de&gl=DE) (recommend option)
+  - (2) Use the Ubuntu icon or
+  - (3) enter `wsl` or `bash` in Powershell.
+
+*You can use `wsl --update` to manually update your WSL Linux kernel, and you can use `wsl --update rollback` to rollback to a previous WSL Linux kernel version. To learn more about WSL, take a look at this post form Microsoft: ["What is the Windows Subsystem for Linux?"](https://docs.microsoft.com/en-us/windows/wsl/about#what-is-wsl-2).*
+
+
+
+### Install Miniforge
+
+Next, we install Miniforge (an alternative to Anaconda and Miniconda) on your Linux system.
+
+- Launch the Linux terminal with one of the following options:  
+  - (1) Install the Windows Terminal from the [Microsoft Store](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=de-de&gl=DE) (recommend option)
+  - (2) Use the Ubuntu icon or
+  - (3) enter `wsl` or `bash` in Powershell.
+
+
+Next, we install Miniforge with `wget` (we use `wget` to download directly from the terminal).
+
+- Get the appropriate Linux version of Miniforge3 for your machine (see [this overview](https://github.com/conda-forge/miniforge/releases); usually `x86_64 (amd64)`). Here is the example for x86_64 (amd64):
+
+```Bash
+wget https://github.com/conda-forge/miniforge/releases/download/4.12.0-0/Miniforge3-4.12.0-0-Linux-x86_64.sh
+```
+
+- Now install Miniforge from the installer script: 
+
+```Bash
+sh Miniforge3-4.12.0-0-Linux-x86_64.sh
+```
+
+
+<!-- ------------------------ -->
+## Prerequisites for Apple
+
+Duration: 0:05:00
+
 
 ### MiniForge
 
@@ -50,17 +99,14 @@ To start this tutorial, I recommend to use [Miniforge](https://github.com/conda-
 
 - [Miniforge3 installation tutorial](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0).
 
-
-
 <!-- ------------------------ -->
 ## Create Virtual Environment
 
 Duration: 0:02:00
 
+On Windows open your Linux terminal. On macOS or Linux open a terminal window.
 
-On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
-
-We create an environment with a specific version of Python and install pip. We call the environment ``airflow``:
+We create an environment with a specific version of Python and install pip. We call the environment ``airflow`` (if you don't have Python 3.10 you can replace it with 3.9 or 3.8):
 
 ```bash
 conda create -n airflow python=3.10 pip
@@ -101,7 +147,7 @@ pip install virtualenv
 export AIRFLOW_HOME=~/airflow
 ```
 
-- Install Airflow with the following constraints file. We use Airflow Version "2.3.1" and Python "3.10.": 
+- Install Airflow with the following constraints file. We use Airflow Version "2.3.1" and Python "3.10."(if you don't have Python 3.10 you can replace it with 3.9 or 3.8): 
 
 ```bash
 pip install "apache-airflow==2.3.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.3.1/constraints-3.10.txt"
