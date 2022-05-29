@@ -426,7 +426,7 @@ airflow webserver
 
 Open the Airflow web interface in your browser:
 
-- [http://0.0.0.0:8080/home](http://0.0.0.0:8080/home)
+- [http://0.0.0.0:8080](http://0.0.0.0:8080)
 
 
 Now start experimenting with the Airflow web interface:
