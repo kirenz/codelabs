@@ -25,7 +25,7 @@ In this tutorial we are going to install [Apache Airflow](https://airflow.apache
 
 <br>
 
-- Airflow is a open source platform to programmatically author, schedule and monitor workflows.
+- Airflow is an open source platform to programmatically author, schedule and monitor workflows.
 
 - Airflow pipelines are defined in Python, allowing for dynamic pipeline generation. This allows for writing code that instantiates pipelines dynamically.
 
@@ -38,7 +38,7 @@ Monitor, schedule and manage your workflows via a robust and modern web applicat
 <!-- ------------------------ -->
 ## Prerequisites for Windows
 
-Duration: 0:05:00
+Duration: 0:10:00
 
 ### Windows Subsystem for Linux 2 (WSL2)
 
@@ -456,9 +456,9 @@ Congratulations! You have completed the tutorial and learned how to:
 ✅ Create a simple pipeline 
 
 
-Next, you may want to proceed with this tutorial to build another DAG (there are more examples when you scroll down):
+Next, you may want to proceed with this tutorial to build a simple Python machine learning pipeline using pandas and scikit-learn:  
 
-- [Airflow DAG example](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html)
+- [Airflow pipeline example](https://github.com/kirenz/airflow-dag-reg)
 
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
