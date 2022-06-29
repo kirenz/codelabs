@@ -42,9 +42,10 @@
       </google-codelab-step>
     
       <google-codelab-step label="Prerequisites" duration="2">
-        <p class="image-container"><img alt="Anaconda logo" style="width: 200.00px" src="img/a65e86b6a759a874.png">   </p>
+        <p>To start this tutorial, I recommend to use [Miniforge](<a href="https://github.com/conda-forge/miniforge" target="_blank">Miniforge</a> or <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda</a>. Follow these instructions if you haven&#39;t already installed one of them on your system:</p>
 <ul>
-<li>To start this tutorial, you need <a href="https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda" target="_blank"><strong>Anaconda</strong></a>.</li>
+<li><a href="https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0" target="_blank">Miniforge installation</a> (recommended)</li>
+<li><a href="https://kirenz.github.io/codelabs/codelabs/anaconda-install/#0" target="_blank">Anaconda installation</a></li>
 </ul>
 
 
@@ -52,10 +53,10 @@
     
       <google-codelab-step label="Create TensorFlow environment" duration="5">
         <p class="image-container"><img alt="TensorFlow logo" style="width: 300.00px" src="img/b538f31a85a23aee.png">   </p>
-<p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow). Note that we will use <code>pip</code>in this environment to install packages (and not conda). Therefore, we install pip in this environment.</p>
+<p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow). Note that we will use <code>pip</code> in this environment to install packages (and not conda). Therefore, we install pip in this environment.</p>
 <p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
-<p>We create an environment with a specific version of Python (3.8). We call the environment <code>tf</code>:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.8 pip
+<p>We create an environment with a specific version of Python (3.9). We call the environment <code>tf</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.9 pip
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
 
@@ -77,8 +78,6 @@
 <p>Install additional modules:</p>
 <pre><code language="language-bash" class="language-bash">pip install tensorflow-datasets
 </code></pre>
-<pre><code language="language-bash" class="language-bash">pip install seaborn
-</code></pre>
 <pre><code language="language-bash" class="language-bash">pip install -U scikit-learn
 </code></pre>
 
@@ -92,7 +91,7 @@
 <ul>
 <li>💻<a href="https://kirenz.github.io/codelabs/codelabs/tfx-pipeline" target="_blank">Build your first TFX pipeline</a></li>
 </ul>
-<p>If you want to switch back to your Anaconda base environment, just use:</p>
+<p>If you want to switch back to your base environment, just use:</p>
 <pre><code language="language-bash" class="language-bash">conda deactivate
 </code></pre>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>

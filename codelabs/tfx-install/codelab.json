@@ -3,7 +3,7 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2022-05-26T19:05:38+02:00",
+  "updated": "2022-06-29T22:07:03+02:00",
   "id": "tfx-install",
   "duration": 13,
   "title": "Installation of Anaconda, TensorFlow \u0026 TFX",

@@ -30,9 +30,11 @@ We use the data science platform Anaconda to install TFX
 
 Duration: 00:02:00
 
-<img src="img/anaconda-logo.png" alt="Anaconda logo" width="200">  
+To start this tutorial, I recommend to use [Miniforge]([Miniforge](https://github.com/conda-forge/miniforge) or [Anaconda](https://www.anaconda.com/products/distribution). Follow these instructions if you haven't already installed one of them on your system:
 
-- To start this tutorial, you need [**Anaconda**](https://kirenz.github.io/python-basics/docs/programming-toolkit.html#anaconda). 
+- [Miniforge installation](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0) (recommended)
+- [Anaconda installation](https://kirenz.github.io/codelabs/codelabs/anaconda-install/#0)
+
 
 <!-- ------------------------ -->
 ## Create TensorFlow environment
@@ -41,14 +43,14 @@ Duration: 00:05:00
 <img src="img/tf-logo.png" alt="TensorFlow logo" width="300">  
 
 [Conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands
-) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow). Note that we will use `pip`in this environment to install packages (and not conda). Therefore, we install pip in this environment.
+) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions (like TensorFlow). Note that we will use `pip` in this environment to install packages (and not conda). Therefore, we install pip in this environment.
 
 On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.
 
-We create an environment with a specific version of Python (3.8). We call the environment ``tf``:
+We create an environment with a specific version of Python (3.9). We call the environment ``tf``:
 
 ```bash
-conda create -n tf python=3.8 pip
+conda create -n tf python=3.9 pip
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
@@ -74,6 +76,7 @@ pip install --upgrade pip
 
 Now we have to use `pip` (pip is the package installer for Python) to install TFX. [This table](https://pypi.org/project/tfx/) describes how the tfx package versions are compatible with its major dependency PyPI packages. 
 
+
 ```bash
 pip install tfx
 ```
@@ -84,10 +87,6 @@ Install additional modules:
 
 ```bash
 pip install tensorflow-datasets
-```
-
-```bash
-pip install seaborn
 ```
 
 ```bash
@@ -107,7 +106,7 @@ If you'd like to learn more about TensorFlow Extended, have a look at the follow
 
 - 💻[Build your first TFX pipeline](https://kirenz.github.io/codelabs/codelabs/tfx-pipeline)
 
-If you want to switch back to your Anaconda base environment, just use:
+If you want to switch back to your base environment, just use:
 
 ```bash
 conda deactivate
