@@ -40,9 +40,8 @@ Duration: 0:05:00
 To complete this tutorial, you need the following environment:
 
 - Code editor (e.g., [Visual Studio Code](https://code.visualstudio.com/))
-- Anaconda
-- Virtual Anaconda environment (preferably named "tf") with:
-  - TensorFlow
+- Miniforge or Anaconda
+- Virtual conda environment (preferably named "tf") with:
   - TensorFlow Extended
   
 <aside class="positive">
@@ -229,7 +228,7 @@ Open your pipeline's **pipeline/pipeline.py** file and review the contents:
 - You may follow the instructions in the **TODO** comments in **pipeline.py** to add more steps to the pipeline.
 
 <!-- ------------------------ -->
-## What's next?
+## Congratulations!
 
 Duration: 0:07:00
 
