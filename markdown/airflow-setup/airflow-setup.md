@@ -40,6 +40,8 @@ Monitor, schedule and manage your workflows via a robust and modern web applicat
 
 Duration: 0:10:00
 
+- You should be familiar with the command line interface (CLI). If this is not the case, read this easy to follow [CLI tutorial](https://tutorial.djangogirls.org/en/intro_to_command_line/).    
+
 ### Windows Subsystem for Linux 2 (WSL2)
 
 If you have a Windows machine, you need Windows Subsystem for Linux 2 (WSL2). Here, we follow the instructions provided by Microsoft's Craig Loewen to set up WSL2 (see [this post](https://devblogs.microsoft.com/commandline/install-wsl-with-a-single-command-now-available-in-windows-10-version-2004-and-higher/) to learn more).
@@ -50,7 +52,7 @@ If you have a Windows machine, you need Windows Subsystem for Linux 2 (WSL2). He
 wsl.exe --install
 ```
 
-This will automatically install the open source operating system Ubuntu and the latest WSL Linux kernel version onto your machine. 
+This will automatically install the open source operating system Ubuntu and the latest WSL Linux kernel version onto your machine (inside a virtual machine). This means that you only can use the Linux command line tools to install packages, run commands, and interact with the Linux kernel. 
 
 - When it’s completed, restart your machine. 
 
@@ -62,7 +64,6 @@ Your distribution will start after you boot up again, completing the installatio
   - (3) enter `wsl` or `bash` in Powershell.
 
 *You can use `wsl --update` to manually update your WSL Linux kernel, and you can use `wsl --update rollback` to rollback to a previous WSL Linux kernel version. To learn more about WSL, take a look at this post form Microsoft: ["What is the Windows Subsystem for Linux?"](https://docs.microsoft.com/en-us/windows/wsl/about#what-is-wsl-2).*
-
 
 
 ### Install Miniforge
@@ -89,6 +90,13 @@ wget https://github.com/conda-forge/miniforge/releases/download/4.12.0-0/Minifor
 sh Miniforge3-4.12.0-0-Linux-x86_64.sh
 ```
 
+### Install Visual Studio Code
+
+It is also recommended to install Visual Studio Code in your new Linux system.:
+
+- [VS Code installation tutorial](https://code.visualstudio.com/blogs/2019/09/03/wsl2)
+
+To learn more, read the post ["Tips and Tricks for Linux development with WSL and Visual Studio Code"](https://devblogs.microsoft.com/commandline/tips-and-tricks-for-linux-development-with-wsl-and-visual-studio-code/).
 
 <!-- ------------------------ -->
 ## Prerequisites for Apple

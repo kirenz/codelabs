@@ -43,14 +43,17 @@
       </google-codelab-step>
     
       <google-codelab-step label="Prerequisites for Windows" duration="10">
-        <h2 is-upgraded>Windows Subsystem for Linux 2 (WSL2)</h2>
+        <ul>
+<li>You should be familiar with the command line interface (CLI). If this is not the case, read this easy to follow <a href="https://tutorial.djangogirls.org/en/intro_to_command_line/" target="_blank">CLI tutorial</a>.</li>
+</ul>
+<h2 is-upgraded>Windows Subsystem for Linux 2 (WSL2)</h2>
 <p>If you have a Windows machine, you need Windows Subsystem for Linux 2 (WSL2). Here, we follow the instructions provided by Microsoft&#39;s Craig Loewen to set up WSL2 (see <a href="https://devblogs.microsoft.com/commandline/install-wsl-with-a-single-command-now-available-in-windows-10-version-2004-and-higher/" target="_blank">this post</a> to learn more).</p>
 <ul>
 <li>Open a command prompt window with admin privileges and run</li>
 </ul>
 <pre><code language="language-Bash" class="language-Bash">wsl.exe --install
 </code></pre>
-<p>This will automatically install the open source operating system Ubuntu and the latest WSL Linux kernel version onto your machine.</p>
+<p>This will automatically install the open source operating system Ubuntu and the latest WSL Linux kernel version onto your machine (inside a virtual machine). This means that you only can use the Linux command line tools to install packages, run commands, and interact with the Linux kernel.</p>
 <ul>
 <li>When it&#39;s completed, restart your machine.</li>
 </ul>
@@ -89,6 +92,12 @@
 </ul>
 <pre><code language="language-Bash" class="language-Bash">sh Miniforge3-4.12.0-0-Linux-x86_64.sh
 </code></pre>
+<h2 is-upgraded>Install Visual Studio Code</h2>
+<p>It is also recommended to install Visual Studio Code in your new Linux system.:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/blogs/2019/09/03/wsl2" target="_blank">VS Code installation tutorial</a></li>
+</ul>
+<p>To learn more, read the post <a href="https://devblogs.microsoft.com/commandline/tips-and-tricks-for-linux-development-with-wsl-and-visual-studio-code/" target="_blank">&#34;Tips and Tricks for Linux development with WSL and Visual Studio Code&#34;</a>.</p>
 
 
       </google-codelab-step>
