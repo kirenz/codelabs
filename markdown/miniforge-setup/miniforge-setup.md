@@ -230,7 +230,7 @@ Duration: 0:01:00
 
 Congratulations! You have completed the tutorial and learned how to: 
 
-✅ install Miniforge 
+✅ install Miniforge  
 ✅ create virtual environments  
 ✅ install modules using conda
 
