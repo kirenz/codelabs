@@ -46,10 +46,33 @@ The terminal is a text-based application for viewing, handling, and manipulating
 
 Duration: 00:05:00
 
-- If you have **Windows**: Open the [Miniforge GitHub page](https://github.com/conda-forge/miniforge#miniforge3), choose the appropriate installer for your system and install the software.
+### Windows
 
-- If you have **MacOs**: Open your terminal and use `brew` to install Miniforge:
+If you have **Windows**: 
 
+- Open the [Miniforge GitHub page](https://github.com/conda-forge/miniforge#miniforge3)
+- Choose the appropriate installer for your system 
+- Install the software
+- Open a Windows command prompt (by typing cmd in the search box)
+- Enter the following code and press enter (replace foo with your username): 
+
+```Bash
+C:\Users\foo\miniforge3\Scripts\activate
+```
+
+### macOS
+
+If you have **macOS**: 
+
+- [Open your terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac) 
+
+- If you don't already have the package manager [Homebrew](https://brew.sh/), install it now: 
+
+```Bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+- To install Miniforge, simply type::
 
 ```Bash
 brew install miniforge
@@ -69,12 +92,11 @@ conda init zsh
 Duration: 00:05:00
 
 
-During the first installation, Miniforge installed the so called `base` environment. Let`s take a look at this environment:
+During the first installation, Miniforge installed the so called `base` environment including Python and some useful Python modules (modules are like apps on your smartphone). Let`s take a look at this environment:
 
-- On *Windows* open the Start menu and open an "Anaconda Command Prompt". 
-- On *macOS* or *Linux* open a terminal window.
+- Open a terminal window.
 
-Usually, the `base` environment is already activated (and you can see the word `base` in your terminal. If not, type: `conda activate base`)
+Usually, the `base` environment is already activated (and you can see the word `base` in your terminal. If not, try: `conda activate base`)
 
 - Now take a look at all the modules in your `base` environment:
 
@@ -89,14 +111,14 @@ You should see a list of modules with their name, version, build (more detaild i
 ## Create a virtual environment
 Duration: 00:05:00
 
-The package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called *virtual environments*). 
+The package manager `conda` makes it easy to manage multiple "environments" (like the base environment) that can be maintained and run separately without interference from each other (in so called *virtual environments*). 
 
 [Conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands
 ) help manage dependencies and isolate projects. This is particularly useful when some packages require specific module versions. 
 
 ### Environment for scikit-learn
 
-In this example we will install the module [scikit-learn](https://scikit-learn.org/stable/) with conda. See step "Installation of modules" for more information about this topic.
+In this example we will install the module [scikit-learn](https://scikit-learn.org/stable/) with conda. 
 
 - Let's create a new environment for scikit-learn:
   - `conda create -n` creats a new environment
@@ -161,7 +183,7 @@ conda update scikit-learn
 ## Installation of modules 
 Duration: 00:05:00
 
-There are two options of how to install modules in an environment: with `conda` or `pip`. Note however, that ideally you should always use one of the two methods in one environment.
+There are two options of how to install modules in an environment: with `conda` or `pip`. Note however, that ideally you should always only use one of the two methods in one environment.
 
 
 ### Conda-forge

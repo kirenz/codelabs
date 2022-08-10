@@ -53,9 +53,27 @@
       </google-codelab-step>
     
       <google-codelab-step label="Installation" duration="5">
-        <ul>
-<li>If you have <strong>Windows</strong>: Open the <a href="https://github.com/conda-forge/miniforge#miniforge3" target="_blank">Miniforge GitHub page</a>, choose the appropriate installer for your system and install the software.</li>
-<li>If you have <strong>MacOs</strong>: Open your terminal and use <code>brew</code> to install Miniforge:</li>
+        <h2 is-upgraded>Windows</h2>
+<p>If you have <strong>Windows</strong>:</p>
+<ul>
+<li>Open the <a href="https://github.com/conda-forge/miniforge#miniforge3" target="_blank">Miniforge GitHub page</a></li>
+<li>Choose the appropriate installer for your system</li>
+<li>Install the software</li>
+<li>Open a Windows command prompt (by typing cmd in the search box)</li>
+<li>Enter the following code and press enter (replace foo with your username):</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">C:\Users\foo\miniforge3\Scripts\activate
+</code></pre>
+<h2 is-upgraded>macOS</h2>
+<p>If you have <strong>macOS</strong>:</p>
+<ul>
+<li><a href="https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac" target="_blank">Open your terminal</a></li>
+<li>If you don&#39;t already have the package manager <a href="https://brew.sh/" target="_blank">Homebrew</a>, install it now:</li>
+</ul>
+<pre><code language="language-Bash" class="language-Bash">/bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34;
+</code></pre>
+<ul>
+<li>To install Miniforge, simply type::</li>
 </ul>
 <pre><code language="language-Bash" class="language-Bash">brew install miniforge
 </code></pre>
@@ -72,12 +90,11 @@
       </google-codelab-step>
     
       <google-codelab-step label="Virtual environments" duration="5">
-        <p>During the first installation, Miniforge installed the so called <code>base</code> environment. Let`s take a look at this environment:</p>
+        <p>During the first installation, Miniforge installed the so called <code>base</code> environment including Python and some useful Python modules (modules are like apps on your smartphone). Let`s take a look at this environment:</p>
 <ul>
-<li>On <em>Windows</em> open the Start menu and open an &#34;Anaconda Command Prompt&#34;.</li>
-<li>On <em>macOS</em> or <em>Linux</em> open a terminal window.</li>
+<li>Open a terminal window.</li>
 </ul>
-<p>Usually, the <code>base</code> environment is already activated (and you can see the word <code>base</code> in your terminal. If not, type: <code>conda activate base</code>)</p>
+<p>Usually, the <code>base</code> environment is already activated (and you can see the word <code>base</code> in your terminal. If not, try: <code>conda activate base</code>)</p>
 <ul>
 <li>Now take a look at all the modules in your <code>base</code> environment:</li>
 </ul>
@@ -89,10 +106,10 @@
       </google-codelab-step>
     
       <google-codelab-step label="Create a virtual environment" duration="5">
-        <p>The package manager <code>conda</code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called <em>virtual environments</em>).</p>
+        <p>The package manager <code>conda</code> makes it easy to manage multiple &#34;environments&#34; (like the base environment) that can be maintained and run separately without interference from each other (in so called <em>virtual environments</em>).</p>
 <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific module versions.</p>
 <h2 is-upgraded>Environment for scikit-learn</h2>
-<p>In this example we will install the module <a href="https://scikit-learn.org/stable/" target="_blank">scikit-learn</a> with conda. See step &#34;Installation of modules&#34; for more information about this topic.</p>
+<p>In this example we will install the module <a href="https://scikit-learn.org/stable/" target="_blank">scikit-learn</a> with conda.</p>
 <ul>
 <li>Let&#39;s create a new environment for scikit-learn: <ul>
 <li><code>conda create -n</code> creats a new environment</li>
@@ -146,7 +163,7 @@
       </google-codelab-step>
     
       <google-codelab-step label="Installation of modules" duration="5">
-        <p>There are two options of how to install modules in an environment: with <code>conda</code> or <code>pip</code>. Note however, that ideally you should always use one of the two methods in one environment.</p>
+        <p>There are two options of how to install modules in an environment: with <code>conda</code> or <code>pip</code>. Note however, that ideally you should always only use one of the two methods in one environment.</p>
 <h2 is-upgraded>Conda-forge</h2>
 <p>As a first option, you should always try to download a package from <a href="https://conda-forge.org/docs/user/introduction.html" target="_blank">conda-forge</a>. Here is a list of <a href="https://anaconda.org/conda-forge/repo" target="_blank">conda-forge packages</a>.</p>
 <ul>
