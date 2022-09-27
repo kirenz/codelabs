@@ -168,10 +168,6 @@ Congratulations! You have completed the tutorial and learned the basics of:
 ✅ CSS  
 ✅ Chrome DevTools and SelectorGadget  
 
-Next, you may want to proceed with this tutorial:
-
-- [Web Scraping in Python With Beautiful Soup Requests and Pandas](https://www.kirenz.com/post/2022-05-02-web-scraping-in-python-with-beautiful-soup-requests-and-pandas/)
-
 
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
 
