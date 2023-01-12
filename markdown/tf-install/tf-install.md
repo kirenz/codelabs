@@ -21,9 +21,14 @@ In this tutorial, we will install [TensorFlow](https://www.tensorflow.org/), whi
 
 Duration: 00:01:00
 
-To start this tutorial, I recommend to use [Miniforge](https://github.com/conda-forge/miniforge) (a community-led alternative to Anaconda): 
+To start this tutorial, you need to have Anaconda or [Miniforge](https://github.com/conda-forge/miniforge) (a community-led alternative to Anaconda).
+
+<!--
 
 - [Miniforge3 installation tutorial](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0).
+
+-->
+
 
 <!-- ------------------------ -->
 ## Create TensorFlow environment
@@ -38,7 +43,7 @@ We create a new environment and call it ``tf``. We also install TensorFlow and a
 
 
 ```bash
-conda create -n tf tensorflow matplotlib pandas jupyter pydot
+conda create -n tf python=3.10 tensorflow matplotlib pandas jupyter pydot
 ```
 
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
