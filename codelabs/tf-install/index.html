@@ -34,10 +34,7 @@
       </google-codelab-step>
     
       <google-codelab-step label="Prerequisites" duration="1">
-        <p>To start this tutorial, I recommend to use <a href="https://github.com/conda-forge/miniforge" target="_blank">Miniforge</a> (a community-led alternative to Anaconda):</p>
-<ul>
-<li><a href="https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0" target="_blank">Miniforge3 installation tutorial</a>.</li>
-</ul>
+        <p>To start this tutorial, you need to have Anaconda or <a href="https://github.com/conda-forge/miniforge" target="_blank">Miniforge</a> (a community-led alternative to Anaconda).</p>
 
 
       </google-codelab-step>
@@ -49,7 +46,7 @@
 <li>On macOS or Linux open a terminal window.</li>
 </ul>
 <p>We create a new environment and call it <code>tf</code>. We also install TensorFlow and additional packages in this new environment:</p>
-<pre><code language="language-bash" class="language-bash">conda create -n tf tensorflow matplotlib pandas jupyter pydot
+<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.10 tensorflow matplotlib pandas jupyter pydot
 </code></pre>
 <p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
 <p>We also need to install <a href="https://graphviz.gitlab.io/download/" target="_blank">graphviz</a>.</p>
