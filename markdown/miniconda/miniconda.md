@@ -83,7 +83,8 @@ Duration: 00:05:00
 
 - Go to the site [latest Miniconda installer](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links): 
 
-- Depending on your system, select the Intel or M1 version and choose the pkg-file.
+- Depending on your system, select the Intel or M1 version and choose the graphical installer (*pkg* file).
+
 
 <!-- ------------------------ -->
 ## Virtual environments
