@@ -15,30 +15,56 @@ Duration: 0:02:00
 
 <img src="img/anaconda-logo.png" alt="Anaconda logo" width="200">  
 
-The open-source [Anaconda Individual Edition](https://www.anaconda.com/products/individual) distribution is one of the easiest ways to perform data science projects. It already includes Python and the most important modules we need. 
+Anaconda is a software-company which offers open-source-tools to perform Python/R data science and machine learning on a single machine. 
+
+Their popular open-source *Anaconda Individual Edition* distribution includes Python, the package manager *conda* to install and manage Python modules as well as over 250 preinstalled modules. Since we usually only use a small fraction of these modules, we install the lightweight version of Anaconda, called *Miniconda*.
 
 <aside class="positive">
-Anaconda is a data science toolkit which already includes most of the data science modules we need.
+Miniconda is a data science toolkit which includes Python and a package manager
  </aside>
 
+Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages.
 
-*If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 or 3.7 is also fine). In your terminal, type `python --version` to see which Python version you are using in your Anaconda base environment.* 
-
-*You may also uninstall your current Anaconda environment from your machine and install the latest version: here a guide of how to [uninstall Anaconda](https://docs.anaconda.com/anaconda/install/uninstall/).*
 
 <!-- ------------------------ -->
 ## Prerequisites
 
-Duration: 0:02:00
+Duration: 0:05:00
 
-- To start this tutorial, you should have some understanding of the **command line interface** (other names for the command line are: cmd, CLI, prompt, console or terminal). 
+To avoid compatibility problems with older versions of Anaconda, I recommend to uninstall Anaconda first. If you don't already have Anaconda installed on your system, you can skip this section.
 
-If you aren't familiar with the terminal, read this [introduction to the command-line interface](https://tutorial.djangogirls.org/en/intro_to_command_line/).
+### Windows
+
+1. Open the file explorer.
+2. Delete your environment (anaconda3\envs) and package (anaconda3\pkgs) folders in your user folder.
+3. Open Add or remove programs and uninstall your Anaconda installation.
 
 
-<aside class="positive">
-The terminal is a text-based application for viewing, handling, and manipulating files on your computer
-</aside>  
+### macOS
+
+
+Open your terminal ([learn how to open your terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac))
+
+
+You can remove your entire Anaconda directory with `rm -rf`. If you are not sure where anaconda is installed, simply enter all commands:
+
+First try the opt folder:
+
+```bash
+rm -rf ~/opt/anaconda3
+```
+
+Then this location:
+
+```bash
+rm -rf anaconda3
+```
+
+Finally, enter:
+
+```bash
+rm -rf ~/anaconda3
+```
 
 
 <!-- ------------------------ -->
@@ -46,14 +72,18 @@ The terminal is a text-based application for viewing, handling, and manipulating
 
 Duration: 00:05:00
 
-- Go to [anaconda.com](https://www.anaconda.com/products/individual) 
 
+### Windows
 
-- Scroll to the bottom of the page (until you see "Anaconda Installers")
+- Go to the site [latest Miniconda installer](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links): 
 
+- Choose the appropriate version (usually 64-bit) and install the software.
 
-- Choose the appropriate `Graphical Installer` for your system (Windows, MacOS or Linux) and install the software.
+### Mac
 
+- Go to the site [latest Miniconda installer](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links): 
+
+- Depending on your system, select the Intel or M1 version and choose the pkg-file.
 
 <!-- ------------------------ -->
 ## Virtual environments
