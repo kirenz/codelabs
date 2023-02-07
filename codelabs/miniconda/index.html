@@ -1,0 +1,213 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Miniconda installation</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="miniconda"
+                  title="Miniconda installation"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/miniconda">
+    
+      <google-codelab-step label="Overview" duration="2">
+        <p class="image-container"><img alt="Anaconda logo" style="width: 200.00px" src="img/a65e86b6a759a874.png">   </p>
+<p>Anaconda is a software-company which offers various tools to perform data science tasks on a single machine. Their popular open-source <em>Anaconda Individual Edition</em> distribution includes</p>
+<ul>
+<li>Python and R,</li>
+<li>the package manager <em>conda</em> to install packages</li>
+<li>as well as over 250 preinstalled packages.</li>
+</ul>
+<p>Note that Anaconda is quite large -the base install requires around 2GB- and we usually only use a small fraction of the preinstalled packages. Therefore, we will install the lightweight version of Anaconda, called <em>Miniconda</em>.</p>
+<aside class="special"><p> Miniconda is a data science toolkit which includes Python and the package manager conda </p>
+</aside>
+<p>Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="5">
+        <ul>
+<li>You should be familiar with the shell. If not, take a look at this tutorial.</li>
+<li>If you have Anaconda installed on your system, I recommend to uninstall it first to avoid compatibility problems.</li>
+</ul>
+<h2 is-upgraded>Uninstall Anaconda</h2>
+<p>You can skip this section if you don&#39;t already have Anaconda installed on your machine.</p>
+<h3 is-upgraded>Windows</h3>
+<ol type="1">
+<li>Open the file explorer.</li>
+<li>Delete your environment (anaconda3\envs) and package (anaconda3\pkgs) folders in your user folder.</li>
+<li>Open Add or remove programs and uninstall your Anaconda installation.</li>
+</ol>
+<h3 is-upgraded>macOS</h3>
+<p>Open your terminal (<a href="https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac" target="_blank">learn how to open your terminal</a>)</p>
+<p>Anaconda is usually located in your home directory inside a folder called &#34;opt&#34;. You can remove your entire Anaconda directory by typing the following command in your terminal:</p>
+<pre><code language="language-bash" class="language-bash">rm -rf ~/opt/anaconda3
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Installation" duration="5">
+        <h2 is-upgraded>Windows</h2>
+<ul>
+<li>Go to the site <a href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links" target="_blank">latest Miniconda installer links</a>:</li>
+<li>Choose the appropriate Windows version (usually 64-bit) and download the file</li>
+<li>Go to your Downloads folder, right-click on the file and choose &#34;as Administrator&#34;</li>
+<li>Install the software.</li>
+<li>During the installation process, choose: &#34;Just Me&#34;</li>
+</ul>
+<h2 is-upgraded>Mac</h2>
+<ul>
+<li>Go to the site <a href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links" target="_blank">latest Miniconda installer links</a>:</li>
+<li>Depending on your system, select the Intel or M1 version and choose the graphical installer (<em>pkg</em> file).</li>
+<li>Go to your Downloads folder and install the software.</li>
+<li>During the installation process, choose: &#34;Just Me&#34;</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Miniconda Setup" duration="5">
+        <p>During the installation process, Miniconda created the so called <code>base</code> environment. Let`s take a look at this environment:</p>
+<ul>
+<li>On <em>Windows</em> open the Start menu and open &#34;Anaconda Powershell Prompt&#34; or &#34;Anaconda Prompt&#34;.</li>
+<li>On <em>macOS</em> or <em>Linux</em> open a terminal window.</li>
+</ul>
+<p>Usually, the <code>base</code> environment is already activated (and you can see the word <code>base</code> in your shell).</p>
+<p>Update your version of conda by running:</p>
+<pre><code language="language-bash" class="language-bash">conda update -n base -c defaults conda
+
+</code></pre>
+<p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="From where to install packages" duration="5">
+        <p>The conda team, from Anaconda, Inc., provides various packages to all users free of charge in their defaults channel. However, to get more up-to-date modules, it&#39;s better to use the popular community-led alternative conda-forge.</p>
+<p>Type this in your shell to add the conda-forge channel to conda:</p>
+<pre><code language="language-base" class="language-base">conda config --add channels conda-forge
+</code></pre>
+<p>Then make conda-forge the priority channel:</p>
+<pre><code language="language-bash" class="language-bash">conda config --set channel_priority strict
+</code></pre>
+<p>This ensures that conda will always try to install packages from the conda-forge channel first instead of other channels.</p>
+<p>In the next step, we install some Python module with conda.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Install packages in a virtual environment" duration="5">
+        <h2 is-upgraded>conda</h2>
+<p>If you install a new module with <code>conda</code>, it analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have a package in version 2.0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.</p>
+<p>You can take a look at all available packages on this website: <a href="https://anaconda.org/" target="_blank">https://anaconda.org/</a>.</p>
+<h2 is-upgraded>Virtual environments</h2>
+<p>Furthermore, Anaconda&#39;s package manager <code>conda</code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other in so called <em>virtual environments</em>. A virtual environment in Python is a separate and isolated environment where you can install packages and dependencies without affecting other Python installations or the system&#39;s environment.</p>
+<p>Installing Python modules in a virtual environment is recommended for several reasons:</p>
+<ul>
+<li>Isolation: By using virtual environments, you can isolate your project&#39;s dependencies from the system-wide Python installation. This means that you can have different versions of the same library for different projects without causing conflicts.</li>
+<li>Reproducibility: By specifying dependencies in a virtual environment, you can ensure that the project will always run with the same versions of libraries, regardless of system-wide installations or updates.</li>
+<li>Compatibility: Different projects may have different requirements, and installing modules in a virtual environment prevents compatibility issues between projects.</li>
+<li>Easy Management: Virtual environments make it easier to manage dependencies, as you can easily install, update or remove them without affecting other projects or the system.</li>
+</ul>
+<h2 is-upgraded>Create virtual environment</h2>
+<ul>
+<li>Let&#39;s create a new environment: <ul>
+<li>Call the new environment <code>ds</code> (short for data science)</li>
+<li>Use Python 3.10</li>
+<li>Install some packages (pandas etc.)</li>
+</ul>
+</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda create --name ds python=3.10 pandas scikit-learn altair vega vega_datasets
+</code></pre>
+<p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
+<ul>
+<li>You can activate the new environment as follows:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda activate ds
+</code></pre>
+<p>You are now inside your virtual environment ds (you should notice that base is replaced by ds in your shell)</p>
+<ul>
+<li>Take a look at all the modules in your <code>ds</code> environment:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda list
+</code></pre>
+<p>You should see a list of modules with their name, version, build (more detaild information about the package) and channel (from which the packages were installed).</p>
+<ul>
+<li>If you want to switch back to your <code>base</code> environment simply type:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda deactivate
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Update Anaconda environments" duration="5">
+        <p>If you want to update a specific Anaconda environment (this will update all packages in the selected environment to the latest version but will not update Python), use this command: <code>conda update --all</code></p>
+<p><em>Make sure to activate the right environment first. In our example, we use the base environment so we don&#39;t have to activate it</em></p>
+<ul>
+<li>Update all</li>
+</ul>
+<pre><code language="language-terminal" class="language-terminal">conda update --all
+</code></pre>
+<ul>
+<li>If you only want to update specific modules, use conda update and the name of the module (e.g., scikit-learn)</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda update scikit-learn
+</code></pre>
+<ul>
+<li>Let&#39;s make sure that you use the machine learning module <code>scikit-learn</code> in version 1.2.1 or higher:</li>
+</ul>
+<pre><code language="language-terminal" class="language-terminal">conda list scikit-learn
+</code></pre>
+<ul>
+<li>It&#39;s also possible to install a specific version of a module:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda install -c anaconda scikit-learn=1.2.1
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What&#39;s next?" duration="1">
+        <p>Congratulations! You have completed the tutorial and learned how to:</p>
+<p>✅ install Miniconda</p>
+<p>✅ use conda-forge</p>
+<p>✅ create a virtual environment</p>
+<p>✅ install modules</p>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the <em>Report a mistake</em> button at the bottom left of this site.</p>
+<p><em>Copyright: Jan Kirenz (2023), </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em>, </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0) License</em></a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
