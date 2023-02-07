@@ -115,12 +115,8 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Install packages in a virtual environment" duration="5">
-        <h2 is-upgraded>conda</h2>
-<p>If you install a new module with <code>conda</code>, it analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have a package in version 2.0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.</p>
-<p>You can take a look at all available packages on this website: <a href="https://anaconda.org/" target="_blank">https://anaconda.org/</a>.</p>
-<h2 is-upgraded>Virtual environments</h2>
-<p>Furthermore, Anaconda&#39;s package manager <code>conda</code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other in so called <em>virtual environments</em>. A virtual environment in Python is a separate and isolated environment where you can install packages and dependencies without affecting other Python installations or the system&#39;s environment.</p>
+      <google-codelab-step label="What is a virtual environment?" duration="5">
+        <p>Anaconda&#39;s package manager <code>conda</code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other in so called <em>virtual environments</em>. A virtual environment in Python is a separate and isolated environment where you can install packages and dependencies without affecting other Python installations or the system&#39;s environment.</p>
 <p>Installing Python modules in a virtual environment is recommended for several reasons:</p>
 <ul>
 <li>Isolation: By using virtual environments, you can isolate your project&#39;s dependencies from the system-wide Python installation. This means that you can have different versions of the same library for different projects without causing conflicts.</li>
@@ -128,7 +124,13 @@
 <li>Compatibility: Different projects may have different requirements, and installing modules in a virtual environment prevents compatibility issues between projects.</li>
 <li>Easy Management: Virtual environments make it easier to manage dependencies, as you can easily install, update or remove them without affecting other projects or the system.</li>
 </ul>
-<h2 is-upgraded>Create virtual environment</h2>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Install packages in a virtual environment" duration="5">
+        <p>If you install a new module with <code>conda</code>, it analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have a package in version 2.0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.</p>
+<p>You can take a look at all available packages on this website: <a href="https://anaconda.org/" target="_blank">https://anaconda.org/</a>.</p>
 <ul>
 <li>Let&#39;s create a new environment: <ul>
 <li>Call the new environment <code>ds</code> (short for data science)</li>
@@ -194,6 +196,7 @@
 <p>✅ use conda-forge</p>
 <p>✅ create a virtual environment</p>
 <p>✅ install modules</p>
+<p>✅ update modules</p>
 <p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
 <p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the <em>Report a mistake</em> button at the bottom left of this site.</p>
 <p><em>Copyright: Jan Kirenz (2023), </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em>, </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0) License</em></a></p>
