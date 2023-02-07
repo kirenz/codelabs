@@ -177,20 +177,10 @@ This ensures that conda will always try to install packages from the conda-forge
 In the next step, we install some Python module with conda.
 
 
-## Install packages in a virtual environment
+## What is a virtual environment?
 Duration: 00:05:00
 
-### conda
-
-If you install a new module with `conda`, it analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have a package in version 2.0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. 
-
-You can take a look at all available packages on this website: <https://anaconda.org/>. 
-
-
-
-### Virtual environments
-
-Furthermore, Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other in so called *virtual environments*. A virtual environment in Python is a separate and isolated environment where you can install packages and dependencies without affecting other Python installations or the system's environment.
+Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other in so called *virtual environments*. A virtual environment in Python is a separate and isolated environment where you can install packages and dependencies without affecting other Python installations or the system's environment.
 
 Installing Python modules in a virtual environment is recommended for several reasons:
 
@@ -203,7 +193,14 @@ Installing Python modules in a virtual environment is recommended for several re
 - Easy Management: Virtual environments make it easier to manage dependencies, as you can easily install, update or remove them without affecting other projects or the system.
 
 
-### Create virtual environment
+
+## Install packages in a virtual environment
+Duration: 00:05:00
+
+If you install a new module with `conda`, it analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have a package in version 2.0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. 
+
+You can take a look at all available packages on this website: <https://anaconda.org/>. 
+
 
 - Let's create a new environment:
   - Call the new environment `ds` (short for data science) 
@@ -287,6 +284,8 @@ Congratulations! You have completed the tutorial and learned how to:
 ✅ create a virtual environment 
 
 ✅ install modules
+
+✅ update modules
 
 
 
