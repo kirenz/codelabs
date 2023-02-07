@@ -9,51 +9,56 @@ feedback link: https://github.com/kirenz/codelabs/blob/master/markdown/miniconda
 
 # Miniconda installation
 
-<!-- ------------------------ -->
 ## Overview
 Duration: 0:02:00
 
 <img src="img/anaconda-logo.png" alt="Anaconda logo" width="200">  
 
-Anaconda is a software-company which offers open-source-tools to perform Python/R data science and machine learning on a single machine. 
+Anaconda is a software-company which offers open-source-tools to perform data science and machine learning on a single machine. 
 
-Their popular open-source *Anaconda Individual Edition* distribution includes Python, the package manager *conda* to install and manage Python modules as well as over 250 preinstalled modules. Since we usually only use a small fraction of these modules, we install the lightweight version of Anaconda, called *Miniconda*.
+Their popular open-source *Anaconda Individual Edition* distribution includes Python, the package manager *conda* to install Python modules as well as over 250 preinstalled modules. Since we usually only use a small fraction of these modules, we will instead install the lightweight version of Anaconda, called *Miniconda*.
 
 <aside class="positive">
 Miniconda is a data science toolkit which includes Python and a package manager
- </aside>
+</aside>
 
 Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages.
 
 
-<!-- ------------------------ -->
 ## Prerequisites
 
 Duration: 0:05:00
 
-To avoid compatibility problems with older versions of Anaconda, I recommend to uninstall Anaconda first. If you don't already have Anaconda installed on your system, you can skip this section.
 
-### Windows
+- You should be familiar with the shell.
+
+- If you have Anaconda installed on your system, I recommend to uninstall it first to avoid compatibility problems.
+
+
+### Uninstall Anaconda
+
+You can skip this section if you don't already have Anaconda installed on your machine.
+
+
+#### Windows
 
 1. Open the file explorer.
 2. Delete your environment (anaconda3\envs) and package (anaconda3\pkgs) folders in your user folder.
 3. Open Add or remove programs and uninstall your Anaconda installation.
 
 
-### macOS
-
+#### macOS
 
 Open your terminal ([learn how to open your terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac))
 
+Anaconda is usually located in your home directory inside a folder called "opt". You can remove your entire Anaconda directory by typing the following command in your terminal: 
 
-You can remove your entire Anaconda directory with `rm -rf`. If you are not sure where anaconda is installed, simply enter all commands:
-
-First try the opt folder:
 
 ```bash
 rm -rf ~/opt/anaconda3
 ```
 
+<!--
 Then this location:
 
 ```bash
@@ -65,9 +70,9 @@ Finally, enter:
 ```bash
 rm -rf ~/anaconda3
 ```
+-->
 
 
-<!-- ------------------------ -->
 ## Installation 
 
 Duration: 00:05:00
@@ -75,34 +80,55 @@ Duration: 00:05:00
 
 ### Windows
 
-- Go to the site [latest Miniconda installer](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links): 
+- Go to the site [latest Miniconda installer links](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links): 
 
-- Choose the appropriate version (usually 64-bit) and install the software.
+- Choose the appropriate Windows version (usually 64-bit) and download the file
+
+- Go to your Downloads folder and install the software.
+
+- During the installation process, choose: "Just Me"
+
+
 
 ### Mac
 
-- Go to the site [latest Miniconda installer](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links): 
+- Go to the site [latest Miniconda installer links](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links): 
 
 - Depending on your system, select the Intel or M1 version and choose the graphical installer (*pkg* file).
 
+- Go to your Downloads folder and install the software.
 
-<!-- ------------------------ -->
-## Virtual environments
+- During the installation process, choose: "Just Me"
+ 
+
+
+## Miniconda Setup 
 Duration: 00:05:00
 
 
-During the first installation, Anaconda installed the so called `base` environment. Let`s take a look at this environment:
+During the first installation, Miniconda installed the so called `base` environment. Let`s take a look at this environment:
 
-- On *Windows* open the Start menu and open an "Anaconda Command Prompt". 
+- On *Windows* open the Start menu and open "Anaconda Powershell Prompt" or "Anaconda Prompt". 
 - On *macOS* or *Linux* open a terminal window.
 
-Usually, the `base` environment is already activated (and you can see the word `base` in your terminal). If not, type: 
+
+<!--
+First we initialize conda for shell interaction. Type the following command in your shell and press enter:
+
+
+```bash
+conda init
+```
+-->
+
+Usually, the `base` environment is already activated (and you can see the word `base` in your shell). If not, type: 
+
 
 ```bash
 conda activate base
 ```
 
-- Now take a look at all the modules in your `base` environment:
+- Take a look at all the modules in your `base` environment:
 
 ```bash
 conda list
@@ -110,17 +136,32 @@ conda list
 
 You should see a list of modules with their name, version, build (more detaild information about the package) and channel (from which the packages were installed).
 
-<!-- ------------------------ -->
+
+## Conda-forge
+Duration: 00:05:00
+
+
+Instead of the conda default package manager, we want to use the community-led alternative conda-forge to install Python modules.
+
+Type this in your terminal to add conda-forge:
+
+
+```bash
+conda config --add channels conda-forge
+```
+
+
+
 
 ## Create a virtual environment
 Duration: 00:05:00
 
-Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called *virtual environments*). 
+Anaconda's package manager `conda` makes it easy to manage multiple environments that can be maintained and run separately without interference from each other (in so called *virtual environments*). 
 
 [Conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands
 ) help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions. 
 
-- Let's create an environment with a specific version of Python (3.9). We call the environment ``myenv``:
+- Let's create a new environment with a specific version of Python (3.9). We call the environment ``myenv``:
 
 ```bash
 conda create -n myenv python=3.9
@@ -146,7 +187,7 @@ conda list
 conda deactivate
 ```
 
-<!-- ------------------------ -->
+
 ## Update anaconda environments
 Duration: 00:05:00
 
@@ -180,7 +221,7 @@ conda list scikit-learn
 conda install -c anaconda scikit-learn=1.0.2
 ```
 
-<!-- ------------------------ -->
+
 ## Installation of modules 
 Duration: 00:05:00
 
@@ -219,7 +260,7 @@ Let`s install some additional modules in our base environment.
 
 
 
-<!-- ------------------------ -->
+
 
 
 
@@ -251,7 +292,7 @@ conda create -n tf python=3.9 pip
 When conda asks you to proceed ``(proceed ([y]/n)?``), type ``y``.
 
 
-<!-- ------------------------ -->
+
 ## Activate TensorFlow environment
 Duration: 00:02:00
 
@@ -262,7 +303,7 @@ conda activate tf
 ```
 
 
-<!-- ------------------------ -->
+
 ## Install TensorFlow 
 Duration: 00:02:00
 
@@ -280,7 +321,7 @@ Step 2: install TensorFlow:
 pip install tensorflow
 ```
 
-<!-- ------------------------ -->
+
 ## What's next?
 Duration: 0:01:00
 
