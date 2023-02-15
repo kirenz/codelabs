@@ -9,7 +9,7 @@
   <title>Miniconda installation</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
   <style>
     .success {
       color: #1e8e3e;
@@ -74,12 +74,31 @@
 <li>Install the software.</li>
 <li>During the installation process, choose: &#34;Just Me&#34;</li>
 </ul>
-<h2 is-upgraded>Mac</h2>
+<h2 is-upgraded>Windows</h2>
 <ul>
-<li>Go to the site <a href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links" target="_blank">latest Miniconda installer links</a>:</li>
-<li>Depending on your system, select the Intel or M1 version and choose the graphical installer (<em>pkg</em> file).</li>
-<li>Go to your Downloads folder and install the software.</li>
+<li>Scroll to the bottom of the page (until you see &#34;Anaconda Installers&#34;)</li>
+<li>Choose the appropriate <code>Graphical Installer</code> for your system and install the software.</li>
+</ul>
+<h2 is-upgraded>MacOS with Intel</h2>
+<ul>
+<li>Download the <code>Graphical Installer</code> and install the software:</li>
+</ul>
+<p><a href="https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-x86_64.pkg" target="_blank">Miniconda3 macOS Intel x86 64-bit pkg</a></p>
+<ul>
 <li>During the installation process, choose: &#34;Just Me&#34;</li>
+</ul>
+<h2 is-upgraded>MacOS with M1</h2>
+<ul>
+<li>Download the software:</li>
+<li><a href="https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh" target="_blank">Miniconda3 macOS Apple M1 ARM 64-bit bash</a></li>
+<li>Open a terminal and <code>cd</code> into your downloads directory</li>
+<li>Install Minconda:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">sh ./Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh
+</code></pre>
+<ul>
+<li>Scroll to the bottom and type <code>yes</code>to install the software.</li>
+<li>If asked, agree to initialize Miniconda</li>
 </ul>
 
 
@@ -206,10 +225,10 @@
     
   </google-codelab>
 
-  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
-  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
-  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
-  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
   <script src="//support.google.com/inapp/api.js"></script>
 
 </body>
