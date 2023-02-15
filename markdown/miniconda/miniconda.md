@@ -95,15 +95,39 @@ Duration: 00:05:00
 
 
 
-### Mac
+### Windows
 
-- Go to the site [latest Miniconda installer links](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links): 
+- Scroll to the bottom of the page (until you see "Anaconda Installers")
 
-- Depending on your system, select the Intel or M1 version and choose the graphical installer (*pkg* file).
+- Choose the appropriate `Graphical Installer` for your system and install the software.
 
-- Go to your Downloads folder and install the software.
+### MacOS with Intel 
+
+- Download the `Graphical Installer` and install the software:
+
+[Miniconda3 macOS Intel x86 64-bit pkg](https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-x86_64.pkg)
 
 - During the installation process, choose: "Just Me"
+
+### MacOS with M1
+
+- Download the software:
+
+- [Miniconda3 macOS Apple M1 ARM 64-bit bash](https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh)
+
+- Open a terminal and `cd` into your downloads directory
+
+- Install Minconda:
+
+```bash
+sh ./Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh
+```
+- Scroll to the bottom and type `yes`to install the software.
+
+- If asked, agree to initialize Miniconda
+
+
+
  
 
 
