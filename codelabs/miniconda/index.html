@@ -1,0 +1,239 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Miniconda installation</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="miniconda"
+                  title="Miniconda installation"
+                  environment="web"
+                  feedback-link="https://github.com/kirenz/codelabs/blob/master/markdown/miniconda">
+    
+      <google-codelab-step label="Overview" duration="2">
+        <p class="image-container"><img alt="Anaconda logo" style="width: 200.00px" src="img/a65e86b6a759a874.png">   </p>
+<p>The open-source <a href="https://www.anaconda.com/products/individual" target="_blank">Anaconda Individual Edition</a> distribution is one of the easiest ways to perform data science projects. It already includes Python and the most important modules we need.</p>
+<aside class="special"><p> Anaconda is a data science toolkit which already includes most of the data science modules we need.  </p>
+</aside>
+<p><em>If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 or 3.7 is also fine). In your terminal, type </em></p>
+<p><em><code>python --version</code></em></p>
+<p><em> to see which Python version you are using in your Anaconda base environment.</em></p>
+<p><em>You may also uninstall your current Anaconda environment from your machine and install the latest version: here a guide of how to </em><a href="https://docs.anaconda.com/anaconda/install/uninstall/" target="_blank"><em>uninstall Anaconda</em></a><em>.</em></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prerequisites" duration="2">
+        <ul>
+<li>To start this tutorial, you should have some understanding of the <strong>command line interface</strong> (other names for the command line are: cmd, CLI, prompt, console or terminal).</li>
+</ul>
+<p>If you aren&#39;t familiar with the terminal, read this <a href="https://tutorial.djangogirls.org/en/intro_to_command_line/" target="_blank">introduction to the command-line interface</a>.</p>
+<aside class="special"><p> The terminal is a text-based application for viewing, handling, and manipulating files on your computer </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Installation" duration="5">
+        <ul>
+<li>Go to <a href="https://www.anaconda.com/products/individual" target="_blank">anaconda.com</a></li>
+</ul>
+<h2 is-upgraded>Windows</h2>
+<ul>
+<li>Scroll to the bottom of the page (until you see &#34;Anaconda Installers&#34;)</li>
+<li>Choose the appropriate <code>Graphical Installer</code> for your system and install the software.</li>
+</ul>
+<h2 is-upgraded>MacOS with Intel</h2>
+<ul>
+<li>Download the <code>Graphical Installer</code> and install the software:</li>
+</ul>
+<p><a href="https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-x86_64.pkg" target="_blank">Miniconda3 macOS Intel x86 64-bit pkg</a></p>
+<h2 is-upgraded>MacOS with M1</h2>
+<ul>
+<li>Download the software:</li>
+<li><a href="https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh" target="_blank">Miniconda3 macOS Apple M1 ARM 64-bit bash</a></li>
+<li>Open a terminal and <code>cd</code> into your downloads directory</li>
+<li>Install Minconda:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">sh ./Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh
+</code></pre>
+<ul>
+<li>Scroll to the bottom and type <code>yes</code>to install the software.</li>
+<li>If asked, agree to initialize Miniconda</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Virtual environments" duration="5">
+        <p>During the first installation, Anaconda installed the so called <code>base</code> environment. Let`s take a look at this environment:</p>
+<ul>
+<li>On <em>Windows</em> open the Start menu and open an &#34;Anaconda Command Prompt&#34;.</li>
+<li>On <em>macOS</em> or <em>Linux</em> open a terminal window.</li>
+</ul>
+<p>Usually, the <code>base</code> environment is already activated (and you can see the word <code>base</code> in your terminal). If not, type:</p>
+<pre><code language="language-bash" class="language-bash">conda activate base
+</code></pre>
+<ul>
+<li>Now take a look at all the modules in your <code>base</code> environment:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda list
+</code></pre>
+<p>You should see a list of modules with their name, version, build (more detaild information about the package) and channel (from which the packages were installed).</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create a virtual environment" duration="5">
+        <p>Anaconda&#39;s package manager <code>conda</code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called <em>virtual environments</em>).</p>
+<p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions.</p>
+<ul>
+<li>Let&#39;s create an environment with a specific version of Python (3.9). We call the environment <code>myenv</code>:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda create -n myenv python=3.9
+</code></pre>
+<p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
+<ul>
+<li>You can activate the new environment as follows:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda activate myenv
+</code></pre>
+<ul>
+<li>Now take a look at all the modules in your <code>myenv</code> environment:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda list
+</code></pre>
+<ul>
+<li>If you want to switch back to your <code>base</code> environment simply type:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda deactivate
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Update anaconda environments" duration="5">
+        <p>If you want to update a specific Anaconda environment (this will update all packages in the selected environment to the latest version but will not update Python), use this command: <code>conda update --all</code></p>
+<p><em>Make sure to activate the right environment first. In our example, we use the base environment so we don&#39;t have to activate it</em></p>
+<ul>
+<li>Update all</li>
+</ul>
+<pre><code language="language-terminal" class="language-terminal">conda update --all
+</code></pre>
+<ul>
+<li>If you only want to update specific modules, use conda update and the name of the module (e.g., scikit-learn)</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda update scikit-learn
+</code></pre>
+<ul>
+<li>Let&#39;s make sure that you use the machine learning module <code>scikit-learn</code> in version 1.0.2 or higher:</li>
+</ul>
+<pre><code language="language-terminal" class="language-terminal">conda list scikit-learn
+</code></pre>
+<ul>
+<li>It&#39;s also possible to install a specific version of a module:</li>
+</ul>
+<pre><code language="language-bash" class="language-bash">conda install -c anaconda scikit-learn=1.0.2
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Installation of modules" duration="5">
+        <p>There are several options how to install modules in a Anaconda environment.</p>
+<h2 is-upgraded>Conda</h2>
+<p><a href="https://docs.anaconda.com/anaconda/user-guide/tasks/install-packages/" target="_blank">conda</a> is the official Anaconda module manager.</p>
+<p>If you install a new module with <code>conda</code>, it analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2.0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.</p>
+<p>The conda team, from Anaconda, Inc., packages a multitude of packages and provides them to all users free of charge in their default channel.</p>
+<p>But what if a package you are looking for is not in the default channel? One option is to use conda-forge (see below).</p>
+<h2 is-upgraded>Conda-forge</h2>
+<p><a href="https://conda-forge.org/docs/user/introduction.html" target="_blank">Conda-forge</a> is a community-led collection of recipes, build infrastructure and distributions for the conda package manager.</p>
+<h2 is-upgraded>Pip</h2>
+<p>Instead of conda, you can also use <code>pip</code> (the standard package installer for Python) to install packages.</p>
+<p>Note that we will use <code>pip</code>in this environment to install packages (and not conda). Therefore, we install pip in this environment.</p>
+<aside class="warning"><p> Note that you should only use either conda or pip in one environment  </p>
+</aside>
+<p>Let`s install some additional modules in our base environment.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create a virtual environment" duration="5">
+        <p>Furthermore, Anaconda&#39;s package manager <code>conda</code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called <strong>virtual environments</strong>).</p>
+<p><code>conda</code> analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2.0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use <code>pip</code> (the standard package installer for Python) to install packages.</p>
+<aside class="warning"><p> Note that you should only use either conda or pip in one environment  </p>
+</aside>
+<p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands" target="_blank">Conda environments</a> help manage dependencies and isolate projects. This is particularly useful when some packages require specific Python versions. Note that we will use <code>pip</code>in this environment to install packages (and not conda). Therefore, we install pip in this environment.</p>
+<p>On Windows open the Start menu and open an Anaconda Command Prompt. On macOS or Linux open a terminal window.</p>
+<p>We create an environment with a specific version of Python (3.9) and the <strong>TensorFlow</strong> package. We call the environment <code>tf</code>:</p>
+<pre><code language="language-bash" class="language-bash">conda create -n tf python=3.9 pip
+</code></pre>
+<p>When conda asks you to proceed <code>(proceed ([y]/n)?</code>), type <code>y</code>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Activate TensorFlow environment" duration="2">
+        <p>You can activate your environment as follows:</p>
+<pre><code language="language-bash" class="language-bash">conda activate tf
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Install TensorFlow" duration="2">
+        <p>You can install TensorFlow as follows (see <a href="https://www.tensorflow.org/install" target="_blank">documentation</a>):</p>
+<p>Step 1: upgrade pip:</p>
+<pre><code language="language-bash" class="language-bash">pip install --upgrade pip
+</code></pre>
+<p>Step 2: install TensorFlow:</p>
+<pre><code language="language-bash" class="language-bash">pip install tensorflow
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="What&#39;s next?" duration="1">
+        <p>Congratulations! You have completed the tutorial and learned how to install:</p>
+<p>✅ TensorFlow</p>
+<p>If you&#39;d like to learn more about TensorFlow, have a look at the following suggestion:</p>
+<ul>
+<li><a href="https://www.tensorflow.org/tutorials" target="_blank">TensorFlow tutorials</a></li>
+</ul>
+<p>If you want to switch back to your Anaconda base environment, just use:</p>
+<pre><code language="language-bash" class="language-bash">conda deactivate
+</code></pre>
+<p class="image-container"><img alt="Jan Kirenz" style="width: 100.00px" src="img/f80fc95e35c0d9fa.png"></p>
+<p>Thank you for participating in this tutorial. If you found any issues along the way I&#39;d appreciate it if you&#39;d raise them by clicking the <em>Report a mistake</em> button at the bottom left of this site.</p>
+<p><em>Copyright: Jan Kirenz (2021), </em><a href="https://www.kirenz.com" target="_blank"><em>kirenz.com</em></a><em>, </em><a href="https://creativecommons.org/licenses/by-nc/2.0/" target="_blank"><em>Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0) License</em></a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
