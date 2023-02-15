@@ -49,39 +49,16 @@ Duration: 00:05:00
 - Go to [anaconda.com](https://www.anaconda.com/products/individual) 
 
 
-### Windows
-
 - Scroll to the bottom of the page (until you see "Anaconda Installers")
 
-- Choose the appropriate `Graphical Installer` for your system and install the software.
 
-### MacOS with Intel 
-
-- Download the `Graphical Installer` and install the software:
-
-[Miniconda3 macOS Intel x86 64-bit pkg](https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-x86_64.pkg)
-
-### MacOS with M1
-
-- Download the software:
-
-- [Miniconda3 macOS Apple M1 ARM 64-bit bash](https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh)
-
-- Open a terminal and `cd` into your downloads directory
-
-- Install Minconda:
-
-```bash
-sh ./Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh
-```
-- Scroll to the bottom and type `yes`to install the software.
-
-- If asked, agree to initialize Miniconda
+- Choose the appropriate `Graphical Installer` for your system (Windows, MacOS or Linux) and install the software.
 
 
 <!-- ------------------------ -->
 ## Virtual environments
 Duration: 00:05:00
+
 
 During the first installation, Anaconda installed the so called `base` environment. Let`s take a look at this environment:
 
