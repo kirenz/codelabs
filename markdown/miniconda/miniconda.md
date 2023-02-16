@@ -89,35 +89,24 @@ Duration: 00:05:00
 
 - Go to your Downloads folder, right-click on the file and choose "as Administrator"
 
-- Install the software.
+- Install the software
 
 - During the installation process, choose: "Just Me"
 
 
-
-### Windows
-
-- Scroll to the bottom of the page (until you see "Anaconda Installers")
-
-- Choose the appropriate `Graphical Installer` for your system and install the software.
-
 ### MacOS with Intel 
 
-- Download the `Graphical Installer` and install the software:
-
-[Miniconda3 macOS Intel x86 64-bit pkg](https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-x86_64.pkg)
+- Download the `Graphical Installer` and install the software: [Miniconda3 macOS Intel x86 64-bit pkg](https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-x86_64.pkg)
 
 - During the installation process, choose: "Just Me"
 
 ### MacOS with M1
 
-- Download the software:
+- Download the software: [Miniconda3 macOS Apple M1 ARM 64-bit bash](https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh)
 
-- [Miniconda3 macOS Apple M1 ARM 64-bit bash](https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh)
+- Open a terminal and `cd` into the directory where the file is located.
 
-- Open a terminal and `cd` into your downloads directory
-
-- Install Minconda:
+- In your terminal:
 
 ```bash
 sh ./Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh
@@ -126,9 +115,6 @@ sh ./Miniconda3-py310_23.1.0-1-MacOSX-arm64.sh
 
 - If asked, agree to initialize Miniconda
 
-
-
- 
 
 
 ## Miniconda Setup 
