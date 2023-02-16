@@ -1,6 +1,11 @@
 
 ### Data Science
 
+- [Miniconda setup](https://kirenz.github.io/codelabs/codelabs/miniconda/#0)
+
+- [Anaconda setup](https://kirenz.github.io/codelabs/codelabs/anaconda-install/#0)
+
+
 - [Miniforge3 setup](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0)
 
 - [Plotly Dash setup](https://kirenz.github.io/codelabs/codelabs/dash-setup/#0)
