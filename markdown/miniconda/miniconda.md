@@ -297,10 +297,6 @@ Congratulations! You have completed the tutorial and learned how to:
 
 ✅ update modules
 
-
-
-
-
 <img src="img/Jan.png" alt="Jan Kirenz" width="100">
 
 Thank you for participating in this tutorial. If you found any issues along the way I'd appreciate it if you'd raise them by clicking the *Report a mistake* button at the bottom left of this site.
