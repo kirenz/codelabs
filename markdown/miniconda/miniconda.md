@@ -35,7 +35,7 @@ Duration: 0:05:00
 
 - You should be familiar with the shell. If not, take a look at this tutorial.
 
-- If you have Anaconda installed on your system, I recommend to uninstall it first to avoid compatibility problems.
+- If you have an old Anaconda version installed on your system, you may uninstall it first to avoid compatibility problems.
 
 
 ### Uninstall Anaconda
