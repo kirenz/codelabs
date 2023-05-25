@@ -1,7 +1,11 @@
 
 ### Data Science
 
+<!--
+
 - [Miniconda setup](https://kirenz.github.io/codelabs/codelabs/miniconda/#0)
+
+-->
 
 - [Anaconda setup](https://kirenz.github.io/codelabs/codelabs/anaconda-install/#0)
 
