@@ -13,8 +13,11 @@
 - [Miniforge3 setup](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0)
 
 - [Plotly Dash setup](https://kirenz.github.io/codelabs/codelabs/dash-setup/#0)
-- [Jupyter Book](https://kirenz.github.io/codelabs/codelabs/jupyter-book/#0)
 
+<!--
+
+- [Jupyter Book](https://kirenz.github.io/codelabs/codelabs/jupyter-book/#0)
+-->
 
 ### MLOps
 
